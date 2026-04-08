@@ -1,0 +1,167 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TypeBadge from "../../components/TypeBadge.astro";
+import FeatureBadge from "../../components/FeatureBadge.astro";
+import StarCount from "../../components/StarCount.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import {
+  getAllProjects,
+  generateSlug,
+  getProjectsByType,
+  getDifficultyLabel,
+  getDifficultyColor,
+  type Project,
+} from "../../lib/directory";
+
+export async function getStaticPaths() {
+  const projects = getAllProjects();
+  return projects.map((project) => ({
+    params: { slug: generateSlug(project.name) },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props as { project: Project };
+
+const related = getProjectsByType(project.type)
+  .filter((p) => p.name !== project.name)
+  .slice(0, 3);
+
+const diffLabel = getDifficultyLabel(project.difficulty);
+const diffColor = getDifficultyColor(project.difficulty);
+const diffBadgeBg: Record<string, string> = {
+  emerald: "bg-emerald-50 text-emerald-700",
+  amber: "bg-amber-50 text-amber-700",
+  rose: "bg-rose-50 text-rose-700",
+  neutral: "bg-neutral-100 text-neutral-700",
+};
+---
+
+<BaseLayout title={project.name} description={project.full_description.slice(0, 160)}>
+  <!-- Header -->
+  <section class="border-b border-neutral-200 bg-neutral-50">
+    <div class="mx-auto max-w-5xl px-6 py-16">
+      <a href="/directory" class="inline-flex items-center gap-1 text-sm text-neutral-500 no-underline hover:text-neutral-900">
+        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd" />
+        </svg>
+        Back to Directory
+      </a>
+
+      <div class="mt-6 flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <h1 class="text-4xl sm:text-5xl">{project.name}</h1>
+          <p class="mt-2 text-lg text-neutral-500">by {project.creator}</p>
+          <div class="mt-4 flex flex-wrap items-center gap-3">
+            <TypeBadge type={project.type} />
+            {project.difficulty && (
+              <span class={`inline-block rounded-full px-3 py-1 text-xs font-medium ${diffBadgeBg[diffColor] || diffBadgeBg.neutral}`}>
+                {diffLabel}
+              </span>
+            )}
+            <StarCount stars={project.github_stars} />
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            {project.use_cases.map((uc) => (
+              <span class="inline-block rounded-full border border-neutral-300 px-3 py-1 text-xs font-medium text-neutral-600">
+                {uc}
+              </span>
+            ))}
+            {project.features.map((f) => (
+              <span class="inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-500">
+                {f}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          {project.website_url && (
+            <a
+              href={project.website_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary inline-flex items-center gap-2"
+            >
+              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5zm7.25-.182a.75.75 0 01.75-.75h3.5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0V6.56l-5.22 5.22a.75.75 0 11-1.06-1.06l5.22-5.22h-2.44a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+              </svg>
+              Visit Website
+            </a>
+          )}
+          {project.github_url && (
+            <a
+              href={project.github_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-ghost inline-flex items-center gap-2"
+            >
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Description -->
+  <section class="border-b border-neutral-200">
+    <div class="mx-auto max-w-5xl px-6 py-16">
+      <h2 class="text-xl font-semibold">About</h2>
+      <p class="mt-4 text-lg leading-relaxed">{project.full_description}</p>
+    </div>
+  </section>
+
+  <!-- Why Discussed -->
+  {project.why_discussed && (
+    <section class="border-b border-neutral-200 bg-indigo-50/50">
+      <div class="mx-auto max-w-5xl px-6 py-16">
+        <h2 class="text-xl font-semibold">Why people are talking about it</h2>
+        <blockquote class="mt-4 border-l-4 border-indigo-400 pl-6 text-lg italic text-neutral-700">
+          {project.why_discussed}
+        </blockquote>
+      </div>
+    </section>
+  )}
+
+  <!-- Key Features -->
+  {project.key_features.length > 0 && (
+    <section class="border-b border-neutral-200">
+      <div class="mx-auto max-w-5xl px-6 py-16">
+        <h2 class="text-xl font-semibold">Key Features</h2>
+        <div class="mt-6 flex flex-wrap gap-2">
+          {project.key_features.map((feature) => (
+            <FeatureBadge feature={feature} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Notes -->
+  {project.notes && (
+    <section class="border-b border-neutral-200 bg-neutral-50">
+      <div class="mx-auto max-w-5xl px-6 py-16">
+        <h2 class="text-xl font-semibold">Notes</h2>
+        <p class="mt-4">{project.notes}</p>
+      </div>
+    </section>
+  )}
+
+  <!-- Related Projects -->
+  {related.length > 0 && (
+    <section class="border-b border-neutral-200">
+      <div class="mx-auto max-w-6xl px-6 py-16">
+        <h2 class="text-xl font-semibold">More {project.type === "agent-tool" ? "Agent Tools" : project.type === "multi-agent-platform" ? "Multi-Agent Platforms" : "Developer Utilities"}</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {related.map((p) => (
+            <ProjectCard project={p} slug={generateSlug(p.name)} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>

@@ -1,0 +1,10 @@
+[
+  {
+    "section": "Navigation",
+    "links": [
+      { "label": "Home", "href": "/" },
+      { "label": "Directory", "href": "/directory" },
+      { "label": "Compare", "href": "/compare" }
+    ]
+  }
+]

@@ -1,0 +1,1704 @@
+{
+  "metadata": {
+    "title": "Comprehensive Directory of Agent Harnesses & Orchestrators",
+    "last_updated": "April 8, 2026",
+    "description": "Full master aggregation including every harness, framework, adjacent tool, Paperclip.ing category, and all orchestration projects discussed. 69 total entries.",
+    "total_entries": 69,
+    "categories": [
+      "Team/Organization-Backed",
+      "Individual/Indie & Research",
+      "Harnesses-Adjacent",
+      "Zero-Human / Agent Company Orchestration"
+    ],
+    "types": [
+      "Agent Tools",
+      "Multi-Agent Platforms",
+      "Developer Utilities"
+    ],
+    "use_cases": [
+      "Software Development",
+      "Business Operations",
+      "Autonomous Operations",
+      "General-Purpose",
+      "Content Creation",
+      "Research & Science"
+    ],
+    "features": [
+      "Open Source",
+      "Self-Hosted",
+      "Model-Agnostic",
+      "Security-Focused",
+      "Self-Improving"
+    ],
+    "difficulty_levels": [
+      "Beginner",
+      "Intermediate",
+      "Advanced"
+    ]
+  },
+  "harnesses": [
+    {
+      "name": "Claude Code",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "Anthropic",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "full_description": "Anthropic's official coding agent harness with multi-agent orchestration, progressive disclosure, and tight context engineering. The gold-standard closed-source reference that inspired dozens of open forks.",
+      "key_features": [
+        "Progressive context + checkpoints",
+        "Multi-agent orchestration",
+        "High-quality coding & frontend"
+      ],
+      "why_discussed": "Still the benchmark for quality; recent policy changes around third-party access have accelerated open alternatives.",
+      "notes": "Gold standard benchmark",
+      "website_url": "https://www.anthropic.com/product/claude-code",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Hermes Agent",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "use_cases": [
+        "Software Development",
+        "Autonomous Operations"
+      ],
+      "features": [
+        "Open Source",
+        "Model-Agnostic",
+        "Self-Improving"
+      ],
+      "creator": "Nous Research",
+      "github_stars": 34000,
+      "github_url": "https://github.com/NousResearch/hermes-agent",
+      "full_description": "The self-improving AI agent with a built-in learning loop that creates/refines reusable Markdown skills from experience, maintains multi-level persistent memory (facts, history search, user model), and grows smarter across sessions. Runs on cheap VPS/serverless, multi-platform gateway (CLI + Telegram/Discord/Slack/WhatsApp/Signal/Email), 40+ tools (filesystem/terminal/browser/Cron/sub-agents), model-agnostic with 200+ model support via OpenRouter. Features real sandboxing across six backends (local, Docker, SSH, Daytona, Singularity, Modal), subagent delegation with parallelization, scheduled automations via natural language cron, and dialectic user modeling.",
+      "key_features": [
+        "Built-in learning loop with auto-generated skills",
+        "Multi-level persistent memory with full-text search",
+        "40+ tools plus MCP server integration",
+        "Multi-platform gateway (Telegram/Discord/Slack/WhatsApp/Signal/Email/CLI)",
+        "Self-evolution via DSPy + GEPA",
+        "200+ model support",
+        "Six sandboxing backends",
+        "Subagent delegation and parallelization"
+      ],
+      "why_discussed": "Frequently called the strongest open-source harness—outperforms OpenClaw/Claude Code on real-world tasks, better memory management, proactive learning, and stability. Fastest-growing open harness with 34K stars and 313 contributors.",
+      "notes": "Website: https://hermes-agent.nousresearch.com/",
+      "website_url": "https://hermes-agent.nousresearch.com/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "OpenClaw",
+      "category": "Individual/Indie & Research",
+      "type": "agent-tool",
+      "use_cases": [
+        "Software Development",
+        "General-Purpose"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "OpenClaw community",
+      "github_stars": 351208,
+      "github_url": "https://github.com/openclaw/openclaw",
+      "full_description": "The original AI agent runtime for messaging channels. Skill system, sub-agent spawning, persistent sessions, and multi-platform orchestration.",
+      "key_features": [
+        "Persistent sessions + HEARTBEAT.md",
+        "Skill system",
+        "Multi-platform orchestration"
+      ],
+      "why_discussed": "The foundational 'Claw' that sparked the entire ecosystem; still widely used but being forked for security/performance.",
+      "notes": "Massive skill hub",
+      "website_url": "https://openclaw.ai/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "IronClaw",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "use_cases": [
+        "Software Development",
+        "General-Purpose"
+      ],
+      "features": [
+        "Open Source",
+        "Self-Hosted",
+        "Security-Focused"
+      ],
+      "creator": "NEAR AI",
+      "github_stars": 11500,
+      "github_url": "https://github.com/nearai/ironclaw",
+      "full_description": "Rust re-implementation of OpenClaw focused on security/privacy. WASM sandbox, credential protection, prompt-injection defenses, encrypted PostgreSQL persistence, self-repair, and parallel jobs.",
+      "key_features": [
+        "WASM sandbox",
+        "Encrypted PostgreSQL",
+        "Self-repair",
+        "Parallel jobs"
+      ],
+      "why_discussed": "Trusted corporate/institutional alternative; 'secure by design' in the Claw ecosystem.",
+      "notes": "Rust rewrite for security",
+      "website_url": "https://www.ironclaw.com/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "oh-my-openagent (omo)",
+      "category": "Individual/Indie & Research",
+      "type": "agent-tool",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [
+        "Open Source",
+        "Model-Agnostic"
+      ],
+      "creator": "code-yeongyu",
+      "github_stars": 49500,
+      "github_url": "https://github.com/code-yeongyu/oh-my-openagent",
+      "full_description": "Multi-model, multi-agent harness (formerly 'Oh My OpenCode') with 10 discipline agents (Sisyphus orchestrator on Claude Opus 4.6/Kimi K2.5/GLM-5, Hephaestus deep worker on GPT-5.4, Prometheus strategic planner, Atlas master executor, Oracle architecture, Librarian docs/code search, Explore fast codebase analysis, Metis plan gap analysis, Momus plan validation). Features ultrawork one-command mode (/ulw), hash-anchored edits with LINE#ID content hash validation (68.3% success rate improvement), IntentGate for true user intent analysis, LSP/AST-grep precision, 5+ background agents in parallel, built-in MCPs (Exa, Context7, Grep.app), skill-embedded MCPs, 40+ lifecycle hooks, tmux integration, and Ralph Loop for 100% task completion. 1.6M+ total downloads, 518K monthly.",
+      "key_features": [
+        "10 discipline agents with role-specific model routing",
+        "Hash-anchored edits (zero stale-line errors)",
+        "Ultrawork mode (/ulw) - type three letters, walk away",
+        "IntentGate user intent analysis",
+        "Ralph Loop for 100% task completion",
+        "5+ parallel background agents",
+        "Built-in MCPs (Exa, Context7, Grep.app)",
+        "LSP + AST-Grep precision",
+        "40+ lifecycle hooks",
+        "Full Claude Code + OpenCode compatibility"
+      ],
+      "why_discussed": "Called 'the best agent harness' in multiple threads; 49.5K stars, 189 contributors, 1.6M+ downloads. Revolutionized OpenCode usage and ships daily.",
+      "notes": "Latest: v3.15.3 (Apr 6, 2026). v3.16.0 imminent. Renamed from 'Oh My OpenCode' to 'Oh My OpenAgent'.",
+      "website_url": "https://ohmyopenagent.com/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "DeepAgents",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "LangChain team",
+      "github_stars": 19900,
+      "github_url": "https://github.com/langchain-ai/deepagents",
+      "full_description": "The 'batteries-included' agent harness built natively on LangGraph. Model-agnostic with backend abstraction (local FS, remote VM, DB), strong context management, long-horizon tasks, middleware for custom orchestration, and MCP integration via langchain-mcp-adapters. Ships as both a Python library and a standalone Deep Agents CLI. Also has a JavaScript counterpart (deepagents.js). Extremely active development with 1,363 commits, 475 branches, 86 releases, and 107 contributors.",
+      "key_features": [
+        "Backend abstraction (local FS / remote VM / DB)",
+        "Built natively on LangGraph",
+        "Context management and middleware customization",
+        "MCP integration",
+        "Deep Agents CLI",
+        "JavaScript counterpart (deepagents.js)",
+        "Themes support"
+      ],
+      "why_discussed": "Practical open alternative for inspectable coding agents. Extremely active development — latest release hours ago, commits daily.",
+      "notes": "Latest: deepagents v0.5.1. Pairs with LangGraph.",
+      "website_url": "https://docs.langchain.com/deepagents",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "LangGraph",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "General-Purpose"
+      ],
+      "features": [],
+      "creator": "LangChain team",
+      "github_stars": 28645,
+      "github_url": "https://github.com/langchain-ai/langgraph",
+      "full_description": "Production-grade multi-agent orchestration (router + specialists, stateful graphs). Used in real-world case studies (finance, data).",
+      "key_features": [
+        "Stateful graphs",
+        "Router + specialists"
+      ],
+      "why_discussed": "Go-to for complex workflows; 'harness engineering is systems engineering'.",
+      "notes": "",
+      "website_url": "https://www.langchain.com/langgraph",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "deer-flow",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "General-Purpose"
+      ],
+      "features": [
+        "Open Source",
+        "Model-Agnostic"
+      ],
+      "creator": "ByteDance",
+      "github_stars": 59102,
+      "github_url": "https://github.com/bytedance/deer-flow",
+      "full_description": "Trending open-source super-agent harness with sub-agent orchestration, built-in memory, sandboxes, and extensible skills.",
+      "key_features": [
+        "Sub-agent orchestration",
+        "Built-in memory + sandboxes"
+      ],
+      "why_discussed": "Called 'top trending' for complex autonomous systems.",
+      "notes": "",
+      "website_url": "https://deerflow.tech/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "AutoAgent",
+      "category": "Individual/Indie & Research",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "General-Purpose"
+      ],
+      "features": [
+        "Open Source",
+        "Self-Improving"
+      ],
+      "creator": "Kevin Gu / thirdlayer.inc",
+      "github_stars": 3790,
+      "github_url": "https://github.com/kevinrgu/autoagent",
+      "full_description": "Meta-agent that autonomously engineers/optimizes its own harness overnight via benchmark loops (goal in program.md → hill-climb on scores).",
+      "key_features": [
+        "Self-optimizing meta-agent",
+        "Benchmark-driven"
+      ],
+      "why_discussed": "'AI engineers its own harness' — pure meta-tool for rapid iteration.",
+      "notes": "#1 on multiple benches after 24h",
+      "website_url": null,
+      "difficulty": "advanced"
+    },
+    {
+      "name": "AutoGen",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "General-Purpose"
+      ],
+      "features": [],
+      "creator": "Microsoft",
+      "github_stars": 56797,
+      "github_url": "https://github.com/microsoft/autogen",
+      "full_description": "Mature multi-agent conversation/orchestration with tool registration and delegation.",
+      "key_features": [
+        "Conversation memory",
+        "Strong delegation"
+      ],
+      "why_discussed": "Classic building block for interoperability.",
+      "notes": "",
+      "website_url": "https://microsoft.github.io/autogen/stable/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "CrewAI",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "General-Purpose"
+      ],
+      "features": [],
+      "creator": "CrewAI team",
+      "github_stars": 48275,
+      "github_url": "https://github.com/crewAIInc/crewAI",
+      "full_description": "Role-based task decomposition for 'team-like' agent workflows.",
+      "key_features": [
+        "Role-based state",
+        "Task decomposition"
+      ],
+      "why_discussed": "Frequently compared in framework debates.",
+      "notes": "",
+      "website_url": "https://crewai.com/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Google ADK / Antigravity",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "General-Purpose"
+      ],
+      "features": [],
+      "creator": "Google",
+      "github_stars": 18797,
+      "github_url": "https://github.com/google/adk-python",
+      "full_description": "Agent-first platform for real-time/multiplayer prototyping and persistent agents.",
+      "key_features": [
+        "Real-time prototyping",
+        "Persistent agents"
+      ],
+      "why_discussed": "Quick shoutouts for fast multi-agent experimentation.",
+      "notes": "",
+      "website_url": "https://google.github.io/adk-docs/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Anthropic Multi-Agent Harness",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "Anthropic engineering (internal)",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Internal three-agent system for long-running full-stack dev and frontend design. Emphasizes orchestration, context management, and autonomous workflows.",
+      "key_features": [
+        "Three-agent system",
+        "Long-running workflows"
+      ],
+      "why_discussed": "Engineering blog posts are required reading; inspires custom builds.",
+      "notes": "Not open-source",
+      "website_url": null,
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Microsoft Agent Framework",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "General-Purpose"
+      ],
+      "features": [],
+      "creator": "Microsoft",
+      "github_stars": 9092,
+      "github_url": "https://github.com/microsoft/agent-framework",
+      "full_description": "C#/.NET toolkit for multi-agent workflows, human-in-the-loop approval, tool calling, and orchestration. Developer-first with full integration into Azure/.NET ecosystems.",
+      "key_features": [
+        "Human-in-the-loop",
+        ".NET integration"
+      ],
+      "why_discussed": "Workshop buzz and Zenn tutorials highlight it for production enterprise stacks.",
+      "notes": "",
+      "website_url": "https://learn.microsoft.com/en-us/agent-framework/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Dify",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "General-Purpose"
+      ],
+      "features": [],
+      "creator": "Dify team",
+      "github_stars": 136612,
+      "github_url": "https://github.com/langgenius/dify",
+      "full_description": "Open-source platform for building/deploying AI agents and workflows with visual orchestration.",
+      "key_features": [
+        "Visual orchestration"
+      ],
+      "why_discussed": "Frequently ranked in 2026 'best frameworks' roundups.",
+      "notes": "",
+      "website_url": "https://dify.ai/",
+      "difficulty": "beginner"
+    },
+    {
+      "name": "Mastra",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "General-Purpose",
+        "Software Development"
+      ],
+      "features": [
+        "Open Source",
+        "Model-Agnostic"
+      ],
+      "creator": "Gatsby.js founders (Sam Bhagwat, Abhi Aiyer, Shane Thomas) — Y Combinator backed",
+      "github_stars": 22800,
+      "github_url": "https://github.com/mastra-ai/mastra",
+      "full_description": "Open-source TypeScript framework for building AI-powered applications and agents. Provides AI primitives including agents, workflows (graph-based orchestration with branching, parallel execution, human-in-the-loop), memory systems, MCP server authoring, observability (tracing, logging, performance eval), and evals/guardrails. Connects to 90+ AI providers through a unified interface. Agents can be deployed as APIs, bundled with apps, or run as standalone services on any Node.js environment. Founded October 2024 by the Gatsby.js team, backed by Y Combinator. Apache 2.0 licensed.",
+      "key_features": [
+        "TypeScript-native agent framework",
+        "Graph-based workflow orchestration",
+        "Memory systems (conversation, semantic, retrieval)",
+        "MCP server authoring",
+        "Built-in observability (tracing, logging)",
+        "Evals and guardrails (prompt injection prevention)",
+        "90+ AI provider support",
+        "Flexible deployment (API, bundled, standalone)"
+      ],
+      "why_discussed": "Rising in developer comparisons alongside LangGraph. Built by the respected Gatsby.js team, YC-backed, and purpose-built for the TypeScript/React/Next.js ecosystem.",
+      "notes": "Apache 2.0 license. Enterprise features available.",
+      "website_url": "https://mastra.ai/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "OpenAI Agents SDK",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "General-Purpose"
+      ],
+      "features": [],
+      "creator": "OpenAI",
+      "github_stars": 20633,
+      "github_url": "https://github.com/openai/openai-agents-python",
+      "full_description": "Official SDK exposing primitives for custom agent runtimes (planning, memory, tools).",
+      "key_features": [
+        "Planning primitives",
+        "Memory primitives"
+      ],
+      "why_discussed": "Direct tie-in to Codex/Copilot ecosystems.",
+      "notes": "",
+      "website_url": "https://openai.github.io/openai-agents-python/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "GitHub Copilot SDK",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "Microsoft/GitHub",
+      "github_stars": 8268,
+      "github_url": "https://github.com/github/copilot-sdk",
+      "full_description": "Public-preview SDK exposing the agent runtime behind Copilot Cloud/CLI with BYOK support.",
+      "key_features": [
+        "BYOK support",
+        "Copilot runtime exposure"
+      ],
+      "why_discussed": "Fresh April 2026 launch; enables custom harness extensions.",
+      "notes": "",
+      "website_url": "https://docs.github.com/en/copilot/how-tos/copilot-sdk",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "ZeroClaw",
+      "category": "Individual/Indie & Research",
+      "type": "agent-tool",
+      "use_cases": [
+        "Software Development",
+        "General-Purpose"
+      ],
+      "features": [
+        "Security-Focused"
+      ],
+      "creator": "Claw ecosystem community",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Rust-based Claw variant with trait-based model routing and lightweight persistence.",
+      "key_features": [
+        "Trait-based routing",
+        "Lightweight persistence"
+      ],
+      "why_discussed": "High engagement in security-focused threads.",
+      "notes": "Part of secure Claw ecosystem",
+      "website_url": "https://www.zeroclawlabs.ai/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Nanobot",
+      "category": "Individual/Indie & Research",
+      "type": "agent-tool",
+      "use_cases": [
+        "General-Purpose",
+        "Research & Science"
+      ],
+      "features": [
+        "Open Source",
+        "Model-Agnostic"
+      ],
+      "creator": "HKUDS",
+      "github_stars": 38391,
+      "github_url": "https://github.com/HKUDS/Nanobot",
+      "full_description": "Python research-lab harness using LiteLLM for provider routing + LLM-driven memory consolidation.",
+      "key_features": [
+        "LiteLLM routing",
+        "LLM-driven memory"
+      ],
+      "why_discussed": "Exploded to 23k stars quickly; praised for clean, minimal design.",
+      "notes": "",
+      "website_url": "https://www.nanobot.ai/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "PicoClaw",
+      "category": "Individual/Indie & Research",
+      "type": "agent-tool",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [
+        "Self-Hosted"
+      ],
+      "creator": "Sipeed",
+      "github_stars": 27799,
+      "github_url": "https://github.com/sipeed/picoclaw",
+      "full_description": "Go implementation optimized for tiny hardware ($5 chips). Ultra-lightweight with custom SDKs.",
+      "key_features": [
+        "Ultra-lightweight",
+        "Edge hardware optimized"
+      ],
+      "why_discussed": "Niche but buzzing in edge/self-hosted circles.",
+      "notes": "",
+      "website_url": "https://picoclaw.io/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Chorus",
+      "category": "Individual/Indie & Research",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "Chorus-AIDLC",
+      "github_stars": 381,
+      "github_url": "https://github.com/Chorus-AIDLC/chorus",
+      "full_description": "Requirements-to-delivery harness with task DAGs, sub-agent teams, proof-of-work, and human approval gates.",
+      "key_features": [
+        "Task DAGs",
+        "Human approval gates"
+      ],
+      "why_discussed": "End-to-end for real software projects.",
+      "notes": "",
+      "website_url": "https://chorus-aidlc.github.io/Chorus/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Emdash",
+      "category": "Individual/Indie & Research",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "YC W26",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Parallel-agent orchestrator with git worktree isolation (local or SSH). Runs 10+ coding agents simultaneously.",
+      "key_features": [
+        "Git worktree isolation",
+        "Parallel agents"
+      ],
+      "why_discussed": "YC-backed momentum.",
+      "notes": "",
+      "website_url": "https://www.emdash.sh/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Zylos",
+      "category": "Individual/Indie & Research",
+      "type": "agent-tool",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "Community",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Persistent Claude Code harness with tiered memory, skill-based disclosure, multi-channel bridge, scheduler, and activity monitor.",
+      "key_features": [
+        "Tiered memory",
+        "Scheduler"
+      ],
+      "why_discussed": "Persistent Claude Code extension.",
+      "notes": "",
+      "website_url": "https://zylos.ai/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "everything-claude-code",
+      "category": "Individual/Indie & Research",
+      "type": "agent-tool",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "affaan-m",
+      "github_stars": 144705,
+      "github_url": "https://github.com/affaan-m/everything-claude-code",
+      "full_description": "Performance optimization layer (skills, instincts, memory, security) that works across Claude Code, Codex, Cursor, OpenCode, and beyond.",
+      "key_features": [
+        "Cross-harness optimization",
+        "Skills + instincts"
+      ],
+      "why_discussed": "Works across multiple coding agents.",
+      "notes": "",
+      "website_url": "https://ecc.tools/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Bridle",
+      "category": "Individual/Indie & Research",
+      "type": "developer-utility",
+      "use_cases": [
+        "General-Purpose",
+        "Software Development"
+      ],
+      "features": [
+        "Open Source",
+        "Model-Agnostic"
+      ],
+      "creator": "neiii (d0)",
+      "github_stars": 412,
+      "github_url": "https://github.com/neiii/bridle",
+      "full_description": "A unified configuration manager for AI coding assistants — the 'harness of harnesses.' Provides a TUI and CLI to manage profiles, install skills/agents/MCPs, and switch configurations across multiple harnesses from a single interface. Acts as a package manager for your harness: install skills from GitHub repos, create/switch configuration profiles per harness, and manage MCP server configs without manually editing files. Built in Rust. Supports Claude Code, OpenCode, Goose, Copilot CLI, Crush, and Amp (experimental). MIT licensed.",
+      "key_features": [
+        "Interactive TUI for visual management",
+        "Profile management (create, switch, diff, edit per harness)",
+        "Cross-harness skill installation from GitHub repos",
+        "Unified status view across all installed harnesses",
+        "MCP server configuration management",
+        "Zero-install trial via npx bridle-ai"
+      ],
+      "why_discussed": "Solves the 'which harness config goes where' problem. As the ecosystem fragments across 6+ harnesses, Bridle is the only tool that unifies their configuration management.",
+      "notes": "Latest: v0.2.9. 12 releases. MIT license. Install: npm install -g bridle-ai",
+      "website_url": null,
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Desloppify",
+      "category": "Individual/Indie & Research",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "Community",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Focused harness that turns sloppy AI-generated code into well-engineered, production-ready output via mechanical enforcement.",
+      "key_features": [
+        "Code quality enforcement"
+      ],
+      "why_discussed": "Post-generation cleanup tool.",
+      "notes": "",
+      "website_url": "https://desloppify.it/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Claude Dispatch",
+      "category": "Individual/Indie & Research",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "Claw ecosystem",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Lightweight dispatcher for Claude Code instances with parallel task routing.",
+      "key_features": [
+        "Parallel task routing"
+      ],
+      "why_discussed": "Most recent addition to the Claw ecosystem; freshly shipping.",
+      "notes": "",
+      "website_url": null,
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "OpenMontage",
+      "category": "Individual/Indie & Research",
+      "type": "developer-utility",
+      "use_cases": [
+        "Content Creation"
+      ],
+      "features": [
+        "Self-Hosted"
+      ],
+      "creator": "Community (HKUDS adjacent)",
+      "github_stars": "Emerging",
+      "github_url": null,
+      "full_description": "First open-source agentic video production system. Turns any LLM into a full studio: 11 pipelines, 49 tools, 400+ skills for research → script → assets → edit → voice/music/subtitles/render.",
+      "key_features": [
+        "11 pipelines",
+        "400+ skills",
+        "Agentic video production"
+      ],
+      "why_discussed": "Exploding on X for creator workflows; 'breaks the internet for content'.",
+      "notes": "Outputs under $2 or free locally",
+      "website_url": null,
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Excalibur",
+      "category": "Individual/Indie & Research",
+      "type": "agent-tool",
+      "use_cases": [
+        "General-Purpose",
+        "Research & Science"
+      ],
+      "features": [],
+      "creator": "Research / indie",
+      "github_stars": "Niche",
+      "github_url": null,
+      "full_description": "Structured-thought-only agent framework (causal patterns instead of freeform prompting). Forces intentional agent use.",
+      "key_features": [
+        "Structured causal patterns",
+        "Deterministic"
+      ],
+      "why_discussed": "Niche but high-signal among power users seeking deterministic harnesses.",
+      "notes": "'Software of the future'",
+      "website_url": null,
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Open Harness (MaxGfeller)",
+      "category": "Individual/Indie & Research",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "MaxGfeller",
+      "github_stars": 384,
+      "github_url": "https://github.com/MaxGfeller/open-harness",
+      "full_description": "TypeScript library (Vercel AI SDK) providing core harness primitives you can import directly into code. Supports AGENTS.md convention, repo walking, and custom runtimes.",
+      "key_features": [
+        "Harness primitives library",
+        "AGENTS.md support"
+      ],
+      "why_discussed": "Developer-focused 'harness-in-a-box' for embedding in apps.",
+      "notes": "Distinct from zhijiewong's CLI version",
+      "website_url": "https://www.open-harness.dev/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "AgentCI",
+      "category": "Harnesses-Adjacent",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "Indie / framework-agnostic",
+      "github_stars": "Emerging",
+      "github_url": null,
+      "full_description": "Framework-agnostic AI agent evaluation + CI/CD runtime. Lightweight prompt versioning, offline testing, and observability for any harness.",
+      "key_features": [
+        "Prompt versioning",
+        "Offline testing",
+        "Observability"
+      ],
+      "why_discussed": "Solves the 'how do I reliably test my harness?' pain point.",
+      "notes": "Harness-adjacent eval runtime",
+      "website_url": "https://agent-ci.com/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Desplega Agent Swarm",
+      "category": "Individual/Indie & Research",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "General-Purpose"
+      ],
+      "features": [],
+      "creator": "Community",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Open-source multi-agent orchestration framework focused on swarms with composable primitives.",
+      "key_features": [
+        "Composable swarm primitives"
+      ],
+      "why_discussed": "Featured in awesome-agent-harness lists.",
+      "notes": "",
+      "website_url": "https://agent-swarm.dev/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Theoriq Agent Framework",
+      "category": "Individual/Indie & Research",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "General-Purpose"
+      ],
+      "features": [],
+      "creator": "0G Labs",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Modular, autonomous, decentralized AI agent framework for on-chain/off-chain tasks.",
+      "key_features": [
+        "Decentralized",
+        "On-chain/off-chain"
+      ],
+      "why_discussed": "Web3/AI crossover threads praise it for censorship-resistant agents.",
+      "notes": "",
+      "website_url": "https://www.theoriq.ai/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "PromptLock",
+      "category": "Harnesses-Adjacent",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "Community",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Git-native prompt version control with CI testing (harness-adjacent memory/observability layer).",
+      "key_features": [
+        "Git-native versioning",
+        "CI testing"
+      ],
+      "why_discussed": "Pairs with any harness for reproducible agent runs.",
+      "notes": "",
+      "website_url": "https://promptlock.io/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "ROMA (Recursive Open Meta-Agent Framework)",
+      "category": "Individual/Indie & Research",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Research & Science"
+      ],
+      "features": [],
+      "creator": "Research",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Research-oriented long-horizon multi-agent system (from 2026 papers).",
+      "key_features": [
+        "Recursive meta-agent",
+        "Long-horizon"
+      ],
+      "why_discussed": "Academic/practical crossover for self-referential meta-harnesses.",
+      "notes": "",
+      "website_url": null,
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Local AI Memory Sync Engine",
+      "category": "Harnesses-Adjacent",
+      "type": "developer-utility",
+      "use_cases": [
+        "General-Purpose"
+      ],
+      "features": [],
+      "creator": "Community",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Cross-tool memory layer with MCP interface (harness-adjacent persistence primitive).",
+      "key_features": [
+        "Cross-harness memory sync",
+        "MCP interface"
+      ],
+      "why_discussed": "Solves the 'memory across harnesses' fragmentation problem.",
+      "notes": "",
+      "website_url": null,
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Claw-Chief",
+      "category": "Individual/Indie & Research",
+      "type": "agent-tool",
+      "use_cases": [
+        "Business Operations"
+      ],
+      "features": [],
+      "creator": "ryancarson",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Open-sourced OpenClaw chief-of-staff setup (full config + skills for executive workflows).",
+      "key_features": [
+        "Ready-to-run preset",
+        "Chief-of-staff config"
+      ],
+      "why_discussed": "Community fork/extension adopted as a ready-to-run harness preset.",
+      "notes": "",
+      "website_url": null,
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "auto-harness",
+      "category": "Individual/Indie & Research",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [
+        "Self-Improving"
+      ],
+      "creator": "Gauri Gupta / NeoSigma",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Self-improving library that auto-detects failures, turns them into evals, and fixes the harness.",
+      "key_features": [
+        "Auto-evals",
+        "Failure-to-fix loop"
+      ],
+      "why_discussed": "'Let it cook over the weekend' — self-optimizing loop.",
+      "notes": "~40% gains reported",
+      "website_url": "https://www.neosigma.ai/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "harness-craft",
+      "category": "Individual/Indie & Research",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [
+        "Open Source",
+        "Model-Agnostic"
+      ],
+      "creator": "YuxiaoWang-520",
+      "github_stars": 84,
+      "github_url": "https://github.com/YuxiaoWang-520/harness-craft",
+      "full_description": "Composable library of 46+ skills/rules for coding agents. Persistent repo memory, long-horizon execution, multi-agent roles, TDD/security guardrails.",
+      "key_features": [
+        "46+ skills",
+        "Persistent repo memory",
+        "Multi-role agents"
+      ],
+      "why_discussed": "Turns one-off prompting into a durable engineering system.",
+      "notes": "",
+      "website_url": null,
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "OpenHarness (zhijiewong)",
+      "category": "Individual/Indie & Research",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [
+        "Open Source",
+        "Self-Hosted",
+        "Model-Agnostic"
+      ],
+      "creator": "Zhijie Wang / zhijiewong",
+      "github_stars": 66,
+      "github_url": "https://github.com/zhijiewong/openharness",
+      "full_description": "Framework to build your own terminal CLI agent harness with any LLM. 18 tools, Git auto-commit, MCP support.",
+      "key_features": [
+        "Terminal CLI builder",
+        "Any LLM",
+        "MCP support"
+      ],
+      "why_discussed": "'Build your own terminal CLI with any LLM' — extensible, local-first.",
+      "notes": "Latest: v0.5.0 (Apr 5, 2026)",
+      "website_url": null,
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "project-harness",
+      "category": "Individual/Indie & Research",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "Marvin Vista",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "CLI that bootstraps any repo into an agent-ready codebase: AGENTS.md, repo-local docs, execution plans.",
+      "key_features": [
+        "Repo bootstrapping",
+        "AGENTS.md"
+      ],
+      "why_discussed": "Fresh shipping post; practical scaffolding.",
+      "notes": "",
+      "website_url": null,
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Codebuff",
+      "category": "Individual/Indie & Research",
+      "type": "agent-tool",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "James Grugett / @jahooma",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Coding agent harness optimized for Opus 4.5 with specialized sub-agents and clean OpenTUI.",
+      "key_features": [
+        "Opus-optimized",
+        "Specialized sub-agents"
+      ],
+      "why_discussed": "Benchmark-beating performance.",
+      "notes": "",
+      "website_url": "https://www.codebuff.com",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "OpenGauss",
+      "category": "Individual/Indie & Research",
+      "type": "agent-tool",
+      "use_cases": [
+        "Research & Science"
+      ],
+      "features": [],
+      "creator": "mathematics_inc (fork of Hermes)",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Autoformalization agent harness for math/Lean. Parallel sub-agents, extensible.",
+      "key_features": [
+        "Math/Lean focus",
+        "Parallel sub-agents"
+      ],
+      "why_discussed": "Research/frontier use case; stronger/faster on FormalQualBench.",
+      "notes": "",
+      "website_url": "https://www.math.inc/opengauss",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Paperclip.ing",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Business Operations",
+        "Autonomous Operations"
+      ],
+      "features": [
+        "Open Source",
+        "Self-Hosted",
+        "Model-Agnostic"
+      ],
+      "creator": "paperclipai / @dotta",
+      "github_stars": 49399,
+      "github_url": "https://github.com/paperclipai/paperclip",
+      "full_description": "Self-hosted Node.js + React dashboard that turns collections of AI agents into a structured, autonomous organization. Org charts, budgets/cost caps, governance, task routing, heartbeats, accountability. You define high-level goals; it runs the company with zero/minimal human oversight. Model-agnostic, BYO agents.",
+      "key_features": [
+        "Org charts + governance",
+        "Budgets & cost tracking",
+        "Autonomous task routing",
+        "Central dashboard"
+      ],
+      "why_discussed": "Viral reference for 'zero-human companies' — if OpenClaw/Hermes is the employee, Paperclip is the company. Exploded in March 2026.",
+      "notes": "Website: https://paperclip.ing/ | MIT licensed",
+      "website_url": "https://paperclip.ing/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Trinity",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Business Operations",
+        "Autonomous Operations"
+      ],
+      "features": [
+        "Open Source",
+        "Self-Hosted"
+      ],
+      "creator": "Ability AI",
+      "github_stars": 30,
+      "github_url": "https://github.com/Abilityai/trinity",
+      "full_description": "Sovereign deep agent orchestration infrastructure. Docker-isolated agents, fleet-wide scheduling, agent-to-agent delegation, real-time observability, audit trails, and governance. Used for fully autonomous businesses with 350+ agents executing real-money transactions.",
+      "key_features": [
+        "Fleet scheduling",
+        "Audit trails + governance",
+        "Real-time observability"
+      ],
+      "why_discussed": "Production-ready zero-human company platform.",
+      "notes": "Open-source core",
+      "website_url": "https://www.ability.ai/trinity",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "JUNO",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Business Operations",
+        "Autonomous Operations"
+      ],
+      "features": [
+        "Open Source",
+        "Self-Hosted"
+      ],
+      "creator": "koad/juno",
+      "github_stars": 0,
+      "github_url": "https://github.com/koad/juno",
+      "full_description": "Sovereign AI business entity framework. Treats the entire company as a cryptographic, git-native, autonomous entity with its own keys, mission, and on-chain/off-chain execution.",
+      "key_features": [
+        "Cryptographic entity",
+        "Git-native",
+        "On-chain/off-chain"
+      ],
+      "why_discussed": "Zero-human company laboratory; discussed alongside Paperclip.",
+      "notes": "Open-source",
+      "website_url": null,
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Neuro SAN",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Business Operations"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "Cognizant AI Lab",
+      "github_stars": 103,
+      "github_url": "https://github.com/cognizant-ai-lab/neuro-san",
+      "full_description": "Data-driven multi-agent orchestration platform for entire business networks. Declarative config defines agent behavior, tools, and collaboration at organizational scale.",
+      "key_features": [
+        "Declarative HOCON config",
+        "Business-network scale"
+      ],
+      "why_discussed": "Production business workflows at company scale.",
+      "notes": "Open-source",
+      "website_url": "https://www.cognizant.com/us/en/ai-lab/neuro-san",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "SuperAGI",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Business Operations",
+        "Autonomous Operations"
+      ],
+      "features": [],
+      "creator": "SuperAGI team",
+      "github_stars": 17430,
+      "github_url": "https://github.com/TransformerOptimus/SuperAGI",
+      "full_description": "Robust open-source multi-agent orchestration platform optimized for fully autonomous, long-running agent companies/enterprises.",
+      "key_features": [
+        "Task delegation",
+        "Persistent workflows",
+        "Scalability"
+      ],
+      "why_discussed": "Frequently compared in zero-human company discussions.",
+      "notes": "",
+      "website_url": "https://superagi.com/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Mission Control",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Business Operations"
+      ],
+      "features": [
+        "Open Source",
+        "Self-Hosted"
+      ],
+      "creator": "builderz-labs",
+      "github_stars": 3855,
+      "github_url": "https://github.com/builderz-labs/mission-control",
+      "full_description": "Self-hosted dashboard for AI agent orchestration. Manage fleets, dispatch tasks, track costs/spend, coordinate multi-agent workflows, and govern operations—all via SQLite.",
+      "key_features": [
+        "Self-hosted dashboard",
+        "Cost tracking",
+        "Fleet management"
+      ],
+      "why_discussed": "Fresh Paperclip-style control plane; hours-old buzz.",
+      "notes": "",
+      "website_url": "https://mc.builderz.dev/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "CompanyHelm",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Business Operations",
+        "Autonomous Operations"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "CompanyHelm",
+      "github_stars": 11,
+      "github_url": "https://github.com/CompanyHelm/companyhelm",
+      "full_description": "Distributed multi-agent orchestrator with built-in task management, agent-to-agent conversations, and persistent state.",
+      "key_features": [
+        "Distributed orchestration",
+        "Persistent state"
+      ],
+      "why_discussed": "Paperclip-adjacent 'company' orchestrator.",
+      "notes": "",
+      "website_url": "https://www.companyhelm.com/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Ruflo",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development",
+        "Autonomous Operations"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "ruvnet",
+      "github_stars": 30605,
+      "github_url": "https://github.com/ruvnet/ruflo",
+      "full_description": "Production-ready multi-agent orchestration platform (especially strong with Claude Code). Deploys 100+ specialized agents in coordinated 'hive-mind' swarms with queen-led topology, Byzantine consensus, fault tolerance, and self-learning.",
+      "key_features": [
+        "Hive-mind swarms",
+        "Byzantine consensus",
+        "Fault tolerance"
+      ],
+      "why_discussed": "Leading agent orchestration platform for Claude; enterprise-grade swarms.",
+      "notes": "",
+      "website_url": null,
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Operator",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development",
+        "Business Operations"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "untra",
+      "github_stars": 10,
+      "github_url": "https://github.com/untra/operator",
+      "full_description": "Kanban-shaped multi-agent orchestration app for AI-assisted software development. Launch/monitor/pause agents against work tickets with git-versioned progress tracking.",
+      "key_features": [
+        "Kanban workflow",
+        "Git-versioned progress"
+      ],
+      "why_discussed": "Practical orchestration for real dev workflows.",
+      "notes": "",
+      "website_url": null,
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Kata Orchestrator",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Business Operations"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "gannonh / kata monorepo",
+      "github_stars": 29,
+      "github_url": "https://github.com/gannonh/kata",
+      "full_description": "Full multi-agent orchestration suite (part of larger monorepo with CLI, Symphony, Desktop, and Context tools). Handles coordinated fleets across tools.",
+      "key_features": [
+        "Complete orchestration OS",
+        "Monorepo tools"
+      ],
+      "why_discussed": "Gaining traction in desktop/self-hosted circles.",
+      "notes": "",
+      "website_url": "https://kata.sh/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Agency Swarm",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "General-Purpose"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "VRSEN",
+      "github_stars": 4151,
+      "github_url": "https://github.com/VRSEN/agency-swarm",
+      "full_description": "Reliable multi-agent orchestration framework built on top of OpenAI Agents SDK. Adds structured swarm management, production features, and collaborative workflows.",
+      "key_features": [
+        "Swarm management",
+        "Production features"
+      ],
+      "why_discussed": "Extends SDKs into full orchestration.",
+      "notes": "",
+      "website_url": "https://agency-swarm.ai/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Composio Agent Orchestrator",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "ComposioHQ",
+      "github_stars": 5921,
+      "github_url": "https://github.com/ComposioHQ/agent-orchestrator",
+      "full_description": "Agentic orchestrator for parallel coding agents. Plans tasks, spawns agents, coordinates parallel work, and handles complex multi-agent coding flows.",
+      "key_features": [
+        "Parallel coding agents",
+        "Task planning"
+      ],
+      "why_discussed": "Exploding in parallel-agent discussions.",
+      "notes": "",
+      "website_url": "https://composio.dev/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "MetaGPT",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development",
+        "Autonomous Operations"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "FoundationAgents",
+      "github_stars": 66800,
+      "github_url": "https://github.com/FoundationAgents/MetaGPT",
+      "full_description": "The original 'AI Software Company' simulator — multi-agent orchestration with defined roles (CEO, CTO, engineers), SOPs, and hierarchical workflows for end-to-end software projects. Features AFlow (automating agentic workflow generation), SPO, and AOT research additions. 112 contributors, 8.5K forks. Also ships MGX (MetaGPT X) as a hosted product at mgx.dev.",
+      "key_features": [
+        "Role-based company simulation",
+        "Hierarchical workflows with SOPs",
+        "AFlow automated workflow generation",
+        "MGX hosted product"
+      ],
+      "why_discussed": "Long-time reference in every 'Paperclip vs. virtual company' thread. 66.8K stars makes it one of the most starred agent projects on GitHub.",
+      "notes": "Development has slowed — last meaningful commit Nov 2025. MGX at mgx.dev is the commercial product.",
+      "website_url": "https://atoms.dev/",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "ChatDev",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development",
+        "Autonomous Operations"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "OpenBMB",
+      "github_stars": 31000,
+      "github_url": "https://github.com/OpenBMB/ChatDev",
+      "full_description": "Virtual Software Company orchestration with agents in CEO/CTO/Programmer roles. Runs functional seminars and automates the full dev lifecycle.",
+      "key_features": [
+        "Virtual company roles",
+        "End-to-end dev lifecycle"
+      ],
+      "why_discussed": "One of the earliest 'AI company' metaphors; still actively compared to Paperclip.",
+      "notes": "v2 evolved into broader zero-code orchestration",
+      "website_url": "https://chatdev.ai/",
+      "difficulty": "beginner"
+    },
+    {
+      "name": "gastown",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Business Operations",
+        "Autonomous Operations"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "steveyegge",
+      "github_stars": 13655,
+      "github_url": "https://github.com/steveyegge/gastown",
+      "full_description": "Multi-agent orchestration system focused on persistent work tracking, long-running coordination, and agent collaboration across sessions.",
+      "key_features": [
+        "Persistent work tracking",
+        "Long-running coordination"
+      ],
+      "why_discussed": "Highlighted in awesome-agent-orchestrators as a persistent 'company memory' layer.",
+      "notes": "",
+      "website_url": "https://gastownhall.ai/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Agentnetes",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Autonomous Operations"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "Shashikant86 (hackathon with Google DeepMind)",
+      "github_stars": 1,
+      "github_url": "https://github.com/Shashikant86/agentnetes",
+      "full_description": "Open-source agent orchestration system inspired by Kubernetes. Self-discovering AI agent swarms on demand with static demo available in-browser.",
+      "key_features": [
+        "Kubernetes-inspired orchestration",
+        "Self-discovering swarms"
+      ],
+      "why_discussed": "Brand-new (March 2026 hackathon project); fits the 'smells like a harness' orchestration layer for swarms.",
+      "notes": "Open-source and actively evolving; try the demo at https://shashikant86.github.io/agentnetes/",
+      "website_url": null,
+      "difficulty": "advanced"
+    },
+    {
+      "name": "OpenCode",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [
+        "Open Source",
+        "Model-Agnostic"
+      ],
+      "creator": "Anomaly (Dax Raad / SST team) — Y Combinator backed",
+      "github_stars": 139000,
+      "github_url": "https://github.com/anomalyco/opencode",
+      "full_description": "Open-source AI coding agent that runs in terminal (TUI), desktop, or IDE. Positioned as the provider-agnostic Claude Code alternative — supports 75+ LLM providers including Claude, GPT, Gemini, DeepSeek, local models (Ollama, LM Studio), and existing ChatGPT Plus/GitHub Copilot subscriptions. Features two built-in agents ('build' for read/write and 'plan' for read-only analysis), LSP integration for intelligent code understanding, multi-session parallel workflows, client/server architecture for remote development, shareable session links, and undo/redo change history. Also offers 'Zen' — a curated set of AI models optimized for coding. Built by the creators of SST (Serverless Stack), backed by Y Combinator, Reid Hoffman, and Max Levchin. 6.5M+ monthly developers. MIT licensed.",
+      "key_features": [
+        "75+ LLM provider support (provider-agnostic)",
+        "Built-in 'build' and 'plan' agents",
+        "LSP integration for code understanding",
+        "Multi-session parallel workflows",
+        "Client/server architecture",
+        "GitHub Copilot / ChatGPT Plus login support",
+        "Desktop apps (macOS, Windows, Linux)",
+        "Custom themes, keybinds, formatters"
+      ],
+      "why_discussed": "139K GitHub stars — one of the most starred developer tools on GitHub. The leading open-source Claude Code alternative. 6.5M monthly developers, 850+ contributors, 756 releases.",
+      "notes": "Latest: v1.4.0. Install: npx opencode. MIT license.",
+      "website_url": "https://opencode.ai",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "GSD (Get Shit Done)",
+      "category": "Individual/Indie & Research",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [
+        "Open Source",
+        "Model-Agnostic"
+      ],
+      "creator": "TACHES (@glittercowboy)",
+      "github_stars": 49100,
+      "github_url": "https://github.com/gsd-build/get-shit-done",
+      "full_description": "A meta-prompting and context engineering system that installs INTO existing AI coding agents (primarily Claude Code, plus 12+ runtimes). Not a standalone tool — it's a collection of structured prompt/skill files that give your agent a complete project management workflow via 40+ slash commands (/gsd-*). The core innovation is wave-based parallel execution: a thin orchestrator spawns specialized sub-agents (researchers, planners, executors, verifiers, debuggers) each with a fresh 200K-token context window, preventing the 'context rot' that degrades AI coding quality on longer sessions. Every completed task gets an atomic git commit. Your main session stays at 30-40% context usage while sub-agents do the heavy lifting. Install via 'npx get-shit-done-cc@latest'.",
+      "key_features": [
+        "40+ slash commands covering full project lifecycle",
+        "Wave-based parallel execution with fresh context per sub-agent",
+        "Context rot prevention (main session stays lean)",
+        "Atomic git commits per completed task",
+        "XML-structured task format for LLM precision",
+        "Session persistence (/gsd-pause-work, /gsd-resume-work)",
+        "12+ runtime support (Claude Code, OpenCode, Gemini CLI, Cursor, etc.)",
+        "Model profiles (quality/balanced/budget routing)"
+      ],
+      "why_discussed": "49.1K stars — solves the universal 'vibecoding' frustration where AI coding quality degrades on real projects. A perfect case study for why this directory exists: massively popular but hard to categorize from the README alone.",
+      "notes": "Latest: v1.34.2. MIT license. Successor project GSD-2 (4.9K stars) is a standalone CLI built on Pi SDK.",
+      "website_url": null,
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Twin",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "use_cases": [
+        "Business Operations",
+        "Autonomous Operations"
+      ],
+      "features": [
+        "Self-Improving"
+      ],
+      "creator": "Twin Labs (Hugo Mercier, Joao Justi) — Paris, France. $10M seed.",
+      "github_stars": null,
+      "github_url": null,
+      "full_description": "Cloud-based AI agent builder that lets non-technical users automate business workflows using natural language. Describe your goal in a conversation, and Twin brainstorms, refines, and builds a working autonomous agent. Connects to 2,700+ apps via native integrations, builds API integrations on the fly at runtime, and falls back to browser automation when no API exists. Features long-term agent memory, self-healing when integrations fail, smart model switching (Opus for planning, smaller models for execution), and a community marketplace with ~996 published agents. Built with Rust and Nix end-to-end including a custom Wayland compositor. Closed-source, credit-based SaaS.",
+      "key_features": [
+        "Natural language agent building (no code required)",
+        "2,700+ app integrations",
+        "On-the-fly API integration at runtime",
+        "Browser automation fallback",
+        "Long-term agent memory with consolidation/pruning",
+        "Self-healing when integrations fail",
+        "Community marketplace (~996 agents)",
+        "Scheduled/triggered execution (cron, webhooks, email)"
+      ],
+      "why_discussed": "The leading no-code AI agent builder for non-technical users. $10M seed. Complementary to developer-focused tools — Twin serves business users while Paperclip serves developers.",
+      "notes": "Credit-based pricing: Free trial to Pro ($20-$463/mo). Closed-source.",
+      "website_url": "https://twin.so",
+      "difficulty": "beginner"
+    },
+    {
+      "name": "T3 Code",
+      "category": "Individual/Indie & Research",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [
+        "Open Source",
+        "Model-Agnostic"
+      ],
+      "creator": "Theo Browne (T3 Stack / T3 Tools Inc) — Y Combinator W22",
+      "github_stars": 8500,
+      "github_url": "https://github.com/pingdotgg/t3code",
+      "full_description": "Free, open-source desktop application (Electron) that provides a graphical front-end for AI coding agents. NOT an IDE and NOT a coding agent — it's a unified GUI layer that wraps terminal-based agents like OpenAI Codex CLI and Claude Code in a visual, project-aware interface. Three-panel layout: Git repo sidebar, conversation threads per project, and main interaction area showing prompts, agent responses, reasoning, and real-time tool calls. Includes diff viewer (unified/split), integrated terminal, and one-click commit/push/PR workflow. Native git worktree support for safe, isolated agent work. BYOK (Bring Your Own Key) — no subscription fees.",
+      "key_features": [
+        "GUI front-end for coding agents (Codex CLI, Claude Code)",
+        "Git worktree isolation for safe parallel agent work",
+        "Multi-repo parallel processing",
+        "Diff viewer (unified and split views)",
+        "One-click commit/push/PR workflow",
+        "Task-centric chat with reasoning traces",
+        "BYOK — no additional fees"
+      ],
+      "why_discussed": "Fills the gap between terminal-based agents and cloud IDEs. The only dedicated GUI shell for coding agents. By a well-known developer (T3 Stack creator) with strong community reach.",
+      "notes": "Latest: v0.0.15. Very early stage. Cursor/OpenCode/Gemini support planned. MIT license. Install: npx t3",
+      "website_url": "https://t3.codes",
+      "difficulty": "intermediate"
+    },
+    {
+      "name": "Harness (revfactory)",
+      "category": "Individual/Indie & Research",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "Minho Hwang (@revfactory) — Kakao AI Native Strategy Team, South Korea",
+      "github_stars": 2100,
+      "github_url": "https://github.com/revfactory/harness",
+      "full_description": "A meta-skill ('Agent Team & Skill Architect') for Claude Code that designs domain-specific agent teams, defines specialized agents, and generates the skills they use. Describe your domain or project, and Harness automatically architects a multi-agent team with defined roles, communication patterns, and generated skills. Supports 6 architectural patterns (Pipeline, Fan-out/Fan-in, Expert Pool, Producer-Reviewer, Supervisor, Hierarchical Delegation). 6-phase workflow: domain analysis, team architecture design, agent definition generation, skill generation, integration/orchestration, and validation/testing. A/B tested: +60% quality improvement, 100% win rate across 15 SE tasks. Apache 2.0.",
+      "key_features": [
+        "6 architectural patterns for agent teams",
+        "Automatic agent definition + skill generation",
+        "Progressive Disclosure for context management",
+        "Validation with dry-run and comparative testing",
+        "100 pre-built harnesses (companion repo harness-100)",
+        "Two execution modes: Agent Teams and Subagents"
+      ],
+      "why_discussed": "The only tool that auto-generates entire agent team architectures from natural language. +60% quality improvement in A/B tests across 15 SE tasks.",
+      "notes": "v1.1.0. Apache 2.0. Install: /plugin marketplace add revfactory/harness. Companion: github.com/revfactory/harness-100",
+      "website_url": "https://revfactory.github.io/harness/",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "Pi Monorepo",
+      "category": "Individual/Indie & Research",
+      "type": "agent-tool",
+      "use_cases": [
+        "Software Development",
+        "General-Purpose"
+      ],
+      "features": [
+        "Open Source",
+        "Model-Agnostic"
+      ],
+      "creator": "Mario Zechner (@badlogic)",
+      "github_stars": 33000,
+      "github_url": "https://github.com/badlogic/pi-mono",
+      "full_description": "Comprehensive AI agent toolkit organized as a TypeScript monorepo. Bundles seven packages: unified LLM API supporting OpenAI/Anthropic/Google+ (pi-ai), agent runtime with tool calling and state management (pi-agent-core), interactive coding agent CLI (pi-coding-agent), Slack bot (pi-mom), terminal UI library with differential rendering (pi-tui), web components for AI chat interfaces (pi-web-ui), and vLLM GPU pod management CLI (pi-pods). Also runs an initiative for sharing real-world coding agent sessions to improve benchmarks. MIT licensed.",
+      "key_features": [
+        "7-package monorepo covering the full agent stack",
+        "Unified multi-provider LLM API",
+        "Agent runtime with tool calling and state management",
+        "Interactive coding agent CLI",
+        "Terminal UI with differential rendering",
+        "Web components for AI chat interfaces",
+        "vLLM GPU pod management"
+      ],
+      "why_discussed": "33K stars. One of the most comprehensive open-source agent toolkits — covers everything from LLM API to terminal UI to GPU management. GSD v2 is built on the Pi SDK.",
+      "notes": "Latest: v0.65.2. 186 releases, 160 contributors. MIT license.",
+      "website_url": "https://pi.dev",
+      "difficulty": "advanced"
+    },
+    {
+      "name": "awesome-agent",
+      "category": "Harnesses-Adjacent",
+      "type": "developer-utility",
+      "use_cases": [
+        "Research & Science",
+        "General-Purpose"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "ShrikeBot (an autonomous AI agent)",
+      "github_stars": 0,
+      "github_url": "https://github.com/ShrikeBot/awesome-agent",
+      "full_description": "A curated 'awesome list' of autonomous AI agent technologies, platforms, tools, and resources — uniquely maintained by Shrike, an autonomous AI agent. Catalogs 18 categories covering agent platforms, frameworks, identity/trust protocols (ATP, ERC-8004, DID), communication protocols (MCP, Google A2A, ACP, ANP, AG-UI), social platforms, memory tools, coding assistants, orchestration frameworks, observability, marketplaces, hosting, standards, libraries, notable agents, research papers, and communities. Organized around five pillars: Autonomy, Identity, Communication, Culture, Infrastructure.",
+      "key_features": [
+        "18 organized categories covering the full agent ecosystem",
+        "Maintained by an autonomous AI agent",
+        "Covers protocols, platforms, frameworks, infrastructure",
+        "Five pillars: Autonomy, Identity, Communication, Culture, Infrastructure"
+      ],
+      "why_discussed": "Novel concept — an AI-maintained directory of AI agent tools. Covers protocols and standards that most directories miss.",
+      "notes": "Very early (6 commits, 1 contributor). Community contributions via PRs.",
+      "website_url": "https://shrikebot.io",
+      "difficulty": "beginner"
+    },
+    {
+      "name": "AutoAgents",
+      "category": "Individual/Indie & Research",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development",
+        "Autonomous Operations",
+        "General-Purpose"
+      ],
+      "features": [
+        "Open Source",
+        "Model-Agnostic",
+        "Self-Hosted"
+      ],
+      "creator": "liquidos-ai",
+      "github_stars": 540,
+      "github_url": "https://github.com/liquidos-ai/autoagents",
+      "full_description": "Production-grade multi-agent framework written in Rust combining type-safe agent modeling with structured tool invocation, customizable memory systems, and interchangeable LLM backends. ReAct and basic agent executors with streaming, tool support via derive macros and sandboxed WASM runtime, extensible memory backends, guardrails for LLM inference, optimization pipelines with caching/retry, and multi-agent coordination through typed pub/sub messaging. Supports 10+ cloud providers and 3 local providers with experimental Burn and Onnx backends. Local TTS/STT. OpenTelemetry observability. Python bindings via PyPI. Dual-licensed MIT and Apache 2.0.",
+      "key_features": [
+        "Rust-native with type-safe agent modeling",
+        "Sandboxed WASM tool runtime",
+        "Multi-agent coordination via typed pub/sub",
+        "10+ cloud + 3 local LLM providers",
+        "OpenTelemetry observability",
+        "Local TTS/STT",
+        "Python bindings via PyPI"
+      ],
+      "why_discussed": "One of the few Rust-native multi-agent frameworks. Type-safe modeling and WASM sandboxing for production-grade deployments.",
+      "notes": "Related: Odyssey (higher-level system), AutoAgents-CLI (YAML workflow runner).",
+      "website_url": null,
+      "difficulty": "advanced"
+    },
+    {
+      "name": "OpenAgents",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Autonomous Operations",
+        "Business Operations"
+      ],
+      "features": [
+        "Open Source",
+        "Self-Hosted"
+      ],
+      "creator": "OpenAgentsInc",
+      "github_stars": 393,
+      "github_url": "https://github.com/OpenAgentsInc/openagents",
+      "full_description": "Decentralized economic infrastructure platform for safe and efficient machine work at scale. Built on five interconnected markets: Compute (inference/embeddings), Data (permissioned datasets), Labor (agent-completed work), Liquidity (value movement), and Risk (prediction markets/coverage). Primary application is 'Autopilot' — a desktop runtime where users offer spare compute, get matched to paid machine work, and receive bitcoin via Lightning Network. Economy Kernel provides WorkUnits, contracts, verification tiers, and payment proofs. Built with Rust and Nostr protocol. Apache 2.0.",
+      "key_features": [
+        "Five interconnected economic markets",
+        "Autopilot desktop runtime for compute sharing",
+        "Lightning Network payment settlement",
+        "Economy Kernel with WorkUnits and contracts",
+        "Verification tiers for agent output safety",
+        "Built on Rust and Nostr protocol"
+      ],
+      "why_discussed": "Unique approach — treats AI agents as economic actors with formal contracts, verification, and payment settlement. Addresses the underexplored problem of agent economic safety.",
+      "notes": "14,284 commits. Note: openagents.org redirects to MetaGPT, not this project — actual site is openagents.com.",
+      "website_url": "https://openagents.com",
+      "difficulty": "advanced"
+    }
+  ]
+}

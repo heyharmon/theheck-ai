@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import DirectoryBrowser from "../components/DirectoryBrowser.vue";
+import { getAllProjects, getTypes, getUseCases, getDifficultyLevels, getMetadata } from "../lib/directory";
+
+const projects = getAllProjects();
+const types = getTypes();
+const useCases = getUseCases();
+const difficultyLevels = getDifficultyLevels();
+const metadata = getMetadata();
+---
+
+<BaseLayout title="Directory" description="Browse and filter all agent tools, multi-agent platforms, and developer utilities.">
+  <section class="border-b border-neutral-200 bg-neutral-50">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <h1>Directory</h1>
+      <p class="mt-4 max-w-2xl text-lg text-neutral-500">
+        {metadata.total_entries} agent tools, platforms, and utilities — filter by type and use case.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      <DirectoryBrowser
+        client:load
+        projects={projects}
+        types={types}
+        useCases={useCases}
+        difficultyLevels={difficultyLevels}
+      />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,14 @@
+{
+  "name": "Agent Harness Directory",
+  "tagline": "The definitive directory of agent harnesses & orchestrators",
+  "description": "Browse, compare, and explore 60+ agent harnesses, orchestration frameworks, and adjacent tools shaping the AI agent ecosystem.",
+  "url": "https://agentharness.directory",
+  "ogImage": "/images/og-default.png",
+  "copyright": "2026 Agent Harness Directory",
+  "social": {
+    "twitter": "",
+    "linkedin": "",
+    "github": ""
+  },
+  "formspreeId": ""
+}

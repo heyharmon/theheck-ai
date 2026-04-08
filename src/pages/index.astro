@@ -1,0 +1,166 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TypeCard from "../components/TypeCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import {
+  getMetadata,
+  getAllProjects,
+  getTypes,
+  getTypeCounts,
+  getUseCases,
+  getUseCaseCounts,
+  generateSlug,
+} from "../lib/directory";
+
+const metadata = getMetadata();
+const projects = getAllProjects();
+const types = getTypes();
+const typeCounts = getTypeCounts();
+const useCases = getUseCases();
+const useCaseCounts = getUseCaseCounts();
+
+const typeDescriptions: Record<string, string> = {
+  "Agent Tools": "Single-agent tools that handle context, memory, and task execution for you.",
+  "Multi-Agent Platforms": "Systems that coordinate teams of agents working together on complex tasks.",
+  "Developer Utilities": "Supporting tools for testing, syncing, managing, and improving your agents.",
+};
+
+const typeSlugs: Record<string, string> = {
+  "Agent Tools": "agent-tool",
+  "Multi-Agent Platforms": "multi-agent-platform",
+  "Developer Utilities": "developer-utility",
+};
+
+const featuredNames = [
+  "Claude Code",
+  "Hermes Agent",
+  "Paperclip.ing",
+  "LangGraph",
+  "MetaGPT",
+  "Dify",
+];
+const featured = featuredNames
+  .map((name) => projects.find((p) => p.name === name))
+  .filter(Boolean) as typeof projects;
+---
+
+<BaseLayout
+  title="Home"
+  description="Find the right AI agent tools for your work. Browse 60+ agent tools, multi-agent platforms, and developer utilities — filtered by what they do and what they're for."
+>
+  <!-- Hero -->
+  <section class="hero-dark">
+    <div class="mx-auto max-w-3xl px-6 py-24 sm:py-32 text-center">
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+        Find the right AI agent tools for your work
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-neutral-400">
+        {metadata.total_entries} tools and platforms for building with AI agents — organized by what they do and what they're for. Whether you're getting started or looking for a better alternative, start here.
+      </p>
+      <div class="mt-10 flex items-center justify-center gap-4">
+        <a href="/directory" class="btn-primary">Browse the directory</a>
+        <a href="/compare" class="btn-ghost-dark">Compare side by side</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What you'll find -->
+  <section class="border-t border-neutral-200">
+    <div class="mx-auto max-w-5xl px-6 py-24">
+      <h2 class="text-center">Three types of tools, one directory</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-center text-neutral-500">
+        The AI agent landscape is vast. We organize it into three clear categories so you can find what you need fast.
+      </p>
+      <div class="mt-12 grid gap-6 sm:grid-cols-3">
+        {types.map((type) => (
+          <TypeCard
+            name={type}
+            typeSlug={typeSlugs[type] || type}
+            count={typeCounts[type] || 0}
+            description={typeDescriptions[type] || ""}
+            href={`/directory?type=${encodeURIComponent(typeSlugs[type] || type)}`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Use cases -->
+  <section class="border-t border-neutral-200 bg-neutral-50">
+    <div class="mx-auto max-w-5xl px-6 py-24">
+      <h2 class="text-center">What are you building?</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-center text-neutral-500">
+        Every tool is tagged by use case. Filter to find exactly what fits your goals.
+      </p>
+      <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {useCases.map((uc) => (
+          <a
+            href={`/directory?use_case=${encodeURIComponent(uc)}`}
+            class="flex items-center justify-between rounded-xl border border-neutral-200 bg-white px-6 py-4 no-underline transition-all hover:border-indigo-300 hover:shadow-md"
+          >
+            <span class="font-medium text-neutral-900">{uc}</span>
+            <span class="text-sm text-neutral-400">{useCaseCounts[uc] || 0}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How this helps you -->
+  <section class="border-t border-neutral-200">
+    <div class="mx-auto max-w-5xl px-6 py-24">
+      <h2 class="text-center">How this directory helps</h2>
+      <div class="mt-12 grid gap-8 sm:grid-cols-3">
+        <div>
+          <h3 class="text-lg font-semibold">New to agents?</h3>
+          <p class="mt-2 text-sm">
+            Understand what tools exist, what they do, and which ones match your goals. No jargon, just clear categories and use cases.
+          </p>
+          <a href="/directory" class="mt-4 inline-block text-sm font-medium text-indigo-600 no-underline hover:underline">Start exploring</a>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold">Looking for alternatives?</h3>
+          <p class="mt-2 text-sm">
+            Compare tools side by side. Filter by the same use case or type to discover options you didn't know existed.
+          </p>
+          <a href="/compare" class="mt-4 inline-block text-sm font-medium text-indigo-600 no-underline hover:underline">Compare tools</a>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold">Keeping up with the space?</h3>
+          <p class="mt-2 text-sm">
+            The agent ecosystem moves fast. This directory tracks {metadata.total_entries} tools across {useCases.length} use cases so you don't have to.
+          </p>
+          <a href="/directory" class="mt-4 inline-block text-sm font-medium text-indigo-600 no-underline hover:underline">See what's new</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <section class="border-t border-neutral-200 bg-neutral-50">
+    <div class="mx-auto max-w-6xl px-6 py-24">
+      <h2>Notable projects</h2>
+      <p class="mt-4 max-w-2xl text-neutral-500">
+        A few well-known tools to get you oriented.
+      </p>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {featured.map((project) => (
+          <ProjectCard project={project} slug={generateSlug(project.name)} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="hero-dark border-t border-neutral-800">
+    <div class="mx-auto max-w-3xl px-6 py-20 text-center">
+      <h2 class="text-3xl font-bold">The right tool is already here</h2>
+      <p class="mx-auto mt-4 max-w-xl text-neutral-400">
+        {metadata.total_entries} agent tools, platforms, and utilities. Filterable by type and use case. Free and open.
+      </p>
+      <div class="mt-8">
+        <a href="/directory" class="btn-primary">Browse the directory</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
