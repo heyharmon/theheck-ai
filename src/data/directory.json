@@ -2,8 +2,8 @@
   "metadata": {
     "title": "Comprehensive Directory of Agent Harnesses & Orchestrators",
     "last_updated": "April 8, 2026",
-    "description": "Full master aggregation including every harness, framework, adjacent tool, Paperclip.ing category, and all orchestration projects discussed. 69 total entries.",
-    "total_entries": 69,
+    "description": "Full master aggregation including every harness, framework, adjacent tool, Paperclip.ing category, and all orchestration projects discussed. 71 total entries.",
+    "total_entries": 71,
     "categories": [
       "Team/Organization-Backed",
       "Individual/Indie & Research",
@@ -1584,7 +1584,7 @@
       "difficulty": "advanced"
     },
     {
-      "name": "Pi Monorepo",
+      "name": "Pi Agent",
       "category": "Individual/Indie & Research",
       "type": "agent-tool",
       "use_cases": [
@@ -1699,6 +1699,62 @@
       "notes": "14,284 commits. Note: openagents.org redirects to MetaGPT, not this project — actual site is openagents.com.",
       "website_url": "https://openagents.com",
       "difficulty": "advanced"
+    },
+    {
+      "name": "Claude Code Agent Teams",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "Anthropic",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "full_description": "Experimental built-in feature of Claude Code (v2.1.32+) that coordinates multiple Claude Code instances working together as a team. A team lead spawns teammates as fully independent processes with their own context windows, coordinated via a shared task list (with dependency management and file locking) and a mailbox messaging system. Teammates self-claim tasks, auto-notify the lead when idle, and can communicate directly via point-to-point messages or broadcasts. Supports plan approval workflows, competing hypothesis exploration, and quality gates via three hooks (TeammateIdle, TaskCreated, TaskCompleted). Display modes: in-process (Shift+Down to cycle) or split panes (tmux/iTerm2). Can use custom subagent definitions for role-specialized teammates. Opt-in via CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1.",
+      "key_features": [
+        "Native multi-instance coordination (shared task list + mailbox)",
+        "Fully independent context windows per teammate",
+        "Task dependency management with file locking",
+        "Plan approval workflows",
+        "Quality gate hooks (TeammateIdle, TaskCreated, TaskCompleted)",
+        "Custom subagent definitions for role specialization",
+        "In-process and split-pane display modes",
+        "Competing hypothesis exploration"
+      ],
+      "why_discussed": "The first native multi-agent orchestration built into a major coding agent. Composable with ecosystem tools like revfactory/harness (which generates the subagent definitions that Agent Teams uses as teammate roles). Changes the landscape — what third-party tools built at the prompt layer, Anthropic now provides at the runtime layer.",
+      "notes": "Experimental — disabled by default. Requires Claude Code v2.1.32+. Closed-source, no separate install. Subagent 'skills' and 'mcpServers' frontmatter not yet applied to teammates.",
+      "website_url": "https://code.claude.com/docs/en/agent-teams"
+    },
+    {
+      "name": "Impeccable",
+      "category": "Individual/Indie & Research",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development",
+        "Content Creation"
+      ],
+      "features": [
+        "Open Source",
+        "Model-Agnostic"
+      ],
+      "creator": "Paul Bakaus (@pbakaus)",
+      "github_stars": 17200,
+      "github_url": "https://github.com/pbakaus/impeccable",
+      "full_description": "A skill package that gives AI coding agents design fluency — 20 slash commands covering diagnostics (/audit, /critique), quality (/normalize, /polish, /optimize, /harden), intensity (/quieter, /bolder), adaptation (/clarify, /distill, /adapt), and enhancement (/animate, /colorize, /delight, /onboard, /typeset, /arrange, /overdrive). Built on top of Anthropic's original frontend-design skill but massively expanded. Includes seven embedded domain reference guides (typography, color/contrast, spatial design, motion, interaction, responsive, UX writing) and an explicit anti-pattern library teaching AI what to avoid. Project memory via .impeccable.md persists design context across sessions. Works with 11+ harnesses: Claude Code, Cursor, Gemini CLI, Codex CLI, VS Code Copilot, OpenCode, Pi, Kiro, Trae, Rovo Dev, Antigravity. Apache 2.0.",
+      "key_features": [
+        "20 design-focused slash commands",
+        "7 embedded domain reference guides",
+        "Anti-pattern library (what AI should avoid in design)",
+        "Scoring: Nielsen's 10 heuristics + P0-P3 severity ratings",
+        "Project memory via .impeccable.md",
+        "11+ harness support (Claude Code, Cursor, Gemini CLI, etc.)",
+        "/teach-impeccable for one-time project context setup",
+        "Framework-agnostic (React, Astro, plain HTML, etc.)"
+      ],
+      "why_discussed": "Solves the 'developers can't prompt for good design' problem by encoding designer vocabulary into slash commands. 17.2K stars. The most popular design-focused agent skill in the ecosystem. Impressive before/after results on AI-generated UIs.",
+      "notes": "Latest: v1.6.0. Apache 2.0. Install: npx skills add pbakaus/impeccable. Prefixed commands (/i-*) available to avoid conflicts.",
+      "website_url": "https://impeccable.style"
     }
   ]
 }
