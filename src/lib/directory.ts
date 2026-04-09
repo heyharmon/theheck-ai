@@ -15,6 +15,7 @@ export interface Project {
   key_features: string[];
   why_discussed: string;
   notes: string;
+  tag?: string | null;
 }
 
 export interface DirectoryMetadata {
@@ -85,7 +86,7 @@ export function getTypeCounts(): Record<string, number> {
 
 export function getTypeLabel(type: string): string {
   const labels: Record<string, string> = {
-    "agent-tool": "Agent Tools",
+    "agent-tool": "Agents",
     "multi-agent-platform": "Multi-Agent Platforms",
     "developer-utility": "Developer Utilities",
   };
@@ -97,7 +98,7 @@ export function getTypeColor(type: string): string {
     "agent-tool": "indigo",
     "multi-agent-platform": "emerald",
     "developer-utility": "amber",
-    "Agent Tools": "indigo",
+    "Agents": "indigo",
     "Multi-Agent Platforms": "emerald",
     "Developer Utilities": "amber",
   };

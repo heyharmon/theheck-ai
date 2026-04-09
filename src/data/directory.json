@@ -1,9 +1,9 @@
 {
   "metadata": {
     "title": "Comprehensive Directory of Agent Harnesses & Orchestrators",
-    "last_updated": "April 8, 2026",
-    "description": "Full master aggregation including every harness, framework, adjacent tool, Paperclip.ing category, and all orchestration projects discussed. 71 total entries.",
-    "total_entries": 72,
+    "last_updated": "April 9, 2026",
+    "description": "Full master aggregation including every harness, framework, adjacent tool, Paperclip.ing category, and all orchestration projects discussed. 73 total entries.",
+    "total_entries": 73,
     "categories": [
       "Team/Organization-Backed",
       "Individual/Indie & Research",
@@ -11,7 +11,7 @@
       "Zero-Human / Agent Company Orchestration"
     ],
     "types": [
-      "Agent Tools",
+      "Agents",
       "Multi-Agent Platforms",
       "Developer Utilities"
     ],
@@ -57,7 +57,8 @@
       "why_discussed": "Still the benchmark for quality; recent policy changes around third-party access have accelerated open alternatives.",
       "notes": "Gold standard benchmark",
       "website_url": "https://www.anthropic.com/product/claude-code",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "Hermes Agent",
@@ -89,7 +90,8 @@
       "why_discussed": "Frequently called the strongest open-source harness—outperforms OpenClaw/Claude Code on real-world tasks, better memory management, proactive learning, and stability. Fastest-growing open harness with 34K stars and 313 contributors.",
       "notes": "Website: https://hermes-agent.nousresearch.com/",
       "website_url": "https://hermes-agent.nousresearch.com/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": "messaging"
     },
     {
       "name": "OpenClaw",
@@ -114,7 +116,8 @@
       "why_discussed": "The foundational 'Claw' that sparked the entire ecosystem; still widely used but being forked for security/performance.",
       "notes": "Massive skill hub",
       "website_url": "https://openclaw.ai/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": "messaging"
     },
     {
       "name": "IronClaw",
@@ -142,7 +145,8 @@
       "why_discussed": "Trusted corporate/institutional alternative; 'secure by design' in the Claw ecosystem.",
       "notes": "Rust rewrite for security",
       "website_url": "https://www.ironclaw.com/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": "security"
     },
     {
       "name": "oh-my-openagent (omo)",
@@ -174,7 +178,8 @@
       "why_discussed": "Called 'the best agent harness' in multiple threads; 49.5K stars, 189 contributors, 1.6M+ downloads. Revolutionized OpenCode usage and ships daily.",
       "notes": "Latest: v3.15.3 (Apr 6, 2026). v3.16.0 imminent. Renamed from 'Oh My OpenCode' to 'Oh My OpenAgent'.",
       "website_url": "https://ohmyopenagent.com/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "DeepAgents",
@@ -200,7 +205,8 @@
       "why_discussed": "Practical open alternative for inspectable coding agents. Extremely active development — latest release hours ago, commits daily.",
       "notes": "Latest: deepagents v0.5.1. Pairs with LangGraph.",
       "website_url": "https://docs.langchain.com/deepagents",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "LangGraph",
@@ -221,7 +227,8 @@
       "why_discussed": "Go-to for complex workflows; 'harness engineering is systems engineering'.",
       "notes": "",
       "website_url": "https://www.langchain.com/langgraph",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "deer-flow",
@@ -245,7 +252,8 @@
       "why_discussed": "Called 'top trending' for complex autonomous systems.",
       "notes": "",
       "website_url": "https://deerflow.tech/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "AutoAgent",
@@ -269,7 +277,8 @@
       "why_discussed": "'AI engineers its own harness' — pure meta-tool for rapid iteration.",
       "notes": "#1 on multiple benches after 24h",
       "website_url": null,
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "AutoGen",
@@ -290,7 +299,8 @@
       "why_discussed": "Classic building block for interoperability.",
       "notes": "",
       "website_url": "https://microsoft.github.io/autogen/stable/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "CrewAI",
@@ -311,7 +321,8 @@
       "why_discussed": "Frequently compared in framework debates.",
       "notes": "",
       "website_url": "https://crewai.com/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "Google ADK / Antigravity",
@@ -332,7 +343,8 @@
       "why_discussed": "Quick shoutouts for fast multi-agent experimentation.",
       "notes": "",
       "website_url": "https://google.github.io/adk-docs/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "Anthropic Multi-Agent Harness",
@@ -353,7 +365,8 @@
       "why_discussed": "Engineering blog posts are required reading; inspires custom builds.",
       "notes": "Not open-source",
       "website_url": null,
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "Microsoft Agent Framework",
@@ -374,7 +387,8 @@
       "why_discussed": "Workshop buzz and Zenn tutorials highlight it for production enterprise stacks.",
       "notes": "",
       "website_url": "https://learn.microsoft.com/en-us/agent-framework/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "Dify",
@@ -394,7 +408,8 @@
       "why_discussed": "Frequently ranked in 2026 'best frameworks' roundups.",
       "notes": "",
       "website_url": "https://dify.ai/",
-      "difficulty": "beginner"
+      "difficulty": "beginner",
+      "tag": null
     },
     {
       "name": "Mastra",
@@ -425,7 +440,8 @@
       "why_discussed": "Rising in developer comparisons alongside LangGraph. Built by the respected Gatsby.js team, YC-backed, and purpose-built for the TypeScript/React/Next.js ecosystem.",
       "notes": "Apache 2.0 license. Enterprise features available.",
       "website_url": "https://mastra.ai/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "OpenAI Agents SDK",
@@ -446,7 +462,8 @@
       "why_discussed": "Direct tie-in to Codex/Copilot ecosystems.",
       "notes": "",
       "website_url": "https://openai.github.io/openai-agents-python/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "GitHub Copilot SDK",
@@ -467,7 +484,8 @@
       "why_discussed": "Fresh April 2026 launch; enables custom harness extensions.",
       "notes": "",
       "website_url": "https://docs.github.com/en/copilot/how-tos/copilot-sdk",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "ZeroClaw",
@@ -491,7 +509,8 @@
       "why_discussed": "High engagement in security-focused threads.",
       "notes": "Part of secure Claw ecosystem",
       "website_url": "https://www.zeroclawlabs.ai/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "Nanobot",
@@ -516,7 +535,8 @@
       "why_discussed": "Exploded to 23k stars quickly; praised for clean, minimal design.",
       "notes": "",
       "website_url": "https://www.nanobot.ai/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "PicoClaw",
@@ -539,7 +559,8 @@
       "why_discussed": "Niche but buzzing in edge/self-hosted circles.",
       "notes": "",
       "website_url": "https://picoclaw.io/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": "embedded"
     },
     {
       "name": "Chorus",
@@ -560,7 +581,8 @@
       "why_discussed": "End-to-end for real software projects.",
       "notes": "",
       "website_url": "https://chorus-aidlc.github.io/Chorus/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "Emdash",
@@ -581,7 +603,8 @@
       "why_discussed": "YC-backed momentum.",
       "notes": "",
       "website_url": "https://www.emdash.sh/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "Zylos",
@@ -602,7 +625,8 @@
       "why_discussed": "Persistent Claude Code extension.",
       "notes": "",
       "website_url": "https://zylos.ai/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "everything-claude-code",
@@ -623,7 +647,8 @@
       "why_discussed": "Works across multiple coding agents.",
       "notes": "",
       "website_url": "https://ecc.tools/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": "meta-layer"
     },
     {
       "name": "Bridle",
@@ -652,7 +677,8 @@
       "why_discussed": "Solves the 'which harness config goes where' problem. As the ecosystem fragments across 6+ harnesses, Bridle is the only tool that unifies their configuration management.",
       "notes": "Latest: v0.2.9. 12 releases. MIT license. Install: npm install -g bridle-ai",
       "website_url": null,
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": "meta-layer"
     },
     {
       "name": "Desloppify",
@@ -672,7 +698,8 @@
       "why_discussed": "Post-generation cleanup tool.",
       "notes": "",
       "website_url": "https://desloppify.it/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "Claude Dispatch",
@@ -692,7 +719,8 @@
       "why_discussed": "Most recent addition to the Claw ecosystem; freshly shipping.",
       "notes": "",
       "website_url": null,
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "OpenMontage",
@@ -716,7 +744,8 @@
       "why_discussed": "Exploding on X for creator workflows; 'breaks the internet for content'.",
       "notes": "Outputs under $2 or free locally",
       "website_url": null,
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": "video"
     },
     {
       "name": "Excalibur",
@@ -738,7 +767,8 @@
       "why_discussed": "Niche but high-signal among power users seeking deterministic harnesses.",
       "notes": "'Software of the future'",
       "website_url": null,
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "Open Harness (MaxGfeller)",
@@ -761,7 +791,8 @@
       "why_discussed": "Developer-focused 'harness-in-a-box' for embedding in apps.",
       "notes": "Distinct from zhijiewong's CLI version",
       "website_url": "https://www.open-harness.dev/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "AgentCI",
@@ -783,7 +814,8 @@
       "why_discussed": "Solves the 'how do I reliably test my harness?' pain point.",
       "notes": "Harness-adjacent eval runtime",
       "website_url": "https://agent-ci.com/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": "testing"
     },
     {
       "name": "Desplega Agent Swarm",
@@ -803,7 +835,8 @@
       "why_discussed": "Featured in awesome-agent-harness lists.",
       "notes": "",
       "website_url": "https://agent-swarm.dev/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "Theoriq Agent Framework",
@@ -824,7 +857,8 @@
       "why_discussed": "Web3/AI crossover threads praise it for censorship-resistant agents.",
       "notes": "",
       "website_url": "https://www.theoriq.ai/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": "web3"
     },
     {
       "name": "PromptLock",
@@ -845,7 +879,8 @@
       "why_discussed": "Pairs with any harness for reproducible agent runs.",
       "notes": "",
       "website_url": "https://promptlock.io/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "ROMA (Recursive Open Meta-Agent Framework)",
@@ -866,7 +901,8 @@
       "why_discussed": "Academic/practical crossover for self-referential meta-harnesses.",
       "notes": "",
       "website_url": null,
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "Local AI Memory Sync Engine",
@@ -887,7 +923,8 @@
       "why_discussed": "Solves the 'memory across harnesses' fragmentation problem.",
       "notes": "",
       "website_url": null,
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "Claw-Chief",
@@ -908,7 +945,8 @@
       "why_discussed": "Community fork/extension adopted as a ready-to-run harness preset.",
       "notes": "",
       "website_url": null,
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "auto-harness",
@@ -931,7 +969,8 @@
       "why_discussed": "'Let it cook over the weekend' — self-optimizing loop.",
       "notes": "~40% gains reported",
       "website_url": "https://www.neosigma.ai/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "harness-craft",
@@ -956,7 +995,8 @@
       "why_discussed": "Turns one-off prompting into a durable engineering system.",
       "notes": "",
       "website_url": null,
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": "meta-layer"
     },
     {
       "name": "OpenHarness (zhijiewong)",
@@ -982,7 +1022,8 @@
       "why_discussed": "'Build your own terminal CLI with any LLM' — extensible, local-first.",
       "notes": "Latest: v0.5.0 (Apr 5, 2026)",
       "website_url": null,
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "project-harness",
@@ -1003,7 +1044,8 @@
       "why_discussed": "Fresh shipping post; practical scaffolding.",
       "notes": "",
       "website_url": null,
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "Codebuff",
@@ -1024,7 +1066,8 @@
       "why_discussed": "Benchmark-beating performance.",
       "notes": "",
       "website_url": "https://www.codebuff.com",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "OpenGauss",
@@ -1045,7 +1088,8 @@
       "why_discussed": "Research/frontier use case; stronger/faster on FormalQualBench.",
       "notes": "",
       "website_url": "https://www.math.inc/opengauss",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": "theorem-proving"
     },
     {
       "name": "Paperclip.ing",
@@ -1073,7 +1117,8 @@
       "why_discussed": "Viral reference for 'zero-human companies' — if OpenClaw/Hermes is the employee, Paperclip is the company. Exploded in March 2026.",
       "notes": "Website: https://paperclip.ing/ | MIT licensed",
       "website_url": "https://paperclip.ing/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "Trinity",
@@ -1099,7 +1144,8 @@
       "why_discussed": "Production-ready zero-human company platform.",
       "notes": "Open-source core",
       "website_url": "https://www.ability.ai/trinity",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "JUNO",
@@ -1125,7 +1171,8 @@
       "why_discussed": "Zero-human company laboratory; discussed alongside Paperclip.",
       "notes": "Open-source",
       "website_url": null,
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": "web3"
     },
     {
       "name": "Neuro SAN",
@@ -1148,7 +1195,8 @@
       "why_discussed": "Production business workflows at company scale.",
       "notes": "Open-source",
       "website_url": "https://www.cognizant.com/us/en/ai-lab/neuro-san",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "SuperAGI",
@@ -1171,7 +1219,8 @@
       "why_discussed": "Frequently compared in zero-human company discussions.",
       "notes": "",
       "website_url": "https://superagi.com/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "Mission Control",
@@ -1196,7 +1245,8 @@
       "why_discussed": "Fresh Paperclip-style control plane; hours-old buzz.",
       "notes": "",
       "website_url": "https://mc.builderz.dev/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "CompanyHelm",
@@ -1220,7 +1270,8 @@
       "why_discussed": "Paperclip-adjacent 'company' orchestrator.",
       "notes": "",
       "website_url": "https://www.companyhelm.com/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "Ruflo",
@@ -1245,7 +1296,8 @@
       "why_discussed": "Leading agent orchestration platform for Claude; enterprise-grade swarms.",
       "notes": "",
       "website_url": null,
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "Operator",
@@ -1269,7 +1321,8 @@
       "why_discussed": "Practical orchestration for real dev workflows.",
       "notes": "",
       "website_url": null,
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "Kata Orchestrator",
@@ -1292,7 +1345,8 @@
       "why_discussed": "Gaining traction in desktop/self-hosted circles.",
       "notes": "",
       "website_url": "https://kata.sh/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "Agency Swarm",
@@ -1315,7 +1369,8 @@
       "why_discussed": "Extends SDKs into full orchestration.",
       "notes": "",
       "website_url": "https://agency-swarm.ai/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "Composio Agent Orchestrator",
@@ -1338,7 +1393,8 @@
       "why_discussed": "Exploding in parallel-agent discussions.",
       "notes": "",
       "website_url": "https://composio.dev/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "MetaGPT",
@@ -1364,7 +1420,8 @@
       "why_discussed": "Long-time reference in every 'Paperclip vs. virtual company' thread. 66.8K stars makes it one of the most starred agent projects on GitHub.",
       "notes": "Development has slowed — last meaningful commit Nov 2025. MGX at mgx.dev is the commercial product.",
       "website_url": "https://atoms.dev/",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "ChatDev",
@@ -1388,7 +1445,8 @@
       "why_discussed": "One of the earliest 'AI company' metaphors; still actively compared to Paperclip.",
       "notes": "v2 evolved into broader zero-code orchestration",
       "website_url": "https://chatdev.ai/",
-      "difficulty": "beginner"
+      "difficulty": "beginner",
+      "tag": null
     },
     {
       "name": "gastown",
@@ -1412,7 +1470,8 @@
       "why_discussed": "Highlighted in awesome-agent-orchestrators as a persistent 'company memory' layer.",
       "notes": "",
       "website_url": "https://gastownhall.ai/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "Agentnetes",
@@ -1435,7 +1494,8 @@
       "why_discussed": "Brand-new (March 2026 hackathon project); fits the 'smells like a harness' orchestration layer for swarms.",
       "notes": "Open-source and actively evolving; try the demo at https://shashikant86.github.io/agentnetes/",
       "website_url": null,
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "OpenCode",
@@ -1465,7 +1525,8 @@
       "why_discussed": "139K GitHub stars — one of the most starred developer tools on GitHub. The leading open-source Claude Code alternative. 6.5M monthly developers, 850+ contributors, 756 releases.",
       "notes": "Latest: v1.4.0. Install: npx opencode. MIT license.",
       "website_url": "https://opencode.ai",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": null
     },
     {
       "name": "GSD (Get Shit Done)",
@@ -1495,7 +1556,8 @@
       "why_discussed": "49.1K stars — solves the universal 'vibecoding' frustration where AI coding quality degrades on real projects. A perfect case study for why this directory exists: massively popular but hard to categorize from the README alone.",
       "notes": "Latest: v1.34.2. MIT license. Successor project GSD-2 (4.9K stars) is a standalone CLI built on Pi SDK.",
       "website_url": null,
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": "meta-layer"
     },
     {
       "name": "Twin",
@@ -1525,7 +1587,8 @@
       "why_discussed": "The leading no-code AI agent builder for non-technical users. $10M seed. Complementary to developer-focused tools — Twin serves business users while Paperclip serves developers.",
       "notes": "Credit-based pricing: Free trial to Pro ($20-$463/mo). Closed-source.",
       "website_url": "https://twin.so",
-      "difficulty": "beginner"
+      "difficulty": "beginner",
+      "tag": "no-code"
     },
     {
       "name": "T3 Code",
@@ -1554,7 +1617,8 @@
       "why_discussed": "Fills the gap between terminal-based agents and cloud IDEs. The only dedicated GUI shell for coding agents. By a well-known developer (T3 Stack creator) with strong community reach.",
       "notes": "Latest: v0.0.15. Very early stage. Cursor/OpenCode/Gemini support planned. MIT license. Install: npx t3",
       "website_url": "https://t3.codes",
-      "difficulty": "intermediate"
+      "difficulty": "intermediate",
+      "tag": "gui"
     },
     {
       "name": "Harness (revfactory)",
@@ -1581,7 +1645,8 @@
       "why_discussed": "The only tool that auto-generates entire agent team architectures from natural language. +60% quality improvement in A/B tests across 15 SE tasks.",
       "notes": "v1.1.0. Apache 2.0. Install: /plugin marketplace add revfactory/harness. Companion: github.com/revfactory/harness-100",
       "website_url": "https://revfactory.github.io/harness/",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": "meta-layer"
     },
     {
       "name": "Pi Agent",
@@ -1611,7 +1676,8 @@
       "why_discussed": "33K stars. One of the most comprehensive open-source agent toolkits — covers everything from LLM API to terminal UI to GPU management. GSD v2 is built on the Pi SDK.",
       "notes": "Latest: v0.65.2. 186 releases, 160 contributors. MIT license.",
       "website_url": "https://pi.dev",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "awesome-agent",
@@ -1637,7 +1703,8 @@
       "why_discussed": "Novel concept — an AI-maintained directory of AI agent tools. Covers protocols and standards that most directories miss.",
       "notes": "Very early (6 commits, 1 contributor). Community contributions via PRs.",
       "website_url": "https://shrikebot.io",
-      "difficulty": "beginner"
+      "difficulty": "beginner",
+      "tag": null
     },
     {
       "name": "AutoAgents",
@@ -1669,7 +1736,8 @@
       "why_discussed": "One of the few Rust-native multi-agent frameworks. Type-safe modeling and WASM sandboxing for production-grade deployments.",
       "notes": "Related: Odyssey (higher-level system), AutoAgents-CLI (YAML workflow runner).",
       "website_url": null,
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": null
     },
     {
       "name": "OpenAgents",
@@ -1698,7 +1766,8 @@
       "why_discussed": "Unique approach — treats AI agents as economic actors with formal contracts, verification, and payment settlement. Addresses the underexplored problem of agent economic safety.",
       "notes": "14,284 commits. Note: openagents.org redirects to MetaGPT, not this project — actual site is openagents.com.",
       "website_url": "https://openagents.com",
-      "difficulty": "advanced"
+      "difficulty": "advanced",
+      "tag": "web3"
     },
     {
       "name": "Claude Code Agent Teams",
@@ -1724,7 +1793,8 @@
       ],
       "why_discussed": "The first native multi-agent orchestration built into a major coding agent. Composable with ecosystem tools like revfactory/harness (which generates the subagent definitions that Agent Teams uses as teammate roles). Changes the landscape — what third-party tools built at the prompt layer, Anthropic now provides at the runtime layer.",
       "notes": "Experimental — disabled by default. Requires Claude Code v2.1.32+. Closed-source, no separate install. Subagent 'skills' and 'mcpServers' frontmatter not yet applied to teammates.",
-      "website_url": "https://code.claude.com/docs/en/agent-teams"
+      "website_url": "https://code.claude.com/docs/en/agent-teams",
+      "tag": null
     },
     {
       "name": "Impeccable",
@@ -1753,8 +1823,9 @@
         "Framework-agnostic (React, Astro, plain HTML, etc.)"
       ],
       "why_discussed": "Solves the 'developers can't prompt for good design' problem by encoding designer vocabulary into slash commands. 17.2K stars. The most popular design-focused agent skill in the ecosystem. Impressive before/after results on AI-generated UIs.",
-      "notes": "Latest: v1.6.0. Apache 2.0. Install: npx skills add pbakaus/impeccable. Prefixed commands (/i-*) available to avoid conflicts.",
-      "website_url": "https://impeccable.style"
+      "notes": "Latest: v1.6.0. Apache 2.0. Install: npx skills add pbakaus/impeccable. Prefixed commands (/i-*) available to avoid conflicts. Best used in a dedicated design agent — the skill is very robust and will bloat the context window. The agent using this skill should not have any other responsibilities besides design.",
+      "website_url": "https://impeccable.style",
+      "tag": "design"
     },
     {
       "name": "Skills CLI",
@@ -1783,7 +1854,62 @@
         "MIT licensed, open standard"
       ],
       "why_discussed": "First serious attempt at a universal distribution layer for agent instructions. Strong adoption (91K+ recorded installs, backed by Vercel, Microsoft, and Anthropic as publishers), but the honest signal is nuanced: Vercel's own research showed AGENTS.md outperforms skills for always-on knowledge, making skills best suited for complex on-demand domain expertise rather than general agent configuration.",
-      "notes": "Use it for: packaging team workflows, framework-specific rules, specialized domain knowledge. Don't use it for: simple one-off prompts, rules that must apply every turn (use AGENTS.md), tool access (use MCP), or foundational agent behavior (use system prompts). The CLI also installs skill directories for every supported agent it detects, even ones you don't use — add unwanted agent dirs to .gitignore."
+      "notes": "Use it for: packaging team workflows, framework-specific rules, specialized domain knowledge. Don't use it for: simple one-off prompts, rules that must apply every turn (use AGENTS.md), tool access (use MCP), or foundational agent behavior (use system prompts). The CLI also installs skill directories for every supported agent it detects, even ones you don't use — add unwanted agent dirs to .gitignore.",
+      "tag": "meta-layer"
+    },
+    {
+      "name": "ui.sh",
+      "category": "Team/Organization-Backed",
+      "type": "developer-utility",
+      "difficulty": "beginner",
+      "use_cases": [
+        "Software Development",
+        "Content Creation"
+      ],
+      "features": [],
+      "creator": "Adam Wathan & Steve Schoger",
+      "github_stars": "N/A",
+      "github_url": null,
+      "website_url": "https://ui.sh",
+      "full_description": "A CLI toolkit by the creators of Tailwind CSS and Refactoring UI that turns coding agents into design engineers. Works with Claude Code, Amp, Cursor, OpenCode, and Codex to help developers build polished, well-designed UIs without needing design expertise.",
+      "key_features": [
+        "Agent-aware UI generation",
+        "Works with major coding agents",
+        "Design engineering via terminal",
+        "Built by Tailwind CSS creators"
+      ],
+      "why_discussed": "Bridges the gap between AI-generated code and good design — from the team behind Tailwind CSS and Refactoring UI.",
+      "notes": "Invite-only beta as of April 2026",
+      "tag": "design"
+    },
+    {
+      "name": "Superset",
+      "category": "Team/Organization-Backed",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [
+        "Model-Agnostic"
+      ],
+      "creator": "Superset Inc. (Avi, Kiet, Satya)",
+      "github_stars": 9200,
+      "github_url": "https://github.com/superset-sh/superset",
+      "website_url": "https://superset.sh/",
+      "full_description": "Desktop IDE for orchestrating multiple CLI-based AI coding agents in parallel. Each agent operates in its own isolated Git worktree, preventing merge conflicts while sharing Git history. Provides a unified dashboard for monitoring all active agents, a built-in diff viewer for reviewing changes, one-click handoff to external editors (VS Code, Cursor, JetBrains, Xcode, Sublime), and workspace presets for automated environment setup. Works with any terminal-based agent — Claude Code, Codex, Gemini CLI, Cursor Agent, OpenCode, and more.",
+      "key_features": [
+        "Parallel execution of 10+ coding agents simultaneously",
+        "Git worktree isolation per agent",
+        "Unified monitoring dashboard",
+        "Built-in diff viewer for reviewing agent changes",
+        "One-click deep-linking to VS Code, Cursor, JetBrains",
+        "Workspace presets with custom setup/teardown scripts",
+        "Agent-agnostic — works with any CLI-based coding agent"
+      ],
+      "why_discussed": "First dedicated IDE for parallel agent orchestration. 9.2K GitHub stars, Vercel AI Gateway integration, 512 Product Hunt upvotes. Solves the coordination bottleneck as coding agents became capable enough for autonomous parallel work.",
+      "notes": "Elastic License 2.0 (source-available, not OSI). Electron + React + Bun. macOS primary. Launched March 2026.",
+      "difficulty": "intermediate",
+      "tag": "gui"
     }
   ]
 }

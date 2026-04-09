@@ -15,6 +15,7 @@ interface Project {
   key_features: string[];
   why_discussed: string;
   notes: string;
+  tag?: string | null;
 }
 
 const props = defineProps<{
@@ -58,7 +59,7 @@ function getNumericStars(stars: string | number | null): number {
 }
 
 const typeLabels: Record<string, string> = {
-  "agent-tool": "Agent Tools",
+  "agent-tool": "Agents",
   "multi-agent-platform": "Multi-Agent Platforms",
   "developer-utility": "Developer Utilities",
 };
@@ -320,6 +321,12 @@ onMounted(() => {
               ]"
             >
               {{ difficultyLabels[project.difficulty] || project.difficulty }}
+            </span>
+            <span
+              v-if="project.tag"
+              class="inline-block rounded-full border border-violet-200 bg-violet-50 px-2.5 py-0.5 text-xs font-medium text-violet-700"
+            >
+              {{ project.tag }}
             </span>
             <span v-if="project.github_stars" class="inline-flex items-center gap-1 text-xs text-neutral-500">
               <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">

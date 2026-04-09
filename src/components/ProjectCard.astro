@@ -51,6 +51,11 @@ const badgeBg: Record<string, string> = {
         {getDifficultyLabel(project.difficulty)}
       </span>
     )}
+    {project.tag && (
+      <span class="inline-block rounded-full border border-violet-200 bg-violet-50 px-2.5 py-0.5 text-xs font-medium text-violet-700">
+        {project.tag}
+      </span>
+    )}
     {project.github_stars && (
       <span class="inline-flex items-center gap-1 text-xs text-neutral-500">
         <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
