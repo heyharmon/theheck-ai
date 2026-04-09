@@ -27,19 +27,13 @@ The site is **data-driven, not CMS-driven**. The primary content source is `src/
 
 ## Agents
 
-Five specialist agents. Route every user request to the correct agent. If a request spans multiple domains, break into sub-tasks and invoke sequentially — foundational changes first. Agents do not call each other; root Claude orchestrates all coordination.
+Three specialist agents. Route every user request to the correct agent. If a request spans multiple domains, break into sub-tasks and invoke sequentially — foundational changes first. Agents do not call each other; root Claude orchestrates all coordination.
 
 ### Research Agent → `research`
 
-**When:** A new tool or project needs to be added to the directory. Always run research *before* the content agent adds the entry. Uses the project's website, GitHub, docs, and X/Twitter (via Chrome browser tools) to produce a structured research brief.
+**When:** A new tool or project needs to be added to the directory. Always run research *before* adding the entry. Uses the project's website, GitHub, docs, and X/Twitter (via Chrome browser tools) to produce a structured research brief.
 
-**Produces:** `src/data/research/{slug}.md` — a research brief with classification, draft entry JSON, community sentiment, and similar tools. The content agent uses this brief to create the directory entry.
-
-### Content Agent → `content`
-
-**When:** Adding, editing, or removing tool entries. Editing static page text, blog posts, or markdown. Managing nav/footer links or site config. Any CMS-like operation.
-
-**Owns:** `src/data/directory.json`, `src/content/`, `src/data/nav.json`, `src/data/footer.json`, `src/data/site-meta.json`
+**Produces:** `src/data/research/{slug}.md` — a research brief with classification, draft entry JSON, community sentiment, and similar tools.
 
 ### SEO Agent → `seo`
 
@@ -52,12 +46,6 @@ Five specialist agents. Route every user request to the correct agent. If a requ
 **When:** Changing colors, typography, fonts, spacing, layout, design tokens, component appearance, Tailwind theme, prose styling — any visual change.
 
 **Owns:** `src/styles/global.css`, Tailwind classes in `.astro` components and layouts
-
-### Dev Agent → `dev`
-
-**When:** Bug fixes, new features, component development, schema changes, build config, integrations, refactoring, performance — any structural codebase change.
-
-**Owns:** Everything not owned by Content, SEO, or Design.
 
 ## Subagent Model Policy
 

@@ -65,7 +65,7 @@ const typeLabels: Record<string, string> = {
 };
 
 const typeColors: Record<string, { border: string; badge: string; badgeText: string }> = {
-  "agent-tool": { border: "border-t-indigo-500", badge: "bg-indigo-50", badgeText: "text-indigo-700" },
+  "agent-tool": { border: "border-t-black/20", badge: "bg-neutral-100", badgeText: "text-neutral-700" },
   "multi-agent-platform": { border: "border-t-emerald-500", badge: "bg-emerald-50", badgeText: "text-emerald-700" },
   "developer-utility": { border: "border-t-amber-500", badge: "bg-amber-50", badgeText: "text-amber-700" },
 };
@@ -153,7 +153,7 @@ onMounted(() => {
               v-model="searchQuery"
               type="text"
               placeholder="Search projects..."
-              class="w-full rounded-lg border border-neutral-300 bg-white py-2.5 pl-10 pr-4 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition-colors focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+              class="w-full rounded-lg border border-black/10 bg-white py-2.5 pl-10 pr-4 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition-colors focus:border-black focus:ring-2 focus:ring-neutral-100"
             />
           </div>
         </div>
@@ -163,7 +163,7 @@ onMounted(() => {
           <p class="mb-2 text-xs font-medium uppercase tracking-wider text-neutral-400">Sort</p>
           <select
             v-model="sortBy"
-            class="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-700 outline-none focus:border-indigo-500"
+            class="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm text-neutral-700 outline-none focus:border-black"
           >
             <option value="name">Name</option>
             <option value="stars">Stars</option>
@@ -267,7 +267,7 @@ onMounted(() => {
         <!-- Clear filters -->
         <button
           v-if="selectedType !== 'All' || selectedUseCase !== 'All' || selectedDifficulty !== 'All' || searchQuery.trim()"
-          class="w-full rounded-lg border border-neutral-300 px-3 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100"
+          class="w-full rounded-lg border border-black/10 px-3 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100"
           @click="searchQuery = ''; selectedType = 'All'; selectedUseCase = 'All'; selectedDifficulty = 'All'"
         >
           Clear all filters
@@ -303,13 +303,7 @@ onMounted(() => {
           <p class="mt-1 text-xs text-neutral-400">{{ project.creator }}</p>
 
           <div class="mt-3 flex flex-wrap items-center gap-2">
-            <span
-              :class="[
-                'inline-block rounded-full px-3 py-1 text-xs font-medium',
-                typeColors[project.type]?.badge || 'bg-neutral-100',
-                typeColors[project.type]?.badgeText || 'text-neutral-700',
-              ]"
-            >
+            <span class="inline-block rounded-full bg-neutral-900 px-3 py-1 text-xs font-medium text-white">
               {{ typeLabels[project.type] || project.type }}
             </span>
             <span
@@ -324,9 +318,9 @@ onMounted(() => {
             </span>
             <span
               v-if="project.tag"
-              class="inline-block rounded-full border border-violet-200 bg-violet-50 px-2.5 py-0.5 text-xs font-medium text-violet-700"
+              class="inline-block rounded-full border border-dashed border-neutral-300 px-2.5 py-0.5 text-xs font-medium text-neutral-500"
             >
-              {{ project.tag }}
+              #{{ project.tag }}
             </span>
             <span v-if="project.github_stars" class="inline-flex items-center gap-1 text-xs text-neutral-500">
               <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
@@ -344,7 +338,7 @@ onMounted(() => {
             <span
               v-for="uc in project.use_cases"
               :key="uc"
-              class="inline-block rounded-full border border-neutral-200 px-2.5 py-0.5 text-xs text-neutral-500"
+              class="inline-block rounded-full border border-black/10 px-2.5 py-0.5 text-xs text-neutral-500"
             >
               {{ uc }}
             </span>
@@ -356,7 +350,7 @@ onMounted(() => {
       <div v-else class="mt-12 text-center">
         <p class="text-lg text-neutral-500">No projects match your filters.</p>
         <button
-          class="mt-4 text-sm font-medium text-indigo-600 hover:underline"
+          class="mt-4 text-sm font-medium text-neutral-900 hover:underline"
           @click="searchQuery = ''; selectedType = 'All'; selectedUseCase = 'All'"
         >
           Clear all filters

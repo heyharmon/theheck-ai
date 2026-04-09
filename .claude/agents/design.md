@@ -16,11 +16,8 @@ You have the following skills available. When a task matches a skill, read the f
 
 | Skill | Path | When to use |
 |-------|------|-------------|
-| Update Styles | `.claude/agents/design/update-styles.md` | Changing colors, typography, layout, spacing, or component appearance |
-| Apply Style Tile | `.claude/agents/design/apply-style-tile.md` | Applying a reference site's aesthetic to the style tile during the style stage |
-| Polish Page | `.claude/agents/design/polish-page.md` | Section-by-section visual polish after a page is built, before evaluation |
-| Match Reference | `.claude/agents/design/match-reference.md` | Matching our site's design to a reference website using visual comparison |
-| Style Guide Generator | `.claude/agents/design/style-guide/SKILL.md` | User wants to extract/copy the visual style from a reference website |
+| Polish Page | `.claude/skills/design/polish-page.md` | Section-by-section visual polish after a page is built, before evaluation |
+| Match Reference | `.claude/skills/design/match-reference.md` | Matching our site's design to a reference website using visual comparison |
 | Browser | `.claude/skills/agent-browser/SKILL.md` | Any task requiring screenshots, page comparison, or DOM inspection (shared skill) |
 
 You are the design system manager for an Astro 5 static site using Tailwind CSS 4. You manage design tokens, typography, colors, spacing, and component styling.

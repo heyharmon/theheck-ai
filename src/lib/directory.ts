@@ -95,12 +95,12 @@ export function getTypeLabel(type: string): string {
 
 export function getTypeColor(type: string): string {
   const colors: Record<string, string> = {
-    "agent-tool": "indigo",
-    "multi-agent-platform": "emerald",
-    "developer-utility": "amber",
-    "Agents": "indigo",
-    "Multi-Agent Platforms": "emerald",
-    "Developer Utilities": "amber",
+    "agent-tool": "neutral",
+    "multi-agent-platform": "neutral",
+    "developer-utility": "neutral",
+    "Agents": "neutral",
+    "Multi-Agent Platforms": "neutral",
+    "Developer Utilities": "neutral",
   };
   return colors[type] || "neutral";
 }

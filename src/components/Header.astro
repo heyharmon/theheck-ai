@@ -6,9 +6,9 @@ const pathname = Astro.url.pathname;
 const sortedNav = [...nav].sort((a, b) => a.order - b.order);
 ---
 
-<header class="border-b border-neutral-200 bg-white">
+<header class="border-b border-black/10 bg-white">
   <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-    <a href="/" class="text-lg font-semibold tracking-tight text-neutral-900 no-underline">
+    <a href="/" class="text-lg font-semibold tracking-tight text-black no-underline">
       {siteMeta.name}
     </a>
 
@@ -26,8 +26,8 @@ const sortedNav = [...nav].sort((a, b) => a.order - b.order);
                 class:list={[
                   "text-sm font-medium no-underline transition-colors",
                   isActive
-                    ? "text-indigo-600"
-                    : "text-neutral-600 hover:text-neutral-900",
+                    ? "text-black"
+                    : "text-neutral-500 hover:text-black",
                 ]}
               >
                 {item.label}

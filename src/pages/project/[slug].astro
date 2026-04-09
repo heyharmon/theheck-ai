@@ -8,6 +8,7 @@ import {
   getAllProjects,
   generateSlug,
   getProjectsByType,
+  getTypeLabel,
   getDifficultyLabel,
   getDifficultyColor,
   type Project,
@@ -46,7 +47,7 @@ const diffBadgeBg: Record<string, string> = {
 
 <BaseLayout title={project.name} description={project.full_description.slice(0, 160)}>
   <!-- Header -->
-  <section class="border-b border-neutral-200 bg-neutral-50">
+  <section class="border-b border-black/10 bg-neutral-50">
     <div class="mx-auto max-w-5xl px-6 py-16">
       <a href="/directory" class="inline-flex items-center gap-1 text-sm text-neutral-500 no-underline hover:text-neutral-900">
         <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -60,22 +61,24 @@ const diffBadgeBg: Record<string, string> = {
           <h1 class="text-4xl sm:text-5xl">{project.name}</h1>
           <p class="mt-2 text-lg text-neutral-500">by {project.creator}</p>
           <div class="mt-4 flex flex-wrap items-center gap-3">
-            <TypeBadge type={project.type} />
+            <span class="inline-block rounded-full bg-neutral-900 px-3 py-1 text-xs font-medium text-white">
+              {getTypeLabel(project.type)}
+            </span>
             {project.difficulty && (
               <span class={`inline-block rounded-full px-3 py-1 text-xs font-medium ${diffBadgeBg[diffColor] || diffBadgeBg.neutral}`}>
                 {diffLabel}
               </span>
             )}
             {project.tag && (
-              <span class="inline-block rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-xs font-medium text-violet-700">
-                {project.tag}
+              <span class="inline-block rounded-full border border-dashed border-neutral-300 px-3 py-1 text-xs font-medium text-neutral-500">
+                #{project.tag}
               </span>
             )}
             <StarCount stars={project.github_stars} />
           </div>
           <div class="mt-3 flex flex-wrap gap-2">
             {project.use_cases.map((uc) => (
-              <span class="inline-block rounded-full border border-neutral-300 px-3 py-1 text-xs font-medium text-neutral-600">
+              <span class="inline-block rounded-full border border-black/10 px-3 py-1 text-xs font-medium text-neutral-600">
                 {uc}
               </span>
             ))}
@@ -120,7 +123,7 @@ const diffBadgeBg: Record<string, string> = {
   </section>
 
   <!-- Description -->
-  <section class="border-b border-neutral-200">
+  <section class="border-b border-black/10">
     <div class="mx-auto max-w-5xl px-6 py-16">
       <h2 class="text-xl font-semibold">About</h2>
       <p class="mt-4 text-lg leading-relaxed">{project.full_description}</p>
@@ -129,10 +132,10 @@ const diffBadgeBg: Record<string, string> = {
 
   <!-- Why Discussed -->
   {project.why_discussed && (
-    <section class="border-b border-neutral-200 bg-indigo-50/50">
+    <section class="border-b border-black/10 bg-neutral-50">
       <div class="mx-auto max-w-5xl px-6 py-16">
         <h2 class="text-xl font-semibold">Why people are talking about it</h2>
-        <blockquote class="mt-4 border-l-4 border-indigo-400 pl-6 text-lg italic text-neutral-700">
+        <blockquote class="mt-4 border-l-4 border-black/20 pl-6 text-lg italic text-neutral-700">
           {project.why_discussed}
         </blockquote>
       </div>
@@ -141,7 +144,7 @@ const diffBadgeBg: Record<string, string> = {
 
   <!-- Key Features -->
   {project.key_features.length > 0 && (
-    <section class="border-b border-neutral-200">
+    <section class="border-b border-black/10">
       <div class="mx-auto max-w-5xl px-6 py-16">
         <h2 class="text-xl font-semibold">Key Features</h2>
         <div class="mt-6 flex flex-wrap gap-2">
@@ -155,7 +158,7 @@ const diffBadgeBg: Record<string, string> = {
 
   <!-- Notes -->
   {project.notes && (
-    <section class="border-b border-neutral-200 bg-neutral-50">
+    <section class="border-b border-black/10 bg-neutral-50">
       <div class="mx-auto max-w-5xl px-6 py-16">
         <h2 class="text-xl font-semibold">Notes</h2>
         <p class="mt-4">{project.notes}</p>
@@ -165,20 +168,20 @@ const diffBadgeBg: Record<string, string> = {
 
   <!-- Related Reading -->
   {relatedResources.length > 0 && (
-    <section class="border-b border-neutral-200 bg-neutral-50">
+    <section class="border-b border-black/10 bg-neutral-50">
       <div class="mx-auto max-w-5xl px-6 py-16">
         <h2 class="text-xl font-semibold">Related Reading</h2>
         <p class="mt-2 text-sm text-neutral-500">Curated articles and guides that feature {project.name}.</p>
         <ul class="mt-8 space-y-4">
           {relatedResources.map((resource) => (
-            <li class="rounded-xl border border-neutral-200 bg-white p-5">
+            <li class="rounded-xl border border-black/10 bg-white p-5">
               <div class="flex flex-wrap items-start justify-between gap-3">
                 <div class="flex-1 min-w-0">
                   <a
                     href={resource.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="font-display font-medium text-neutral-900 no-underline hover:text-indigo-600 hover:underline transition-colors"
+                    class="font-display font-medium text-neutral-900 no-underline hover:text-neutral-600 hover:underline transition-colors"
                   >
                     {resource.name}
                   </a>
@@ -198,7 +201,7 @@ const diffBadgeBg: Record<string, string> = {
 
   <!-- Related Projects -->
   {related.length > 0 && (
-    <section class="border-b border-neutral-200">
+    <section class="border-b border-black/10">
       <div class="mx-auto max-w-6xl px-6 py-16">
         <h2 class="text-xl font-semibold">More {project.type === "agent-tool" ? "Agents" : project.type === "multi-agent-platform" ? "Multi-Agent Platforms" : "Developer Utilities"}</h2>
         <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

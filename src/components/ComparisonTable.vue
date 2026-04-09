@@ -111,7 +111,7 @@ const sorted = computed(() => {
         v-model="searchQuery"
         type="text"
         placeholder="Filter table..."
-        class="w-full rounded-lg border border-neutral-300 bg-white py-2.5 pl-10 pr-4 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition-colors focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+        class="w-full rounded-lg border border-black/10 bg-white py-2.5 pl-10 pr-4 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition-colors focus:border-black focus:ring-2 focus:ring-neutral-100"
       />
     </div>
 
@@ -119,9 +119,9 @@ const sorted = computed(() => {
       {{ sorted.length }} {{ sorted.length === 1 ? 'project' : 'projects' }}
     </p>
 
-    <div class="mt-4 overflow-x-auto rounded-xl border border-neutral-200">
+    <div class="mt-4 overflow-x-auto rounded-xl border border-black/10">
       <table class="w-full text-left text-sm">
-        <thead class="border-b border-neutral-200 bg-neutral-50">
+        <thead class="border-b border-black/10 bg-neutral-50">
           <tr>
             <th
               v-for="col in [
@@ -154,7 +154,7 @@ const sorted = computed(() => {
             <td class="px-4 py-3 font-medium">
               <a
                 :href="`/project/${generateSlug(project.name)}`"
-                class="text-indigo-600 no-underline hover:underline"
+                class="text-neutral-900 font-semibold no-underline hover:underline"
               >
                 {{ project.name }}
               </a>
@@ -169,7 +169,7 @@ const sorted = computed(() => {
                 <span
                   v-for="uc in project.use_cases"
                   :key="uc"
-                  class="inline-block rounded-full border border-neutral-200 px-2 py-0.5 text-xs text-neutral-500"
+                  class="inline-block rounded-full border border-black/10 px-2 py-0.5 text-xs text-neutral-500"
                 >
                   {{ uc }}
                 </span>

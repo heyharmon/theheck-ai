@@ -49,7 +49,7 @@ export function getResourceTypeLabel(type: string): string {
 
 export function getResourceTypeBadgeClass(type: string): string {
   const classes: Record<string, string> = {
-    guide: "badge badge-indigo",
+    guide: "badge badge-neutral",
     article: "badge badge-outline",
     video: "badge badge-rose",
     course: "badge badge-emerald",

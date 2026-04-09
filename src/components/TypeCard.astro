@@ -10,28 +10,13 @@ interface Props {
 }
 
 const { name, typeSlug, count, description, href } = Astro.props;
-const color = getTypeColor(typeSlug);
-
-const borderColors: Record<string, string> = {
-  indigo: "border-indigo-500",
-  emerald: "border-emerald-500",
-  amber: "border-amber-500",
-  neutral: "border-neutral-500",
-};
-
-const textColors: Record<string, string> = {
-  indigo: "text-indigo-600",
-  emerald: "text-emerald-600",
-  amber: "text-amber-600",
-  neutral: "text-neutral-600",
-};
 ---
 
 <a
   href={href}
-  class={`card-interactive block border-t-4 no-underline ${borderColors[color]}`}
+  class="card-interactive block border-t-2 border-t-black no-underline"
 >
-  <h3 class={`text-lg font-semibold ${textColors[color]}`}>
+  <h3 class="text-lg font-semibold text-black">
     {name}
   </h3>
   <p class="mt-2 text-sm text-neutral-500">{description}</p>
