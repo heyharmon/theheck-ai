@@ -31,7 +31,7 @@ export interface DirectoryMetadata {
 
 export interface DirectoryData {
   metadata: DirectoryMetadata;
-  harnesses: Project[];
+  tools: Project[];
 }
 
 const data = directoryData as DirectoryData;
@@ -55,15 +55,15 @@ export function formatStars(stars: string | number | null): string {
 }
 
 export function getMetadata(): DirectoryMetadata {
-  return { ...data.metadata, total_entries: data.harnesses.length };
+  return { ...data.metadata, total_entries: data.tools.length };
 }
 
 export function getAllProjects(): Project[] {
-  return data.harnesses;
+  return data.tools;
 }
 
 export function getProjectBySlug(slug: string): Project | undefined {
-  return data.harnesses.find((p) => generateSlug(p.name) === slug);
+  return data.tools.find((p) => generateSlug(p.name) === slug);
 }
 
 // --- Type helpers ---
@@ -73,7 +73,7 @@ export function getTypes(): string[] {
 }
 
 export function getTypeCounts(): Record<string, number> {
-  return data.harnesses.reduce(
+  return data.tools.reduce(
     (acc, p) => {
       const label = getTypeLabel(p.type);
       acc[label] = (acc[label] || 0) + 1;
@@ -105,7 +105,7 @@ export function getTypeColor(type: string): string {
 }
 
 export function getProjectsByType(type: string): Project[] {
-  return data.harnesses.filter((p) => p.type === type || getTypeLabel(p.type) === type);
+  return data.tools.filter((p) => p.type === type || getTypeLabel(p.type) === type);
 }
 
 // --- Difficulty helpers ---
@@ -140,7 +140,7 @@ export function getUseCases(): string[] {
 
 export function getUseCaseCounts(): Record<string, number> {
   const counts: Record<string, number> = {};
-  data.harnesses.forEach((p) => {
+  data.tools.forEach((p) => {
     p.use_cases.forEach((uc) => {
       counts[uc] = (counts[uc] || 0) + 1;
     });
@@ -156,7 +156,7 @@ export function getFeatures(): string[] {
 
 // --- Slug uniqueness check ---
 
-const slugs = data.harnesses.map((p) => generateSlug(p.name));
+const slugs = data.tools.map((p) => generateSlug(p.name));
 const dupes = slugs.filter((s, i) => slugs.indexOf(s) !== i);
 if (dupes.length > 0) {
   throw new Error(`Duplicate slugs detected: ${dupes.join(", ")}`);

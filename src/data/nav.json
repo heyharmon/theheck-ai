@@ -1,5 +1,6 @@
 [
   { "label": "Home", "href": "/", "order": 0 },
   { "label": "Directory", "href": "/directory", "order": 1 },
-  { "label": "Compare", "href": "/compare", "order": 2 }
+  { "label": "Compare", "href": "/compare", "order": 2 },
+  { "label": "Resources", "href": "/resources", "order": 3 }
 ]

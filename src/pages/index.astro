@@ -46,7 +46,7 @@ const featured = featuredNames
 
 <BaseLayout
   title="Home"
-  description="Find the right AI agent tools for your work. Browse 60+ agent tools, multi-agent platforms, and developer utilities — filtered by what they do and what they're for."
+  description="Find the right AI agent tools for your work. Browse 70+ agent tools, multi-agent platforms, and developer utilities — filtered by what they do and what they're for."
 >
   <!-- Hero -->
   <section class="hero-dark">
@@ -66,7 +66,7 @@ const featured = featuredNames
 
   <!-- What you'll find -->
   <section class="border-t border-neutral-200">
-    <div class="mx-auto max-w-5xl px-6 py-24">
+    <div class="mx-auto max-w-5xl px-6 py-20 sm:py-28">
       <h2 class="text-center">Three types of tools, one directory</h2>
       <p class="mx-auto mt-4 max-w-2xl text-center text-neutral-500">
         The AI agent landscape is vast. We organize it into three clear categories so you can find what you need fast.
@@ -87,7 +87,7 @@ const featured = featuredNames
 
   <!-- Use cases -->
   <section class="border-t border-neutral-200 bg-neutral-50">
-    <div class="mx-auto max-w-5xl px-6 py-24">
+    <div class="mx-auto max-w-5xl px-6 py-16 sm:py-20">
       <h2 class="text-center">What are you building?</h2>
       <p class="mx-auto mt-4 max-w-2xl text-center text-neutral-500">
         Every tool is tagged by use case. Filter to find exactly what fits your goals.
@@ -107,10 +107,10 @@ const featured = featuredNames
   </section>
 
   <!-- How this helps you -->
-  <section class="border-t border-neutral-200">
-    <div class="mx-auto max-w-5xl px-6 py-24">
+  <section class="section-tinted border-t border-neutral-200">
+    <div class="mx-auto max-w-5xl px-6 py-14 sm:py-18">
       <h2 class="text-center">How this directory helps</h2>
-      <div class="mt-12 grid gap-8 sm:grid-cols-3">
+      <div class="mt-10 grid gap-8 sm:grid-cols-3">
         <div>
           <h3 class="text-lg font-semibold">New to agents?</h3>
           <p class="mt-2 text-sm">
@@ -138,14 +138,16 @@ const featured = featuredNames
 
   <!-- Featured -->
   <section class="border-t border-neutral-200 bg-neutral-50">
-    <div class="mx-auto max-w-6xl px-6 py-24">
+    <div class="mx-auto max-w-6xl px-6 py-20 sm:py-28">
       <h2>Notable projects</h2>
       <p class="mt-4 max-w-2xl text-neutral-500">
         A few well-known tools to get you oriented.
       </p>
       <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {featured.map((project) => (
-          <ProjectCard project={project} slug={generateSlug(project.name)} />
+        {featured.map((project, i) => (
+          <div class={i === 0 ? "sm:col-span-2 lg:col-span-2" : ""}>
+            <ProjectCard project={project} slug={generateSlug(project.name)} />
+          </div>
         ))}
       </div>
     </div>
@@ -153,7 +155,7 @@ const featured = featuredNames
 
   <!-- CTA -->
   <section class="hero-dark border-t border-neutral-800">
-    <div class="mx-auto max-w-3xl px-6 py-20 text-center">
+    <div class="mx-auto max-w-3xl px-6 py-16 text-center">
       <h2 class="text-3xl font-bold">The right tool is already here</h2>
       <p class="mx-auto mt-4 max-w-xl text-neutral-400">
         {metadata.total_entries} agent tools, platforms, and utilities. Filterable by type and use case. Free and open.

@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getAllResources, getResourceTypeLabel, getResourceTypeBadgeClass } from "../lib/resources";
+import { generateSlug } from "../lib/directory";
+import resourcesMeta from "../data/resources.json";
+
+const resources = getAllResources();
+const metadata = resourcesMeta.metadata;
+
+const typeBorderColor: Record<string, string> = {
+  guide: "border-indigo-400",
+  article: "border-amber-400",
+  video: "border-rose-400",
+  course: "border-emerald-400",
+  reference: "border-neutral-400",
+};
+---
+
+<BaseLayout
+  title="Resources"
+  description="Curated articles, guides, and references for the AI agent ecosystem."
+>
+  <!-- Page header -->
+  <section class="border-b border-neutral-200 bg-neutral-50">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <h1>Resources</h1>
+      <p class="mt-4 max-w-2xl text-lg text-neutral-500">
+        {metadata.description}
+      </p>
+      <p class="mt-2 text-sm text-neutral-400">
+        {resources.length} {resources.length === 1 ? "resource" : "resources"} — last updated {metadata.last_updated}
+      </p>
+    </div>
+  </section>
+
+  <!-- Resource list -->
+  <section>
+    <div class="mx-auto max-w-6xl px-6 py-12">
+      {resources.length === 0 ? (
+        <p class="text-neutral-500">No resources yet. Check back soon.</p>
+      ) : (
+        <ul class="space-y-4">
+          {resources.map((resource) => {
+            const borderClass = typeBorderColor[resource.type] ?? "border-neutral-300";
+            return (
+              <li class={`rounded-xl border border-neutral-200 bg-white pl-5 pr-6 py-5 border-l-4 ${borderClass}`}>
+                <div class="flex flex-wrap items-start justify-between gap-3">
+                  <!-- Main content -->
+                  <div class="flex-1 min-w-0">
+                    <div class="flex flex-wrap items-center gap-2">
+                      <a
+                        href={resource.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="font-display font-medium text-neutral-900 no-underline hover:text-indigo-600 hover:underline transition-colors"
+                      >
+                        {resource.name}
+                      </a>
+                      <span class={getResourceTypeBadgeClass(resource.type)}>
+                        {getResourceTypeLabel(resource.type)}
+                      </span>
+                    </div>
+
+                    <p class="mt-2 text-sm text-neutral-600 leading-relaxed">
+                      {resource.description}
+                    </p>
+
+                    <p class="mt-2 text-xs text-neutral-400">by {resource.author}</p>
+
+                    {resource.related_tools.length > 0 && (
+                      <div class="mt-3 flex flex-wrap items-center gap-2">
+                        <span class="text-xs text-neutral-400">Related tools:</span>
+                        {resource.related_tools.map((tool) => (
+                          <a
+                            href={`/project/${generateSlug(tool)}`}
+                            class="inline-block rounded-full border border-neutral-300 px-2.5 py-0.5 text-xs font-medium text-neutral-600 no-underline transition-colors hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700"
+                          >
+                            {tool}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  </section>
+</BaseLayout>

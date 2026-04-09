@@ -12,6 +12,11 @@ import {
   getDifficultyColor,
   type Project,
 } from "../../lib/directory";
+import {
+  getResourcesForTool,
+  getResourceTypeLabel,
+  getResourceTypeBadgeClass,
+} from "../../lib/resources";
 
 export async function getStaticPaths() {
   const projects = getAllProjects();
@@ -26,6 +31,8 @@ const { project } = Astro.props as { project: Project };
 const related = getProjectsByType(project.type)
   .filter((p) => p.name !== project.name)
   .slice(0, 3);
+
+const relatedResources = getResourcesForTool(project.name);
 
 const diffLabel = getDifficultyLabel(project.difficulty);
 const diffColor = getDifficultyColor(project.difficulty);
@@ -147,6 +154,39 @@ const diffBadgeBg: Record<string, string> = {
       <div class="mx-auto max-w-5xl px-6 py-16">
         <h2 class="text-xl font-semibold">Notes</h2>
         <p class="mt-4">{project.notes}</p>
+      </div>
+    </section>
+  )}
+
+  <!-- Related Reading -->
+  {relatedResources.length > 0 && (
+    <section class="border-b border-neutral-200 bg-neutral-50">
+      <div class="mx-auto max-w-5xl px-6 py-16">
+        <h2 class="text-xl font-semibold">Related Reading</h2>
+        <p class="mt-2 text-sm text-neutral-500">Curated articles and guides that feature {project.name}.</p>
+        <ul class="mt-8 space-y-4">
+          {relatedResources.map((resource) => (
+            <li class="rounded-xl border border-neutral-200 bg-white p-5">
+              <div class="flex flex-wrap items-start justify-between gap-3">
+                <div class="flex-1 min-w-0">
+                  <a
+                    href={resource.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-display font-medium text-neutral-900 no-underline hover:text-indigo-600 hover:underline transition-colors"
+                  >
+                    {resource.name}
+                  </a>
+                  <p class="mt-1.5 text-sm text-neutral-500 leading-relaxed">{resource.description}</p>
+                  <p class="mt-2 text-xs text-neutral-400">by {resource.author}</p>
+                </div>
+                <span class={`shrink-0 ${getResourceTypeBadgeClass(resource.type)}`}>
+                  {getResourceTypeLabel(resource.type)}
+                </span>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )}

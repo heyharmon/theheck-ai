@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "description": "Curated articles, guides, and references for the AI agent ecosystem. Each resource is linked to the tools it relates to.",
+    "last_updated": "April 8, 2026",
+    "total_entries": 1,
+    "types": ["guide", "article", "video", "course", "reference"]
+  },
+  "resources": [
+    {
+      "name": "Second Brain: Obsidian + Claude Code Setup Guide",
+      "url": "https://okhlopkov.com/second-brain-obsidian-claude-code/",
+      "author": "Daniil Okhlopkov",
+      "type": "guide",
+      "description": "Practical guide to building a knowledge management system where Claude Code actively reads, searches, and updates your Obsidian vault. Covers folder structure, CLAUDE.md configuration, voice-to-knowledge pipelines via Telegram, and daily use cases. Demonstrates how to give an AI agent proper context and structured access to personal knowledge.",
+      "tags": ["knowledge-management", "obsidian", "personal-ai", "claude-code", "productivity"],
+      "related_tools": ["Claude Code"]
+    }
+  ]
+}

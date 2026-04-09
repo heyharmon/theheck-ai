@@ -3,7 +3,7 @@
     "title": "Comprehensive Directory of Agent Harnesses & Orchestrators",
     "last_updated": "April 8, 2026",
     "description": "Full master aggregation including every harness, framework, adjacent tool, Paperclip.ing category, and all orchestration projects discussed. 71 total entries.",
-    "total_entries": 71,
+    "total_entries": 72,
     "categories": [
       "Team/Organization-Backed",
       "Individual/Indie & Research",
@@ -36,7 +36,7 @@
       "Advanced"
     ]
   },
-  "harnesses": [
+  "tools": [
     {
       "name": "Claude Code",
       "category": "Team/Organization-Backed",
@@ -1755,6 +1755,35 @@
       "why_discussed": "Solves the 'developers can't prompt for good design' problem by encoding designer vocabulary into slash commands. 17.2K stars. The most popular design-focused agent skill in the ecosystem. Impressive before/after results on AI-generated UIs.",
       "notes": "Latest: v1.6.0. Apache 2.0. Install: npx skills add pbakaus/impeccable. Prefixed commands (/i-*) available to avoid conflicts.",
       "website_url": "https://impeccable.style"
+    },
+    {
+      "name": "Skills CLI",
+      "category": "Harnesses-Adjacent",
+      "type": "developer-utility",
+      "difficulty": "beginner",
+      "use_cases": [
+        "Software Development",
+        "General-Purpose"
+      ],
+      "features": [
+        "Open Source",
+        "Model-Agnostic"
+      ],
+      "creator": "Vercel",
+      "github_stars": 13400,
+      "github_url": "https://github.com/vercel-labs/skills",
+      "website_url": "https://skills.sh",
+      "full_description": "A package manager for AI coding agent instructions — often called \"npm for agent skills.\" Install, update, publish, and share modular markdown-based instruction sets (SKILL.md files) that give any supported agent specialized knowledge it would not otherwise have. One command installs a skill across 40+ agents (Claude Code, Cursor, Codex, Windsurf, Gemini CLI, and more). Skills are not code plugins — they are structured context that agents read on demand. Great for packaging repeatable team workflows (deployment checklists, testing standards, framework rules) into versioned, shareable packages. However, Vercel's own evals found that AGENTS.md (always-loaded context) achieved 100% pass rates where skills (on-demand context) achieved only 53% — because agents often don't invoke skills unless explicitly told to. Best used for complex, specialized, on-demand knowledge; not a replacement for AGENTS.md or system prompts for rules that should always apply.",
+      "key_features": [
+        "One-command install across 40+ agents",
+        "Skill discovery via skills.sh directory",
+        "Version management and updates",
+        "Project-scoped or global installation",
+        "Skill authoring and publishing",
+        "MIT licensed, open standard"
+      ],
+      "why_discussed": "First serious attempt at a universal distribution layer for agent instructions. Strong adoption (91K+ recorded installs, backed by Vercel, Microsoft, and Anthropic as publishers), but the honest signal is nuanced: Vercel's own research showed AGENTS.md outperforms skills for always-on knowledge, making skills best suited for complex on-demand domain expertise rather than general agent configuration.",
+      "notes": "Use it for: packaging team workflows, framework-specific rules, specialized domain knowledge. Don't use it for: simple one-off prompts, rules that must apply every turn (use AGENTS.md), tool access (use MCP), or foundational agent behavior (use system prompts). The CLI also installs skill directories for every supported agent it detects, even ones you don't use — add unwanted agent dirs to .gitignore."
     }
   ]
 }

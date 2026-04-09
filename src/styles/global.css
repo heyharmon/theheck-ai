@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #e5e5e5;
-  --color-neutral-300: #d4d4d4;
-  --color-neutral-400: #a3a3a3;
-  --color-neutral-500: #737373;
-  --color-neutral-600: #525252;
-  --color-neutral-700: #404040;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #171717;
-  --color-neutral-950: #0a0a0a;
+  /* Neutrals tinted slightly toward indigo for subconscious cohesion */
+  --color-neutral-50: #f9fafb;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-200: #e4e5ea;
+  --color-neutral-300: #d1d3db;
+  --color-neutral-400: #9b9daa;
+  --color-neutral-500: #6e7081;
+  --color-neutral-600: #4e5063;
+  --color-neutral-700: #3c3e50;
+  --color-neutral-800: #25263a;
+  --color-neutral-900: #161728;
+  --color-neutral-950: #0b0c1a;
 
   --color-indigo-50: #eef2ff;
   --color-indigo-100: #e0e7ff;
@@ -59,22 +60,26 @@
   }
 
   h1 {
-    @apply font-sans font-semibold tracking-tight text-neutral-900 text-4xl sm:text-5xl;
-    line-height: 1.1;
+    @apply font-display font-bold tracking-tight text-neutral-900;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    line-height: 1.08;
   }
 
   h2 {
-    @apply font-sans font-semibold tracking-tight text-neutral-900 text-2xl sm:text-3xl;
+    @apply font-display font-semibold tracking-tight text-neutral-900;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     line-height: 1.15;
   }
 
   h3 {
-    @apply font-sans font-medium text-neutral-900 text-xl;
-    line-height: 1.2;
+    @apply font-display font-medium text-neutral-900 text-lg;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
   }
 
   p {
-    @apply leading-relaxed text-neutral-600;
+    @apply text-neutral-600;
+    line-height: 1.7;
   }
 
   a {
@@ -129,7 +134,7 @@
 }
 
 .prose blockquote {
-  @apply border-l-2 border-neutral-300 pl-6 italic text-neutral-500 my-6;
+  @apply border-l-2 border-indigo-300 pl-6 italic text-neutral-500 my-6;
 }
 
 .prose strong {
@@ -144,16 +149,18 @@
   @apply text-indigo-600 underline;
 }
 
-/* Hero dark section */
+/* Hero dark section — indigo-tinted dark for brand cohesion */
 .hero-dark {
-  @apply bg-neutral-950 text-white;
+  background: linear-gradient(180deg, #0b0c1a 0%, #121330 100%);
+  @apply text-white;
 }
 .hero-dark h1,
 .hero-dark h2 {
   @apply text-white;
 }
 .hero-dark p {
-  @apply text-neutral-400;
+  color: #9b9dba;
+  line-height: 1.8;
 }
 
 /* Feature badge pill */
@@ -185,6 +192,11 @@
 }
 .card-interactive:hover {
   @apply border-indigo-300 shadow-lg shadow-indigo-100/50;
+}
+
+/* Subtle indigo-tinted section background for alternating rhythm */
+.section-tinted {
+  background-color: #f6f7fb;
 }
 
 /* Ghost button on dark bg */

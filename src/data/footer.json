@@ -4,7 +4,8 @@
     "links": [
       { "label": "Home", "href": "/" },
       { "label": "Directory", "href": "/directory" },
-      { "label": "Compare", "href": "/compare" }
+      { "label": "Compare", "href": "/compare" },
+      { "label": "Resources", "href": "/resources" }
     ]
   }
 ]

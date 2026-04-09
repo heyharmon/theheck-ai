@@ -47,26 +47,29 @@
   },
   "typography": {
     "fonts": {
-      "heading": "Inter",
-      "body": "Inter",
+      "heading": "Space Grotesk",
+      "body": "Plus Jakarta Sans",
       "mono": "JetBrains Mono"
     },
     "headings": {
       "h1": {
-        "classes": "font-sans font-semibold tracking-tight text-neutral-900 text-4xl sm:text-5xl",
-        "lineHeight": "1.1"
+        "classes": "font-display font-bold tracking-tight text-neutral-900",
+        "lineHeight": "1.08",
+        "sizing": "clamp(2.25rem, 5vw, 3.5rem)"
       },
       "h2": {
-        "classes": "font-sans font-semibold tracking-tight text-neutral-900 text-2xl sm:text-3xl",
-        "lineHeight": "1.15"
+        "classes": "font-display font-semibold tracking-tight text-neutral-900",
+        "lineHeight": "1.15",
+        "sizing": "clamp(1.5rem, 3vw, 2rem)"
       },
       "h3": {
-        "classes": "font-sans font-medium text-neutral-900 text-xl",
-        "lineHeight": "1.2"
+        "classes": "font-display font-medium text-neutral-900 text-lg",
+        "lineHeight": "1.25"
       }
     },
     "body": {
-      "classes": "leading-relaxed text-neutral-600"
+      "classes": "text-neutral-600",
+      "lineHeight": "1.7"
     },
     "small": {
       "classes": "text-sm text-neutral-400"
