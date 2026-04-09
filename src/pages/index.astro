@@ -49,12 +49,12 @@ const featured = featuredNames
   description="Find the right AI agent tools for your work. Browse 70+ agent tools, multi-agent platforms, and developer utilities — filtered by what they do and what they're for."
 >
   <!-- Hero -->
-  <section class="border-b border-black/10">
+  <section class="border-b border-black/10 dark:border-white/10">
     <div class="mx-auto max-w-4xl px-6 py-28 sm:py-36">
-      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-medium tracking-[-0.045em] text-black leading-[1.02]">
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-medium tracking-[-0.045em] text-black leading-[1.02] dark:text-white">
         Find the right AI agent tools for your work
       </h1>
-      <p class="mt-8 max-w-2xl text-lg text-neutral-500 leading-relaxed">
+      <p class="mt-8 max-w-2xl text-lg text-neutral-500 leading-relaxed dark:text-neutral-400">
         {metadata.total_entries} tools and platforms for building with AI agents — organized by what they do and what they're for. Whether you're getting started or looking for a better alternative, start here.
       </p>
       <div class="mt-10 flex items-center gap-4">
@@ -65,10 +65,10 @@ const featured = featuredNames
   </section>
 
   <!-- What you'll find -->
-  <section class="border-b border-black/10">
+  <section class="border-b border-black/10 dark:border-white/10">
     <div class="mx-auto max-w-5xl px-6 py-24 sm:py-32">
       <h2 class="text-center">Three types of tools, one directory</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-center text-neutral-500">
+      <p class="mx-auto mt-4 max-w-2xl text-center text-neutral-500 dark:text-neutral-400">
         The AI agent landscape is vast. We organize it into three clear categories so you can find what you need fast.
       </p>
       <div class="mt-14 grid gap-6 sm:grid-cols-3">
@@ -86,19 +86,19 @@ const featured = featuredNames
   </section>
 
   <!-- Use cases -->
-  <section class="border-b border-black/10 bg-neutral-50">
+  <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
     <div class="mx-auto max-w-5xl px-6 py-20 sm:py-28">
       <h2 class="text-center">What are you building?</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-center text-neutral-500">
+      <p class="mx-auto mt-4 max-w-2xl text-center text-neutral-500 dark:text-neutral-400">
         Every tool is tagged by use case. Filter to find exactly what fits your goals.
       </p>
       <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {useCases.map((uc) => (
           <a
             href={`/directory?use_case=${encodeURIComponent(uc)}`}
-            class="flex items-center justify-between rounded-xl border border-black/10 bg-white px-6 py-4 no-underline transition-all hover:border-black/25 hover:shadow-sm"
+            class="flex items-center justify-between rounded-xl border border-black/10 bg-white px-6 py-4 no-underline transition-all hover:border-black/25 hover:shadow-sm dark:border-white/10 dark:bg-neutral-800 dark:hover:border-white/20"
           >
-            <span class="font-medium text-neutral-900">{uc}</span>
+            <span class="font-medium text-neutral-900 dark:text-white">{uc}</span>
             <span class="text-sm text-neutral-400">{useCaseCounts[uc] || 0}</span>
           </a>
         ))}
@@ -107,7 +107,7 @@ const featured = featuredNames
   </section>
 
   <!-- How this helps you -->
-  <section class="border-b border-black/10">
+  <section class="border-b border-black/10 dark:border-white/10">
     <div class="mx-auto max-w-5xl px-6 py-20 sm:py-28">
       <h2 class="text-center">How this directory helps</h2>
       <div class="mt-12 grid gap-10 sm:grid-cols-3">
@@ -116,48 +116,46 @@ const featured = featuredNames
           <p class="mt-2 text-sm">
             Understand what tools exist, what they do, and which ones match your goals. No jargon, just clear categories and use cases.
           </p>
-          <a href="/directory" class="mt-4 inline-block text-sm font-semibold text-black no-underline hover:underline">Start exploring</a>
+          <a href="/directory" class="mt-4 inline-block text-sm font-semibold text-black no-underline hover:underline dark:text-white">Start exploring</a>
         </div>
         <div>
           <h3 class="text-lg font-semibold">Looking for alternatives?</h3>
           <p class="mt-2 text-sm">
             Compare tools side by side. Filter by the same use case or type to discover options you didn't know existed.
           </p>
-          <a href="/compare" class="mt-4 inline-block text-sm font-semibold text-black no-underline hover:underline">Compare tools</a>
+          <a href="/compare" class="mt-4 inline-block text-sm font-semibold text-black no-underline hover:underline dark:text-white">Compare tools</a>
         </div>
         <div>
           <h3 class="text-lg font-semibold">Keeping up with the space?</h3>
           <p class="mt-2 text-sm">
             The agent ecosystem moves fast. This directory tracks {metadata.total_entries} tools across {useCases.length} use cases so you don't have to.
           </p>
-          <a href="/directory" class="mt-4 inline-block text-sm font-semibold text-black no-underline hover:underline">See what's new</a>
+          <a href="/directory" class="mt-4 inline-block text-sm font-semibold text-black no-underline hover:underline dark:text-white">See what's new</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Featured -->
-  <section class="border-b border-black/10 bg-neutral-50">
+  <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
     <div class="mx-auto max-w-6xl px-6 py-24 sm:py-32">
       <h2>Notable projects</h2>
-      <p class="mt-4 max-w-2xl text-neutral-500">
+      <p class="mt-4 max-w-2xl text-neutral-500 dark:text-neutral-400">
         A few well-known tools to get you oriented.
       </p>
       <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {featured.map((project, i) => (
-          <div class={i === 0 ? "sm:col-span-2 lg:col-span-2" : ""}>
-            <ProjectCard project={project} slug={generateSlug(project.name)} />
-          </div>
+        {featured.map((project) => (
+          <ProjectCard project={project} slug={generateSlug(project.name)} />
         ))}
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="border-b border-black/10">
+  <section class="border-b border-black/10 dark:border-white/10">
     <div class="mx-auto max-w-3xl px-6 py-24 sm:py-32 text-center">
       <h2 class="text-3xl font-semibold tracking-tight">The right tool is already here</h2>
-      <p class="mx-auto mt-4 max-w-xl text-neutral-500">
+      <p class="mx-auto mt-4 max-w-xl text-neutral-500 dark:text-neutral-400">
         {metadata.total_entries} agent tools, platforms, and utilities. Filterable by type and use case. Free and open.
       </p>
       <div class="mt-10">

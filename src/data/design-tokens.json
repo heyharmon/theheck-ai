@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "1.0",
-    "description": "Machine-readable design system. Agents read this as the source of truth for where and how to use design tokens."
+    "version": "2.0",
+    "description": "Machine-readable design system. Monochromatic black/white/gray palette inspired by ui.sh. Agents read this as the source of truth for where and how to use design tokens."
   },
   "colors": {
     "background": {
@@ -11,59 +11,61 @@
       "card": "white"
     },
     "text": {
-      "primary": "neutral-900",
+      "primary": "black",
       "body": "neutral-600",
       "muted": "neutral-500",
       "subtle": "neutral-400",
-      "accent": "indigo-600"
+      "accent": "black"
     },
     "border": {
-      "default": "neutral-200",
-      "card": "neutral-200",
+      "default": "black/10",
+      "card": "black/10",
       "input": "neutral-300",
-      "focus": "indigo-500"
+      "focus": "black"
     },
     "accent": {
-      "base": "indigo-600",
-      "hover": "indigo-700",
-      "light": "indigo-50",
-      "scale": ["indigo-50", "indigo-100", "indigo-200", "indigo-300", "indigo-400", "indigo-500", "indigo-600", "indigo-700", "indigo-800", "indigo-900", "indigo-950"]
+      "base": "black",
+      "hover": "neutral-800",
+      "light": "neutral-50",
+      "note": "Monochromatic system — no colored accent. Use black/white/gray only."
     },
     "button": {
       "primary": {
-        "bg": "indigo-600",
+        "bg": "black",
         "text": "white",
-        "hoverBg": "indigo-700"
+        "hoverBg": "neutral-800"
       },
       "ghost": {
         "bg": "transparent",
-        "text": "neutral-900",
-        "border": "neutral-300",
-        "hoverBg": "neutral-900",
+        "text": "black",
+        "border": "black/20",
+        "hoverBg": "black",
         "hoverText": "white",
-        "hoverBorder": "neutral-900"
+        "hoverBorder": "black"
       }
     }
   },
   "typography": {
     "fonts": {
-      "heading": "Space Grotesk",
-      "body": "Plus Jakarta Sans",
+      "heading": "Inter",
+      "body": "Inter",
       "mono": "JetBrains Mono"
     },
     "headings": {
       "h1": {
-        "classes": "font-display font-bold tracking-tight text-neutral-900",
+        "classes": "font-display font-medium tracking-tight text-black",
         "lineHeight": "1.08",
-        "sizing": "clamp(2.25rem, 5vw, 3.5rem)"
+        "sizing": "clamp(2.25rem, 5vw, 3.5rem)",
+        "letterSpacing": "-0.04em"
       },
       "h2": {
-        "classes": "font-display font-semibold tracking-tight text-neutral-900",
+        "classes": "font-display font-semibold tracking-tight text-black",
         "lineHeight": "1.15",
-        "sizing": "clamp(1.5rem, 3vw, 2rem)"
+        "sizing": "clamp(1.5rem, 3vw, 2rem)",
+        "letterSpacing": "-0.025em"
       },
       "h3": {
-        "classes": "font-display font-medium text-neutral-900 text-lg",
+        "classes": "font-display font-medium text-black text-lg",
         "lineHeight": "1.25"
       }
     },
@@ -88,22 +90,22 @@
   "effects": {
     "borderRadius": {
       "card": "rounded-xl",
-      "button": "rounded-lg",
+      "button": "rounded-xl",
       "input": "rounded-lg",
       "small": "rounded"
     },
     "shadows": {
       "subtle": "shadow-sm",
-      "note": "Use sparingly — prefer flat borders for most components"
+      "note": "Use sparingly — prefer flat borders (black/10) for most components"
     }
   },
   "componentPatterns": {
     "hero-text": {
-      "description": "Text-only hero with headline, subheadline, and dual CTA buttons (primary + ghost). White background.",
+      "description": "Text-only hero with headline, subheadline, and dual CTA buttons (primary + ghost). White background. Large headline with tight tracking.",
       "reference": "index.astro hero section"
     },
     "card-grid": {
-      "description": "Grid of bordered cards (rounded-xl, border-neutral-200, p-8) with icon, title, and description. 3-column on lg, 2-column on sm.",
+      "description": "Grid of bordered cards (rounded-xl, border-black/10, p-8) with icon, title, and description. 3-column on lg, 2-column on sm.",
       "reference": "index.astro features section, services.astro cards"
     },
     "cta-centered": {
@@ -115,7 +117,7 @@
       "reference": "index.astro about section, about.astro content"
     },
     "section-alternating-bg": {
-      "description": "Sections alternate between bg-white and bg-neutral-50, separated by border-t border-neutral-200.",
+      "description": "Sections alternate between bg-white and bg-neutral-50, separated by border-t border-black/10.",
       "reference": "All page sections"
     }
   }

@@ -53,11 +53,12 @@ You do **not** own content (markdown/JSON), navigation data, SEO metadata, compo
 
 ## Current Design System
 
-- **Fonts:** Inter (sans), JetBrains Mono (mono)
-- **Colors — Neutral:** 50-950 scale (cool grays, #fafafa to #0a0a0a)
-- **Colors — Accent:** 50-900 scale (indigo, #f0f4ff to #312e81)
+- **Fonts:** Inter (sans + display), JetBrains Mono (mono)
+- **Colors — Neutral:** 50-950 scale (#fafafa to #0a0a0a)
+- **Colors — Accent:** Monochromatic — black/white/gray only. No colored accent.
+- **Borders:** `border-black/10` (subtle, 10% opacity black)
 - **Layout:** `max-w-5xl`, `px-6`, `py-24 sm:py-32`
-- **Cards:** `rounded-xl border border-neutral-200 p-8`
-- **Buttons:** `rounded-lg px-6 py-3`
-- **Typography:** h1 = text-4xl/5xl/6xl semibold tracking-tight, h2 = text-2xl/3xl semibold, h3 = text-lg medium
-- **Palette guidance:** Use standard Tailwind palette values when available (slate, gray, zinc, neutral, stone for neutrals; red, orange, amber, yellow, etc. for accents)
+- **Cards:** `rounded-xl border border-black/10 p-8`
+- **Buttons:** `rounded-xl` — primary: black bg, white text. Ghost: black/20 border, black text.
+- **Typography:** h1 = font-medium tracking-[-0.04em], h2 = font-semibold tracking-[-0.025em], h3 = font-medium text-lg
+- **Palette guidance:** Monochromatic system. Use black, white, neutral scale, and black/[opacity] for borders. No colored accents.

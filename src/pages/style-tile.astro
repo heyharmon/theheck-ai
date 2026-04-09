@@ -24,10 +24,7 @@ import "../styles/global.css";
     <title>Style Tile — Design System</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <!-- ============================================ -->
@@ -44,14 +41,14 @@ import "../styles/global.css";
     </div>
 
     <!-- COLORS -->
-    <section class="mx-auto max-w-5xl px-6 py-16 border-t border-neutral-200">
+    <section class="mx-auto max-w-5xl px-6 py-16 border-t border-black/10">
       <p class="text-sm font-medium uppercase tracking-wider text-neutral-400 mb-2">Layer 1</p>
       <h2 class="mb-12">Color Palette</h2>
 
       <h3 class="mb-6">Neutral Scale</h3>
       <div class="grid grid-cols-5 sm:grid-cols-11 gap-2 mb-12">
         <div>
-          <div class="h-16 rounded border border-neutral-200 bg-neutral-50"></div>
+          <div class="h-16 rounded border border-black/10 bg-neutral-50"></div>
           <p class="mt-2 text-xs text-neutral-400">50</p>
         </div>
         <div>
@@ -96,63 +93,43 @@ import "../styles/global.css";
         </div>
       </div>
 
-      <h3 class="mb-6">Indigo Accent</h3>
-      <div class="grid grid-cols-5 sm:grid-cols-11 gap-2 mb-12">
+      <h3 class="mb-6">Black / Opacity Scale</h3>
+      <div class="grid grid-cols-5 sm:grid-cols-6 gap-2 mb-12">
         <div>
-          <div class="h-16 rounded bg-indigo-50"></div>
-          <p class="mt-2 text-xs text-neutral-400">50</p>
+          <div class="h-16 rounded border border-black/10 bg-black/5"></div>
+          <p class="mt-2 text-xs text-neutral-400">5%</p>
         </div>
         <div>
-          <div class="h-16 rounded bg-indigo-100"></div>
-          <p class="mt-2 text-xs text-neutral-400">100</p>
+          <div class="h-16 rounded bg-black/10"></div>
+          <p class="mt-2 text-xs text-neutral-400">10%</p>
         </div>
         <div>
-          <div class="h-16 rounded bg-indigo-200"></div>
-          <p class="mt-2 text-xs text-neutral-400">200</p>
+          <div class="h-16 rounded bg-black/20"></div>
+          <p class="mt-2 text-xs text-neutral-400">20%</p>
         </div>
         <div>
-          <div class="h-16 rounded bg-indigo-300"></div>
-          <p class="mt-2 text-xs text-neutral-400">300</p>
+          <div class="h-16 rounded bg-black/40"></div>
+          <p class="mt-2 text-xs text-neutral-400">40%</p>
         </div>
         <div>
-          <div class="h-16 rounded bg-indigo-400"></div>
-          <p class="mt-2 text-xs text-neutral-400">400</p>
+          <div class="h-16 rounded bg-black/60"></div>
+          <p class="mt-2 text-xs text-neutral-400">60%</p>
         </div>
         <div>
-          <div class="h-16 rounded bg-indigo-500"></div>
-          <p class="mt-2 text-xs text-neutral-400">500</p>
-        </div>
-        <div>
-          <div class="h-16 rounded bg-indigo-600"></div>
-          <p class="mt-2 text-xs text-neutral-400">600</p>
-        </div>
-        <div>
-          <div class="h-16 rounded bg-indigo-700"></div>
-          <p class="mt-2 text-xs text-neutral-400">700</p>
-        </div>
-        <div>
-          <div class="h-16 rounded bg-indigo-800"></div>
-          <p class="mt-2 text-xs text-neutral-400">800</p>
-        </div>
-        <div>
-          <div class="h-16 rounded bg-indigo-900"></div>
-          <p class="mt-2 text-xs text-neutral-400">900</p>
-        </div>
-        <div>
-          <div class="h-16 rounded bg-indigo-950"></div>
-          <p class="mt-2 text-xs text-neutral-400">950</p>
+          <div class="h-16 rounded bg-black"></div>
+          <p class="mt-2 text-xs text-neutral-400">100%</p>
         </div>
       </div>
 
       <h3 class="mb-6">Backgrounds</h3>
       <div class="grid gap-4 sm:grid-cols-3 mb-12">
-        <div class="p-6 bg-white border border-neutral-200 rounded-xl">
+        <div class="p-6 bg-white border border-black/10 rounded-xl">
           <p class="text-xs text-neutral-400">Primary — white</p>
         </div>
-        <div class="p-6 bg-neutral-50 border border-neutral-200 rounded-xl">
+        <div class="p-6 bg-neutral-50 border border-black/10 rounded-xl">
           <p class="text-xs text-neutral-400">Secondary — neutral-50</p>
         </div>
-        <div class="p-6 bg-neutral-100 border border-neutral-200 rounded-xl">
+        <div class="p-6 bg-neutral-100 border border-black/10 rounded-xl">
           <p class="text-xs text-neutral-400">Tertiary — neutral-100</p>
         </div>
       </div>
@@ -163,17 +140,17 @@ import "../styles/global.css";
         <p class="text-neutral-600">Body — neutral-600</p>
         <p class="text-neutral-500">Muted — neutral-500</p>
         <p class="text-neutral-400">Subtle — neutral-400</p>
-        <p class="text-indigo-600 font-medium">Accent — indigo-600</p>
+        <p class="text-black font-medium">Accent — black</p>
       </div>
     </section>
 
     <!-- TYPOGRAPHY -->
-    <section class="mx-auto max-w-5xl px-6 py-16 border-t border-neutral-200">
+    <section class="mx-auto max-w-5xl px-6 py-16 border-t border-black/10">
       <h2 class="mb-12">Typography</h2>
 
       <div class="space-y-8 mb-12">
         <div>
-          <p class="text-xs text-neutral-400 mb-2">H1 — Inter / font-semibold / text-4xl sm:text-5xl</p>
+          <p class="text-xs text-neutral-400 mb-2">H1 — Inter / font-medium / tracking-tight / text-4xl sm:text-5xl</p>
           <h1>The quick brown fox</h1>
         </div>
         <div>
@@ -203,7 +180,7 @@ import "../styles/global.css";
     </section>
 
     <!-- BUTTONS -->
-    <section class="mx-auto max-w-5xl px-6 py-16 border-t border-neutral-200">
+    <section class="mx-auto max-w-5xl px-6 py-16 border-t border-black/10">
       <h2 class="mb-12">Buttons</h2>
 
       <div class="flex flex-wrap gap-6 items-center">
@@ -215,7 +192,7 @@ import "../styles/global.css";
     </section>
 
     <!-- FORM INPUTS -->
-    <section class="mx-auto max-w-5xl px-6 py-16 border-t border-neutral-200">
+    <section class="mx-auto max-w-5xl px-6 py-16 border-t border-black/10">
       <h2 class="mb-12">Form Inputs</h2>
 
       <div class="max-w-md space-y-6">
@@ -224,7 +201,7 @@ import "../styles/global.css";
           <input
             type="text"
             placeholder="Placeholder text"
-            class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+            class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
           />
         </div>
         <div>
@@ -232,7 +209,7 @@ import "../styles/global.css";
           <textarea
             rows="4"
             placeholder="Placeholder text"
-            class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+            class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
           ></textarea>
         </div>
         <button type="button" class="btn-primary">Submit</button>
@@ -240,23 +217,23 @@ import "../styles/global.css";
     </section>
 
     <!-- BORDERS & EFFECTS -->
-    <section class="mx-auto max-w-5xl px-6 py-16 border-t border-neutral-200">
+    <section class="mx-auto max-w-5xl px-6 py-16 border-t border-black/10">
       <h2 class="mb-12">Borders & Effects</h2>
 
       <div class="space-y-6">
         <div>
-          <p class="text-xs text-neutral-400 mb-3">Divider — border-neutral-200</p>
+          <p class="text-xs text-neutral-400 mb-3">Divider — border-black/10</p>
           <hr />
         </div>
         <div>
-          <p class="text-xs text-neutral-400 mb-3">Card — rounded-xl border-neutral-200</p>
-          <div class="rounded-xl border border-neutral-200 p-6">
+          <p class="text-xs text-neutral-400 mb-3">Card — rounded-xl border-black/10</p>
+          <div class="rounded-xl border border-black/10 p-6">
             <p class="text-sm text-neutral-600">Container with card styling</p>
           </div>
         </div>
         <div>
           <p class="text-xs text-neutral-400 mb-3">Elevated card — rounded-xl shadow-sm</p>
-          <div class="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm">
+          <div class="rounded-xl border border-black/10 bg-white p-6 shadow-sm">
             <p class="text-sm text-neutral-600">Container with subtle shadow</p>
           </div>
         </div>
@@ -267,14 +244,14 @@ import "../styles/global.css";
     <!-- LAYER 2: COMPONENT PATTERNS                  -->
     <!-- ============================================ -->
 
-    <div class="mx-auto max-w-5xl px-6 py-16 border-t border-neutral-200">
+    <div class="mx-auto max-w-5xl px-6 py-16 border-t border-black/10">
       <p class="text-sm font-medium uppercase tracking-wider text-neutral-400 mb-2">Layer 2</p>
       <h2>Component Patterns</h2>
       <p class="mt-4 max-w-2xl">Reusable section patterns used across the site. This section grows as new page layouts introduce new patterns.</p>
     </div>
 
     <!-- PATTERN: hero-text -->
-    <section class="mx-auto max-w-5xl px-6 py-24 sm:py-32 border-t border-neutral-200">
+    <section class="mx-auto max-w-5xl px-6 py-24 sm:py-32 border-t border-black/10">
       <p class="text-xs text-neutral-400 mb-4">PATTERN: hero-text</p>
       <h1 class="max-w-3xl">Text-Only Hero Headline</h1>
       <p class="mt-6 max-w-2xl text-lg text-neutral-500">
@@ -287,21 +264,21 @@ import "../styles/global.css";
     </section>
 
     <!-- PATTERN: card-grid -->
-    <section class="mx-auto max-w-5xl px-6 py-24 border-t border-neutral-200">
+    <section class="mx-auto max-w-5xl px-6 py-24 border-t border-black/10">
       <p class="text-xs text-neutral-400 mb-4">PATTERN: card-grid</p>
       <h2 class="mb-8">Cards — Feature Grid</h2>
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="rounded-xl border border-neutral-200 p-8">
+        <div class="rounded-xl border border-black/10 p-8">
           <div class="text-2xl">&#9670;</div>
           <h3 class="mt-4">Card Title</h3>
           <p class="mt-2 text-sm">Short description of this feature or service.</p>
         </div>
-        <div class="rounded-xl border border-neutral-200 p-8">
+        <div class="rounded-xl border border-black/10 p-8">
           <div class="text-2xl">&#9650;</div>
           <h3 class="mt-4">Card Title</h3>
           <p class="mt-2 text-sm">Short description of this feature or service.</p>
         </div>
-        <div class="rounded-xl border border-neutral-200 p-8">
+        <div class="rounded-xl border border-black/10 p-8">
           <div class="text-2xl">&#9679;</div>
           <h3 class="mt-4">Card Title</h3>
           <p class="mt-2 text-sm">Short description of this feature or service.</p>
@@ -310,7 +287,7 @@ import "../styles/global.css";
     </section>
 
     <!-- PATTERN: cta-centered -->
-    <section class="bg-neutral-50 border-t border-neutral-200">
+    <section class="bg-neutral-50 border-t border-black/10">
       <div class="mx-auto max-w-5xl px-6 py-24 sm:py-32 text-center">
         <p class="text-xs text-neutral-400 mb-4">PATTERN: cta-centered</p>
         <h2>Call to Action Headline</h2>
@@ -324,7 +301,7 @@ import "../styles/global.css";
     </section>
 
     <!-- PATTERN: section-2col -->
-    <section class="mx-auto max-w-5xl px-6 py-24 border-t border-neutral-200">
+    <section class="mx-auto max-w-5xl px-6 py-24 border-t border-black/10">
       <p class="text-xs text-neutral-400 mb-4">PATTERN: section-2col</p>
       <h2 class="mb-8">Two-Column Section</h2>
       <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
@@ -349,27 +326,27 @@ import "../styles/global.css";
     </section>
 
     <!-- PATTERN: section-alternating-bg -->
-    <section class="bg-neutral-50 border-t border-neutral-200">
+    <section class="bg-neutral-50 border-t border-black/10">
       <div class="mx-auto max-w-5xl px-6 py-24">
         <p class="text-xs text-neutral-400 mb-4">PATTERN: section-alternating-bg</p>
         <h2 class="mb-4">Alternating Background Section</h2>
         <p class="max-w-2xl">
-          Sections alternate between white and neutral-50 backgrounds. Separated by border-neutral-200 dividers.
+          Sections alternate between white and neutral-50 backgrounds. Separated by border-black/10 dividers.
         </p>
       </div>
     </section>
 
     <!-- PATTERN: nav-preview -->
-    <section class="mx-auto max-w-5xl px-6 py-24 border-t border-neutral-200">
+    <section class="mx-auto max-w-5xl px-6 py-24 border-t border-black/10">
       <p class="text-xs text-neutral-400 mb-4">PATTERN: nav-preview</p>
       <h2 class="mb-8">Navigation</h2>
-      <div class="rounded-xl border border-neutral-200">
+      <div class="rounded-xl border border-black/10">
         <nav class="flex items-center justify-between px-6 py-4">
           <a href="#0" class="text-lg font-semibold tracking-tight text-neutral-900 no-underline">
             Site Name
           </a>
           <ul class="flex items-center gap-6">
-            <li><a href="#0" class="text-sm font-medium text-indigo-600 no-underline">Active</a></li>
+            <li><a href="#0" class="text-sm font-medium text-black no-underline">Active</a></li>
             <li><a href="#0" class="text-sm font-medium text-neutral-600 no-underline hover:text-neutral-900">Link</a></li>
             <li><a href="#0" class="text-sm font-medium text-neutral-600 no-underline hover:text-neutral-900">Link</a></li>
             <li><a href="#0" class="text-sm font-medium text-neutral-600 no-underline hover:text-neutral-900">Contact</a></li>
@@ -379,11 +356,11 @@ import "../styles/global.css";
     </section>
 
     <!-- PATTERN: footer-preview -->
-    <section class="mx-auto max-w-5xl px-6 py-24 border-t border-neutral-200">
+    <section class="mx-auto max-w-5xl px-6 py-24 border-t border-black/10">
       <p class="text-xs text-neutral-400 mb-4">PATTERN: footer-preview</p>
       <h2 class="mb-8">Footer</h2>
-      <div class="rounded-xl border border-neutral-200 overflow-hidden">
-        <div class="border-t border-neutral-200 bg-neutral-50 py-16">
+      <div class="rounded-xl border border-black/10 overflow-hidden">
+        <div class="border-t border-black/10 bg-neutral-50 py-16">
           <div class="text-center">
             <a href="#0" class="text-xl font-semibold tracking-tight text-neutral-900 no-underline">
               Site Name

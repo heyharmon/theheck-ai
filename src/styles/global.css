@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Class-based dark mode */
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-display: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -18,24 +21,38 @@
   --color-neutral-900: #171717;
   --color-neutral-950: #0a0a0a;
 
+  /* Lime accent — dark mode buttons and interactive highlights */
+  --color-lime-300: #bef264;
+  --color-lime-400: #a3e635;
+  --color-lime-500: #84cc16;
+
   /* Emerald, amber, rose kept for difficulty badges (semantic, not brand) */
   --color-emerald-50: #ecfdf5;
   --color-emerald-100: #d1fae5;
   --color-emerald-500: #10b981;
   --color-emerald-600: #059669;
   --color-emerald-700: #047857;
+  --color-emerald-800: #065f46;
+  --color-emerald-900: #064e3b;
+  --color-emerald-950: #022c22;
 
   --color-amber-50: #fffbeb;
   --color-amber-100: #fef3c7;
   --color-amber-500: #f59e0b;
   --color-amber-600: #d97706;
   --color-amber-700: #b45309;
+  --color-amber-800: #92400e;
+  --color-amber-900: #78350f;
+  --color-amber-950: #451a03;
 
   --color-rose-50: #fff1f2;
   --color-rose-100: #ffe4e6;
   --color-rose-500: #f43f5e;
   --color-rose-600: #e11d48;
   --color-rose-700: #be123c;
+  --color-rose-800: #9f1239;
+  --color-rose-900: #881337;
+  --color-rose-950: #4c0519;
 }
 
 @layer base {
@@ -45,58 +62,58 @@
   }
 
   body {
-    @apply bg-white text-neutral-900 font-sans;
+    @apply bg-white text-neutral-900 font-sans dark:bg-neutral-950 dark:text-neutral-100;
   }
 
   h1 {
-    @apply font-display font-medium text-black;
+    @apply font-display font-medium text-black dark:text-white;
     font-size: clamp(2.5rem, 6vw, 4rem);
     line-height: 1.05;
     letter-spacing: -0.04em;
   }
 
   h2 {
-    @apply font-display font-semibold text-black;
+    @apply font-display font-semibold text-black dark:text-white;
     font-size: clamp(1.5rem, 3vw, 2rem);
     line-height: 1.12;
     letter-spacing: -0.025em;
   }
 
   h3 {
-    @apply font-display font-medium text-neutral-900 text-lg;
+    @apply font-display font-medium text-neutral-900 text-lg dark:text-neutral-100;
     line-height: 1.25;
     letter-spacing: -0.015em;
   }
 
   p {
-    @apply text-neutral-600;
+    @apply text-neutral-600 dark:text-neutral-400;
     line-height: 1.7;
   }
 
   a {
-    @apply text-neutral-900 underline-offset-4 hover:underline;
+    @apply text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-100;
   }
 
   hr {
-    @apply border-black/10;
+    @apply border-black/10 dark:border-white/10;
   }
 }
 
-/* Primary button — black bg, white text, rounded-xl */
+/* Primary button — black bg in light, lime in dark */
 .btn-primary {
-  @apply inline-block rounded-xl bg-black px-6 py-3 text-sm font-medium text-white no-underline transition-colors;
+  @apply inline-block rounded-xl bg-black px-6 py-3 text-sm font-medium text-white no-underline transition-colors dark:bg-lime-400 dark:text-black;
 }
 .btn-primary:hover {
-  @apply bg-neutral-800;
+  @apply bg-neutral-800 dark:bg-lime-300;
 }
 
-/* Ghost button — black border, black text */
+/* Ghost button — black border in light, white border in dark */
 .btn-ghost {
-  @apply inline-block rounded-xl border border-black/20 px-6 py-3 text-sm font-medium text-neutral-900 no-underline transition-colors;
+  @apply inline-block rounded-xl border border-black/20 px-6 py-3 text-sm font-medium text-neutral-900 no-underline transition-colors dark:border-white/20 dark:text-white;
   background: transparent;
 }
 .btn-ghost:hover {
-  @apply border-black bg-black text-white;
+  @apply border-black bg-black text-white dark:border-white dark:bg-white dark:text-black;
 }
 
 /* Prose styling for rendered markdown content */
@@ -113,43 +130,43 @@
 }
 
 .prose p {
-  @apply mb-6 text-neutral-600;
+  @apply mb-6 text-neutral-600 dark:text-neutral-400;
 }
 
 .prose ul {
-  @apply list-disc pl-6 mb-6 space-y-2 text-neutral-600;
+  @apply list-disc pl-6 mb-6 space-y-2 text-neutral-600 dark:text-neutral-400;
 }
 
 .prose ol {
-  @apply list-decimal pl-6 mb-6 space-y-2 text-neutral-600;
+  @apply list-decimal pl-6 mb-6 space-y-2 text-neutral-600 dark:text-neutral-400;
 }
 
 .prose blockquote {
-  @apply border-l-2 border-black/20 pl-6 italic text-neutral-500 my-6;
+  @apply border-l-2 border-black/20 pl-6 italic text-neutral-500 my-6 dark:border-white/20;
 }
 
 .prose strong {
-  @apply font-semibold text-neutral-900;
+  @apply font-semibold text-neutral-900 dark:text-white;
 }
 
 .prose code {
-  @apply bg-neutral-100 px-1.5 py-0.5 rounded text-sm font-mono text-neutral-800;
+  @apply bg-neutral-100 px-1.5 py-0.5 rounded text-sm font-mono text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200;
 }
 
 .prose a {
-  @apply text-neutral-900 underline;
+  @apply text-neutral-900 underline dark:text-white;
 }
 
-/* Hero section — white bg, high contrast */
+/* Hero section */
 .hero-dark {
-  @apply bg-white text-neutral-900;
+  @apply bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100;
 }
 .hero-dark h1,
 .hero-dark h2 {
-  @apply text-black;
+  @apply text-black dark:text-white;
 }
 .hero-dark p {
-  @apply text-neutral-500;
+  @apply text-neutral-500 dark:text-neutral-400;
   line-height: 1.8;
 }
 
@@ -158,42 +175,45 @@
   @apply inline-block rounded-full px-3 py-1 text-xs font-medium;
 }
 .badge-neutral {
-  @apply bg-neutral-100 text-neutral-700;
+  @apply bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300;
 }
 .badge-emerald {
-  @apply bg-emerald-50 text-emerald-700;
+  @apply bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-500;
 }
 .badge-amber {
-  @apply bg-amber-50 text-amber-700;
+  @apply bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-500;
 }
 .badge-rose {
-  @apply bg-rose-50 text-rose-700;
+  @apply bg-rose-50 text-rose-700 dark:bg-rose-950 dark:text-rose-500;
 }
 .badge-outline {
-  @apply border border-black/10 bg-transparent text-neutral-600;
+  @apply border border-black/10 bg-transparent text-neutral-600 dark:border-white/10 dark:text-neutral-400;
 }
 .badge-subtle {
-  @apply bg-neutral-100 text-neutral-500;
+  @apply bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400;
 }
 
 /* Interactive card — flat, subtle borders */
 .card-interactive {
-  @apply rounded-xl border border-black/10 bg-white p-6 transition-all duration-200;
+  @apply rounded-xl border border-black/10 bg-white p-6 transition-all duration-200 dark:border-white/10 dark:bg-neutral-900;
 }
 .card-interactive:hover {
-  @apply border-black/25 shadow-sm;
+  @apply border-black/25 shadow-sm dark:border-white/20;
 }
 
 /* Subtle section background for alternating rhythm */
 .section-tinted {
   background-color: #fafafa;
 }
+:is(.dark) .section-tinted {
+  background-color: #171717;
+}
 
 /* Ghost button on dark bg */
 .btn-ghost-dark {
-  @apply inline-block rounded-xl border border-black/20 px-6 py-3 text-sm font-medium text-neutral-900 no-underline transition-colors;
+  @apply inline-block rounded-xl border border-white/20 px-6 py-3 text-sm font-medium text-white no-underline transition-colors;
   background: transparent;
 }
 .btn-ghost-dark:hover {
-  @apply border-black bg-black text-white;
+  @apply border-white bg-white text-black;
 }
