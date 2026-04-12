@@ -1,11 +1,29 @@
 {
   "metadata": {
     "description": "Curated articles, guides, and references for the AI agent ecosystem. Each resource is linked to the tools it relates to.",
-    "last_updated": "April 9, 2026",
-    "total_entries": 2,
+    "last_updated": "April 11, 2026",
+    "total_entries": 4,
     "types": ["guide", "article", "video", "course", "reference"]
   },
   "resources": [
+    {
+      "name": "G-Brain vs. Pathy: Two Ways to Build an Agentic Second Brain",
+      "url": "/resources/g-brain-vs-pathy",
+      "author": "Agent Harness Directory",
+      "type": "guide",
+      "description": "Head-to-head comparison of Garry Tan's G-Brain skillpack and Andrej Karpathy's LLM Knowledge Base (the 'Pathy' second brain). Covers architecture, retrieval model, schema, setup cost, and where each one breaks down — and ends with a straight recommendation on which one to implement first.",
+      "tags": ["knowledge-management", "second-brain", "g-brain", "karpathy", "agentic-memory", "claude-code", "openclaw", "hermes"],
+      "related_tools": ["Claude Code", "OpenClaw", "Hermes Agent"]
+    },
+    {
+      "name": "Prompts to Analyze Your Startup's Flaws and Opportunities",
+      "url": "https://x.com/heyrimsha/status/2041819915636859017",
+      "author": "Rimsha (@heyrimsha)",
+      "type": "guide",
+      "description": "A thread of ready-to-paste prompts for pressure-testing a startup — surfacing hidden weaknesses, untapped opportunities, positioning gaps, and strategic blind spots. Useful as a starting prompt library for founders running diagnostic sessions with Claude, ChatGPT, or an agent inside their own knowledge base.",
+      "tags": ["prompts", "startup-strategy", "self-audit", "founder-tools", "business-analysis"],
+      "related_tools": ["Claude Code"]
+    },
     {
       "name": "Second Brain: Obsidian + Claude Code Setup Guide",
       "url": "https://okhlopkov.com/second-brain-obsidian-claude-code/",

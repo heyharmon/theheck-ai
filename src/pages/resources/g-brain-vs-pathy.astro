@@ -1,0 +1,201 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "G-Brain vs. Pathy: Two Ways to Build an Agentic Second Brain";
+const description =
+  "A hands-on comparison of Garry Tan's G-Brain and Andrej Karpathy's LLM Knowledge Base (the 'Pathy' second brain). What each is, how they differ, and which one you should actually implement.";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Header -->
+  <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
+    <div class="mx-auto max-w-3xl px-6 py-16">
+      <p class="text-xs uppercase tracking-widest text-neutral-400">Guide</p>
+      <h1 class="mt-2">G-Brain vs. Pathy</h1>
+      <p class="mt-4 text-lg text-neutral-500">
+        Two popular patterns for building an agentic knowledge base — one from a YC president running a production agent, one from an ex-Tesla/OpenAI researcher who thinks RAG is overrated. Here's how they actually differ, and which one to pick.
+      </p>
+      <p class="mt-4 text-sm text-neutral-400">
+        Updated April 11, 2026 · ~8 min read
+      </p>
+    </div>
+  </section>
+
+  <!-- Body -->
+  <section>
+    <article class="prose mx-auto max-w-3xl px-6 py-12">
+      <h2>Why this comparison exists</h2>
+      <p>
+        If you've spent any time watching how people are wiring Claude Code, OpenClaw, or Hermes into their daily workflow, you've probably seen two patterns surface more than any others: <strong>G-Brain</strong>, Garry Tan's opinionated skillpack for OpenClaw/Hermes, and <strong>the "Pathy" second brain</strong>, the pattern Andrej Karpathy publicly described as his "LLM Knowledge Base."
+      </p>
+      <p>
+        They sound similar on the surface — both are markdown-first, both lean on a frontier model to do the heavy lifting, both try to give your agent memory that compounds. But the philosophies are almost opposite. Pick the wrong one and you'll either drown in infrastructure you don't need, or hit a ceiling you didn't see coming.
+      </p>
+
+      <h2>The short version</h2>
+      <p>
+        <strong>G-Brain</strong> is a production-grade system for an agent that has to know a lot about a lot of people: entities, relationships, deals, meetings. It uses Postgres + pgvector under the hood, expects ~20 cron jobs enriching pages in the background, and assumes you're routing real-world signal (email, calendar, calls, Twitter) into the brain continuously.
+      </p>
+      <p>
+        <strong>Pathy</strong> is the opposite reflex: reject RAG, reject vector DBs, keep everything as plain markdown in two or three folders, and let the LLM act as a "research librarian" that reads an index and pulls whole articles into context on demand. It's designed to stay small enough that a frontier model can reason over it natively.
+      </p>
+
+      <h2>G-Brain in detail</h2>
+      <p>
+        G-Brain is Garry Tan's personal agent brain, open-sourced in late 2025 alongside his <code>gstack</code> setup. The README is blunt about the problem it solves: "Your AI agent is smart but it doesn't know anything about your life."
+      </p>
+      <p>
+        The architecture is a three-layer stack:
+      </p>
+      <ul>
+        <li><strong>Source layer</strong> — markdown files in a git repo, organized by entity type (<code>people/</code>, <code>companies/</code>, <code>deals/</code>, <code>concepts/</code>, <code>meetings/</code>, <code>media/</code>). MECE: mutually exclusive, collectively exhaustive.</li>
+        <li><strong>Retrieval layer</strong> — PGLite (embedded Postgres) by default, upgradable to Supabase. Hybrid search: vector + keyword + reciprocal rank fusion.</li>
+        <li><strong>Agent layer</strong> — a CLI and MCP server. Agents call <code>gbrain search</code>, <code>gbrain get</code>, <code>gbrain put_page</code>, <code>gbrain add_link</code>.</li>
+      </ul>
+      <p>
+        The real payload is the <strong>skillpack</strong>: a protocol the agent follows on every turn. Detect entities in the user's message → query the brain → respond with context → write new findings back. Layered on top are roughly 20 cron jobs that enrich pages in the background: daily briefings, stale-page detection, orphan cleanup, entity enrichment from external APIs, link validation.
+      </p>
+      <p>
+        The reference deployment Garry runs has <strong>14,700+ brain files and 40+ skills</strong>. That scale is the point — G-Brain is designed to be the second brain of someone who takes dozens of meetings a week and has hundreds of people to keep context on.
+      </p>
+
+      <h3>Where G-Brain shines</h3>
+      <ul>
+        <li>Dense relationship graphs. Investors, sales, BD, recruiting — anywhere the "people and companies" graph is the product.</li>
+        <li>High-volume inbound signal. Email → brain, calls → brain, calendar → brain recipes are first-class.</li>
+        <li>Continuous enrichment. Cron jobs keep the brain fresh without you babysitting it.</li>
+        <li>Hybrid retrieval scales. When you cross ~1,000 files, a vector+keyword backend starts earning its keep.</li>
+      </ul>
+
+      <h3>Where G-Brain gets in your way</h3>
+      <ul>
+        <li>It's heavy. You're running Postgres, embeddings, cron, and MCP on day one.</li>
+        <li>It's opinionated. If your domain isn't "people, companies, deals, meetings," you're bending the schema.</li>
+        <li>It needs frontier models. Garry's own docs say smaller models break the skillpack.</li>
+        <li>The full experience assumes you're plugging in Gmail, calendar, call recorders. Without those pipes, a lot of the value sits dormant.</li>
+      </ul>
+
+      <h2>Pathy in detail</h2>
+      <p>
+        "Pathy" is shorthand for the pattern Andrej Karpathy described when he started publishing his <strong>LLM Knowledge Base</strong> approach — an evolving markdown wiki that an LLM compiles, links, and maintains like a librarian. There are now several open-source implementations (<code>NicholasSpisak/second-brain</code> is the most popular for Obsidian users), but the pattern is small enough that most people just set it up themselves from a CLAUDE.md.
+      </p>
+      <p>
+        The structure collapses to three or four folders:
+      </p>
+      <ul>
+        <li><code>raw/</code> — append-only dump. PDFs, web clips, meeting notes, repos. You never edit this.</li>
+        <li><code>wiki/</code> — the LLM's output. Encyclopedia-style articles with backlinks and an <code>INDEX.md</code> summarizing every article in one line.</li>
+        <li><code>outputs/</code> — synthesized reports, queries, briefings the agent generates for you.</li>
+        <li><code>CLAUDE.md</code> — the schema. Ingestion rules, naming conventions, linting protocol.</li>
+      </ul>
+      <p>
+        The agent works in two modes. <strong>Compilation</strong>: read new material in <code>raw/</code>, extract concepts, create/update wiki articles, refresh the index. <strong>Linting</strong>: scan for contradictions, broken backlinks, stale entries, conceptual gaps.
+      </p>
+      <p>
+        Karpathy's core argument is that <strong>RAG's chunking destroys context</strong>. Instead of splitting documents into fragments and hoping cosine similarity picks the right ones, the LLM reads a compact <code>INDEX.md</code> and pulls whole articles into its context window. With a 1M-token model, that's plenty of runway for a personal collection.
+      </p>
+
+      <h3>Where Pathy shines</h3>
+      <ul>
+        <li>Extremely simple. Two folders, a schema file, and a frontier model.</li>
+        <li>Human-readable everywhere. No database to query, no embeddings to regenerate.</li>
+        <li>Portable. It's just markdown — open it in Obsidian, in VS Code, in anything.</li>
+        <li>Lossless retrieval. The LLM sees full articles, not cosine-adjacent chunks.</li>
+        <li>Cheap to start. No infrastructure. You can have it running in an hour.</li>
+      </ul>
+
+      <h3>Where Pathy breaks down</h3>
+      <ul>
+        <li>Context-window ceiling. Somewhere between a few hundred and ~1,000 articles, even 1M-token models start skipping things.</li>
+        <li>Token costs compound. Every linting pass reads a lot of markdown.</li>
+        <li>No concurrent queries. One agent, one vault — this isn't a team knowledge base.</li>
+        <li>No background enrichment. You get what you put in. If you stop feeding it, it stops growing.</li>
+      </ul>
+
+      <h2>Head-to-head</h2>
+      <div class="not-prose my-6 overflow-x-auto rounded-xl border border-black/10 dark:border-white/10">
+        <table class="w-full text-sm">
+          <thead class="bg-neutral-50 dark:bg-neutral-900">
+            <tr class="text-left">
+              <th class="px-4 py-3 font-medium text-neutral-500">Dimension</th>
+              <th class="px-4 py-3 font-medium text-neutral-500">G-Brain</th>
+              <th class="px-4 py-3 font-medium text-neutral-500">Pathy</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-black/10 dark:divide-white/10">
+            <tr>
+              <td class="px-4 py-3 font-medium">Storage</td>
+              <td class="px-4 py-3">Markdown + Postgres/pgvector</td>
+              <td class="px-4 py-3">Markdown only</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium">Retrieval</td>
+              <td class="px-4 py-3">Hybrid search (vector + keyword + RRF)</td>
+              <td class="px-4 py-3">LLM reads index → pulls articles</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium">Schema</td>
+              <td class="px-4 py-3">Fixed (people, companies, deals, meetings…)</td>
+              <td class="px-4 py-3">Open (you define it in CLAUDE.md)</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium">Enrichment</td>
+              <td class="px-4 py-3">~20 cron jobs, background</td>
+              <td class="px-4 py-3">On-demand only</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium">Sweet spot</td>
+              <td class="px-4 py-3">Thousands of entity files, high inbound signal</td>
+              <td class="px-4 py-3">Hundreds of articles, research-heavy</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium">Setup time</td>
+              <td class="px-4 py-3">A weekend</td>
+              <td class="px-4 py-3">An hour</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium">Costs</td>
+              <td class="px-4 py-3">Model + Supabase at scale (~$25/mo)</td>
+              <td class="px-4 py-3">Model only</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium">Primary agent host</td>
+              <td class="px-4 py-3">OpenClaw, Hermes, Claude Code</td>
+              <td class="px-4 py-3">Claude Code, any CLI agent</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>What they have in common</h2>
+      <p>
+        Both start from the same bet: <strong>markdown is the right primitive</strong>. Both assume you're running a frontier model (Opus 4.6, GPT-5.4 Thinking). Both treat the agent as a continuous collaborator, not a one-off query interface. Both explicitly want your knowledge base to grow on its own terms — linked, linted, deduplicated — rather than pile up as a junk drawer of notes.
+      </p>
+      <p>
+        If you squint, G-Brain is what happens when the Pathy pattern grows up, hits scale, and needs a real retrieval layer underneath it.
+      </p>
+
+      <h2>Which one should you implement?</h2>
+      <p>
+        <strong>Implement Pathy.</strong> Start there.
+      </p>
+      <p>
+        For almost everyone reading this — founders, engineers, researchers, operators who want an agent that remembers — Pathy is the right first move. The pattern is small enough to hold in your head, you can stand it up in an afternoon, and the markdown it produces is never locked into anyone's stack. You'll learn how <em>you</em> actually want your brain organized before you commit to someone else's ontology.
+      </p>
+      <p>
+        Graduate to G-Brain when two things are true: (1) your brain has crossed roughly a thousand files and you're feeling retrieval get flaky, and (2) your life actually looks like G-Brain's schema — you're meeting lots of new people, tracking deals, and funneling in signal from email/calendar/calls. If either isn't true, G-Brain is a lot of machinery for not a lot of payoff.
+      </p>
+      <p>
+        The happy path is a one-way door: Pathy today, G-Brain when the seams start showing. Because both are markdown underneath, the migration is a schema translation, not a rewrite.
+      </p>
+
+      <h2>References</h2>
+      <ul>
+        <li><a href="https://github.com/garrytan/gbrain" target="_blank" rel="noopener noreferrer">garrytan/gbrain</a> — source and skillpack</li>
+        <li><a href="https://github.com/garrytan/gstack" target="_blank" rel="noopener noreferrer">garrytan/gstack</a> — the broader Claude Code setup G-Brain plugs into</li>
+        <li><a href="https://github.com/NicholasSpisak/second-brain" target="_blank" rel="noopener noreferrer">NicholasSpisak/second-brain</a> — open-source Pathy implementation for Obsidian</li>
+        <li><a href="https://ghost.codersera.com/blog/karpathy-llm-knowledge-base-second-brain/" target="_blank" rel="noopener noreferrer">Karpathy's LLM Knowledge Base, summarized</a></li>
+      </ul>
+    </article>
+  </section>
+</BaseLayout>

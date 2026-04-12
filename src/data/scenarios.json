@@ -1,0 +1,186 @@
+{
+  "scenarios": [
+    {
+      "id": "solo-dev-getting-started",
+      "title": "I'm a developer getting started with AI coding agents",
+      "description": "You want to add an AI coding agent to your workflow but aren't sure where to start or what's out there.",
+      "tools": [
+        {
+          "name": "Claude Code",
+          "role": "The gold standard. Best quality output if you're willing to pay for Anthropic's API.",
+          "order": 1
+        },
+        {
+          "name": "OpenCode",
+          "role": "Leading open-source alternative. Provider-agnostic — use Claude, GPT, Gemini, or local models.",
+          "order": 2
+        },
+        {
+          "name": "Pi Agent",
+          "role": "Comprehensive toolkit if you want full control over the stack. Deliberately minimal, extend what you need.",
+          "order": 3
+        },
+        {
+          "name": "Codebuff",
+          "role": "Indie alternative optimized for Opus models. Clean interface, strong benchmarks.",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "level-up-existing-agent",
+      "title": "I already use a coding agent and want to level it up",
+      "description": "You're using Claude Code or OpenCode but want better results, design quality, or project management from your agent.",
+      "tools": [
+        {
+          "name": "everything-claude-code",
+          "role": "Config/skills layer — adds TDD, security scanning, and memory to Claude Code or OpenCode.",
+          "order": 1
+        },
+        {
+          "name": "oh-my-openagent (omo)",
+          "role": "Multi-model orchestration layer with 10 specialist agents. Adds parallel execution and intent analysis.",
+          "order": 2
+        },
+        {
+          "name": "GSD (Get Shit Done)",
+          "role": "Meta-prompting system with 40+ slash commands. Prevents context rot on large projects.",
+          "order": 3
+        },
+        {
+          "name": "Impeccable",
+          "role": "Design skill that gives your agent design fluency. 20 slash commands for UI quality.",
+          "order": 4
+        },
+        {
+          "name": "Skills CLI",
+          "role": "Package manager for agent skills. Install specialized knowledge across 40+ agents.",
+          "order": 5
+        },
+        {
+          "name": "Bridle",
+          "role": "Unified config manager if you use multiple harnesses. Switch profiles, install skills from one TUI.",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "id": "building-product-with-agents",
+      "title": "I'm building a product that uses AI agents",
+      "description": "You're adding agentic capabilities to your SaaS, app, or platform — not just using agents for coding, but shipping agents as a feature.",
+      "tools": [
+        {
+          "name": "Mastra",
+          "role": "TypeScript-native framework. Great for Next.js/React apps. Memory, workflows, MCP authoring, 90+ providers.",
+          "order": 1
+        },
+        {
+          "name": "LangGraph",
+          "role": "Production-grade Python framework for complex stateful agent workflows. Go-to for backend-heavy apps.",
+          "order": 2
+        },
+        {
+          "name": "Open Harness (MaxGfeller)",
+          "role": "TypeScript library of harness primitives you can embed directly in your app via Vercel AI SDK.",
+          "order": 3
+        },
+        {
+          "name": "CrewAI",
+          "role": "Role-based multi-agent framework. Good for team-like workflows where agents have defined responsibilities.",
+          "order": 4
+        },
+        {
+          "name": "Dify",
+          "role": "Visual no-code platform for building agent workflows. Fastest path to a working prototype.",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "parallel-agents",
+      "title": "I need to run multiple coding agents in parallel",
+      "description": "Your work is complex enough that one agent isn't enough. You want to orchestrate several agents working on different parts simultaneously.",
+      "tools": [
+        {
+          "name": "Superset",
+          "role": "Desktop IDE for parallel agents. Git worktree isolation per agent, unified dashboard, diff viewer.",
+          "order": 1
+        },
+        {
+          "name": "Claude Code Agent Teams",
+          "role": "Native multi-instance coordination built into Claude Code. Shared task list, mailbox messaging.",
+          "order": 2
+        },
+        {
+          "name": "Emdash",
+          "role": "Parallel-agent orchestrator with git worktree isolation. Runs 10+ coding agents simultaneously.",
+          "order": 3
+        },
+        {
+          "name": "Composio Agent Orchestrator",
+          "role": "Plans tasks and spawns parallel coding agents to handle complex multi-file work.",
+          "order": 4
+        },
+        {
+          "name": "T3 Code",
+          "role": "GUI shell that wraps coding agents with visual project management and git worktree support.",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "autonomous-operations",
+      "title": "I want to explore fully autonomous agent operations",
+      "description": "You're interested in agents that run without human oversight — autonomous companies, persistent agents, or self-improving systems.",
+      "tools": [
+        {
+          "name": "Hermes Agent",
+          "role": "Self-improving persistent agent. Runs on a VPS, reachable via Telegram/Discord/Slack. Learns from experience.",
+          "order": 1
+        },
+        {
+          "name": "Paperclip.ing",
+          "role": "Dashboard that turns agents into an org structure. Org charts, budgets, governance, task routing.",
+          "order": 2
+        },
+        {
+          "name": "MetaGPT",
+          "role": "AI software company simulator with defined roles (CEO, CTO, engineers). End-to-end project generation.",
+          "order": 3
+        },
+        {
+          "name": "Trinity",
+          "role": "Docker-isolated sovereign agent fleet. Fleet scheduling, audit trails, real-time observability.",
+          "order": 4
+        },
+        {
+          "name": "SuperAGI",
+          "role": "Long-running autonomous agent platform. Persistent workflows, task delegation, scalable.",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "non-technical-user",
+      "title": "I'm not a developer but want to use AI agents",
+      "description": "You want to automate business workflows with AI but don't write code. You need tools that work with natural language.",
+      "tools": [
+        {
+          "name": "Twin",
+          "role": "No-code agent builder. Describe what you want in natural language, Twin builds and runs it. 2,700+ app integrations.",
+          "order": 1
+        },
+        {
+          "name": "Dify",
+          "role": "Visual drag-and-drop agent workflow builder. No coding required for basic automations.",
+          "order": 2
+        },
+        {
+          "name": "ChatDev",
+          "role": "Virtual software company. Describe a software project and watch agent teams build it.",
+          "order": 3
+        }
+      ]
+    }
+  ]
+}

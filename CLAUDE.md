@@ -15,9 +15,12 @@ The value proposition is simple: the right tool is already here — browse, filt
 
 ### Scale (as of April 2026)
 
-- **73 tools** across 3 types: Agents (18), Multi-Agent Platforms (40), Developer Utilities (15)
+- **74 tools** across 3 types and 16 subtypes: Agents (18), Multi-Agent Platforms (40), Developer Utilities (16)
+- **16 subtypes** (workflow roles): Standalone Agent, Config/Skills Layer, Domain-Specific Agent, Framework/SDK, Orchestration Platform, Autonomous Org Platform, Self-Improving System, Agent Scaffolding, Built-in Feature, Cross-Agent Tool, Quality/Testing, Design Tool, GUI Shell, Infrastructure, Reference, Production System
 - **6 use cases:** Software Development, Business Operations, Autonomous Operations, General-Purpose, Content Creation, Research & Science
 - **3 difficulty levels:** Beginner, Intermediate, Advanced
+- **Relationship data** on 38 tools: extends, alternative_to, works_with, built_on, ecosystem
+- **6 curated scenarios** on the /guide page
 
 Built with Astro 5, Tailwind CSS 4, and Vue 3. Static output — no SSR.
 

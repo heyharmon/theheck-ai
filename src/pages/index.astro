@@ -10,7 +10,10 @@ import {
   getUseCases,
   getUseCaseCounts,
   generateSlug,
+  formatStars,
+  getTypeLabel,
 } from "../lib/directory";
+import scenarioData from "../data/scenarios.json";
 
 const metadata = getMetadata();
 const projects = getAllProjects();
@@ -18,6 +21,13 @@ const types = getTypes();
 const typeCounts = getTypeCounts();
 const useCases = getUseCases();
 const useCaseCounts = getUseCaseCounts();
+const scenarios = scenarioData.scenarios;
+
+// Top-starred projects (numeric stars only, sorted descending)
+const topStarred = [...projects]
+  .filter((p) => typeof p.github_stars === "number" && p.github_stars > 0)
+  .sort((a, b) => (b.github_stars as number) - (a.github_stars as number))
+  .slice(0, 6);
 
 const typeDescriptions: Record<string, string> = {
   "Agents": "Single-agent tools that handle context, memory, and task execution for you.",
@@ -58,8 +68,8 @@ const featured = featuredNames
         {metadata.total_entries} tools and platforms for building with AI agents — organized by what they do and what they're for. Whether you're getting started or looking for a better alternative, start here.
       </p>
       <div class="mt-10 flex items-center gap-4">
-        <a href="/directory" class="btn-primary">Browse the directory</a>
-        <a href="/compare" class="btn-ghost">Compare side by side</a>
+        <a href="/guide" class="btn-primary">Find your tool</a>
+        <a href="/directory" class="btn-ghost">Browse the directory</a>
       </div>
     </div>
   </section>
@@ -80,6 +90,64 @@ const featured = featuredNames
             description={typeDescriptions[type] || ""}
             href={`/directory?type=${encodeURIComponent(typeSlugs[type] || type)}`}
           />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Most Popular -->
+  <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
+    <div class="mx-auto max-w-5xl px-6 py-24 sm:py-32">
+      <h2 class="text-center">Most popular by GitHub stars</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-center text-neutral-500 dark:text-neutral-400">
+        The most-starred agent tools and platforms in the directory. A rough proxy for community adoption and interest.
+      </p>
+      <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {topStarred.map((project) => (
+          <a
+            href={`/project/${generateSlug(project.name)}`}
+            class="card-interactive flex flex-col gap-2 no-underline"
+          >
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="text-base font-semibold text-neutral-900 dark:text-white">{project.name}</h3>
+              <span class="inline-flex shrink-0 items-center gap-1 text-xs font-medium text-neutral-500">
+                <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                {formatStars(project.github_stars)}
+              </span>
+            </div>
+            <p class="text-xs text-neutral-400">{project.creator}</p>
+            <span class="inline-block w-fit rounded-full bg-neutral-900 px-2.5 py-0.5 text-xs font-medium text-white dark:bg-white dark:text-black">
+              {getTypeLabel(project.type)}
+            </span>
+            <p class="mt-1 text-sm leading-relaxed text-neutral-600 line-clamp-2 dark:text-neutral-400">
+              {project.full_description}
+            </p>
+          </a>
+        ))}
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/directory" class="btn-ghost">View all {metadata.total_entries} tools</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scenarios -->
+  <section class="border-b border-black/10 dark:border-white/10">
+    <div class="mx-auto max-w-5xl px-6 py-20 sm:py-28">
+      <h2 class="text-center">What's your situation?</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-center text-neutral-500 dark:text-neutral-400">
+        Skip the browsing. Pick the scenario that matches where you are and get curated recommendations.
+      </p>
+      <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {scenarios.map((scenario) => (
+          <a
+            href={`/guide#${scenario.id}`}
+            class="flex items-start gap-3 rounded-xl border border-black/10 bg-white px-5 py-4 no-underline transition-all hover:border-black/25 hover:shadow-sm dark:border-white/10 dark:bg-neutral-800 dark:hover:border-white/20"
+          >
+            <span class="text-sm font-medium text-neutral-900 dark:text-white leading-snug">{scenario.title}</span>
+          </a>
         ))}
       </div>
     </div>
@@ -147,6 +215,52 @@ const featured = featuredNames
         {featured.map((project) => (
           <ProjectCard project={project} slug={generateSlug(project.name)} />
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Freshness signal -->
+  <section class="border-b border-black/10 dark:border-white/10">
+    <div class="mx-auto max-w-4xl px-6 py-16 sm:py-20">
+      <div class="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
+        <div class="text-center sm:text-left">
+          <p class="text-sm font-medium text-neutral-900 dark:text-white">
+            Last updated {metadata.last_updated}
+          </p>
+          <p class="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+            {metadata.total_entries} tools tracked across {useCases.length} use cases and {types.length} types
+          </p>
+        </div>
+        <div class="flex items-center gap-6 text-center">
+          <div>
+            <p class="text-2xl font-semibold text-black dark:text-white">{metadata.total_entries}</p>
+            <p class="text-xs text-neutral-400">Tools</p>
+          </div>
+          <div class="h-8 w-px bg-black/10 dark:bg-white/10"></div>
+          <div>
+            <p class="text-2xl font-semibold text-black dark:text-white">{useCases.length}</p>
+            <p class="text-xs text-neutral-400">Use cases</p>
+          </div>
+          <div class="h-8 w-px bg-black/10 dark:bg-white/10"></div>
+          <div>
+            <p class="text-2xl font-semibold text-black dark:text-white">{types.length}</p>
+            <p class="text-xs text-neutral-400">Types</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide CTA -->
+  <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
+    <div class="mx-auto max-w-3xl px-6 py-24 sm:py-32 text-center">
+      <h2 class="text-3xl font-semibold tracking-tight">Not sure where to start?</h2>
+      <p class="mx-auto mt-4 max-w-xl text-neutral-500 dark:text-neutral-400">
+        Pick your scenario and get opinionated recommendations. No browsing required — just tell us what you're trying to do and we'll point you to the right tools.
+      </p>
+      <div class="mt-10 flex items-center justify-center gap-4">
+        <a href="/guide" class="btn-primary">Find your tool</a>
+        <a href="/directory" class="btn-ghost">Browse the directory</a>
       </div>
     </div>
   </section>

@@ -11,6 +11,9 @@ import {
   getTypeLabel,
   getDifficultyLabel,
   getDifficultyColor,
+  getRelatedTools,
+  getToolsThatExtend,
+  getEcosystemFor,
   type Project,
 } from "../../lib/directory";
 import {
@@ -29,9 +32,24 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props as { project: Project };
 
-const related = getProjectsByType(project.type)
-  .filter((p) => p.name !== project.name)
-  .slice(0, 3);
+// Relationship-aware related tools
+const relationshipSections = getRelatedTools(project);
+const extendedBy = getToolsThatExtend(project);
+const ecosystemSiblings = getEcosystemFor(project);
+
+// Deduplicate: collect all tool names shown in relationship sections
+const shownNames = new Set<string>();
+relationshipSections.forEach(s => s.tools.forEach(t => shownNames.add(t.name)));
+extendedBy.forEach(t => shownNames.add(t.name));
+ecosystemSiblings.forEach(t => shownNames.add(t.name));
+
+// Fallback: if no relationships, show same-type tools (current behavior)
+const hasRelationships = relationshipSections.length > 0 || extendedBy.length > 0 || ecosystemSiblings.length > 0;
+const fallbackRelated = hasRelationships
+  ? []
+  : getProjectsByType(project.type)
+      .filter((p) => p.name !== project.name)
+      .slice(0, 3);
 
 const relatedResources = getResourcesForTool(project.name);
 
@@ -43,12 +61,18 @@ const diffBadgeBg: Record<string, string> = {
   rose: "bg-rose-50 text-rose-700 dark:bg-rose-950 dark:text-rose-500",
   neutral: "bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300",
 };
+
+const diffExplanation: Record<string, string> = {
+  beginner: "No coding required",
+  intermediate: "Some development experience needed",
+  advanced: "For experienced developers",
+};
 ---
 
 <BaseLayout title={project.name} description={project.full_description.slice(0, 160)}>
   <!-- Header -->
   <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
-    <div class="mx-auto max-w-5xl px-6 py-16">
+    <div class="mx-auto max-w-5xl px-6 py-12">
       <a href="/directory" class="inline-flex items-center gap-1 text-sm text-neutral-500 no-underline hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white">
         <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd" />
@@ -56,13 +80,36 @@ const diffBadgeBg: Record<string, string> = {
         Back to Directory
       </a>
 
-      <div class="mt-6 flex flex-wrap items-start justify-between gap-4">
-        <div>
+      <div class="mt-6 flex flex-wrap items-start justify-between gap-6">
+        <div class="flex-1 min-w-0">
           <h1 class="text-4xl sm:text-5xl">{project.name}</h1>
           <p class="mt-2 text-lg text-neutral-500">by {project.creator}</p>
-          <dl class="mt-6 grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm">
+
+          {/* Best for line */}
+          {project.use_cases.length > 0 && (
+            <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">
+              <span class="font-medium text-neutral-700 dark:text-neutral-300">Best for:</span>{" "}
+              {project.use_cases.join(", ")}
+            </p>
+          )}
+
+          {/* Feature attribute pills — high-signal badges right in the header */}
+          {project.features.length > 0 && (
+            <div class="mt-4 flex flex-wrap gap-2">
+              {project.features.map((f) => (
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-3 py-1 text-xs font-medium text-white dark:bg-white dark:text-black">
+                  <svg class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                  </svg>
+                  {f}
+                </span>
+              ))}
+            </div>
+          )}
+
+          <dl class="mt-5 grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm">
             <dt class="text-neutral-400">Type</dt>
-            <dd>
+            <dd class="flex flex-wrap items-center gap-2">
               <span class="inline-block rounded-full bg-neutral-900 px-3 py-1 text-xs font-medium text-white dark:bg-white dark:text-black">
                 {getTypeLabel(project.type)}
               </span>
@@ -70,22 +117,13 @@ const diffBadgeBg: Record<string, string> = {
             {project.difficulty && (
               <>
                 <dt class="text-neutral-400">Difficulty</dt>
-                <dd>
+                <dd class="flex items-center gap-2">
                   <span class={`inline-block rounded-full px-3 py-1 text-xs font-medium ${diffBadgeBg[diffColor] || diffBadgeBg.neutral}`}>
                     {diffLabel}
                   </span>
-                </dd>
-              </>
-            )}
-            {(project.use_cases.length > 0) && (
-              <>
-                <dt class="text-neutral-400">Use case</dt>
-                <dd class="flex flex-wrap gap-1.5">
-                  {project.use_cases.map((uc) => (
-                    <span class="inline-block rounded-full border border-black/10 px-2.5 py-0.5 text-xs font-medium text-neutral-600 dark:border-white/10 dark:text-neutral-400">
-                      {uc}
-                    </span>
-                  ))}
+                  <span class="text-xs text-neutral-400 dark:text-neutral-500">
+                    {diffExplanation[project.difficulty] || ""}
+                  </span>
                 </dd>
               </>
             )}
@@ -99,18 +137,6 @@ const diffBadgeBg: Record<string, string> = {
                 </dd>
               </>
             )}
-            {project.features.length > 0 && (
-              <>
-                <dt class="text-neutral-400">Features</dt>
-                <dd class="flex flex-wrap gap-1.5">
-                  {project.features.map((f) => (
-                    <span class="inline-block rounded-full bg-neutral-100 px-2.5 py-0.5 text-xs font-medium text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
-                      {f}
-                    </span>
-                  ))}
-                </dd>
-              </>
-            )}
             {project.github_stars && (
               <>
                 <dt class="text-neutral-400">Stars</dt>
@@ -120,7 +146,8 @@ const diffBadgeBg: Record<string, string> = {
           </dl>
         </div>
 
-        <div class="flex flex-wrap gap-3">
+        {/* Get Started actions — prominent right column */}
+        <div class="flex flex-col gap-3 sm:items-end shrink-0">
           {project.website_url && (
             <a
               href={project.website_url}
@@ -147,6 +174,14 @@ const diffBadgeBg: Record<string, string> = {
               GitHub
             </a>
           )}
+          {project.github_url && (
+            <div class="mt-1 rounded-lg border border-black/10 bg-white px-3 py-2 dark:border-white/10 dark:bg-neutral-800">
+              <p class="text-[11px] font-medium uppercase tracking-wider text-neutral-400 dark:text-neutral-500">Clone</p>
+              <code class="block mt-0.5 text-xs font-mono text-neutral-600 dark:text-neutral-300 select-all">
+                git clone {project.github_url}.git
+              </code>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -154,7 +189,7 @@ const diffBadgeBg: Record<string, string> = {
 
   <!-- Description -->
   <section class="border-b border-black/10 dark:border-white/10">
-    <div class="mx-auto max-w-5xl px-6 py-16">
+    <div class="mx-auto max-w-5xl px-6 py-10">
       <h2 class="text-xl font-semibold">About</h2>
       <p class="mt-4 text-lg leading-relaxed">{project.full_description}</p>
     </div>
@@ -163,7 +198,7 @@ const diffBadgeBg: Record<string, string> = {
   <!-- Why Discussed -->
   {project.why_discussed && (
     <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
-      <div class="mx-auto max-w-5xl px-6 py-16">
+      <div class="mx-auto max-w-5xl px-6 py-10">
         <h2 class="text-xl font-semibold">Why people are talking about it</h2>
         <blockquote class="mt-4 border-l-4 border-black/20 pl-6 text-lg italic text-neutral-700 dark:border-white/20 dark:text-neutral-300">
           {project.why_discussed}
@@ -172,14 +207,19 @@ const diffBadgeBg: Record<string, string> = {
     </section>
   )}
 
-  <!-- Key Features -->
+  <!-- Key Features — 2-column grid -->
   {project.key_features.length > 0 && (
     <section class="border-b border-black/10 dark:border-white/10">
-      <div class="mx-auto max-w-5xl px-6 py-16">
+      <div class="mx-auto max-w-5xl px-6 py-10">
         <h2 class="text-xl font-semibold">Key Features</h2>
-        <div class="mt-6 flex flex-wrap gap-2">
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
           {project.key_features.map((feature) => (
-            <FeatureBadge feature={feature} />
+            <div class="flex items-start gap-3 rounded-lg border border-black/10 bg-white px-4 py-3 dark:border-white/10 dark:bg-neutral-900">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-neutral-400 dark:text-neutral-500" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-neutral-700 dark:text-neutral-300">{feature}</span>
+            </div>
           ))}
         </div>
       </div>
@@ -189,7 +229,7 @@ const diffBadgeBg: Record<string, string> = {
   <!-- Notes -->
   {project.notes && (
     <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
-      <div class="mx-auto max-w-5xl px-6 py-16">
+      <div class="mx-auto max-w-5xl px-6 py-10">
         <h2 class="text-xl font-semibold">Notes</h2>
         <p class="mt-4">{project.notes}</p>
       </div>
@@ -199,10 +239,10 @@ const diffBadgeBg: Record<string, string> = {
   <!-- Related Reading -->
   {relatedResources.length > 0 && (
     <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
-      <div class="mx-auto max-w-5xl px-6 py-16">
+      <div class="mx-auto max-w-5xl px-6 py-10">
         <h2 class="text-xl font-semibold">Related Reading</h2>
         <p class="mt-2 text-sm text-neutral-500">Curated articles and guides that feature {project.name}.</p>
-        <ul class="mt-8 space-y-4">
+        <ul class="mt-6 space-y-4">
           {relatedResources.map((resource) => (
             <li class="rounded-xl border border-black/10 bg-white p-5 dark:border-white/10 dark:bg-neutral-900">
               <div class="flex flex-wrap items-start justify-between gap-3">
@@ -229,13 +269,55 @@ const diffBadgeBg: Record<string, string> = {
     </section>
   )}
 
-  <!-- Related Projects -->
-  {related.length > 0 && (
+  <!-- Relationship Sections -->
+  {extendedBy.length > 0 && (
     <section class="border-b border-black/10 dark:border-white/10">
-      <div class="mx-auto max-w-6xl px-6 py-16">
+      <div class="mx-auto max-w-6xl px-6 py-10">
+        <h2 class="text-xl font-semibold">Enhanced by</h2>
+        <p class="mt-2 text-sm text-neutral-500">Tools that extend or add capabilities to {project.name}.</p>
+        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {extendedBy.map((p) => (
+            <ProjectCard project={p} slug={generateSlug(p.name)} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {relationshipSections.map((section) => (
+    <section class="border-b border-black/10 dark:border-white/10">
+      <div class="mx-auto max-w-6xl px-6 py-10">
+        <h2 class="text-xl font-semibold">{section.label}</h2>
+        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {section.tools.map((p) => (
+            <ProjectCard project={p} slug={generateSlug(p.name)} />
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  {ecosystemSiblings.length > 0 && (
+    <section class="border-b border-black/10 dark:border-white/10">
+      <div class="mx-auto max-w-6xl px-6 py-10">
+        <h2 class="text-xl font-semibold">Same ecosystem</h2>
+        <p class="mt-2 text-sm text-neutral-500">Other tools in the {project.relationships?.ecosystem} ecosystem.</p>
+        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {ecosystemSiblings.map((p) => (
+            <ProjectCard project={p} slug={generateSlug(p.name)} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Fallback: More of same type (only when no relationships exist) -->
+  {fallbackRelated.length > 0 && (
+    <section class="border-b border-black/10 dark:border-white/10">
+      <div class="mx-auto max-w-6xl px-6 py-10">
         <h2 class="text-xl font-semibold">More {project.type === "agent-tool" ? "Agents" : project.type === "multi-agent-platform" ? "Multi-Agent Platforms" : "Developer Utilities"}</h2>
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {related.map((p) => (
+        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {fallbackRelated.map((p) => (
             <ProjectCard project={p} slug={generateSlug(p.name)} />
           ))}
         </div>

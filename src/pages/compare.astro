@@ -7,12 +7,12 @@ const projects = getAllProjects();
 const metadata = getMetadata();
 ---
 
-<BaseLayout title="Compare" description="Compare all agent harnesses side by side — sortable by name, category, stars, and features.">
+<BaseLayout title="Compare" description="Select 2-4 agent tools and compare them side by side — features, difficulty, use cases, and more.">
   <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
     <div class="mx-auto max-w-6xl px-6 py-16">
-      <h1>Compare All Projects</h1>
+      <h1>Compare Tools</h1>
       <p class="mt-4 max-w-2xl text-lg text-neutral-500">
-        {metadata.total_entries} projects at a glance. Click any column header to sort.
+        {metadata.total_entries} tools. Select 2&ndash;4 from the table and compare them side by side.
       </p>
     </div>
   </section>

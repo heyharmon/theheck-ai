@@ -2,8 +2,8 @@
   "metadata": {
     "title": "Comprehensive Directory of Agent Harnesses & Orchestrators",
     "last_updated": "April 9, 2026",
-    "description": "Full master aggregation including every harness, framework, adjacent tool, Paperclip.ing category, and all orchestration projects discussed. 73 total entries.",
-    "total_entries": 73,
+    "description": "Full master aggregation including every harness, framework, adjacent tool, Paperclip.ing category, and all orchestration projects discussed. 81 total entries.",
+    "total_entries": 81,
     "categories": [
       "Team/Organization-Backed",
       "Individual/Indie & Research",
@@ -34,7 +34,31 @@
       "Beginner",
       "Intermediate",
       "Advanced"
-    ]
+    ],
+    "subtypes": {
+      "agent-tool": [
+        "standalone-agent",
+        "config-layer",
+        "domain-agent"
+      ],
+      "multi-agent-platform": [
+        "framework-sdk",
+        "orchestration-platform",
+        "autonomous-org",
+        "self-improving",
+        "scaffolding",
+        "built-in-feature"
+      ],
+      "developer-utility": [
+        "meta-tool",
+        "quality-tool",
+        "design-tool",
+        "gui-shell",
+        "infrastructure",
+        "reference",
+        "production-system"
+      ]
+    }
   },
   "tools": [
     {
@@ -58,7 +82,8 @@
       "notes": "Gold standard benchmark",
       "website_url": "https://www.anthropic.com/product/claude-code",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "standalone-agent"
     },
     {
       "name": "Hermes Agent",
@@ -91,7 +116,13 @@
       "notes": "Website: https://hermes-agent.nousresearch.com/",
       "website_url": "https://hermes-agent.nousresearch.com/",
       "difficulty": "intermediate",
-      "tag": "messaging"
+      "tag": "messaging",
+      "subtype": "standalone-agent",
+      "relationships": {
+        "alternative_to": [
+          "OpenClaw"
+        ]
+      }
     },
     {
       "name": "OpenClaw",
@@ -117,7 +148,11 @@
       "notes": "Massive skill hub",
       "website_url": "https://openclaw.ai/",
       "difficulty": "intermediate",
-      "tag": "messaging"
+      "tag": "messaging",
+      "subtype": "standalone-agent",
+      "relationships": {
+        "ecosystem": "claw"
+      }
     },
     {
       "name": "IronClaw",
@@ -146,7 +181,14 @@
       "notes": "Rust rewrite for security",
       "website_url": "https://www.ironclaw.com/",
       "difficulty": "advanced",
-      "tag": "security"
+      "tag": "security",
+      "subtype": "standalone-agent",
+      "relationships": {
+        "alternative_to": [
+          "OpenClaw"
+        ],
+        "ecosystem": "claw"
+      }
     },
     {
       "name": "oh-my-openagent (omo)",
@@ -179,7 +221,18 @@
       "notes": "Latest: v3.15.3 (Apr 6, 2026). v3.16.0 imminent. Renamed from 'Oh My OpenCode' to 'Oh My OpenAgent'.",
       "website_url": "https://ohmyopenagent.com/",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "config-layer",
+      "relationships": {
+        "extends": [
+          "OpenCode",
+          "Claude Code"
+        ],
+        "works_with": [
+          "Skills CLI",
+          "Bridle"
+        ]
+      }
     },
     {
       "name": "DeepAgents",
@@ -206,7 +259,14 @@
       "notes": "Latest: deepagents v0.5.1. Pairs with LangGraph.",
       "website_url": "https://docs.langchain.com/deepagents",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "standalone-agent",
+      "relationships": {
+        "built_on": [
+          "LangGraph"
+        ],
+        "ecosystem": "langchain"
+      }
     },
     {
       "name": "LangGraph",
@@ -228,7 +288,11 @@
       "notes": "",
       "website_url": "https://www.langchain.com/langgraph",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "framework-sdk",
+      "relationships": {
+        "ecosystem": "langchain"
+      }
     },
     {
       "name": "deer-flow",
@@ -253,7 +317,8 @@
       "notes": "",
       "website_url": "https://deerflow.tech/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "orchestration-platform"
     },
     {
       "name": "AutoAgent",
@@ -278,7 +343,8 @@
       "notes": "#1 on multiple benches after 24h",
       "website_url": null,
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "self-improving"
     },
     {
       "name": "AutoGen",
@@ -300,7 +366,14 @@
       "notes": "",
       "website_url": "https://microsoft.github.io/autogen/stable/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "framework-sdk",
+      "relationships": {
+        "alternative_to": [
+          "CrewAI",
+          "LangGraph"
+        ]
+      }
     },
     {
       "name": "CrewAI",
@@ -322,7 +395,14 @@
       "notes": "",
       "website_url": "https://crewai.com/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "framework-sdk",
+      "relationships": {
+        "alternative_to": [
+          "AutoGen",
+          "LangGraph"
+        ]
+      }
     },
     {
       "name": "Google ADK / Antigravity",
@@ -344,7 +424,8 @@
       "notes": "",
       "website_url": "https://google.github.io/adk-docs/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "framework-sdk"
     },
     {
       "name": "Anthropic Multi-Agent Harness",
@@ -366,7 +447,8 @@
       "notes": "Not open-source",
       "website_url": null,
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "built-in-feature"
     },
     {
       "name": "Microsoft Agent Framework",
@@ -388,7 +470,8 @@
       "notes": "",
       "website_url": "https://learn.microsoft.com/en-us/agent-framework/",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "framework-sdk"
     },
     {
       "name": "Dify",
@@ -409,7 +492,8 @@
       "notes": "",
       "website_url": "https://dify.ai/",
       "difficulty": "beginner",
-      "tag": null
+      "tag": null,
+      "subtype": "orchestration-platform"
     },
     {
       "name": "Mastra",
@@ -441,7 +525,13 @@
       "notes": "Apache 2.0 license. Enterprise features available.",
       "website_url": "https://mastra.ai/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "framework-sdk",
+      "relationships": {
+        "alternative_to": [
+          "LangGraph"
+        ]
+      }
     },
     {
       "name": "OpenAI Agents SDK",
@@ -463,7 +553,8 @@
       "notes": "",
       "website_url": "https://openai.github.io/openai-agents-python/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "framework-sdk"
     },
     {
       "name": "GitHub Copilot SDK",
@@ -485,7 +576,8 @@
       "notes": "",
       "website_url": "https://docs.github.com/en/copilot/how-tos/copilot-sdk",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "framework-sdk"
     },
     {
       "name": "ZeroClaw",
@@ -510,7 +602,14 @@
       "notes": "Part of secure Claw ecosystem",
       "website_url": "https://www.zeroclawlabs.ai/",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "standalone-agent",
+      "relationships": {
+        "alternative_to": [
+          "OpenClaw"
+        ],
+        "ecosystem": "claw"
+      }
     },
     {
       "name": "Nanobot",
@@ -536,7 +635,14 @@
       "notes": "",
       "website_url": "https://www.nanobot.ai/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "standalone-agent",
+      "relationships": {
+        "alternative_to": [
+          "Claude Code",
+          "OpenCode"
+        ]
+      }
     },
     {
       "name": "PicoClaw",
@@ -560,7 +666,14 @@
       "notes": "",
       "website_url": "https://picoclaw.io/",
       "difficulty": "advanced",
-      "tag": "embedded"
+      "tag": "embedded",
+      "subtype": "standalone-agent",
+      "relationships": {
+        "built_on": [
+          "OpenClaw"
+        ],
+        "ecosystem": "claw"
+      }
     },
     {
       "name": "Chorus",
@@ -582,7 +695,8 @@
       "notes": "",
       "website_url": "https://chorus-aidlc.github.io/Chorus/",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "orchestration-platform"
     },
     {
       "name": "Emdash",
@@ -604,7 +718,8 @@
       "notes": "",
       "website_url": "https://www.emdash.sh/",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "orchestration-platform"
     },
     {
       "name": "Zylos",
@@ -626,7 +741,13 @@
       "notes": "",
       "website_url": "https://zylos.ai/",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "config-layer",
+      "relationships": {
+        "extends": [
+          "Claude Code"
+        ]
+      }
     },
     {
       "name": "everything-claude-code",
@@ -648,7 +769,18 @@
       "notes": "",
       "website_url": "https://ecc.tools/",
       "difficulty": "intermediate",
-      "tag": "meta-layer"
+      "tag": "meta-layer",
+      "subtype": "config-layer",
+      "relationships": {
+        "extends": [
+          "Claude Code",
+          "OpenCode"
+        ],
+        "works_with": [
+          "Skills CLI",
+          "Bridle"
+        ]
+      }
     },
     {
       "name": "Bridle",
@@ -678,7 +810,14 @@
       "notes": "Latest: v0.2.9. 12 releases. MIT license. Install: npm install -g bridle-ai",
       "website_url": null,
       "difficulty": "intermediate",
-      "tag": "meta-layer"
+      "tag": "meta-layer",
+      "subtype": "meta-tool",
+      "relationships": {
+        "works_with": [
+          "Claude Code",
+          "OpenCode"
+        ]
+      }
     },
     {
       "name": "Desloppify",
@@ -699,7 +838,14 @@
       "notes": "",
       "website_url": "https://desloppify.it/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "quality-tool",
+      "relationships": {
+        "works_with": [
+          "Claude Code",
+          "OpenCode"
+        ]
+      }
     },
     {
       "name": "Claude Dispatch",
@@ -720,7 +866,14 @@
       "notes": "",
       "website_url": null,
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "infrastructure",
+      "relationships": {
+        "works_with": [
+          "Claude Code"
+        ],
+        "ecosystem": "claw"
+      }
     },
     {
       "name": "OpenMontage",
@@ -745,7 +898,8 @@
       "notes": "Outputs under $2 or free locally",
       "website_url": null,
       "difficulty": "advanced",
-      "tag": "video"
+      "tag": "video",
+      "subtype": "production-system"
     },
     {
       "name": "Excalibur",
@@ -768,7 +922,8 @@
       "notes": "'Software of the future'",
       "website_url": null,
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "standalone-agent"
     },
     {
       "name": "Open Harness (MaxGfeller)",
@@ -792,7 +947,8 @@
       "notes": "Distinct from zhijiewong's CLI version",
       "website_url": "https://www.open-harness.dev/",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "infrastructure"
     },
     {
       "name": "AgentCI",
@@ -815,7 +971,14 @@
       "notes": "Harness-adjacent eval runtime",
       "website_url": "https://agent-ci.com/",
       "difficulty": "advanced",
-      "tag": "testing"
+      "tag": "testing",
+      "subtype": "quality-tool",
+      "relationships": {
+        "works_with": [
+          "Claude Code",
+          "OpenCode"
+        ]
+      }
     },
     {
       "name": "Desplega Agent Swarm",
@@ -836,7 +999,8 @@
       "notes": "",
       "website_url": "https://agent-swarm.dev/",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "framework-sdk"
     },
     {
       "name": "Theoriq Agent Framework",
@@ -858,7 +1022,8 @@
       "notes": "",
       "website_url": "https://www.theoriq.ai/",
       "difficulty": "advanced",
-      "tag": "web3"
+      "tag": "web3",
+      "subtype": "framework-sdk"
     },
     {
       "name": "PromptLock",
@@ -880,7 +1045,8 @@
       "notes": "",
       "website_url": "https://promptlock.io/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "quality-tool"
     },
     {
       "name": "ROMA (Recursive Open Meta-Agent Framework)",
@@ -902,7 +1068,8 @@
       "notes": "",
       "website_url": null,
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "self-improving"
     },
     {
       "name": "Local AI Memory Sync Engine",
@@ -924,7 +1091,8 @@
       "notes": "",
       "website_url": null,
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "infrastructure"
     },
     {
       "name": "Claw-Chief",
@@ -946,7 +1114,14 @@
       "notes": "",
       "website_url": null,
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "config-layer",
+      "relationships": {
+        "extends": [
+          "OpenClaw"
+        ],
+        "ecosystem": "claw"
+      }
     },
     {
       "name": "auto-harness",
@@ -970,7 +1145,8 @@
       "notes": "~40% gains reported",
       "website_url": "https://www.neosigma.ai/",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "self-improving"
     },
     {
       "name": "harness-craft",
@@ -996,7 +1172,14 @@
       "notes": "",
       "website_url": null,
       "difficulty": "intermediate",
-      "tag": "meta-layer"
+      "tag": "meta-layer",
+      "subtype": "scaffolding",
+      "relationships": {
+        "works_with": [
+          "Claude Code",
+          "OpenCode"
+        ]
+      }
     },
     {
       "name": "OpenHarness (zhijiewong)",
@@ -1023,7 +1206,8 @@
       "notes": "Latest: v0.5.0 (Apr 5, 2026)",
       "website_url": null,
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "scaffolding"
     },
     {
       "name": "project-harness",
@@ -1045,7 +1229,8 @@
       "notes": "",
       "website_url": null,
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "scaffolding"
     },
     {
       "name": "Codebuff",
@@ -1067,7 +1252,13 @@
       "notes": "",
       "website_url": "https://www.codebuff.com",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "standalone-agent",
+      "relationships": {
+        "alternative_to": [
+          "Claude Code"
+        ]
+      }
     },
     {
       "name": "OpenGauss",
@@ -1089,7 +1280,13 @@
       "notes": "",
       "website_url": "https://www.math.inc/opengauss",
       "difficulty": "advanced",
-      "tag": "theorem-proving"
+      "tag": "theorem-proving",
+      "subtype": "domain-agent",
+      "relationships": {
+        "built_on": [
+          "Hermes Agent"
+        ]
+      }
     },
     {
       "name": "Paperclip.ing",
@@ -1118,7 +1315,15 @@
       "notes": "Website: https://paperclip.ing/ | MIT licensed",
       "website_url": "https://paperclip.ing/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "autonomous-org",
+      "relationships": {
+        "alternative_to": [
+          "MetaGPT",
+          "ChatDev",
+          "SuperAGI"
+        ]
+      }
     },
     {
       "name": "Trinity",
@@ -1145,7 +1350,8 @@
       "notes": "Open-source core",
       "website_url": "https://www.ability.ai/trinity",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "autonomous-org"
     },
     {
       "name": "JUNO",
@@ -1172,7 +1378,8 @@
       "notes": "Open-source",
       "website_url": null,
       "difficulty": "advanced",
-      "tag": "web3"
+      "tag": "web3",
+      "subtype": "autonomous-org"
     },
     {
       "name": "Neuro SAN",
@@ -1196,7 +1403,8 @@
       "notes": "Open-source",
       "website_url": "https://www.cognizant.com/us/en/ai-lab/neuro-san",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "autonomous-org"
     },
     {
       "name": "SuperAGI",
@@ -1220,7 +1428,14 @@
       "notes": "",
       "website_url": "https://superagi.com/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "autonomous-org",
+      "relationships": {
+        "alternative_to": [
+          "Paperclip.ing",
+          "MetaGPT"
+        ]
+      }
     },
     {
       "name": "Mission Control",
@@ -1246,7 +1461,13 @@
       "notes": "",
       "website_url": "https://mc.builderz.dev/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "autonomous-org",
+      "relationships": {
+        "alternative_to": [
+          "Paperclip.ing"
+        ]
+      }
     },
     {
       "name": "CompanyHelm",
@@ -1271,7 +1492,13 @@
       "notes": "",
       "website_url": "https://www.companyhelm.com/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "autonomous-org",
+      "relationships": {
+        "alternative_to": [
+          "Paperclip.ing"
+        ]
+      }
     },
     {
       "name": "Ruflo",
@@ -1297,7 +1524,8 @@
       "notes": "",
       "website_url": null,
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "orchestration-platform"
     },
     {
       "name": "Operator",
@@ -1322,7 +1550,8 @@
       "notes": "",
       "website_url": null,
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "orchestration-platform"
     },
     {
       "name": "Kata Orchestrator",
@@ -1346,7 +1575,8 @@
       "notes": "",
       "website_url": "https://kata.sh/",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "autonomous-org"
     },
     {
       "name": "Agency Swarm",
@@ -1370,7 +1600,13 @@
       "notes": "",
       "website_url": "https://agency-swarm.ai/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "framework-sdk",
+      "relationships": {
+        "built_on": [
+          "OpenAI Agents SDK"
+        ]
+      }
     },
     {
       "name": "Composio Agent Orchestrator",
@@ -1394,7 +1630,8 @@
       "notes": "",
       "website_url": "https://composio.dev/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "orchestration-platform"
     },
     {
       "name": "MetaGPT",
@@ -1421,7 +1658,14 @@
       "notes": "Development has slowed — last meaningful commit Nov 2025. MGX at mgx.dev is the commercial product.",
       "website_url": "https://atoms.dev/",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "autonomous-org",
+      "relationships": {
+        "alternative_to": [
+          "Paperclip.ing",
+          "ChatDev"
+        ]
+      }
     },
     {
       "name": "ChatDev",
@@ -1446,7 +1690,14 @@
       "notes": "v2 evolved into broader zero-code orchestration",
       "website_url": "https://chatdev.ai/",
       "difficulty": "beginner",
-      "tag": null
+      "tag": null,
+      "subtype": "autonomous-org",
+      "relationships": {
+        "alternative_to": [
+          "MetaGPT",
+          "Paperclip.ing"
+        ]
+      }
     },
     {
       "name": "gastown",
@@ -1471,7 +1722,8 @@
       "notes": "",
       "website_url": "https://gastownhall.ai/",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "autonomous-org"
     },
     {
       "name": "Agentnetes",
@@ -1495,7 +1747,8 @@
       "notes": "Open-source and actively evolving; try the demo at https://shashikant86.github.io/agentnetes/",
       "website_url": null,
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "autonomous-org"
     },
     {
       "name": "OpenCode",
@@ -1526,7 +1779,13 @@
       "notes": "Latest: v1.4.0. Install: npx opencode. MIT license.",
       "website_url": "https://opencode.ai",
       "difficulty": "intermediate",
-      "tag": null
+      "tag": null,
+      "subtype": "standalone-agent",
+      "relationships": {
+        "alternative_to": [
+          "Claude Code"
+        ]
+      }
     },
     {
       "name": "GSD (Get Shit Done)",
@@ -1557,7 +1816,17 @@
       "notes": "Latest: v1.34.2. MIT license. Successor project GSD-2 (4.9K stars) is a standalone CLI built on Pi SDK.",
       "website_url": null,
       "difficulty": "intermediate",
-      "tag": "meta-layer"
+      "tag": "meta-layer",
+      "subtype": "meta-tool",
+      "relationships": {
+        "extends": [
+          "Claude Code",
+          "OpenCode"
+        ],
+        "works_with": [
+          "Skills CLI"
+        ]
+      }
     },
     {
       "name": "Twin",
@@ -1588,7 +1857,8 @@
       "notes": "Credit-based pricing: Free trial to Pro ($20-$463/mo). Closed-source.",
       "website_url": "https://twin.so",
       "difficulty": "beginner",
-      "tag": "no-code"
+      "tag": "no-code",
+      "subtype": "domain-agent"
     },
     {
       "name": "T3 Code",
@@ -1618,7 +1888,14 @@
       "notes": "Latest: v0.0.15. Very early stage. Cursor/OpenCode/Gemini support planned. MIT license. Install: npx t3",
       "website_url": "https://t3.codes",
       "difficulty": "intermediate",
-      "tag": "gui"
+      "tag": "gui",
+      "subtype": "gui-shell",
+      "relationships": {
+        "works_with": [
+          "Claude Code",
+          "OpenCode"
+        ]
+      }
     },
     {
       "name": "Harness (revfactory)",
@@ -1646,7 +1923,14 @@
       "notes": "v1.1.0. Apache 2.0. Install: /plugin marketplace add revfactory/harness. Companion: github.com/revfactory/harness-100",
       "website_url": "https://revfactory.github.io/harness/",
       "difficulty": "advanced",
-      "tag": "meta-layer"
+      "tag": "meta-layer",
+      "subtype": "meta-tool",
+      "relationships": {
+        "works_with": [
+          "Claude Code",
+          "Claude Code Agent Teams"
+        ]
+      }
     },
     {
       "name": "Pi Agent",
@@ -1677,7 +1961,14 @@
       "notes": "Latest: v0.65.2. 186 releases, 160 contributors. MIT license.",
       "website_url": "https://pi.dev",
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "standalone-agent",
+      "relationships": {
+        "alternative_to": [
+          "Claude Code",
+          "OpenCode"
+        ]
+      }
     },
     {
       "name": "awesome-agent",
@@ -1704,7 +1995,8 @@
       "notes": "Very early (6 commits, 1 contributor). Community contributions via PRs.",
       "website_url": "https://shrikebot.io",
       "difficulty": "beginner",
-      "tag": null
+      "tag": null,
+      "subtype": "reference"
     },
     {
       "name": "AutoAgents",
@@ -1737,7 +2029,8 @@
       "notes": "Related: Odyssey (higher-level system), AutoAgents-CLI (YAML workflow runner).",
       "website_url": null,
       "difficulty": "advanced",
-      "tag": null
+      "tag": null,
+      "subtype": "framework-sdk"
     },
     {
       "name": "OpenAgents",
@@ -1767,7 +2060,8 @@
       "notes": "14,284 commits. Note: openagents.org redirects to MetaGPT, not this project — actual site is openagents.com.",
       "website_url": "https://openagents.com",
       "difficulty": "advanced",
-      "tag": "web3"
+      "tag": "web3",
+      "subtype": "autonomous-org"
     },
     {
       "name": "Claude Code Agent Teams",
@@ -1794,7 +2088,16 @@
       "why_discussed": "The first native multi-agent orchestration built into a major coding agent. Composable with ecosystem tools like revfactory/harness (which generates the subagent definitions that Agent Teams uses as teammate roles). Changes the landscape — what third-party tools built at the prompt layer, Anthropic now provides at the runtime layer.",
       "notes": "Experimental — disabled by default. Requires Claude Code v2.1.32+. Closed-source, no separate install. Subagent 'skills' and 'mcpServers' frontmatter not yet applied to teammates.",
       "website_url": "https://code.claude.com/docs/en/agent-teams",
-      "tag": null
+      "tag": null,
+      "subtype": "built-in-feature",
+      "relationships": {
+        "extends": [
+          "Claude Code"
+        ],
+        "works_with": [
+          "Harness (revfactory)"
+        ]
+      }
     },
     {
       "name": "Impeccable",
@@ -1825,7 +2128,15 @@
       "why_discussed": "Solves the 'developers can't prompt for good design' problem by encoding designer vocabulary into slash commands. 17.2K stars. The most popular design-focused agent skill in the ecosystem. Impressive before/after results on AI-generated UIs.",
       "notes": "Latest: v1.6.0. Apache 2.0. Install: npx skills add pbakaus/impeccable. Prefixed commands (/i-*) available to avoid conflicts. Best used in a dedicated design agent — the skill is very robust and will bloat the context window. The agent using this skill should not have any other responsibilities besides design.",
       "website_url": "https://impeccable.style",
-      "tag": "design"
+      "tag": "design",
+      "subtype": "design-tool",
+      "relationships": {
+        "works_with": [
+          "Claude Code",
+          "OpenCode",
+          "Skills CLI"
+        ]
+      }
     },
     {
       "name": "Skills CLI",
@@ -1855,7 +2166,16 @@
       ],
       "why_discussed": "First serious attempt at a universal distribution layer for agent instructions. Strong adoption (91K+ recorded installs, backed by Vercel, Microsoft, and Anthropic as publishers), but the honest signal is nuanced: Vercel's own research showed AGENTS.md outperforms skills for always-on knowledge, making skills best suited for complex on-demand domain expertise rather than general agent configuration.",
       "notes": "Use it for: packaging team workflows, framework-specific rules, specialized domain knowledge. Don't use it for: simple one-off prompts, rules that must apply every turn (use AGENTS.md), tool access (use MCP), or foundational agent behavior (use system prompts). The CLI also installs skill directories for every supported agent it detects, even ones you don't use — add unwanted agent dirs to .gitignore.",
-      "tag": "meta-layer"
+      "tag": "meta-layer",
+      "subtype": "meta-tool",
+      "relationships": {
+        "works_with": [
+          "Claude Code",
+          "OpenCode",
+          "Impeccable",
+          "GSD (Get Shit Done)"
+        ]
+      }
     },
     {
       "name": "ui.sh",
@@ -1880,7 +2200,8 @@
       ],
       "why_discussed": "Bridges the gap between AI-generated code and good design — from the team behind Tailwind CSS and Refactoring UI.",
       "notes": "Invite-only beta as of April 2026",
-      "tag": "design"
+      "tag": "design",
+      "subtype": "design-tool"
     },
     {
       "name": "Superset",
@@ -1909,7 +2230,320 @@
       "why_discussed": "First dedicated IDE for parallel agent orchestration. 9.2K GitHub stars, Vercel AI Gateway integration, 512 Product Hunt upvotes. Solves the coordination bottleneck as coding agents became capable enough for autonomous parallel work.",
       "notes": "Elastic License 2.0 (source-available, not OSI). Electron + React + Bun. macOS primary. Launched March 2026.",
       "difficulty": "intermediate",
-      "tag": "gui"
+      "tag": "gui",
+      "subtype": "gui-shell",
+      "relationships": {
+        "works_with": [
+          "Claude Code",
+          "OpenCode"
+        ]
+      }
+    },
+    {
+      "name": "Nyx",
+      "category": "Individual/Indie & Research",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [
+        "Model-Agnostic"
+      ],
+      "creator": "German Yanovich",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://getnyx.dev/",
+      "full_description": "Infinite canvas IDE for running multiple AI coding agents in parallel. Provides ten tile types — Terminal, Editor, Browser, Diff, Todo, Notes, Chat, Agent, Image, Kanban — on a free-form spatial canvas. Developers can watch all agent activity simultaneously, hand off tasks between agents via drag-and-drop, review diffs inline with agent feedback loops, and inspect browser elements with annotated screenshots sent as agent context. Supports Claude Code, Codex, Gemini CLI, and any CLI-based agent. Code and prompts stay local; no telemetry. One-time $49 purchase with lifetime 1.x updates.",
+      "key_features": [
+        "Infinite canvas with 10 tile types (Terminal, Editor, Browser, Diff, Todo, Notes, Chat, Agent, Image, Kanban)",
+        "Run 10+ agents in parallel with individual monitoring tiles",
+        "Focus Mode — zoom into a single agent, everything else fades",
+        "Browser Inspect — pick elements, annotate, send screenshots as agent context",
+        "Diff Review Loop — review agent work like a PR, agent reads feedback and iterates",
+        "Task handoff — drag items from Todo to any agent with one click",
+        "Offline-capable after activation; code and prompts stay local"
+      ],
+      "why_discussed": "Part of the emerging multi-agent GUI shell wave alongside Superset, T3 Code, and Maestri. Differentiated by its infinite canvas approach with rich tile variety (10 types vs. terminal-focused competitors), Browser Inspect for visual context, and one-time pricing model. Indie-built alternative to VC-backed competitors.",
+      "notes": "Closed-source. $49 one-time purchase, 14-day free trial, 3 devices per license, lifetime 1.x updates. Pre-launch / waitlist as of April 2026. macOS, Windows, Linux. No GitHub repo.",
+      "difficulty": "intermediate",
+      "tag": "gui",
+      "subtype": "gui-shell",
+      "relationships": {
+        "works_with": [
+          "Claude Code",
+          "OpenCode"
+        ],
+        "alternative_to": [
+          "Superset"
+        ]
+      }
+    },
+    {
+      "name": "Multica",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Software Development",
+        "Business Operations",
+        "Autonomous Operations"
+      ],
+      "features": [
+        "Open Source",
+        "Self-Hosted",
+        "Model-Agnostic"
+      ],
+      "creator": "Jiayuan (JY) Zhang / multica-ai",
+      "github_stars": 7810,
+      "github_url": "https://github.com/multica-ai/multica",
+      "website_url": "https://multica.ai/",
+      "full_description": "Open-source managed agents platform that treats coding agents as persistent teammates. Assign issues to an agent like you would a colleague — they pick up the work, write code, report blockers, and update statuses autonomously. Vendor-neutral (Claude Code, Codex, OpenClaw, OpenCode), fully self-hostable via Docker, with a Kanban task board, real-time WebSocket progress streaming, reusable skill library, multi-workspace isolation, and both local daemon and cloud compute runtimes. Launched the same day as Claude Managed Agents as the self-hostable alternative.",
+      "key_features": [
+        "Agents as teammates — assign via board, agent picks up work autonomously",
+        "Full task lifecycle management (enqueue, claim, start, complete/fail)",
+        "Reusable skills — every solution compounds into team-wide capabilities",
+        "Unified runtime panel — local daemons and cloud runtimes in one dashboard",
+        "Multi-workspace isolation — separate agents, issues, and settings per team",
+        "Real-time progress streaming via WebSocket",
+        "Supports Claude Code, Codex, OpenClaw, and OpenCode",
+        "Full self-hosting via Docker Compose"
+      ],
+      "why_discussed": "Launched April 8, 2026 the same day Anthropic announced Claude Managed Agents. Creator framed it as 'the open source version of Claude Managed Agents.' Reached 7,800+ stars in days. Open-source, self-hostable, vendor-neutral alternative to Anthropic's closed cloud offering.",
+      "notes": "Latest: v0.1.26 (April 2026). Hosted cloud at multica.ai/app. License listed as 'Other' on GitHub — verify terms before enterprise adoption. Go + Next.js + PostgreSQL 17 with pgvector.",
+      "difficulty": "intermediate",
+      "tag": null,
+      "subtype": "orchestration-platform",
+      "relationships": {
+        "works_with": [
+          "Claude Code",
+          "OpenCode"
+        ]
+      }
+    },
+    {
+      "name": "GitButler",
+      "category": "Team/Organization-Backed",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [
+        "Self-Hosted",
+        "Model-Agnostic"
+      ],
+      "creator": "Scott Chacon / GitButler Inc.",
+      "github_stars": 20303,
+      "github_url": "https://github.com/gitbutlerapp/gitbutler",
+      "website_url": "https://gitbutler.com",
+      "full_description": "Git-native version control client (GUI + CLI) rebuilt for AI-era development. Wraps your existing .git repo and adds parallel virtual branches, stacked branches with automatic PR generation, unlimited undo, and a dedicated AI integration layer. Includes a Coding Agent tab that embeds Claude Code in the GUI, lifecycle hooks for Claude Code and Cursor that auto-isolate each agent session into its own virtual branch, and an MCP server (but mcp) that lets any agent record changes and generate contextual commit messages. Founded by GitHub co-founder Scott Chacon, backed by a16z ($17M Series A, April 2026).",
+      "key_features": [
+        "Parallel virtual branches — multiple open branches in one working directory",
+        "Stacked branches with automatic stacked PR generation",
+        "Claude Code lifecycle hooks — auto-isolates parallel agent sessions into separate branches",
+        "MCP server (but mcp) for agent-driven automatic commits with context",
+        "Coding Agent tab — embedded Claude Code GUI wrapper",
+        "but skill install — installs GitButler skills into Claude Code, OpenCode, Codex, and Copilot",
+        "Unlimited undo via operations timeline",
+        "Removes git staging area (no git add required)"
+      ],
+      "why_discussed": "Freshly funded ($17M a16z Series A, April 2026) and positioned as infrastructure for how software gets built with agents. Solves the multi-agent coordination problem: when three Claude Code sessions run simultaneously, GitButler automatically routes each session's changes to an isolated virtual branch. MCP server and Claude Code hooks are shipped, not roadmap.",
+      "notes": "Fair Source license (not OSI open source), code publicly viewable on GitHub. Rust + Tauri + Svelte. Linux is CLI-only; GUI requires macOS or Windows. AI features require enabling experimental feature flag in Global Settings.",
+      "difficulty": "intermediate",
+      "tag": "git",
+      "subtype": "infrastructure",
+      "relationships": {
+        "works_with": [
+          "Claude Code",
+          "Cursor"
+        ]
+      }
+    },
+    {
+      "name": "Littlebird",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "use_cases": [
+        "Business Operations",
+        "General-Purpose"
+      ],
+      "features": [
+        "Security-Focused"
+      ],
+      "creator": "Naman Shah, Alexander Green, Alap Shah",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://littlebird.ai/",
+      "full_description": "AI assistant that builds a persistent memory of your work by reading your active screen in real time (via accessibility APIs, not screenshots) and transcribing meetings. Observes your screen continuously to understand what you're working on across all apps, then answers questions, drafts content, and surfaces proactive insights grounded in your actual work. Uses text-based screen reading (not image capture), stores only text with AES-256 encryption, and excludes password managers and sensitive fields. SOC 2 / GDPR / CCPA / HIPAA compliant. Raised $11M seed in March 2026.",
+      "key_features": [
+        "Real-time screen reading via accessibility APIs (text only, no screenshots)",
+        "Continuous meeting transcription and summarization",
+        "Persistent encrypted memory that builds over time",
+        "Proactive insights delivered on a personalized schedule",
+        "AI chat grounded in your current work context",
+        "Cross-platform: macOS native, iOS/Android companion, Windows beta",
+        "SOC 2, GDPR, CCPA, HIPAA compliant; AES-256 at rest, TLS 1.3 in transit"
+      ],
+      "why_discussed": "Raised $11M seed in March 2026 and launched to #1 on Product Hunt (710 upvotes). Represents a distinct approach in the AI recall space: text-based screen reading via accessibility APIs, positioned between screenshot-based tools (Rewind/Recall) and local open-source tools (Screenpipe). First consumer/professional productivity agent in the directory.",
+      "notes": "Free tier available; paid plans from $20/month. Closed-source, cloud-hosted on AWS. The GitHub org hosts a 10-star Swift app called 'localbird' — possibly an experimental local-first variant.",
+      "difficulty": "beginner",
+      "tag": "memory",
+      "subtype": "standalone-agent",
+      "relationships": {}
+    },
+    {
+      "name": "Superconductor",
+      "category": "Individual/Indie & Research",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "David Daniel (@haveanicedavid)",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://super.engineering",
+      "full_description": "Native macOS app for running parallel AI coding agents, written entirely in Rust and rendered on the GPU via Metal. Orchestrates Claude Code, Codex, Gemini CLI, or any CLI-based agent in isolated git worktrees — no Electron, no embedded browser, just a fast native binary. Provides unlimited parallel agent tabs, sub-50ms startup, GPU-rendered terminal, per-workspace theming, diff viewer, branch management, and one-click PR workflows. All data stays local with no telemetry.",
+      "key_features": [
+        "100% Rust, GPU-rendered via Metal — no Electron or Tauri",
+        "Isolated git worktrees per agent (prevents merge conflicts)",
+        "Unlimited parallel agent tabs, scaling with hardware",
+        "Sub-50ms startup time",
+        "Agent-agnostic: Claude Code, Codex, Gemini CLI, any CLI agent",
+        "Built-in diff viewer, branch management, and PR workflow",
+        "Local-first: no telemetry, no cloud storage, fully offline",
+        "Keyboard-driven interface with configurable keybindings"
+      ],
+      "why_discussed": "Launched April 9, 2026 to 2,000+ likes on the announcement tweet. Stands out in a crowded GUI shell space by being the only 100% Rust, Metal-rendered native app — a direct architectural counter to Electron-based competitors. Built by a solo developer scratching their own itch.",
+      "notes": "Alpha as of April 2026. Free to download. Closed-source. macOS only (Windows/Linux planned). No GitHub repo. Direct download from super.engineering.",
+      "difficulty": "intermediate",
+      "tag": "gui",
+      "subtype": "gui-shell",
+      "relationships": {
+        "works_with": [
+          "Claude Code",
+          "OpenCode"
+        ],
+        "alternative_to": [
+          "Superset",
+          "T3 Code",
+          "Nyx"
+        ]
+      }
+    },
+    {
+      "name": "Paseo",
+      "category": "Individual/Indie & Research",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development",
+        "Autonomous Operations"
+      ],
+      "features": [
+        "Open Source",
+        "Self-Hosted",
+        "Model-Agnostic"
+      ],
+      "creator": "Mo Boudra (@moboudra)",
+      "github_stars": 1735,
+      "github_url": "https://github.com/getpaseo/paseo",
+      "website_url": "https://paseo.sh/",
+      "full_description": "Self-hosted daemon and multi-platform client (iOS, Android, desktop, web, CLI) for orchestrating AI coding agents remotely. Runs a local server that manages Claude Code, Codex, and OpenCode processes; connect from any device to monitor, direct, and parallelize agents. Privacy-first — no telemetry, no logins, code never leaves your machine. Includes experimental orchestration skills for agent handoff, loop-until-done, and multi-agent team coordination.",
+      "key_features": [
+        "Cross-device access: iOS, Android, desktop, web, and CLI clients",
+        "Multi-provider support: Claude Code, Codex, OpenCode, Pi",
+        "Local voice control (on-device STT/TTS via Parakeet and Kokoro)",
+        "Git worktree isolation for parallel agent tasks",
+        "Encrypted relay for remote access without VPN",
+        "Orchestration skills: agent handoff, loop-until-done, multi-agent teams",
+        "Real-time agent output streaming",
+        "No telemetry, no forced accounts, code stays local"
+      ],
+      "why_discussed": "Solves the mobility problem for coding agent power users: agents are anchored to one machine, Paseo breaks that constraint. Two Hacker News Show HN threads, viral Chinese-language tweet (900+ likes), and active weekly releases. The only FOSS tool with full native mobile app parity alongside desktop.",
+      "notes": "AGPL-3.0. Latest: v0.1.52 (April 2026). TypeScript monorepo. Orchestration skills are experimental/unstable. Requires at least one agent CLI pre-installed.",
+      "difficulty": "intermediate",
+      "tag": "gui",
+      "subtype": "gui-shell",
+      "relationships": {
+        "works_with": [
+          "Claude Code",
+          "OpenCode"
+        ],
+        "alternative_to": [
+          "Superset",
+          "T3 Code"
+        ]
+      }
+    },
+    {
+      "name": "Hatch",
+      "category": "Harnesses-Adjacent",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development"
+      ],
+      "features": [],
+      "creator": "EscapeVelocityOperations",
+      "github_stars": 1,
+      "github_url": "https://github.com/EscapeVelocityOperations/hatch-cli",
+      "website_url": "https://usehatch.com",
+      "full_description": "Zero-config, EU-hosted deployment platform built for apps produced by AI coding agents. Auto-detects Node.js/TS, Python, Go, Rust, and static sites; provisions PostgreSQL and Redis automatically; every deploy gets an instant live URL. Ships an MCP server and Claude Code plugin so agents can deploy, inspect logs, manage env vars, and restart apps without leaving the coding session. Closes the loop from 'write code' to 'live URL' in one agent session.",
+      "key_features": [
+        "One-command zero-config deploy (hatch deploy)",
+        "MCP server exposes deployment tools to Claude Code agents",
+        "Claude Code plugin via /plugin marketplace",
+        "Auto-provisioned PostgreSQL and Redis (no setup)",
+        "Instant live URLs (appname.gethatch.eu)",
+        "EU-hosted, GDPR-compliant infrastructure"
+      ],
+      "why_discussed": "Purpose-built for the Claude Code + vibe-coding workflow. The MCP integration means agents can ship what they build without breaking out of the conversation — closing the loop from code to live URL in one session.",
+      "notes": "CLI repo (Go, MIT license) has 1 star — very new. Free tier: 2 hrs/day per app; Always On: €12/mo per app. Platform at gethatch.eu; usehatch.com is alternate entry point. Apps must bind to port 8080.",
+      "difficulty": "beginner",
+      "tag": "cli",
+      "subtype": "infrastructure",
+      "relationships": {
+        "works_with": [
+          "Claude Code"
+        ]
+      }
+    },
+    {
+      "name": "Daytona",
+      "category": "Team/Organization-Backed",
+      "type": "developer-utility",
+      "use_cases": [
+        "Software Development",
+        "Autonomous Operations"
+      ],
+      "features": [
+        "Open Source",
+        "Self-Hosted",
+        "Security-Focused"
+      ],
+      "creator": "Daytona (Ivan Burazin)",
+      "github_stars": 72252,
+      "github_url": "https://github.com/daytonaio/daytona",
+      "website_url": "https://www.daytona.io/",
+      "full_description": "Open-source, secure and elastic infrastructure for running AI-generated code. Provides programmable sandboxes — fully isolated compute environments with a dedicated kernel, filesystem, network stack, vCPU, RAM, and disk — that spin up in under 90ms. Coding agents and autonomous pipelines use Daytona to safely execute generated code, run computer-use tasks, manage persistent state across sessions, and scale to thousands of parallel sandboxes. Multi-language SDKs (Python, TypeScript, Go, Ruby, Java) plus REST API. Raised $31M total.",
+      "key_features": [
+        "Sub-90ms sandbox cold start",
+        "Full process execution, filesystem, and Git access inside sandboxes",
+        "Computer Use support — virtual desktops for browser and desktop automation",
+        "Persistent snapshot and restore for long-running agent state",
+        "Multi-language SDKs (Python, TypeScript, Go, Ruby, Java)",
+        "Network egress blocked by default with configurable allowlists",
+        "Self-hosted via Docker Compose or managed cloud at app.daytona.io",
+        "Organizations, API keys, audit logs, and usage limits for governance"
+      ],
+      "why_discussed": "One of the two dominant AI agent sandbox platforms alongside E2B. Hermes Agent lists it as a first-class sandboxing backend. 72K+ GitHub stars, $31M raised with Datadog and Figma Ventures as investors. Fastest cold start in benchmarks and the only sandbox with native Computer Use support.",
+      "notes": "AGPL-3.0. Usage-based pricing: ~$0.067/h for 1 vCPU / 1 GiB sandbox. Competitors: E2B (Firecracker/microVM, slower cold start), Modal (GPU workloads). Uses Docker-based isolation by default; supports Kata Containers and Sysbox for enhanced isolation.",
+      "difficulty": "advanced",
+      "tag": "sandbox",
+      "subtype": "infrastructure",
+      "relationships": {
+        "works_with": [
+          "Hermes Agent",
+          "Claude Code"
+        ]
+      }
     }
   ]
 }

@@ -1,13 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import DirectoryBrowser from "../components/DirectoryBrowser.vue";
-import { getAllProjects, getTypes, getUseCases, getDifficultyLevels, getMetadata } from "../lib/directory";
+import { getAllProjects, getTypes, getUseCases, getDifficultyLevels, getMetadata, getFeatures } from "../lib/directory";
 
 const projects = getAllProjects();
 const types = getTypes();
 const useCases = getUseCases();
 const difficultyLevels = getDifficultyLevels();
 const metadata = getMetadata();
+const features = getFeatures();
 ---
 
 <BaseLayout title="Directory" description="Browse and filter all agent tools, multi-agent platforms, and developer utilities.">
@@ -15,9 +16,20 @@ const metadata = getMetadata();
     <div class="mx-auto max-w-6xl px-6 py-16">
       <h1>Directory</h1>
       <p class="mt-4 max-w-2xl text-lg text-neutral-500">
-        {metadata.total_entries} agent tools, platforms, and utilities — filter by type and use case.
+        {metadata.total_entries} tools tracked and updated — last reviewed {metadata.last_updated}. Filter by type, difficulty, and use case.
       </p>
 
+      <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-neutral-400">
+        <span>{metadata.total_entries} tools</span>
+        <span class="text-neutral-300 dark:text-neutral-600">&middot;</span>
+        <span>{metadata.types.length} types</span>
+        <span class="text-neutral-300 dark:text-neutral-600">&middot;</span>
+        <span>{metadata.use_cases.length} use cases</span>
+        <span class="text-neutral-300 dark:text-neutral-600">&middot;</span>
+        <span>{metadata.difficulty_levels.length} difficulty levels</span>
+        <span class="text-neutral-300 dark:text-neutral-600">&middot;</span>
+        <a href="/guide" class="text-neutral-500 underline decoration-neutral-300 underline-offset-2 transition-colors hover:text-neutral-700 dark:decoration-neutral-600 dark:hover:text-neutral-200">Not sure where to start?</a>
+      </div>
     </div>
   </section>
 
@@ -29,6 +41,7 @@ const metadata = getMetadata();
         types={types}
         useCases={useCases}
         difficultyLevels={difficultyLevels}
+        features={features}
       />
     </div>
   </section>
