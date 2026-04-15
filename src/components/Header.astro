@@ -1,15 +1,18 @@
 ---
 import nav from "../data/nav.json";
 import siteMeta from "../data/site-meta.json";
-import DarkModeToggle from "./DarkModeToggle.astro";
 
 const pathname = Astro.url.pathname;
 const sortedNav = [...nav].sort((a, b) => a.order - b.order);
 ---
 
-<header class="border-b border-black/10 bg-white dark:border-white/10 dark:bg-neutral-950">
-  <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-    <a href="/" class="text-lg font-semibold tracking-tight text-black no-underline dark:text-white">
+<header class="sticky top-0 z-40 border-b border-white/10 bg-neutral-950/90 backdrop-blur-sm">
+  <nav class="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4">
+    <a
+      href="/"
+      class="font-display text-base font-black tracking-tight text-white no-underline"
+      style="letter-spacing: -0.04em;"
+    >
       {siteMeta.name}
     </a>
 
@@ -26,11 +29,12 @@ const sortedNav = [...nav].sort((a, b) => a.order - b.order);
                 <a
                   href={item.href}
                   class:list={[
-                    "text-sm font-medium no-underline transition-colors",
+                    "font-mono text-[11px] font-bold uppercase tracking-[0.15em] no-underline transition-colors",
                     isActive
-                      ? "text-black dark:text-white"
-                      : "text-neutral-500 hover:text-black dark:text-neutral-400 dark:hover:text-white",
+                      ? "text-[#EBFF00]"
+                      : "text-white/60 hover:text-[#EBFF00]",
                   ]}
+                  style={isActive ? "text-decoration: underline; text-decoration-color: #EBFF00; text-underline-offset: 6px;" : ""}
                 >
                   {item.label}
                 </a>
@@ -39,7 +43,6 @@ const sortedNav = [...nav].sort((a, b) => a.order - b.order);
           })
         }
       </ul>
-      <DarkModeToggle />
     </div>
   </nav>
 </header>

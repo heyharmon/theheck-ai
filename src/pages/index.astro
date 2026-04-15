@@ -59,15 +59,18 @@ const featured = featuredNames
   description="Find the right AI agent tools for your work. Browse 70+ agent tools, multi-agent platforms, and developer utilities — filtered by what they do and what they're for."
 >
   <!-- Hero -->
-  <section class="border-b border-black/10 dark:border-white/10">
-    <div class="mx-auto max-w-4xl px-6 py-28 sm:py-36">
-      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-medium tracking-[-0.045em] text-black leading-[1.02] dark:text-white">
+  <section class="border-b border-white/10">
+    <div class="mx-auto max-w-[1400px] px-6 py-28 sm:py-36">
+      <div class="mb-8">
+        <span class="status-pill">{metadata.total_entries} tools indexed &middot; updated {metadata.last_updated}</span>
+      </div>
+      <h1>
         Find the right AI agent tools for your work
       </h1>
-      <p class="mt-8 max-w-2xl text-lg text-neutral-500 leading-relaxed dark:text-neutral-400">
+      <p class="mt-10 max-w-2xl text-lg text-white/70 leading-relaxed">
         {metadata.total_entries} tools and platforms for building with AI agents — organized by what they do and what they're for. Whether you're getting started or looking for a better alternative, start here.
       </p>
-      <div class="mt-10 flex items-center gap-4">
+      <div class="mt-10 flex flex-wrap items-center gap-4">
         <a href="/guide" class="btn-primary">Find your tool</a>
         <a href="/directory" class="btn-ghost">Browse the directory</a>
       </div>

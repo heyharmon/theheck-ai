@@ -1,13 +1,12 @@
 ---
-import { getTypeColor, getTypeLabel } from "../lib/directory";
+import { getTypeLabel } from "../lib/directory";
 
 interface Props {
   type: string;
 }
 
 const { type } = Astro.props;
-const color = getTypeColor(type);
 const label = getTypeLabel(type);
 ---
 
-<span class={`badge badge-${color}`}>{label}</span>
+<span class="badge badge-neutral">{label}</span>

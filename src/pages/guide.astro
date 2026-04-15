@@ -34,10 +34,13 @@ const scenarios = scenarioData.scenarios.map((scenario) => ({
   description="Answer one question — what's your situation? — and get curated, opinionated recommendations for which AI agent tools to use."
 >
   <!-- Hero -->
-  <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
-    <div class="mx-auto max-w-5xl px-6 py-16">
+  <section class="border-b border-white/10">
+    <div class="mx-auto max-w-[1400px] px-6 py-20">
+      <div class="mb-6">
+        <span class="status-pill">Curated &middot; {projects.length} tools</span>
+      </div>
       <h1>Find your tool</h1>
-      <p class="mt-4 max-w-2xl text-lg text-neutral-500">
+      <p class="mt-8 max-w-2xl text-lg text-white/70">
         The directory has {projects.length} tools. You don't need to browse them all. Pick the scenario that matches your situation and get an opinionated, curated starting point.
       </p>
     </div>

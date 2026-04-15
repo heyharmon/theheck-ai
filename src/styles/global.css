@@ -1,219 +1,419 @@
 @import "tailwindcss";
 
-/* Class-based dark mode */
+/* Class-based dark mode kept so existing `dark:` utilities keep working.
+   The site is dark-only now — `.dark` is forced on <html> in BaseLayout. */
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-display: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  /* Monospace body is the whole shoo.dev vibe */
+  --font-sans: "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: "Unbounded", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Pure neutral scale — monochromatic black/white/gray */
-  --color-neutral-50: #fafafa;
+  /* Neutral scale remapped onto shoo.dev values so existing text-neutral-*
+     and bg-neutral-* utilities resolve sensibly on the new palette. */
+  --color-neutral-50: #f5f5f5;
   --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #e5e5e5;
-  --color-neutral-300: #d4d4d4;
-  --color-neutral-400: #a3a3a3;
-  --color-neutral-500: #737373;
-  --color-neutral-600: #525252;
-  --color-neutral-700: #404040;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #171717;
+  --color-neutral-200: rgba(245, 245, 245, 0.85);
+  --color-neutral-300: rgba(245, 245, 245, 0.7);
+  --color-neutral-400: rgba(245, 245, 245, 0.55);
+  --color-neutral-500: rgba(245, 245, 245, 0.5);
+  --color-neutral-600: rgba(245, 245, 245, 0.4);
+  --color-neutral-700: #262626;
+  --color-neutral-800: #1a1a1a;
+  --color-neutral-900: #0f0f0f;
   --color-neutral-950: #0a0a0a;
 
-  /* Lime accent — dark mode buttons and interactive highlights */
-  --color-lime-300: #bef264;
-  --color-lime-400: #a3e635;
-  --color-lime-500: #84cc16;
+  /* Electric yellow — used as a real secondary color */
+  --color-accent: #EBFF00;
+  --color-accent-dim: rgba(235, 255, 0, 0.35);
 
-  /* Emerald, amber, rose kept for difficulty badges (semantic, not brand) */
-  --color-emerald-50: #ecfdf5;
-  --color-emerald-100: #d1fae5;
-  --color-emerald-500: #10b981;
-  --color-emerald-600: #059669;
-  --color-emerald-700: #047857;
-  --color-emerald-800: #065f46;
-  --color-emerald-900: #064e3b;
-  --color-emerald-950: #022c22;
+  /* Lime kept mapped to the new accent so any stray lime-* class still
+     resolves to the brand color. */
+  --color-lime-300: #EBFF00;
+  --color-lime-400: #EBFF00;
+  --color-lime-500: #EBFF00;
 
-  --color-amber-50: #fffbeb;
-  --color-amber-100: #fef3c7;
-  --color-amber-500: #f59e0b;
-  --color-amber-600: #d97706;
-  --color-amber-700: #b45309;
-  --color-amber-800: #92400e;
-  --color-amber-900: #78350f;
-  --color-amber-950: #451a03;
+  /* Legacy semantic tokens — mapped to monochrome values so stray
+     emerald/amber/rose utilities don't blow up the palette. */
+  --color-emerald-50: rgba(245, 245, 245, 0.05);
+  --color-emerald-100: rgba(245, 245, 245, 0.1);
+  --color-emerald-500: rgba(245, 245, 245, 0.7);
+  --color-emerald-600: rgba(245, 245, 245, 0.6);
+  --color-emerald-700: rgba(245, 245, 245, 0.7);
+  --color-emerald-800: rgba(245, 245, 245, 0.1);
+  --color-emerald-900: rgba(245, 245, 245, 0.08);
+  --color-emerald-950: rgba(245, 245, 245, 0.05);
 
-  --color-rose-50: #fff1f2;
-  --color-rose-100: #ffe4e6;
-  --color-rose-500: #f43f5e;
-  --color-rose-600: #e11d48;
-  --color-rose-700: #be123c;
-  --color-rose-800: #9f1239;
-  --color-rose-900: #881337;
-  --color-rose-950: #4c0519;
+  --color-amber-50: rgba(245, 245, 245, 0.05);
+  --color-amber-100: rgba(245, 245, 245, 0.1);
+  --color-amber-500: #EBFF00;
+  --color-amber-600: #EBFF00;
+  --color-amber-700: rgba(245, 245, 245, 0.7);
+  --color-amber-800: rgba(245, 245, 245, 0.1);
+  --color-amber-900: rgba(245, 245, 245, 0.08);
+  --color-amber-950: rgba(245, 245, 245, 0.05);
+
+  --color-rose-50: rgba(245, 245, 245, 0.05);
+  --color-rose-100: rgba(245, 245, 245, 0.1);
+  --color-rose-500: rgba(245, 245, 245, 0.6);
+  --color-rose-600: rgba(245, 245, 245, 0.55);
+  --color-rose-700: rgba(245, 245, 245, 0.7);
+  --color-rose-800: rgba(245, 245, 245, 0.1);
+  --color-rose-900: rgba(245, 245, 245, 0.08);
+  --color-rose-950: rgba(245, 245, 245, 0.05);
 }
 
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #0a0a0a;
+    color-scheme: dark;
   }
 
   body {
-    @apply bg-white text-neutral-900 font-sans dark:bg-neutral-950 dark:text-neutral-100;
+    @apply bg-neutral-950 text-neutral-100 font-sans;
+    font-size: 1rem;
+    line-height: 1.5;
+    position: relative;
   }
 
   h1 {
-    @apply font-display font-medium text-black dark:text-white;
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    line-height: 1.05;
+    @apply font-display text-white;
+    font-weight: 900;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.9;
     letter-spacing: -0.04em;
   }
 
   h2 {
-    @apply font-display font-semibold text-black dark:text-white;
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    line-height: 1.12;
-    letter-spacing: -0.025em;
+    @apply font-display text-white;
+    font-weight: 900;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
   }
 
   h3 {
-    @apply font-display font-medium text-neutral-900 text-lg dark:text-neutral-100;
+    @apply font-display text-white;
+    font-weight: 700;
+    font-size: 1.125rem;
     line-height: 1.25;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.02em;
   }
 
   p {
-    @apply text-neutral-600 dark:text-neutral-400;
-    line-height: 1.7;
+    @apply text-neutral-100;
+    line-height: 1.5;
+    opacity: 0.7;
   }
 
   a {
-    @apply text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-100;
+    color: #EBFF00;
+    text-decoration: underline;
+    text-decoration-color: rgba(235, 255, 0, 0.35);
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.2s;
+  }
+  a:hover {
+    text-decoration-color: #EBFF00;
   }
 
   hr {
-    @apply border-black/10 dark:border-white/10;
+    @apply border-white/15;
+  }
+
+  input, select, textarea, button {
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background: #EBFF00;
+    color: #0a0a0a;
   }
 }
 
-/* Primary button — black bg in light, lime in dark */
+/* ================== UTILITIES ================== */
+
+/* 60px grid overlay applied once on <body> via pseudo-element */
+.grid-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.grid-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Primary button — electric yellow on black */
 .btn-primary {
-  @apply inline-block rounded-xl bg-black px-6 py-3 text-sm font-medium text-white no-underline transition-colors dark:bg-lime-400 dark:text-black;
+  display: inline-block;
+  background-color: #EBFF00;
+  color: #0a0a0a;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid #EBFF00;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.2s;
 }
 .btn-primary:hover {
-  @apply bg-neutral-800 dark:bg-lime-300;
+  background-color: transparent;
+  color: #EBFF00;
+  text-decoration: none;
 }
 
-/* Ghost button — black border in light, white border in dark */
+/* Ghost button — thin white border, yellow on hover */
 .btn-ghost {
-  @apply inline-block rounded-xl border border-black/20 px-6 py-3 text-sm font-medium text-neutral-900 no-underline transition-colors dark:border-white/20 dark:text-white;
-  background: transparent;
+  display: inline-block;
+  background-color: transparent;
+  color: #f5f5f5;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.2s;
 }
 .btn-ghost:hover {
-  @apply border-black bg-black text-white dark:border-white dark:bg-white dark:text-black;
+  border-color: #EBFF00;
+  color: #EBFF00;
+  background-color: rgba(235, 255, 0, 0.05);
+  text-decoration: none;
 }
 
-/* Prose styling for rendered markdown content */
-.prose {
-  @apply max-w-none;
+.btn-ghost-dark {
+  display: inline-block;
+  background-color: transparent;
+  color: #f5f5f5;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-ghost-dark:hover {
+  border-color: #EBFF00;
+  color: #EBFF00;
+  text-decoration: none;
 }
 
-.prose h2 {
-  @apply mt-12 mb-4;
+/* Interactive card — flat, sharp borders */
+.card-interactive {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.card-interactive:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
-.prose h3 {
-  @apply mt-8 mb-3;
+/* Badges — mono uppercase tracking-widest, sharp corners */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+  line-height: 1.4;
+}
+.badge-neutral {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: rgba(245, 245, 245, 0.7);
+}
+.badge-outline {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: rgba(245, 245, 245, 0.6);
+}
+.badge-subtle {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(245, 245, 245, 0.6);
+}
+.badge-emerald,
+.badge-amber,
+.badge-rose {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: rgba(245, 245, 245, 0.7);
+}
+.badge-accent {
+  background-color: #EBFF00;
+  color: #0a0a0a;
+  border: 1px solid #EBFF00;
 }
 
-.prose p {
-  @apply mb-6 text-neutral-600 dark:text-neutral-400;
+/* Status pill — pulsing yellow dot, used in hero/header */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(245, 245, 245, 0.7);
+  background: rgba(255, 255, 255, 0.02);
+}
+.status-pill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #EBFF00;
+  box-shadow: 0 0 0 0 rgba(235, 255, 0, 0.7);
+  animation: pulse-dot 1.8s ease-in-out infinite;
 }
 
-.prose ul {
-  @apply list-disc pl-6 mb-6 space-y-2 text-neutral-600 dark:text-neutral-400;
+@keyframes pulse-dot {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(235, 255, 0, 0.7);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(235, 255, 0, 0);
+    opacity: 0.6;
+  }
 }
 
-.prose ol {
-  @apply list-decimal pl-6 mb-6 space-y-2 text-neutral-600 dark:text-neutral-400;
+/* Slim yellow marquee bar (optional) */
+.marquee {
+  display: flex;
+  overflow: hidden;
+  background: #EBFF00;
+  color: #0a0a0a;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.4rem 0;
+  white-space: nowrap;
+}
+.marquee__track {
+  display: inline-flex;
+  gap: 3rem;
+  padding-left: 3rem;
+  animation: marquee-scroll 30s linear infinite;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-.prose blockquote {
-  @apply border-l-2 border-black/20 pl-6 italic text-neutral-500 my-6 dark:border-white/20;
+/* Section rhythm: use top border separators instead of bg tinting */
+.section-bordered {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.prose strong {
-  @apply font-semibold text-neutral-900 dark:text-white;
+/* Kept for any legacy usage; now flat/dark neutral */
+.section-tinted {
+  background-color: #0f0f0f;
 }
 
-.prose code {
-  @apply bg-neutral-100 px-1.5 py-0.5 rounded text-sm font-mono text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200;
-}
-
-.prose a {
-  @apply text-neutral-900 underline dark:text-white;
-}
-
-/* Hero section */
+/* Hero section helper — keeps text white, body copy dimmed */
 .hero-dark {
-  @apply bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100;
+  background-color: #0a0a0a;
+  color: #f5f5f5;
 }
 .hero-dark h1,
 .hero-dark h2 {
-  @apply text-black dark:text-white;
+  color: #f5f5f5;
 }
 .hero-dark p {
-  @apply text-neutral-500 dark:text-neutral-400;
-  line-height: 1.8;
+  color: rgba(245, 245, 245, 0.7);
+  line-height: 1.6;
 }
 
-/* Feature badge pill */
-.badge {
-  @apply inline-block rounded-full px-3 py-1 text-xs font-medium;
+/* ================== PROSE ================== */
+.prose {
+  max-width: none;
 }
-.badge-neutral {
-  @apply bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300;
+.prose h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 }
-.badge-emerald {
-  @apply bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-500;
+.prose h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
 }
-.badge-amber {
-  @apply bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-500;
+.prose p {
+  margin-bottom: 1.5rem;
+  color: rgba(245, 245, 245, 0.7);
+  line-height: 1.7;
 }
-.badge-rose {
-  @apply bg-rose-50 text-rose-700 dark:bg-rose-950 dark:text-rose-500;
+.prose ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: rgba(245, 245, 245, 0.7);
 }
-.badge-outline {
-  @apply border border-black/10 bg-transparent text-neutral-600 dark:border-white/10 dark:text-neutral-400;
+.prose ul > li,
+.prose ol > li {
+  margin-bottom: 0.5rem;
 }
-.badge-subtle {
-  @apply bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400;
+.prose ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: rgba(245, 245, 245, 0.7);
 }
-
-/* Interactive card — flat, subtle borders */
-.card-interactive {
-  @apply rounded-xl border border-black/10 bg-white p-6 transition-all duration-200 dark:border-white/10 dark:bg-neutral-900;
+.prose blockquote {
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  padding-left: 1.5rem;
+  font-style: italic;
+  color: rgba(245, 245, 245, 0.5);
+  margin: 1.5rem 0;
 }
-.card-interactive:hover {
-  @apply border-black/25 shadow-sm dark:border-white/20;
+.prose strong {
+  font-weight: 700;
+  color: #f5f5f5;
 }
-
-/* Subtle section background for alternating rhythm */
-.section-tinted {
-  background-color: #fafafa;
+.prose code {
+  background: rgba(255, 255, 255, 0.05);
+  color: #EBFF00;
+  padding: 0.1rem 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  border-radius: 2px;
 }
-:is(.dark) .section-tinted {
-  background-color: #171717;
+.prose a {
+  color: #EBFF00;
+  text-decoration: underline;
+  text-decoration-color: rgba(235, 255, 0, 0.35);
 }
-
-/* Ghost button on dark bg */
-.btn-ghost-dark {
-  @apply inline-block rounded-xl border border-white/20 px-6 py-3 text-sm font-medium text-white no-underline transition-colors;
-  background: transparent;
-}
-.btn-ghost-dark:hover {
-  @apply border-white bg-white text-black;
+.prose a:hover {
+  text-decoration-color: #EBFF00;
 }

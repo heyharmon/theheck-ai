@@ -1,9 +1,15 @@
 {
   "metadata": {
     "description": "Curated articles, guides, and references for the AI agent ecosystem. Each resource is linked to the tools it relates to.",
-    "last_updated": "April 11, 2026",
-    "total_entries": 4,
-    "types": ["guide", "article", "video", "course", "reference"]
+    "last_updated": "April 13, 2026",
+    "total_entries": 5,
+    "types": [
+      "guide",
+      "article",
+      "video",
+      "course",
+      "reference"
+    ]
   },
   "resources": [
     {
@@ -12,8 +18,21 @@
       "author": "Agent Harness Directory",
       "type": "guide",
       "description": "Head-to-head comparison of Garry Tan's G-Brain skillpack and Andrej Karpathy's LLM Knowledge Base (the 'Pathy' second brain). Covers architecture, retrieval model, schema, setup cost, and where each one breaks down — and ends with a straight recommendation on which one to implement first.",
-      "tags": ["knowledge-management", "second-brain", "g-brain", "karpathy", "agentic-memory", "claude-code", "openclaw", "hermes"],
-      "related_tools": ["Claude Code", "OpenClaw", "Hermes Agent"]
+      "tags": [
+        "knowledge-management",
+        "second-brain",
+        "g-brain",
+        "karpathy",
+        "agentic-memory",
+        "claude-code",
+        "openclaw",
+        "hermes"
+      ],
+      "related_tools": [
+        "Claude Code",
+        "OpenClaw",
+        "Hermes Agent"
+      ]
     },
     {
       "name": "Prompts to Analyze Your Startup's Flaws and Opportunities",
@@ -21,8 +40,16 @@
       "author": "Rimsha (@heyrimsha)",
       "type": "guide",
       "description": "A thread of ready-to-paste prompts for pressure-testing a startup — surfacing hidden weaknesses, untapped opportunities, positioning gaps, and strategic blind spots. Useful as a starting prompt library for founders running diagnostic sessions with Claude, ChatGPT, or an agent inside their own knowledge base.",
-      "tags": ["prompts", "startup-strategy", "self-audit", "founder-tools", "business-analysis"],
-      "related_tools": ["Claude Code"]
+      "tags": [
+        "prompts",
+        "startup-strategy",
+        "self-audit",
+        "founder-tools",
+        "business-analysis"
+      ],
+      "related_tools": [
+        "Claude Code"
+      ]
     },
     {
       "name": "Second Brain: Obsidian + Claude Code Setup Guide",
@@ -30,8 +57,16 @@
       "author": "Daniil Okhlopkov",
       "type": "guide",
       "description": "Practical guide to building a knowledge management system where Claude Code actively reads, searches, and updates your Obsidian vault. Covers folder structure, CLAUDE.md configuration, voice-to-knowledge pipelines via Telegram, and daily use cases. Demonstrates how to give an AI agent proper context and structured access to personal knowledge.",
-      "tags": ["knowledge-management", "obsidian", "personal-ai", "claude-code", "productivity"],
-      "related_tools": ["Claude Code"]
+      "tags": [
+        "knowledge-management",
+        "obsidian",
+        "personal-ai",
+        "claude-code",
+        "productivity"
+      ],
+      "related_tools": [
+        "Claude Code"
+      ]
     },
     {
       "name": "Harness Design for Long-Running Application Development",
@@ -39,8 +74,40 @@
       "author": "Prithvi Rajasekaran",
       "type": "article",
       "description": "Anthropic Labs engineer documents a generator-evaluator pattern for improving Claude's performance on subjective design work and lengthy development projects. Separates task execution from evaluation — a generator agent produces work while an evaluator provides structured feedback using defined criteria, running 5-15 iterations per generation. Scales to full-stack development through a three-agent architecture (planner, generator, evaluator) demonstrated in a 6-hour session building a complex retro game editor.",
-      "tags": ["harness-design", "multi-agent", "generator-evaluator", "frontend-design", "long-running-tasks", "anthropic"],
-      "related_tools": ["Claude Code", "Anthropic Multi-Agent Harness"]
+      "tags": [
+        "harness-design",
+        "multi-agent",
+        "generator-evaluator",
+        "frontend-design",
+        "long-running-tasks",
+        "anthropic"
+      ],
+      "related_tools": [
+        "Claude Code",
+        "Anthropic Multi-Agent Harness"
+      ]
+    },
+    {
+      "name": "We Built Every Employee at Ramp Their Own AI Coworker",
+      "url": "https://x.com/sebgoddijn/status/2042285915435937816",
+      "author": "Seb Goddijn (@sebgoddijn)",
+      "type": "article",
+      "description": "Ramp's post on why the models are good enough but the harness isn't — and how they built Glass, an internal AI productivity suite for every employee. Covers an auto-configured workspace (Okta SSO + integrations with Gong, Salesforce, Slack, Notion, Linear, Snowflake, Zendesk), a 350+ skill marketplace called Dojo, an AI skill-recommender (Sensei), scheduled automations, Slack-native assistants, headless long-running tasks with mobile approvals, and a code-editor-style workspace UI. The thesis: don't lower the ceiling on AI capability — raise the floor by making one person's breakthrough the whole company's baseline.",
+      "tags": [
+        "harness-design",
+        "enterprise-ai",
+        "skill-marketplace",
+        "internal-tooling",
+        "agent-ux",
+        "ramp",
+        "glass",
+        "onboarding",
+        "productivity"
+      ],
+      "related_tools": [
+        "Claude Code",
+        "Skills CLI"
+      ]
     }
   ]
 }

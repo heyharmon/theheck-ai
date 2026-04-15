@@ -1,6 +1,6 @@
 ---
 import type { Project } from "../lib/directory";
-import { formatStars, getTypeLabel, getDifficultyLabel, getDifficultyColor, isPopular } from "../lib/directory";
+import { formatStars, getTypeLabel, getDifficultyLabel, isPopular } from "../lib/directory";
 
 interface Props {
   project: Project;
@@ -8,69 +8,53 @@ interface Props {
 }
 
 const { project, slug } = Astro.props;
-const diffColor = getDifficultyColor(project.difficulty);
 const popular = isPopular(project.github_stars);
 const emergingTags = new Set(["testing", "web3", "theorem-proving", "no-code", "video", "design"]);
 const emerging = project.tag ? emergingTags.has(project.tag) : false;
 const featureHighlights = ["Open Source", "Model-Agnostic", "Self-Hosted", "Security-Focused"];
 const highlightedFeatures = (project.features || []).filter((f) => featureHighlights.includes(f)).slice(0, 2);
-
-const diffBadgeBg: Record<string, string> = {
-  emerald: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-500",
-  amber: "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-500",
-  rose: "bg-rose-50 text-rose-700 dark:bg-rose-950 dark:text-rose-500",
-  neutral: "bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300",
-};
 ---
 
 <a
   href={`/project/${slug}`}
   class:list={[
-    "card-interactive flex flex-col border-t-2 no-underline",
-    popular
-      ? "border-t-black dark:border-t-white"
-      : "border-t-black/20 dark:border-t-white/20",
+    "card-interactive flex flex-col no-underline",
+    popular ? "border-t-2 border-t-[#EBFF00]" : "",
   ]}
 >
   <div class="flex items-start justify-between gap-2">
-    <div class="flex items-center gap-2">
-      <h3 class="text-lg font-semibold text-neutral-900 dark:text-white">{project.name}</h3>
+    <div class="flex flex-wrap items-center gap-2">
+      <h3 class="font-display text-lg font-bold text-white" style="letter-spacing: -0.02em;">{project.name}</h3>
       {popular && (
-        <span class="inline-block rounded-full border border-neutral-300 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-neutral-500 dark:border-neutral-600 dark:text-neutral-400">
-          Popular
-        </span>
+        <span class="badge badge-accent">Popular</span>
       )}
       {emerging && (
-        <span class="inline-block rounded-full border border-dashed border-neutral-300 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-neutral-400 dark:border-neutral-600 dark:text-neutral-500">
-          Emerging
-        </span>
+        <span class="badge badge-outline" style="border-style: dashed;">Emerging</span>
       )}
     </div>
     {project.github_url && (
-      <svg class="h-5 w-5 shrink-0 text-neutral-400" viewBox="0 0 24 24" fill="currentColor">
+      <svg class="h-5 w-5 shrink-0 text-white/40" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
       </svg>
     )}
   </div>
 
-  <p class="mt-1 text-xs text-neutral-400">{project.creator}</p>
+  <p class="mt-1 font-mono text-[10px] uppercase tracking-[0.15em] text-white/40">{project.creator}</p>
 
   <div class="mt-3 flex flex-wrap items-center gap-2">
-    <span class="inline-block rounded-full bg-neutral-900 px-3 py-1 text-xs font-medium text-white dark:bg-white dark:text-black">
+    <span class="badge badge-neutral">
       {getTypeLabel(project.type)}
     </span>
     {project.difficulty && (
-      <span class={`inline-block rounded-full px-3 py-1 text-xs font-medium ${diffBadgeBg[diffColor] || diffBadgeBg.neutral}`}>
+      <span class="badge badge-neutral">
         {getDifficultyLabel(project.difficulty)}
       </span>
     )}
     {project.tag && (
-      <span class="inline-block rounded-full border border-dashed border-neutral-300 px-2.5 py-0.5 text-xs font-medium text-neutral-500 dark:border-neutral-600 dark:text-neutral-400">
-        #{project.tag}
-      </span>
+      <span class="badge badge-outline" style="border-style: dashed;">#{project.tag}</span>
     )}
     {project.github_stars && (
-      <span class="inline-flex items-center gap-1 text-xs text-neutral-500">
+      <span class="inline-flex items-center gap-1 font-mono text-xs text-white/50">
         <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
         </svg>
@@ -78,27 +62,23 @@ const diffBadgeBg: Record<string, string> = {
       </span>
     )}
     {highlightedFeatures.map((f) => (
-      <span class="inline-block rounded-full bg-neutral-100 px-2 py-0.5 text-[11px] font-medium text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
-        {f}
-      </span>
+      <span class="badge badge-subtle">{f}</span>
     ))}
   </div>
 
-  <p class="mt-3 flex-1 text-sm leading-relaxed text-neutral-600 line-clamp-3 dark:text-neutral-400">
+  <p class="mt-3 flex-1 text-sm leading-relaxed text-white/70 line-clamp-3">
     {project.full_description}
   </p>
 
   {project.why_discussed && (
-    <p class="mt-2 text-xs italic leading-relaxed text-neutral-400 line-clamp-2 dark:text-neutral-500">
+    <p class="mt-2 text-xs italic leading-relaxed text-white/40 line-clamp-2">
       {project.why_discussed}
     </p>
   )}
 
   <div class="mt-4 flex flex-wrap gap-1.5">
     {project.use_cases.map((uc) => (
-      <span class="inline-block rounded-full border border-black/10 px-2.5 py-0.5 text-xs text-neutral-500 dark:border-white/10 dark:text-neutral-400">
-        {uc}
-      </span>
+      <span class="badge badge-outline">{uc}</span>
     ))}
   </div>
 </a>
