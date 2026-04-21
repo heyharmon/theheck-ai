@@ -56,10 +56,10 @@ const relatedResources = getResourcesForTool(project.name);
 const diffLabel = getDifficultyLabel(project.difficulty);
 const diffColor = getDifficultyColor(project.difficulty);
 const diffBadgeBg: Record<string, string> = {
-  emerald: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-500",
-  amber: "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-500",
-  rose: "bg-rose-50 text-rose-700 dark:bg-rose-950 dark:text-rose-500",
-  neutral: "bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300",
+  emerald: "bg-emerald-50 text-emerald-700",
+  amber: "bg-amber-50 text-amber-700",
+  rose: "bg-rose-50 text-rose-700",
+  neutral: "bg-neutral-100 text-neutral-700",
 };
 
 const diffExplanation: Record<string, string> = {
@@ -71,9 +71,9 @@ const diffExplanation: Record<string, string> = {
 
 <BaseLayout title={project.name} description={project.full_description.slice(0, 160)}>
   <!-- Header -->
-  <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
+  <section class="border-b border-black/10 bg-neutral-50">
     <div class="mx-auto max-w-5xl px-6 py-12">
-      <a href="/directory" class="inline-flex items-center gap-1 text-sm text-neutral-500 no-underline hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white">
+      <a href="/directory" class="inline-flex items-center gap-1 text-sm text-neutral-500 no-underline hover:text-neutral-900">
         <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd" />
         </svg>
@@ -87,8 +87,8 @@ const diffExplanation: Record<string, string> = {
 
           {/* Best for line */}
           {project.use_cases.length > 0 && (
-            <p class="mt-3 text-sm text-neutral-500 dark:text-neutral-400">
-              <span class="font-medium text-neutral-700 dark:text-neutral-300">Best for:</span>{" "}
+            <p class="mt-3 text-sm text-neutral-500">
+              <span class="font-medium text-neutral-700">Best for:</span>{" "}
               {project.use_cases.join(", ")}
             </p>
           )}
@@ -97,7 +97,7 @@ const diffExplanation: Record<string, string> = {
           {project.features.length > 0 && (
             <div class="mt-4 flex flex-wrap gap-2">
               {project.features.map((f) => (
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-3 py-1 text-xs font-medium text-white dark:bg-white dark:text-black">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-3 py-1 text-xs font-medium text-white">
                   <svg class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
                   </svg>
@@ -110,7 +110,7 @@ const diffExplanation: Record<string, string> = {
           <dl class="mt-5 grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm">
             <dt class="text-neutral-400">Type</dt>
             <dd class="flex flex-wrap items-center gap-2">
-              <span class="inline-block rounded-full bg-neutral-900 px-3 py-1 text-xs font-medium text-white dark:bg-white dark:text-black">
+              <span class="inline-block rounded-full bg-neutral-900 px-3 py-1 text-xs font-medium text-white">
                 {getTypeLabel(project.type)}
               </span>
             </dd>
@@ -121,7 +121,7 @@ const diffExplanation: Record<string, string> = {
                   <span class={`inline-block rounded-full px-3 py-1 text-xs font-medium ${diffBadgeBg[diffColor] || diffBadgeBg.neutral}`}>
                     {diffLabel}
                   </span>
-                  <span class="text-xs text-neutral-400 dark:text-neutral-500">
+                  <span class="text-xs text-neutral-400">
                     {diffExplanation[project.difficulty] || ""}
                   </span>
                 </dd>
@@ -131,7 +131,7 @@ const diffExplanation: Record<string, string> = {
               <>
                 <dt class="text-neutral-400">Tag</dt>
                 <dd>
-                  <span class="inline-block rounded-full border border-dashed border-neutral-300 px-2.5 py-0.5 text-xs font-medium text-neutral-500 dark:border-neutral-600 dark:text-neutral-400">
+                  <span class="inline-block rounded-full border border-dashed border-neutral-300 px-2.5 py-0.5 text-xs font-medium text-neutral-500">
                     #{project.tag}
                   </span>
                 </dd>
@@ -175,9 +175,9 @@ const diffExplanation: Record<string, string> = {
             </a>
           )}
           {project.github_url && (
-            <div class="mt-1 rounded-lg border border-black/10 bg-white px-3 py-2 dark:border-white/10 dark:bg-neutral-800">
-              <p class="text-[11px] font-medium uppercase tracking-wider text-neutral-400 dark:text-neutral-500">Clone</p>
-              <code class="block mt-0.5 text-xs font-mono text-neutral-600 dark:text-neutral-300 select-all">
+            <div class="mt-1 rounded-lg border border-black/10 bg-white px-3 py-2">
+              <p class="text-[11px] font-medium uppercase tracking-wider text-neutral-400">Clone</p>
+              <code class="block mt-0.5 text-xs font-mono text-neutral-600 select-all">
                 git clone {project.github_url}.git
               </code>
             </div>
@@ -188,7 +188,7 @@ const diffExplanation: Record<string, string> = {
   </section>
 
   <!-- Description -->
-  <section class="border-b border-black/10 dark:border-white/10">
+  <section class="border-b border-black/10">
     <div class="mx-auto max-w-5xl px-6 py-10">
       <h2 class="text-xl font-semibold">About</h2>
       <p class="mt-4 text-lg leading-relaxed">{project.full_description}</p>
@@ -197,10 +197,10 @@ const diffExplanation: Record<string, string> = {
 
   <!-- Why Discussed -->
   {project.why_discussed && (
-    <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
+    <section class="border-b border-black/10 bg-neutral-50">
       <div class="mx-auto max-w-5xl px-6 py-10">
         <h2 class="text-xl font-semibold">Why people are talking about it</h2>
-        <blockquote class="mt-4 border-l-4 border-black/20 pl-6 text-lg italic text-neutral-700 dark:border-white/20 dark:text-neutral-300">
+        <blockquote class="mt-4 border-l-4 border-black/20 pl-6 text-lg italic text-neutral-700">
           {project.why_discussed}
         </blockquote>
       </div>
@@ -209,16 +209,16 @@ const diffExplanation: Record<string, string> = {
 
   <!-- Key Features — 2-column grid -->
   {project.key_features.length > 0 && (
-    <section class="border-b border-black/10 dark:border-white/10">
+    <section class="border-b border-black/10">
       <div class="mx-auto max-w-5xl px-6 py-10">
         <h2 class="text-xl font-semibold">Key Features</h2>
         <div class="mt-6 grid gap-3 sm:grid-cols-2">
           {project.key_features.map((feature) => (
-            <div class="flex items-start gap-3 rounded-lg border border-black/10 bg-white px-4 py-3 dark:border-white/10 dark:bg-neutral-900">
-              <svg class="mt-0.5 h-4 w-4 shrink-0 text-neutral-400 dark:text-neutral-500" viewBox="0 0 20 20" fill="currentColor">
+            <div class="flex items-start gap-3 rounded-lg border border-black/10 bg-white px-4 py-3">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-neutral-400" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
               </svg>
-              <span class="text-sm text-neutral-700 dark:text-neutral-300">{feature}</span>
+              <span class="text-sm text-neutral-700">{feature}</span>
             </div>
           ))}
         </div>
@@ -228,7 +228,7 @@ const diffExplanation: Record<string, string> = {
 
   <!-- Notes -->
   {project.notes && (
-    <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
+    <section class="border-b border-black/10 bg-neutral-50">
       <div class="mx-auto max-w-5xl px-6 py-10">
         <h2 class="text-xl font-semibold">Notes</h2>
         <p class="mt-4">{project.notes}</p>
@@ -238,20 +238,20 @@ const diffExplanation: Record<string, string> = {
 
   <!-- Related Reading -->
   {relatedResources.length > 0 && (
-    <section class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
+    <section class="border-b border-black/10 bg-neutral-50">
       <div class="mx-auto max-w-5xl px-6 py-10">
         <h2 class="text-xl font-semibold">Related Reading</h2>
         <p class="mt-2 text-sm text-neutral-500">Curated articles and guides that feature {project.name}.</p>
         <ul class="mt-6 space-y-4">
           {relatedResources.map((resource) => (
-            <li class="rounded-xl border border-black/10 bg-white p-5 dark:border-white/10 dark:bg-neutral-900">
+            <li class="rounded-xl border border-black/10 bg-white p-5">
               <div class="flex flex-wrap items-start justify-between gap-3">
                 <div class="flex-1 min-w-0">
                   <a
                     href={resource.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="font-display font-medium text-neutral-900 no-underline hover:text-neutral-600 hover:underline transition-colors dark:text-white dark:hover:text-neutral-300"
+                    class="font-display font-medium text-neutral-900 no-underline hover:text-neutral-600 hover:underline transition-colors"
                   >
                     {resource.name}
                   </a>
@@ -271,7 +271,7 @@ const diffExplanation: Record<string, string> = {
 
   <!-- Relationship Sections -->
   {extendedBy.length > 0 && (
-    <section class="border-b border-black/10 dark:border-white/10">
+    <section class="border-b border-black/10">
       <div class="mx-auto max-w-6xl px-6 py-10">
         <h2 class="text-xl font-semibold">Enhanced by</h2>
         <p class="mt-2 text-sm text-neutral-500">Tools that extend or add capabilities to {project.name}.</p>
@@ -285,7 +285,7 @@ const diffExplanation: Record<string, string> = {
   )}
 
   {relationshipSections.map((section) => (
-    <section class="border-b border-black/10 dark:border-white/10">
+    <section class="border-b border-black/10">
       <div class="mx-auto max-w-6xl px-6 py-10">
         <h2 class="text-xl font-semibold">{section.label}</h2>
         <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -298,7 +298,7 @@ const diffExplanation: Record<string, string> = {
   ))}
 
   {ecosystemSiblings.length > 0 && (
-    <section class="border-b border-black/10 dark:border-white/10">
+    <section class="border-b border-black/10">
       <div class="mx-auto max-w-6xl px-6 py-10">
         <h2 class="text-xl font-semibold">Same ecosystem</h2>
         <p class="mt-2 text-sm text-neutral-500">Other tools in the {project.relationships?.ecosystem} ecosystem.</p>
@@ -313,7 +313,7 @@ const diffExplanation: Record<string, string> = {
 
   <!-- Fallback: More of same type (only when no relationships exist) -->
   {fallbackRelated.length > 0 && (
-    <section class="border-b border-black/10 dark:border-white/10">
+    <section class="border-b border-black/10">
       <div class="mx-auto max-w-6xl px-6 py-10">
         <h2 class="text-xl font-semibold">More {project.type === "agent-tool" ? "Agents" : project.type === "multi-agent-platform" ? "Multi-Agent Platforms" : "Developer Utilities"}</h2>
         <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

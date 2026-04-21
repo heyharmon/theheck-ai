@@ -248,12 +248,12 @@ function getDifficultyClass(difficulty: string): string {
     <!-- Comparison View -->
     <div v-if="showComparison" class="mb-12">
       <div class="mb-6 flex items-center justify-between">
-        <h2 class="text-xl font-semibold text-neutral-900 dark:text-white">
+        <h2 class="text-xl font-semibold text-neutral-900">
           Comparing {{ comparedProjects.length }} Tools
         </h2>
         <button
           @click="closeComparison"
-          class="inline-flex items-center gap-2 rounded-lg border border-black/10 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-100 dark:border-white/10 dark:text-neutral-300 dark:hover:bg-neutral-800"
+          class="inline-flex items-center gap-2 rounded-lg border border-black/10 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-100"
         >
           <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
             <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
@@ -263,12 +263,12 @@ function getDifficultyClass(difficulty: string): string {
       </div>
 
       <!-- Comparison Grid -->
-      <div class="overflow-x-auto rounded-xl border border-black/10 dark:border-white/10">
+      <div class="overflow-x-auto rounded-xl border border-black/10">
         <table class="w-full text-left text-sm">
           <!-- Header row: tool names -->
-          <thead class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
+          <thead class="border-b border-black/10 bg-neutral-50">
             <tr>
-              <th class="w-36 min-w-[9rem] px-4 py-4 text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400"></th>
+              <th class="w-36 min-w-[9rem] px-4 py-4 text-xs font-medium uppercase tracking-wider text-neutral-500"></th>
               <th
                 v-for="project in comparedProjects"
                 :key="project.name"
@@ -277,13 +277,13 @@ function getDifficultyClass(difficulty: string): string {
                 <div class="flex items-start justify-between gap-2">
                   <a
                     :href="`/project/${generateSlug(project.name)}`"
-                    class="text-base font-semibold text-neutral-900 no-underline hover:underline dark:text-white"
+                    class="text-base font-semibold text-neutral-900 no-underline hover:underline"
                   >
                     {{ project.name }}
                   </a>
                   <button
                     @click="removeFromComparison(project.name)"
-                    class="shrink-0 rounded p-1 text-neutral-400 transition-colors hover:bg-neutral-200 hover:text-neutral-700 dark:hover:bg-neutral-700 dark:hover:text-neutral-200"
+                    class="shrink-0 rounded p-1 text-neutral-400 transition-colors hover:bg-neutral-200 hover:text-neutral-700"
                     title="Remove from comparison"
                   >
                     <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -294,13 +294,13 @@ function getDifficultyClass(difficulty: string): string {
               </th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-neutral-100 dark:divide-white/5">
+          <tbody class="divide-y divide-neutral-100">
             <tr
               v-for="(row, idx) in comparisonRows"
               :key="row.label"
-              :class="idx % 2 === 0 ? 'bg-white dark:bg-neutral-950' : 'bg-neutral-50/50 dark:bg-neutral-900/50'"
+              :class="idx % 2 === 0 ? 'bg-white' : 'bg-neutral-50/50'"
             >
-              <td class="px-4 py-3 text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400 align-top">
+              <td class="px-4 py-3 text-xs font-medium uppercase tracking-wider text-neutral-500 align-top">
                 {{ row.label }}
               </td>
               <td
@@ -310,7 +310,7 @@ function getDifficultyClass(difficulty: string): string {
               >
                 <!-- Text fields -->
                 <template v-if="row.type === 'text'">
-                  <span class="text-neutral-700 dark:text-neutral-300">
+                  <span class="text-neutral-700">
                     {{ row.getValue(project) }}
                   </span>
                 </template>
@@ -331,9 +331,9 @@ function getDifficultyClass(difficulty: string): string {
                     <li
                       v-for="item in (row.getValue(project) as string[])"
                       :key="item"
-                      class="flex items-start gap-1.5 text-neutral-700 dark:text-neutral-300"
+                      class="flex items-start gap-1.5 text-neutral-700"
                     >
-                      <span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-neutral-400 dark:bg-neutral-500"></span>
+                      <span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-neutral-400"></span>
                       {{ item }}
                     </li>
                   </ul>
@@ -360,7 +360,7 @@ function getDifficultyClass(difficulty: string): string {
                       :href="(row.getValue(project) as Project).website_url!"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex items-center gap-1.5 text-sm text-neutral-600 no-underline hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+                      class="inline-flex items-center gap-1.5 text-sm text-neutral-600 no-underline hover:text-neutral-900"
                     >
                       <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5zm7.25-.75a.75.75 0 01.75-.75h3.5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0V6.31l-5.47 5.47a.75.75 0 01-1.06-1.06l5.47-5.47H12.25a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
@@ -372,7 +372,7 @@ function getDifficultyClass(difficulty: string): string {
                       :href="(row.getValue(project) as Project).github_url!"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex items-center gap-1.5 text-sm text-neutral-600 no-underline hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+                      class="inline-flex items-center gap-1.5 text-sm text-neutral-600 no-underline hover:text-neutral-900"
                     >
                       <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -381,7 +381,7 @@ function getDifficultyClass(difficulty: string): string {
                     </a>
                     <span
                       v-if="!(row.getValue(project) as Project).website_url && !(row.getValue(project) as Project).github_url"
-                      class="text-neutral-400 dark:text-neutral-600"
+                      class="text-neutral-400"
                     >
                       &mdash;
                     </span>
@@ -399,18 +399,18 @@ function getDifficultyClass(difficulty: string): string {
         <div
           v-for="project in comparedProjects"
           :key="project.name"
-          class="rounded-xl border border-black/10 bg-white p-5 dark:border-white/10 dark:bg-neutral-900"
+          class="rounded-xl border border-black/10 bg-white p-5"
         >
           <div class="flex items-start justify-between gap-2 mb-4">
             <a
               :href="`/project/${generateSlug(project.name)}`"
-              class="text-base font-semibold text-neutral-900 no-underline hover:underline dark:text-white"
+              class="text-base font-semibold text-neutral-900 no-underline hover:underline"
             >
               {{ project.name }}
             </a>
             <button
               @click="removeFromComparison(project.name)"
-              class="shrink-0 rounded p-1 text-neutral-400 transition-colors hover:bg-neutral-200 hover:text-neutral-700 dark:hover:bg-neutral-700 dark:hover:text-neutral-200"
+              class="shrink-0 rounded p-1 text-neutral-400 transition-colors hover:bg-neutral-200 hover:text-neutral-700"
               title="Remove from comparison"
             >
               <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -420,15 +420,15 @@ function getDifficultyClass(difficulty: string): string {
           </div>
           <dl class="space-y-3 text-sm">
             <div>
-              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Creator</dt>
-              <dd class="mt-0.5 text-neutral-700 dark:text-neutral-300">{{ project.creator }}</dd>
+              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500">Creator</dt>
+              <dd class="mt-0.5 text-neutral-700">{{ project.creator }}</dd>
             </div>
             <div>
-              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Type</dt>
-              <dd class="mt-0.5 text-neutral-700 dark:text-neutral-300">{{ typeLabels[project.type] || project.type }}</dd>
+              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500">Type</dt>
+              <dd class="mt-0.5 text-neutral-700">{{ typeLabels[project.type] || project.type }}</dd>
             </div>
             <div>
-              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Difficulty</dt>
+              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500">Difficulty</dt>
               <dd class="mt-1">
                 <span class="badge" :class="getDifficultyClass(difficultyLabels[project.difficulty] || project.difficulty)">
                   {{ difficultyLabels[project.difficulty] || project.difficulty }}
@@ -436,38 +436,38 @@ function getDifficultyClass(difficulty: string): string {
               </dd>
             </div>
             <div>
-              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Stars</dt>
-              <dd class="mt-0.5 text-neutral-700 dark:text-neutral-300">{{ formatStars(project.github_stars) }}</dd>
+              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500">Stars</dt>
+              <dd class="mt-0.5 text-neutral-700">{{ formatStars(project.github_stars) }}</dd>
             </div>
             <div>
-              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Use Cases</dt>
+              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500">Use Cases</dt>
               <dd class="mt-1 flex flex-wrap gap-1">
                 <span
                   v-for="uc in project.use_cases"
                   :key="uc"
-                  class="inline-block rounded-full border border-black/10 px-2 py-0.5 text-xs text-neutral-500 dark:border-white/10 dark:text-neutral-400"
+                  class="inline-block rounded-full border border-black/10 px-2 py-0.5 text-xs text-neutral-500"
                 >
                   {{ uc }}
                 </span>
               </dd>
             </div>
             <div>
-              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Key Features</dt>
+              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500">Key Features</dt>
               <dd class="mt-1">
                 <ul class="list-none space-y-1 p-0 m-0">
                   <li
                     v-for="f in project.key_features"
                     :key="f"
-                    class="flex items-start gap-1.5 text-neutral-700 dark:text-neutral-300"
+                    class="flex items-start gap-1.5 text-neutral-700"
                   >
-                    <span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-neutral-400 dark:bg-neutral-500"></span>
+                    <span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-neutral-400"></span>
                     {{ f }}
                   </li>
                 </ul>
               </dd>
             </div>
             <div>
-              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Features</dt>
+              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500">Features</dt>
               <dd class="mt-1 flex flex-wrap gap-1">
                 <span
                   v-for="f in (project.features.length > 0 ? project.features : ['None listed'])"
@@ -479,14 +479,14 @@ function getDifficultyClass(difficulty: string): string {
               </dd>
             </div>
             <div>
-              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Links</dt>
+              <dt class="text-xs font-medium uppercase tracking-wider text-neutral-500">Links</dt>
               <dd class="mt-1 flex gap-3">
                 <a
                   v-if="project.website_url"
                   :href="project.website_url"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 text-sm text-neutral-600 no-underline hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+                  class="inline-flex items-center gap-1.5 text-sm text-neutral-600 no-underline hover:text-neutral-900"
                 >
                   <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5zm7.25-.75a.75.75 0 01.75-.75h3.5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0V6.31l-5.47 5.47a.75.75 0 01-1.06-1.06l5.47-5.47H12.25a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
@@ -498,7 +498,7 @@ function getDifficultyClass(difficulty: string): string {
                   :href="project.github_url"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 text-sm text-neutral-600 no-underline hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+                  class="inline-flex items-center gap-1.5 text-sm text-neutral-600 no-underline hover:text-neutral-900"
                 >
                   <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -515,7 +515,7 @@ function getDifficultyClass(difficulty: string): string {
     <!-- Table View (hidden during comparison) -->
     <div v-if="!showComparison">
       <!-- Hint text -->
-      <p class="mb-4 text-sm text-neutral-500 dark:text-neutral-400">
+      <p class="mb-4 text-sm text-neutral-500">
         Select 2&ndash;4 tools to compare them side by side.
       </p>
 
@@ -527,7 +527,7 @@ function getDifficultyClass(difficulty: string): string {
           v-model="searchQuery"
           type="text"
           placeholder="Filter table..."
-          class="w-full rounded-lg border border-black/10 bg-white py-2.5 pl-10 pr-4 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition-colors focus:border-black focus:ring-2 focus:ring-neutral-100 dark:border-white/10 dark:bg-neutral-900 dark:text-white dark:placeholder-neutral-500 dark:focus:border-white dark:focus:ring-neutral-800"
+          class="w-full rounded-lg border border-black/10 bg-white py-2.5 pl-10 pr-4 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition-colors focus:border-black focus:ring-2 focus:ring-neutral-100"
         />
       </div>
 
@@ -538,9 +538,9 @@ function getDifficultyClass(difficulty: string): string {
         </template>
       </p>
 
-      <div class="mt-4 overflow-x-auto rounded-xl border border-black/10 dark:border-white/10">
+      <div class="mt-4 overflow-x-auto rounded-xl border border-black/10">
         <table class="w-full text-left text-sm">
-          <thead class="border-b border-black/10 bg-neutral-50 dark:border-white/10 dark:bg-neutral-900">
+          <thead class="border-b border-black/10 bg-neutral-50">
             <tr>
               <th class="w-10 px-3 py-3">
                 <span class="sr-only">Select</span>
@@ -554,7 +554,7 @@ function getDifficultyClass(difficulty: string): string {
                   { key: 'useCases', label: 'Use Cases' },
                 ]"
                 :key="col.key"
-                class="cursor-pointer px-4 py-3 font-medium text-neutral-700 select-none hover:text-neutral-900 whitespace-nowrap dark:text-neutral-300 dark:hover:text-white"
+                class="cursor-pointer px-4 py-3 font-medium text-neutral-700 select-none hover:text-neutral-900 whitespace-nowrap"
                 @click="toggleSort(col.key as any)"
               >
                 <span class="inline-flex items-center gap-1">
@@ -564,18 +564,18 @@ function getDifficultyClass(difficulty: string): string {
                   </svg>
                 </span>
               </th>
-              <th class="px-4 py-3 font-medium text-neutral-700 dark:text-neutral-300">GitHub</th>
+              <th class="px-4 py-3 font-medium text-neutral-700">GitHub</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-neutral-100 dark:divide-white/10">
+          <tbody class="divide-y divide-neutral-100">
             <tr
               v-for="project in sorted"
               :key="project.name"
               class="transition-colors"
               :class="[
                 isSelected(project.name)
-                  ? 'bg-neutral-100 dark:bg-neutral-800/50'
-                  : 'hover:bg-neutral-50 dark:hover:bg-neutral-900',
+                  ? 'bg-neutral-100'
+                  : 'hover:bg-neutral-50',
               ]"
             >
               <td class="px-3 py-3">
@@ -584,28 +584,28 @@ function getDifficultyClass(difficulty: string): string {
                   :checked="isSelected(project.name)"
                   :disabled="isDisabled(project.name)"
                   @change="toggleSelection(project.name)"
-                  class="h-4 w-4 cursor-pointer rounded border-neutral-300 text-neutral-900 focus:ring-neutral-500 disabled:cursor-not-allowed disabled:opacity-40 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white dark:focus:ring-neutral-400"
+                  class="h-4 w-4 cursor-pointer rounded border-neutral-300 text-neutral-900 focus:ring-neutral-500 disabled:cursor-not-allowed disabled:opacity-40"
                 />
               </td>
               <td class="px-4 py-3 font-medium">
                 <a
                   :href="`/project/${generateSlug(project.name)}`"
-                  class="text-neutral-900 font-semibold no-underline hover:underline dark:text-white"
+                  class="text-neutral-900 font-semibold no-underline hover:underline"
                 >
                   {{ project.name }}
                 </a>
               </td>
-              <td class="px-4 py-3 whitespace-nowrap text-neutral-600 dark:text-neutral-400">
+              <td class="px-4 py-3 whitespace-nowrap text-neutral-600">
                 {{ typeLabels[project.type] || project.type }}
               </td>
-              <td class="px-4 py-3 text-neutral-600 dark:text-neutral-400">{{ project.creator }}</td>
+              <td class="px-4 py-3 text-neutral-600">{{ project.creator }}</td>
               <td class="px-4 py-3 text-neutral-500 whitespace-nowrap">{{ formatStars(project.github_stars) }}</td>
               <td class="px-4 py-3">
                 <div class="flex flex-wrap gap-1">
                   <span
                     v-for="uc in project.use_cases"
                     :key="uc"
-                    class="inline-block rounded-full border border-black/10 px-2 py-0.5 text-xs text-neutral-500 dark:border-white/10 dark:text-neutral-400"
+                    class="inline-block rounded-full border border-black/10 px-2 py-0.5 text-xs text-neutral-500"
                   >
                     {{ uc }}
                   </span>
@@ -617,13 +617,13 @@ function getDifficultyClass(difficulty: string): string {
                   :href="project.github_url"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-neutral-400 no-underline hover:text-neutral-900 dark:hover:text-white"
+                  class="text-neutral-400 no-underline hover:text-neutral-900"
                 >
                   <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                   </svg>
                 </a>
-                <span v-else class="text-neutral-300 dark:text-neutral-600">&mdash;</span>
+                <span v-else class="text-neutral-300">&mdash;</span>
               </td>
             </tr>
           </tbody>
@@ -643,16 +643,16 @@ function getDifficultyClass(difficulty: string): string {
       >
         <div
           v-if="selectedCount >= 2 && !showComparison"
-          class="fixed bottom-0 inset-x-0 z-50 border-t border-black/10 bg-white/95 backdrop-blur-sm dark:border-white/10 dark:bg-neutral-950/95"
+          class="fixed bottom-0 inset-x-0 z-50 border-t border-black/10 bg-white/95 backdrop-blur-sm"
         >
           <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
             <div class="flex items-center gap-3">
-              <span class="text-sm font-medium text-neutral-900 dark:text-white">
+              <span class="text-sm font-medium text-neutral-900">
                 {{ selectedCount }} {{ selectedCount === 1 ? 'tool' : 'tools' }} selected
               </span>
               <button
                 @click="clearSelection"
-                class="text-sm text-neutral-500 underline-offset-4 hover:text-neutral-700 hover:underline dark:text-neutral-400 dark:hover:text-neutral-200"
+                class="text-sm text-neutral-500 underline-offset-4 hover:text-neutral-700 hover:underline"
               >
                 Clear
               </button>

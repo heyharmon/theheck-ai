@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "title": "Comprehensive Directory of Agent Harnesses & Orchestrators",
-    "last_updated": "April 14, 2026",
-    "description": "Full master aggregation including every harness, framework, adjacent tool, Paperclip.ing category, and all orchestration projects discussed. 81 total entries.",
-    "total_entries": 86,
+    "title": "Directory of AI Tools, Agents & Harnesses",
+    "last_updated": "April 18, 2026",
+    "description": "A directory of AI tools for everyone at every level — from frontier consumer chat products to agent harnesses, multi-agent platforms, and autonomous systems. Organized by capability ladder.",
+    "total_entries": 105,
     "categories": [
       "Team/Organization-Backed",
       "Individual/Indie & Research",
@@ -11,9 +11,10 @@
       "Zero-Human / Agent Company Orchestration"
     ],
     "types": [
-      "Agents",
-      "Multi-Agent Platforms",
-      "Developer Utilities"
+      "consumer-chat",
+      "agent-tool",
+      "multi-agent-platform",
+      "developer-utility"
     ],
     "use_cases": [
       "Dev",
@@ -34,11 +35,29 @@
       "Intermediate",
       "Advanced"
     ],
+    "audience_levels": [
+      "Anyone",
+      "Curious builder",
+      "Developer",
+      "AI practitioner"
+    ],
+    "ladder_rungs": {
+      "1": "Consumer Chat — chat in a box, zero setup",
+      "2": "Agentic Apps — consumer UX, AI takes action",
+      "3": "Agent Tools — an agent running alongside your files",
+      "4": "Multi-Agent Platforms — compose and orchestrate multiple agents",
+      "5": "Autonomous Systems — zero-human-in-the-loop operations",
+      "6": "Developer Utilities — supporting infrastructure (off-ladder-ish)"
+    },
     "subtypes": {
+      "consumer-chat": [
+        "consumer-chat"
+      ],
       "agent-tool": [
         "standalone-agent",
         "config-layer",
-        "domain-agent"
+        "domain-agent",
+        "agentic-app"
       ],
       "multi-agent-platform": [
         "framework-sdk",
@@ -2686,6 +2705,1425 @@
         "works_with": [
           "Claude Code"
         ]
+      }
+    },
+    {
+      "name": "Superagent",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Research",
+        "Content"
+      ],
+      "features": [],
+      "creator": "Airtable (built on DeepSky acquisition)",
+      "github_stars": "N/A (closed-source SaaS)",
+      "github_url": null,
+      "full_description": "Hosted multi-agent business-research platform from Airtable. A coordinating agent plans a research brief, deploys specialist sub-agents in parallel across credible sources (FactSet, Crunchbase, SEC filings, earnings transcripts, open web), and synthesizes outputs into one of four boardroom-ready deliverables: Super Reports (interactive scrollytelling documents with charts and citations), Super Slides (presentation decks rendered as interactive websites), Super Documents (written business plans, white papers, RFP responses), or Websites (landing pages, dashboards, comparison pages). Every output is fact-checked and citation-linked. Designed for non-technical business users — founders, operators, executives, strategists — not developers. Launched January 27, 2026 as Airtable's first standalone product in 13 years, built on the October 2025 acquisition of DeepSky and led by new CTO David Azose (formerly ChatGPT business products at OpenAI).",
+      "key_features": [
+        "Multi-agent planner/specialist/synthesizer architecture, parallel execution",
+        "Four deliverable types: Super Reports, Super Slides, Super Documents, Websites",
+        "Premium data sources: FactSet, Crunchbase, SEC filings, earnings transcripts",
+        "Inline citations and source traceability on every claim",
+        "Interactive, visually-rendered outputs (not plain text summaries)",
+        "Shareable URLs for every deliverable",
+        "Designed for business users — no prompting expertise required",
+        "30-day free trial; $20/mo Pro (200 runs) with $0.50/overage"
+      ],
+      "why_discussed": "Airtable's first standalone product in 13 years and one of the highest-profile non-developer multi-agent SaaS launches of early 2026. Represents the business-research wedge of the multi-agent platform space (alongside OpenAI/Perplexity/Google Deep Research) and demonstrates a major SaaS incumbent betting its next act on an agent product.",
+      "notes": "Closed SaaS. No API, no self-hosting, no model selection disclosed. Airtable also launched a sibling product, Hyperagent (hyperagent.com), ~3 weeks later in Feb 2026. Name collides with Superagent.sh (YC W24, unrelated) and getsuperagent.com (insurance, unrelated).",
+      "website_url": "https://superagent.com/",
+      "difficulty": "beginner",
+      "tag": null,
+      "subtype": "orchestration-platform",
+      "relationships": {
+        "alternative_to": [
+          "ROMA (Recursive Open Meta-Agent Framework)",
+          "deer-flow"
+        ]
+      }
+    },
+    {
+      "name": "Core",
+      "category": "Individual/Indie & Research",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Ops",
+        "General-Purpose"
+      ],
+      "features": [
+        "Open Source"
+      ],
+      "creator": "Blake Anderson, Jayaditya Gupta, Benjamin Wang — Core OS Studio Inc",
+      "github_stars": "N/A (open-source, repo URL pending)",
+      "github_url": null,
+      "full_description": "Open-source (Apache 2.0) AI-native team workspace that rebuilds Slack, Linear, Notion, Gmail, and Google Calendar into one tool with an AI Assistant woven throughout. Six first-class modules — Messages (channels + DMs), Projects (Kanban boards), Files (rich-text docs + uploads), Email (Gmail integration), Calendar (Google Calendar sync), and AI Assistant (chat that drafts messages, summarizes threads, schedules meetings, manages tasks, and finds information) — all share context so agents can act across the full workspace rather than one app at a time. Built in ~2 months by a 3-person indie team at Core OS Studio Inc. Hosted at core.so and free to use. Founder Blake Anderson frames Core as the complement to Paperclip: 'Paperclip = individual orchestrates AI agents; Core = unified workspace with human team members.'",
+      "key_features": [
+        "AI Assistant embedded across every module (drafts, summarizes, schedules, finds)",
+        "Real-time team messaging with channels + DMs (Slack replacement)",
+        "Kanban project boards with customizable columns (Linear replacement)",
+        "Rich-text documents with real-time collaboration + file uploads (Notion replacement)",
+        "Gmail integration — read, compose, manage mail inside Core",
+        "Google Calendar sync — day/week/month views, create events in-app",
+        "Shared context across modules so agents can act across the full workspace",
+        "Team/Members management + Dashboard",
+        "Apache 2.0 open-source; 100% free hosted version at core.so"
+      ],
+      "why_discussed": "March 29, 2026 public launch drew viral attention across the AI-workspace corner of X. Positioned by commentators as 'rebuilding the modern workspace around AI agents — Slack + Linear + Notion recentered around shared context.' Represents the human-team counterpart to Paperclip in Blake Anderson's own framing, and an Apache 2.0 open-source alternative to the coming wave of AI-native workspace SaaS.",
+      "notes": "Company: Core OS Studio Inc. Apache 2.0 per founder statements, but public GitHub URL not yet located. 'Core' is a heavily overloaded name; disambiguated by core.so domain. Underlying LLM(s) not disclosed; self-hosting feasibility undocumented.",
+      "website_url": "https://www.core.so/",
+      "difficulty": "beginner",
+      "tag": "workspace",
+      "subtype": "orchestration-platform",
+      "relationships": {
+        "alternative_to": [
+          "Superagent"
+        ],
+        "ecosystem": [
+          "Paperclip.ing"
+        ]
+      }
+    },
+    {
+      "name": "Chat-box.ai",
+      "category": "Harnesses-Adjacent",
+      "type": "developer-utility",
+      "use_cases": [
+        "General-Purpose",
+        "Content"
+      ],
+      "features": [],
+      "creator": "FLORATE LIMITED",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "full_description": "Commercial multi-model AI chat aggregator by FLORATE LIMITED. Bundles chat access to Claude 3.5 Sonnet, GPT-4o, Google Gemini, and DALL-E 3 image generation behind a single paid subscription, positioned as 'The World's Best AIs, All in One Place, for a Better Price.' Features include real-time web search, PDF and document Q&A, OCR, voice input, image generation, chat history with search, and cross-device sync. Web and mobile (iOS/Android) with no downloads required on web. Companion 'ChatBox AI — Chatbot Assistant' mobile app has ~6M installs and a 4.7-star rating. Closed-source; no BYOK, no self-hosting, no local models.",
+      "key_features": [
+        "Multi-model chat: Claude 3.5 Sonnet, GPT-4o, Gemini, DALL-E 3",
+        "Image generation (text-to-image via DALL-E 3)",
+        "Real-time web search",
+        "PDF/document upload, Q&A, and OCR",
+        "Voice input and cross-device chat history sync",
+        "Web + iOS + Android clients",
+        "Single subscription replaces separate ChatGPT/Claude/Gemini plans"
+      ],
+      "why_discussed": "Represents the commercial 'multi-model chat aggregator' product category that sits adjacent to the agent-harness ecosystem — consumers buying model access in a bundle rather than assembling their own harness. Notable primarily as a contrast point to open-source peers (LobeHub) and to the similarly-named open-source Chatbox desktop client (chatboxai.app) that it is frequently confused with.",
+      "notes": "Closed-source SaaS. Subscription tiers via mobile app run $6.99–$9.99/week and $19.99–$59.99/year. Multiple Trustpilot complaints flag auto-renewal disputes and in-app review prompts mid-session. Name collision with the open-source Chatbox (chatboxai.app, Mediocre LLC) — these are distinct products.",
+      "website_url": "https://chat-box.ai/",
+      "difficulty": "beginner",
+      "tag": "chat-aggregator",
+      "subtype": "gui-shell",
+      "relationships": {
+        "alternative_to": [
+          "LobeHub"
+        ]
+      }
+    },
+    {
+      "name": "Agent.ai",
+      "category": "Individual/Indie & Research",
+      "type": "multi-agent-platform",
+      "use_cases": [
+        "Ops",
+        "General-Purpose",
+        "Content"
+      ],
+      "features": [
+        "Model-Agnostic"
+      ],
+      "creator": "Dharmesh Shah (HubSpot co-founder & CTO) — AgentAI Platform, Inc.",
+      "github_stars": "N/A (closed-source SaaS)",
+      "github_url": null,
+      "full_description": "Hosted 'professional network for AI agents' that combines a 1,000+ agent marketplace, a no-code visual Agent Builder, and a profile/identity layer for both humans and agents. Built by HubSpot co-founder and CTO Dharmesh Shah as an independent LLC side project (AgentAI Platform, Inc.) — not a HubSpot product, but operated by Shah with freelancers so it can move faster than HubSpot's roadmap. The Builder exposes seven action categories (Inputs & Data Retrieval, Social Media, HubSpot CRM & Automation, Business & Financial Data, Workflow & Logic, AI & Content Generation, Outputs) composed on a visual canvas with manual, scheduled, email, webhook, and HubSpot-event triggers. Agents can invoke other agents, giving the platform a practical multi-agent composition model. Launched at HubSpot INBOUND in September 2024; grew from 10K waitlist signups to 258K users by January 2025, and surpassed 1.1M users with 1,000 public agents by mid-2025. Shah has stated he hopes Agent.ai eventually joins the HubSpot portfolio — the same trajectory as his prior side project ChatSpot, which became Breeze Copilot.",
+      "key_features": [
+        "1,000+ public agent marketplace with browse-and-run discovery",
+        "No-code visual Agent Builder (canvas, 7 action categories, preview/debug panel)",
+        "Multi-trigger support: manual, schedule, email-address, webhook, HubSpot event",
+        "Agent-to-agent invocation as a first-class Workflow & Logic action",
+        "Native HubSpot CRM integration (contact/company management, lead creation, event triggers)",
+        "Model-agnostic backend (OpenAI, Anthropic, and other providers)",
+        "Human and agent profile pages (agent.ai/human/* and agent.ai/profile/*)",
+        "Freemium: marketplace agents free; individual premium agents $10/mo; Pro $25/mo"
+      ],
+      "why_discussed": "One of the highest-profile non-developer multi-agent marketplace/builder platforms in the ecosystem, and a rare example of a major SaaS founder (Dharmesh Shah, HubSpot) running a public independent AI side project at scale (1.1M+ users). Frequently name-checked as a reference point for 'agents for business users' positioning.",
+      "notes": "Independent of HubSpot — built by Dharmesh Shah's LLC (AgentAI Platform, Inc.) with freelancers, not HubSpot employees. Pricing: Pro $25/mo includes all premium agents and private founder community chat; individual premium agents $10/mo each; free marketplace tier. Closed SaaS — no API or self-hosting.",
+      "website_url": "https://agent.ai/",
+      "difficulty": "beginner",
+      "tag": "marketplace",
+      "subtype": "orchestration-platform",
+      "relationships": {
+        "alternative_to": [
+          "Dify",
+          "LobeHub"
+        ]
+      }
+    },
+    {
+      "name": "ChatGPT",
+      "category": "Team/Organization-Backed",
+      "type": "consumer-chat",
+      "subtype": "consumer-chat",
+      "use_cases": ["General-Purpose", "Content", "Research"],
+      "features": [],
+      "creator": "OpenAI",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://chatgpt.com/",
+      "full_description": "OpenAI's flagship consumer chat product — the 'chat in a box' that launched the modern consumer LLM era in November 2022 and, as of early 2026, reaches roughly 900 million weekly active users. Gives anyone a conversational interface over OpenAI's GPT-5 family (GPT-5, 5.2, 5.4, Thinking/Pro/mini/nano variants) plus DALL-E image generation, Sora video, advanced voice, vision, web search, file upload, persistent memory, Projects, Custom GPTs, Canvas, and Deep Research. Zero setup, web + iOS + Android + macOS + Windows. Six pricing tiers in 2026: Free, Go ($8/mo), Plus ($20/mo), Pro ($200/mo), Business ($25–30/user/mo), Enterprise. This entry covers the core chat experience only; ChatGPT Agent is a separate, higher-rung product.",
+      "key_features": [
+        "GPT-5 family auto-switching (Auto picks between fast, Thinking, and Pro modes)",
+        "Image generation (DALL-E) and video (Sora) built in",
+        "Advanced Voice Mode — natural, interruptible voice conversation",
+        "Vision — upload images, PDFs, spreadsheets for analysis",
+        "Web search and citations built into chat",
+        "Persistent memory across sessions (Plus+)",
+        "Projects — group related chats + files in a workspace",
+        "Custom GPTs — reusable personas, shareable",
+        "Canvas — side-by-side collaborative document and code editor",
+        "Deep Research — long-form, cited research reports"
+      ],
+      "why_discussed": "The category-defining consumer AI product and the reference point every other chat experience is measured against. With ~900M weekly active users it is how most of the world experiences AI. For a directory that now spans everyone from first-time users to AI practitioners, ChatGPT is the rung-1 anchor — the tool people start with before they ever consider an agent, a harness, or a framework.",
+      "notes": "Closed-source, closed-weights, SaaS-only. Free/Go/Plus/Pro train on user data by default (opt-out available); Business/Enterprise do not train by default. GPT-5.4 launched March 5, 2026. This entry covers chat only — ChatGPT Agent is a separate entry.",
+      "difficulty": "beginner",
+      "tag": "consumer-chat",
+      "ladder_rung": 1,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Talk or type to a frontier model and get useful answers with zero setup — no install, no API key, no config",
+        "Multimodal input/output in one place — text, voice, image, PDF, spreadsheet, webcam, generated images, generated video",
+        "Memory and Projects that persist context across sessions without any retrieval engineering",
+        "Search the live web and get cited answers without leaving chat",
+        "Custom GPTs and Canvas — lightweight personalization and a shared editable surface without writing a single line of code"
+      ],
+      "good_for": [
+        "Anyone meeting a frontier LLM for the first time — parents, students, knowledge workers, curious professionals",
+        "Everyday thinking, writing, planning, research, email drafting, and 'ask a smart friend' moments",
+        "Generalist tasks across writing, light coding, image/video generation, voice conversation, and document Q&A"
+      ],
+      "not_for": [
+        "Editing files on your computer, running code against your repo — that's rung 3 (Claude Code, Cursor, Codex CLI)",
+        "Taking multi-step actions inside other apps on your behalf — that's rung 2 (ChatGPT Agent, Perplexity Comet)",
+        "Self-hosting, bringing your own models, or keeping prompts off OpenAI's servers — use LobeHub or open-weight alternatives"
+      ],
+      "graduate_to": ["ChatGPT Agent", "Claude Code", "Cursor", "Codex CLI", "Perplexity"],
+      "relationships": {
+        "ecosystem": ["OpenAI Agents SDK", "GitHub Copilot SDK"],
+        "alternative_to": ["Claude.ai", "Google Gemini", "Grok"]
+      }
+    },
+    {
+      "name": "Claude.ai",
+      "category": "Team/Organization-Backed",
+      "type": "consumer-chat",
+      "subtype": "consumer-chat",
+      "use_cases": ["General-Purpose", "Content", "Research"],
+      "features": [],
+      "creator": "Anthropic",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://claude.ai/",
+      "full_description": "Anthropic's flagship consumer chat product and the front door to the Claude model family (Opus 4.7, Sonnet 4.6, Haiku 4.5). Ships on web, macOS / Windows desktop, and iOS / Android mobile. Beyond chat, the product layers Projects (topic-scoped workspaces with persistent context and pinned documents), Artifacts (live, shareable documents, visualizations, code, and mini-apps rendered alongside the conversation), and Skills (reusable capability packs installable from marketplaces). Memory persists across conversations. Free tier includes web search, file creation, code execution, desktop extensions, Slack + Google Workspace connectors, and remote MCP connectors. Pro ($17/mo annual, $20/mo monthly) adds unlimited Projects, Research mode, Claude for Excel/PowerPoint (beta), and bundles Claude Code and Claude Cowork. Max (from $100/mo) offers 5x or 20x Pro usage.",
+      "key_features": [
+        "Chat with Opus 4.7, Sonnet 4.6, and Haiku 4.5 across web, desktop, and mobile",
+        "Projects — topic-scoped workspaces with persistent context and pinned documents",
+        "Artifacts — live rendered documents, visualizations, code, and mini-apps inside the chat",
+        "Skills — reusable capability packs installable from marketplaces",
+        "Memory across conversations, plus import from other AI providers",
+        "Voice Mode for hands-free use",
+        "Remote MCP connectors, Google Workspace, Slack, and desktop extensions (on Free)",
+        "Research mode and Claude for Excel/PowerPoint beta (Pro+)"
+      ],
+      "why_discussed": "The canonical consumer chat experience for Anthropic's Claude — the starting rung of the capability ladder and the tool most non-developers reach for when they say 'I'm using Claude.' Sits as the Anthropic-brand counterpart to ChatGPT and Gemini in the consumer chat space.",
+      "notes": "Consumer chat surface only — Claude Code, Claude Cowork, and Claude Computer Use are separate directory entries. Closed-source, Anthropic models only, no BYOK. Free tier is unusually generous for 2026 consumer AI. Skills overlap with Claude Code's plugin/skill system — the same skill files can power both.",
+      "difficulty": "beginner",
+      "tag": "consumer-chat",
+      "ladder_rung": 1,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Turns a frontier model into a zero-friction doorway — no API key, no config, no install (web) or one-tap install (mobile/desktop)",
+        "Persistent memory and Projects convert a stateless chatbot into a topic-scoped workspace over time",
+        "Artifacts render the assistant's output as live documents, code, mini-apps, and visualizations — not just text",
+        "Skills marketplaces let non-developers install specialized capabilities without writing any code",
+        "MCP connectors, Slack, and Google Workspace integrations now ship on the Free tier"
+      ],
+      "good_for": [
+        "Writers, students, researchers, PMs, and knowledge workers who want a best-in-class chat assistant with Anthropic models",
+        "Non-developers who want pinned-context workspaces (Projects), reusable capabilities (Skills), and live outputs (Artifacts)",
+        "Long-context reasoning, analysis, drafting, and research tasks where Claude's writing and thinking quality is the draw"
+      ],
+      "not_for": [
+        "Developers who want an agent running alongside their local codebase — that is Claude Code",
+        "Teams that need multi-model routing, BYOK, or self-hosting — use LobeHub or a model-agnostic shell",
+        "Automated, always-on agent workflows without a human in the loop — graduate to Claude Cowork or Claude Code"
+      ],
+      "graduate_to": ["Claude Code", "Claude Cowork", "Claude Computer Use", "LobeHub"],
+      "relationships": {
+        "alternative_to": ["ChatGPT", "Google Gemini"],
+        "works_with": ["Claude Code", "Claude Cowork"],
+        "ecosystem": ["Claude Code", "Claude Cowork", "Claude Computer Use"]
+      }
+    },
+    {
+      "name": "Google Gemini",
+      "category": "Team/Organization-Backed",
+      "type": "consumer-chat",
+      "subtype": "consumer-chat",
+      "use_cases": ["General-Purpose", "Content", "Research"],
+      "features": [],
+      "creator": "Google (Google DeepMind)",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://gemini.google.com/",
+      "full_description": "Google's flagship consumer AI chat experience, powered by Gemini 3.1 Pro (flagship) and Gemini 3 Flash (free tier). Accessible via web (gemini.google.com), iOS, Android, and now native Mac. Bundles multimodal chat, custom assistants (Gems), a side-by-side Canvas for iterative document and prototype editing, image generation (Imagen, Nano Banana), video generation with audio (Veo 3.1), live voice conversation with camera sharing (Gemini Live), Personal Intelligence grounding in the user's Google Photos / Gmail / Calendar / Workspace data, and — at the Ultra tier — Gemini Agent for multi-step task execution and Deep Think reasoning. Distributed through Google Search, Android, Chrome, and Workspace with reported 2B+ user reach. Four consumer tiers: Free, Google AI Plus ($7.99/mo), Google AI Pro ($19.99/mo), Google AI Ultra ($249.99/mo).",
+      "key_features": [
+        "Gemini 3.1 Pro flagship model with 1M-token context (Pro+)",
+        "Gems — custom assistants with uploaded file context, shareable",
+        "Canvas — split-pane workspace for editing documents, code, prototypes",
+        "Imagen + Nano Banana image generation and editing",
+        "Veo 3.1 video generation (up to 8 seconds, 1080p, with native audio)",
+        "Gemini Live — real-time voice chat with camera and screen sharing",
+        "Personal Intelligence — grounding in Google Photos, Gmail, Calendar, Workspace",
+        "Gemini Notebooks (NotebookLM integration) for document-centric research",
+        "Gemini Agent (Ultra) — multi-step agentic task execution",
+        "Native apps for web, iOS, Android, and macOS"
+      ],
+      "why_discussed": "The canonical rung-1 consumer chat experience from the vendor with the deepest distribution (Google Search, Android, Workspace, Chrome). Sets the ceiling for what 'chat in a box' can be when paired with a frontier model, a 1M-token context window, and native multimodal generation.",
+      "notes": "Closed-source, cloud-only, single-vendor. Gemini 3 Pro launched Nov 18, 2025; Gemini 3.1 Pro released Feb 19, 2026. Free tier uses Gemini 3 Flash. Gemini Agent and Deep Think are Ultra-tier only. Gemini Deep Research is a separate directory entry. Developer-facing products (Gemini API, Gemini CLI, Jules, AI Studio) are separate products.",
+      "difficulty": "beginner",
+      "tag": "consumer-chat",
+      "ladder_rung": 1,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Ask any question and get an answer grounded in Google's web index when needed",
+        "Generate images (Imagen, Nano Banana) and short videos with sound (Veo 3.1) from text prompts",
+        "Talk to the model live with camera and screen sharing (Gemini Live)",
+        "Create reusable custom assistants (Gems) pre-loaded with your own files and instructions",
+        "Iteratively edit documents, code, or prototypes in a side-by-side Canvas workspace"
+      ],
+      "good_for": [
+        "Non-technical users already in Google's ecosystem who want AI that reads across Gmail, Docs, Photos, and Calendar",
+        "Casual creative work — image mockups, short videos, brainstorming, writing help",
+        "Long-context research and document summarization (1M-token window on Pro and Ultra)"
+      ],
+      "not_for": [
+        "Bringing your own API key, running local models, or swapping providers — single-vendor only",
+        "Building tool-using agents or multi-agent systems — use Gemini CLI, Jules, or a higher-rung platform",
+        "Privacy-sensitive workflows where content must stay off Google's cloud — no self-host option"
+      ],
+      "graduate_to": ["Gemini Deep Research", "Claude Code", "LobeHub"],
+      "relationships": {
+        "alternative_to": ["ChatGPT", "Claude.ai"],
+        "ecosystem": ["Gemini Deep Research"]
+      }
+    },
+    {
+      "name": "Perplexity",
+      "category": "Team/Organization-Backed",
+      "type": "consumer-chat",
+      "subtype": "consumer-chat",
+      "use_cases": ["Research", "General-Purpose"],
+      "features": [],
+      "creator": "Perplexity AI (Aravind Srinivas et al.)",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://www.perplexity.ai/",
+      "full_description": "AI answer engine from Perplexity AI. Ask a question in plain language and get a synthesized answer with numbered inline citations linking back to source pages. Runs live web retrieval on every query (no training-cutoff staleness), offers focus modes for Academic papers, Social discussion, Finance filings, and News, and — on paid tiers — lets users route queries through their own Sonar models or frontier models from OpenAI, Anthropic, and Google. Deep Research mode autonomously plans sub-queries and returns a multi-page cited report. Free tier with unlimited quick searches; Pro ($20/mo) adds unlimited Pro queries and 20 Deep Research runs/day; Max ($200/mo) adds top-tier models (including Claude Opus 4.7) and higher limits; Enterprise tiers at $40/user. Available on web, iOS, Android, and a native Mac app.",
+      "key_features": [
+        "Inline numbered citations on every factual claim, linking to the source page",
+        "Live web retrieval on every query — no model-knowledge-cutoff problem",
+        "Focus modes: Academic, Social, Finance, News, Video, Math",
+        "Deep Research / Sonar Deep Research — autonomous multi-step research with long-form cited report",
+        "Model picker on paid tiers: Sonar, GPT-5.x, Claude Opus 4.7, Gemini, Grok",
+        "Model Council (Feb 2026): run the same prompt across multiple frontier models side-by-side",
+        "File and PDF upload for grounded Q&A over user documents",
+        "Ad-free since February 2026 — subscription-only revenue model"
+      ],
+      "why_discussed": "The reference 'AI answer engine' — the archetype for search-native consumer chat, distinct from ChatGPT (conversation/writing), Claude.ai (long-form reasoning), and Google (10 blue links). The February 2026 decision to kill ads entirely made Perplexity the ad-free archetype in the rung-1 space.",
+      "notes": "Founded Aug 2022 by Aravind Srinivas, Denis Yarats, Johnny Ho, Andy Konwinski. Valued ~$21.2B at Series E-6; ~$450M ARR as of March 2026. Does not overlap with: Perplexity Comet (browser) and Perplexity Computer (agentic orchestration) — both are separately listed.",
+      "difficulty": "beginner",
+      "tag": "answer-engine",
+      "ladder_rung": 1,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Ask a question and get a synthesized answer with numbered inline citations linking to source pages",
+        "Live web retrieval on every query — answers reflect today's internet, not a training cutoff",
+        "Focus modes: Academic (papers), Social (Reddit/X), Finance (SEC filings, earnings), News",
+        "Deep Research mode runs multi-step retrieval and returns a long-form report with sources",
+        "Pro/Max tier Model Council runs the same question across GPT-5.x, Claude Opus 4.7, Gemini, and Sonar side-by-side"
+      ],
+      "good_for": [
+        "Fact-finding, research, and any question where you want to verify the source before you trust the answer",
+        "Replacing Google for 'what is / how does / latest on' queries where ads and SEO spam have degraded search quality",
+        "Literature review, competitive research, and current-events briefings — cited, dated, and traceable"
+      ],
+      "not_for": [
+        "Private data, internal documents, or anything you don't want to send to a cloud SaaS",
+        "Long-form creative writing, coding, or chain-of-thought reasoning tasks — Claude.ai and ChatGPT are stronger here",
+        "Taking actions in the world (booking, buying, editing files) — that's Perplexity Computer or Comet, not Perplexity Search"
+      ],
+      "graduate_to": ["Perplexity Computer", "Perplexity Comet", "Claude Code", "LobeHub"],
+      "relationships": {
+        "alternative_to": ["ChatGPT", "Google Gemini"],
+        "ecosystem": ["Perplexity Computer", "Perplexity Comet"]
+      }
+    },
+    {
+      "name": "DeepSeek",
+      "category": "Team/Organization-Backed",
+      "type": "consumer-chat",
+      "subtype": "consumer-chat",
+      "use_cases": ["General-Purpose", "Research", "Content"],
+      "features": ["Open Source", "Self-Hosted"],
+      "creator": "DeepSeek (Hangzhou DeepSeek AI) — founded by Liang Wenfeng; backed by High-Flyer",
+      "github_stars": 102637,
+      "github_url": "https://github.com/deepseek-ai/DeepSeek-V3",
+      "website_url": "https://chat.deepseek.com/",
+      "full_description": "Free consumer chat UI for DeepSeek's frontier models — the public front-end for DeepSeek-V3.2 (default, non-thinking mode) and DeepSeek-R1 / V3.2-Reasoner ('DeepThink', thinking mode with visible chain-of-thought). Built by Hangzhou DeepSeek AI, a Chinese research lab founded by Liang Wenfeng in July 2023 and backed by the High-Flyer hedge fund. The January 20, 2025 R1 launch triggered global recognition and the largest single-day market-cap drop in U.S. history ($600B wiped from Nvidia alone). Core differentiators: (1) the underlying models are MIT-licensed open-weight releases with 100K+ GitHub stars — users are never locked in, they can run V3/R1/V3.2 locally via Ollama/vLLM or through any inference provider, (2) training cost ~$5.6M vs >$100M for GPT-4-class models, enabling an API priced roughly 10x below OpenAI/Anthropic, (3) R1's reasoning is benchmark-competitive with OpenAI o1 on math and logic. The chat UI itself is closed-source SaaS hosted in China, with documented topic censorship and data-residency concerns — users with sensitive data are widely advised to run the open weights locally or use a Western-hosted inference provider.",
+      "key_features": [
+        "Free consumer chat at chat.deepseek.com — web and mobile apps",
+        "Two modes: DeepSeek-V3.2 (fast) and DeepThink R1 (visible chain-of-thought)",
+        "128K context window",
+        "Strong English + Chinese multilingual performance",
+        "Models are MIT-licensed open-weight on GitHub — users can self-host or switch providers",
+        "API priced an order of magnitude below OpenAI/Anthropic",
+        "File attach and web search in the consumer UI"
+      ],
+      "why_discussed": "The consumer chat experience most often named in the same breath as ChatGPT/Claude/Gemini in 2025-2026 AI roundups, and the canonical example of 'frontier-quality, open-weight, Chinese-origin' — a combination no other lab currently offers at this scale. R1's release was a market-moving event, and the V3/R1 repos sit at 100K+ and 92K+ GitHub stars respectively.",
+      "notes": "Open-weight/SaaS nuance: the *models* (V3, R1, V3.2) are MIT-licensed on GitHub; the *consumer chat UI* is closed and hosted in China. Data residency, topic censorship (Tiananmen, Xinjiang, CCP criticism), and PRC legal jurisdiction are documented concerns — privacy-sensitive users should run the weights locally (Ollama, vLLM) or use a Western-hosted provider.",
+      "difficulty": "beginner",
+      "tag": "consumer-chat",
+      "ladder_rung": 1,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Ask any natural-language question and get a conversational answer, free, with no login in most markets",
+        "Toggle 'DeepThink' reasoning mode to see the model work through math, logic, or code step-by-step",
+        "Upload files (PDFs, images) and ask questions about them",
+        "Access a frontier-class model without paying — the cheapest on-ramp to 'real' AI",
+        "Optional escape hatch: download the open-weight models and run them locally or on a Western provider"
+      ],
+      "good_for": [
+        "Curious users who want to try frontier AI for free and compare it to ChatGPT/Claude/Gemini",
+        "Math, logic, and coding problems where visible chain-of-thought (DeepThink) helps",
+        "Bilingual (English-Chinese) workflows and multilingual writing"
+      ],
+      "not_for": [
+        "Sensitive, regulated, or confidential data — hosted in China under PRC jurisdiction",
+        "Politically sensitive Chinese topics (Tiananmen, Xinjiang, Xi criticism) — actively censored",
+        "Agentic / tool-using workflows — this is a chat UI, not an agent harness"
+      ],
+      "graduate_to": ["LobeHub", "Claude Code", "LangGraph"],
+      "relationships": {
+        "alternative_to": ["ChatGPT", "Claude.ai"],
+        "works_with": ["LobeHub"]
+      }
+    },
+    {
+      "name": "Grok",
+      "category": "Team/Organization-Backed",
+      "type": "consumer-chat",
+      "subtype": "consumer-chat",
+      "use_cases": ["General-Purpose", "Content", "Research"],
+      "features": [],
+      "creator": "xAI",
+      "github_stars": "N/A (closed-source; Grok-1 weights open-sourced Apache 2.0 in March 2024, but current Grok 4/4.1 is closed)",
+      "github_url": null,
+      "website_url": "https://grok.com/",
+      "full_description": "xAI's consumer frontier-LLM chat product. Grok is a chatbot with native real-time access to the X/Twitter firehose, text + image + video generation (Imagine 1.0, including a less-restricted 'Spicy' mode), DeepSearch extended research, Big Brain extended reasoning, a 2M-token context window, voice chat with multiple personas, and 3D animated Companions. Accessible on grok.com, iOS/Android apps, inside X (summonable via @grok on any post), in Tesla vehicles, and — as of January 2026 — in a Department of Defense tier. Current flagship model is Grok 4 (with Grok 4.1 for reasoning). Pricing: Free (rate-limited) → X Premium ($8/mo) → X Premium+ (~$40/mo) → SuperGrok ($30/mo) → SuperGrok Heavy ($300/mo).",
+      "key_features": [
+        "Native real-time access to public X/Twitter posts (unique among frontier chat products)",
+        "Grok 4 / Grok 4.1 models with 2M-token context window",
+        "Imagine 1.0: text-to-image (Aurora), text-to-video with audio, image-to-video, voice-to-image — with a less-restricted 'Spicy' mode",
+        "DeepSearch / DeeperSearch — extended web + X research with citations",
+        "Big Brain mode — longer reasoning chains for multi-step problems",
+        "Voice chat with multiple personas",
+        "Companions — 3D animated conversational characters (optional NSFW mode)",
+        "@grok inline on X — summon from any tweet for instant answers"
+      ],
+      "why_discussed": "Represents the consumer frontier-LLM chat tier alongside ChatGPT, Claude.ai, and Gemini. Unique among its peers for (1) native real-time X/Twitter integration, (2) a 2M-token context window, and (3) an explicit 'less filtered / more rebellious' content posture that attracts users who want generative content without mainstream guardrails.",
+      "notes": "Closed-source commercial product. Grok-1 weights were open-sourced (Apache 2.0, March 2024) but the current grok.com product uses closed Grok 4/4.1 models. Controversies include July 2025 'MechaHitler' incident, May 2025 white-genocide conspiracy insertion, December 2025 deepfake scandal, and August 2025 Google indexing of user sessions.",
+      "difficulty": "beginner",
+      "tag": "consumer-chat",
+      "ladder_rung": 1,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Real-time answers grounded in the live X/Twitter firehose",
+        "Image and video generation with the most permissive content policy among frontier products",
+        "DeepSearch extended research across web + X with citations",
+        "2M-token context for long documents / long reasoning",
+        "Voice chat and 3D animated Companions on mobile"
+      ],
+      "good_for": [
+        "Anyone who wants real-time answers from the live web + X rather than a stale-cutoff model",
+        "Creators who want less-restricted image/video generation (Imagine 1.0 Spicy mode)",
+        "X-native users who want AI summonable from inside their existing feed"
+      ],
+      "not_for": [
+        "Safety-sensitive, enterprise, or compliance-bound contexts (sustained pattern of content incidents)",
+        "Best-in-class coding or agentic workflows — Claude/ChatGPT lead; no coding-agent product at grok.com",
+        "Privacy-conscious or model-flexible users — no BYOK, no local, no self-host"
+      ],
+      "graduate_to": ["Claude Code", "Codex CLI", "LobeHub"],
+      "relationships": {
+        "alternative_to": ["ChatGPT", "Claude.ai", "Google Gemini"]
+      }
+    },
+    {
+      "name": "Le Chat",
+      "category": "Team/Organization-Backed",
+      "type": "consumer-chat",
+      "subtype": "consumer-chat",
+      "use_cases": ["General-Purpose", "Content", "Ops"],
+      "features": ["Self-Hosted", "Security-Focused"],
+      "creator": "Mistral AI",
+      "github_stars": "N/A (closed-source product; Mistral open-weights many models separately)",
+      "github_url": null,
+      "website_url": "https://chat.mistral.ai/",
+      "full_description": "Mistral AI's consumer AI assistant — the European frontier-lab equivalent of ChatGPT, Claude.ai, and Gemini. Available on the web and as native iOS and Android apps, it offers chat, image generation and editing, voice mode (Voxtral), Deep Research, Projects, Memories (editable long-term memory), and Mistral Vibe for coding, all powered by Mistral's own frontier models (Mistral Large, Magistral reasoning, Voxtral audio). Beyond pure chat, Le Chat ships 40+ enterprise MCP connectors (Databricks, Snowflake, GitHub, Atlassian, Asana, Outlook, Box, Stripe, Zapier, and more), custom MCP connector support, and a no-code Agent Builder. Flash Answers — powered by Cerebras hardware — delivers responses at ~1,100 tokens/second. Central differentiator: European data sovereignty — Paris-headquartered under EU jurisdiction, EU-only hosting, no training on Pro user data, and Enterprise private-cloud / on-prem deployment.",
+      "key_features": [
+        "Web + iOS + Android consumer chat over Mistral's frontier models",
+        "Flash Answers: ~1,100 tokens/sec responses via Cerebras inference",
+        "40+ MCP-powered enterprise connectors plus custom MCP server support",
+        "No-code Agent Builder with pre-built templates and drag-and-drop workflows",
+        "Memories: editable, transparent long-term memory (user-controlled)",
+        "Deep Research, Voice mode (Voxtral), Projects, image generation/editing",
+        "Mistral Vibe for coding; natively multilingual reasoning",
+        "EU-sovereign hosting, no training on Pro user data, Enterprise self-hosted / on-prem"
+      ],
+      "why_discussed": "The European answer to ChatGPT and Claude.ai — and the rung-1 consumer-chat anchor most likely to appeal to EU users and buyers who want data residency without giving up frontier-model quality. The cleanest single example in the directory of how a consumer chat app can stretch toward rung-2 agentic capabilities via MCP connectors and a no-code Agent Builder.",
+      "notes": "Free / Pro $14.99/mo / Team $24.99/user/mo / Enterprise. Self-hosting is Enterprise-tier only. Mistral open-weights many of its *models* on Hugging Face (Apache-2.0) but Le Chat the product is closed-source SaaS.",
+      "difficulty": "beginner",
+      "tag": "consumer-chat",
+      "ladder_rung": 1,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Ask a frontier LLM anything, in natural language, for free, without a US-hyperscaler account",
+        "Get ~1,100 token/sec responses via Flash Answers — materially faster than ChatGPT or Claude.ai",
+        "Plug your work stack into chat (Outlook, Asana, Snowflake, GitHub, Box, Stripe) via 40+ MCP connectors",
+        "Build your own no-code agents with a drag-and-drop Agent Builder",
+        "Keep data in the EU with documented residency, DPAs, and opt-out on training"
+      ],
+      "good_for": [
+        "European consumers and SMBs who want a frontier chat app under EU jurisdiction",
+        "Anyone who wants a very fast, free, mobile-first chat assistant with image generation and voice",
+        "Enterprise buyers who need connectors, admin controls, SSO, audit logs, and optional on-prem"
+      ],
+      "not_for": [
+        "Users who want to bring their own keys or swap in Claude / GPT / Gemini — Le Chat runs Mistral models only",
+        "Developers who want a CLI / coding-agent workflow — use Claude Code, Codex CLI, or Mistral's Devstral API",
+        "Teams needing multi-agent orchestration, agent teams, or agent marketplaces"
+      ],
+      "graduate_to": ["LobeHub", "Dify"],
+      "relationships": {
+        "alternative_to": ["ChatGPT", "Claude.ai", "Google Gemini"]
+      }
+    },
+    {
+      "name": "Meta AI",
+      "category": "Team/Organization-Backed",
+      "type": "consumer-chat",
+      "subtype": "consumer-chat",
+      "use_cases": ["General-Purpose", "Content"],
+      "features": [],
+      "creator": "Meta Platforms, Inc. (Meta Superintelligence Labs, led by Alexandr Wang)",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://www.meta.ai/",
+      "full_description": "Meta's consumer AI assistant — a voice-first, multimodal chat product distributed through a standalone meta.ai web + iOS/Android app and embedded natively inside WhatsApp, Instagram, Facebook, Messenger, and Ray-Ban Meta smart glasses. Reaches roughly 1 billion monthly active users across Meta's apps, making it the highest-distribution consumer AI chat product in the world. As of April 2026 driven by Muse Spark, Meta Superintelligence Labs' first proprietary, closed-source frontier model (replacing the open-weight Llama era), featuring Instant mode, Contemplating (deep-reasoning) mode, native multimodality, visual chain-of-thought, and multi-agent subagent orchestration. Supports voice chat with full-duplex speech, personalized memory, image generation and editing, photo/document analysis, shopping and local recommendations, grounded answers citing public Instagram/Facebook/Threads posts, a social Discover feed of shareable prompts, and cross-device continuity. Free with a Facebook or Instagram login.",
+      "key_features": [
+        "Embedded in WhatsApp, Instagram, Facebook, Messenger, and Ray-Ban Meta glasses (1B+ MAU reach)",
+        "Standalone meta.ai web app and dedicated iOS/Android app",
+        "Powered by Muse Spark (2026) — proprietary, closed-source",
+        "Instant mode + Contemplating (deep-reasoning) mode, natively multimodal",
+        "Voice conversation with full-duplex speech, cross-device continuity",
+        "Image generation and editing, photo and document analysis",
+        "Personal memory + grounding on public Instagram/Facebook/Threads posts",
+        "Local discovery, shopping suggestions, personalized recommendations",
+        "Free with a Meta account"
+      ],
+      "why_discussed": "The largest-distribution consumer AI chat product on the planet — roughly 1 billion monthly active users across WhatsApp, Instagram, Facebook, and Messenger. Muse Spark's April 2026 launch was a turning point: Meta's first closed-source frontier model (post-Llama open-weight era), and the catalyst for the Meta AI app jumping from US App Store #57 to #5 in four days.",
+      "notes": "Free with Meta login; no BYOK, no API-first posture, no self-host. Muse Spark is closed-source — a notable pivot from the open-weight Llama era. Conversations can inform ad targeting; EU antitrust proceedings ongoing over WhatsApp AI assistant policy.",
+      "difficulty": "beginner",
+      "tag": "consumer-chat",
+      "ladder_rung": 1,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Chat with a frontier model for free inside apps you already use daily (WhatsApp, Instagram, Messenger, FB, Ray-Ban Meta glasses)",
+        "Voice-first conversation with full-duplex speech and cross-device continuity",
+        "Photo and document analysis plus native image generation and editing in-thread",
+        "Personal memory that learns preferences and grounds answers in your Meta profile",
+        "Contemplating (deep-reasoning) mode as a one-tap toggle"
+      ],
+      "good_for": [
+        "Total beginners who want AI without installing anything new",
+        "Voice-first and hands-free use cases (Ray-Ban Meta glasses, multi-tasking)",
+        "Image generation and editing for social-media-native users"
+      ],
+      "not_for": [
+        "Privacy-conscious users — conversations can inform ad targeting and require a Meta account",
+        "Developers who need API access, BYOK, local inference, or model-agnostic routing",
+        "Long-running agentic workflows, code execution, or non-Meta tool integrations"
+      ],
+      "graduate_to": ["ChatGPT", "Claude.ai", "Google Gemini", "LobeHub"],
+      "relationships": {
+        "alternative_to": ["ChatGPT", "Claude.ai", "Google Gemini"]
+      }
+    },
+    {
+      "name": "Microsoft Copilot",
+      "category": "Team/Organization-Backed",
+      "type": "consumer-chat",
+      "subtype": "consumer-chat",
+      "use_cases": ["General-Purpose", "Content", "Ops"],
+      "features": [],
+      "creator": "Microsoft",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://copilot.microsoft.com/",
+      "full_description": "Microsoft's consumer AI chat assistant — the ChatGPT-class product Microsoft ships to every Windows user. Accessible at copilot.microsoft.com, as a Windows 11 taskbar app, in the Edge sidebar (and the new Copilot Mode), and as iOS/Android apps. Powered by OpenAI frontier models (GPT-4o class) with Bing web-search grounding. Free tier includes chat, voice conversation, file upload, 15 image-generation boosts per day, and screen/camera vision Q&A. Copilot Pro ($20/mo) adds priority model access. Bundling with Microsoft 365 ($9.99 Personal / $19.99 Premium) unlocks Copilot inside Word, Excel, PowerPoint, Outlook, and OneNote. In 2026, Microsoft is pivoting Copilot into an 'agentic Work IQ layer' with Cowork — tasks executed across the user's M365 environment.",
+      "key_features": [
+        "Free-tier chat at copilot.microsoft.com with OpenAI GPT-4o-class models",
+        "15 daily image-generation boosts on the free tier",
+        "Voice chat and 'vision' Q&A from screen or camera",
+        "Bing-powered real-time web search grounding",
+        "Deep Windows 11 integration — taskbar app, system-wide shortcut",
+        "Copilot in Edge sidebar and Edge Copilot Mode (tab-aware research)",
+        "Cowork (2026): agentic actions across Microsoft 365 — email, calendar, Teams, Word, Excel",
+        "iOS + Android mobile apps"
+      ],
+      "why_discussed": "The single biggest consumer-AI distribution play on the planet — shipped by default to every Windows 11 user and embedded in Edge. A reference point for what 'AI for everyone' looks like when a platform holder builds it in.",
+      "notes": "Three 'Copilot' products share the brand and are frequently conflated — this entry covers only the CONSUMER chat product at copilot.microsoft.com, the Windows 11 Copilot app, Copilot in Edge, and the Copilot mobile apps. GitHub Copilot (coding assistant) and Microsoft 365 Copilot for enterprise are separate products. Community sentiment is divided: technology is competent, but Microsoft's force-install strategy across Windows apps drives backlash.",
+      "difficulty": "beginner",
+      "tag": "consumer-chat",
+      "ladder_rung": 1,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Ask any question and get a grounded answer with Bing web citations, for free",
+        "Generate images by typing a description (15/day free)",
+        "Talk to Copilot with your voice or show it what's on your screen",
+        "Draft emails, summarize documents, and brainstorm in plain English",
+        "(Pro + M365) Have Copilot act across Outlook, Word, Excel, Teams on your behalf"
+      ],
+      "good_for": [
+        "Anyone on Windows 11 who wants a built-in AI chatbot without installing anything",
+        "Everyday tasks — research, summarization, image generation, writing help",
+        "M365 users who already live in Outlook/Word/Excel and want AI inside those apps"
+      ],
+      "not_for": [
+        "Developers building agent workflows — use GitHub Copilot, Claude Code, or an agent framework",
+        "Power users who want model choice, BYOK, or local models — Copilot is OpenAI-only and locked",
+        "Privacy-conscious users — deep telemetry and cross-product data sharing are the default"
+      ],
+      "graduate_to": ["ChatGPT", "Claude.ai", "LobeHub", "Claude Code"],
+      "relationships": {
+        "alternative_to": ["ChatGPT", "Google Gemini", "Claude.ai"],
+        "works_with": ["Microsoft 365"]
+      }
+    },
+    {
+      "name": "ChatGPT Agent",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "subtype": "agentic-app",
+      "use_cases": ["General-Purpose", "Ops", "Research"],
+      "features": [],
+      "creator": "OpenAI",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://chatgpt.com/features/agent/",
+      "full_description": "OpenAI's agentic mode inside ChatGPT. Give it a natural-language goal — book a flight, research ten competitors and build a spreadsheet, triage an inbox — and it plans and executes the task inside a sandboxed virtual computer. The sandbox contains a visual browser (screenshot-and-click web automation), a text browser for fast reasoning over static pages, a sandboxed terminal for scripts, and direct API access via ChatGPT Connectors (Gmail, GitHub, Google Drive, calendars). Launched as 'Operator' in January 2025, unified with Deep Research and the core chat experience as 'ChatGPT agent' in July 2025. The standalone operator.chatgpt.com surface is deprecated. Included in Plus, Pro, Business, and Enterprise plans; not in Free.",
+      "key_features": [
+        "Sandboxed virtual browser with visual screenshot-and-click automation",
+        "Text browser for fast reasoning over static pages",
+        "Sandboxed terminal for running scripts inside the virtual computer",
+        "Connectors to Gmail, GitHub, Google Drive, calendars for third-party actions",
+        "Generates real artifacts: Sheets, Docs, slide decks, downloadable files",
+        "Human-in-the-loop confirmation for logins, purchases, and sensitive actions",
+        "Deep Research lineage: multi-hour web research with citations"
+      ],
+      "why_discussed": "The canonical rung-2 'Agentic App' — the clearest example of consumer AI graduating from answering questions to taking actions, inside the product most mainstream users already have open. Frequently the first agent non-developers try.",
+      "notes": "Originally launched as 'Operator' (research preview) in January 2025. Unified with Deep Research and core chat as 'ChatGPT agent' in July 2025. Distinct from the unrelated open-source 'Operator' Kanban orchestration app already in this directory (by GitHub user 'untra').",
+      "difficulty": "beginner",
+      "tag": "agentic-app",
+      "ladder_rung": 2,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Autonomous web browsing and navigation (vs chat-only responses)",
+        "Multi-step task execution from a single goal (plan, act, verify, deliver)",
+        "Form filling, booking, ordering on public web interfaces",
+        "Artifact generation (spreadsheets, docs, slide decks) not just text",
+        "Cross-app workflows via Connectors (read + limited write)"
+      ],
+      "good_for": [
+        "Research compilation with citations and deliverable artifacts",
+        "Low-stakes booking, ordering, and form filling on public web",
+        "Calendar and email triage across connected apps"
+      ],
+      "not_for": [
+        "Editing files in your local repo or running code in your codebase",
+        "Long-horizon unattended autonomous operation (multi-day work)",
+        "Bot-detected sites (Cloudflare, heavy CAPTCHA, complex JS flows)"
+      ],
+      "graduate_to": ["Claude Code", "OpenAI Agents SDK", "CrewAI", "LangGraph"],
+      "relationships": {
+        "works_with": ["ChatGPT"],
+        "ecosystem": ["OpenAI Agents SDK"],
+        "alternative_to": ["Claude Computer Use", "Perplexity Comet", "Perplexity Computer"]
+      }
+    },
+    {
+      "name": "Claude Computer Use",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "subtype": "agentic-app",
+      "use_cases": ["General-Purpose", "Ops", "Dev"],
+      "features": [],
+      "creator": "Anthropic",
+      "github_stars": "N/A (closed-source feature; reference Docker implementation separate)",
+      "github_url": "https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo",
+      "website_url": "https://claude.com/blog/dispatch-and-computer-use",
+      "full_description": "Anthropic's capability that lets Claude see your screen and operate your computer directly — moving the mouse, clicking, typing, using keyboard shortcuts, and reading windows via screenshots — to complete tasks end to end. First released as a developer API beta in October 2024 with Claude 3.5 Sonnet, it graduated to a consumer research preview inside Claude Cowork (the Claude desktop app) and Claude Code Desktop on March 23, 2026 for Pro ($20/mo) and Max ($100–$200/mo) subscribers on macOS, with Windows support following April 2, 2026. The consumer version drives the user's actual local machine: Claude can open apps, navigate browsers, fill spreadsheets, manage email, and handle multi-step workflows. Pairs with Dispatch, which lets users assign tasks from their phone and come back to completed work on their desktop. Claude prioritizes direct integrations (Gmail, Google Calendar, Slack) when available, and falls back to point-and-click control when they aren't.",
+      "key_features": [
+        "Consumer research preview in Claude Cowork and Claude Code Desktop for Pro/Max subscribers",
+        "Operates the user's actual local machine — opens apps, clicks, types, navigates browsers",
+        "Pairs with Dispatch: assign tasks from your phone, return to completed work",
+        "Prefers direct integrations (Gmail, Calendar, Slack) and falls back to screen control",
+        "Permission-gated with prompt-injection classifiers and stop-anytime safeguards",
+        "Developer API (beta) with zoom, fine-grained mouse control, modifier keys",
+        "Dockerized reference implementation on GitHub for sandboxed builders",
+        "Supports Opus 4.7, Opus 4.6, Sonnet 4.6, Opus 4.5 via `computer-use-2025-11-24` beta header"
+      ],
+      "why_discussed": "The clearest example of 'AI takes action on your machine' graduating from a research demo to a shipping consumer product. Between the October 2024 API preview and the March 2026 Cowork rollout, Anthropic went from 14.9% on OSWorld to reports of near-human capability on complex spreadsheets and multi-step web forms. The canonical rung-2 (Agentic App) example from a frontier lab.",
+      "notes": "Originally launched as an API beta Oct 22, 2024. Consumer research preview inside Claude Cowork and Claude Code Desktop launched Mar 23, 2026 (macOS) and Apr 2, 2026 (Windows), available on Pro and Max plans. The capability is a built-in feature of Claude Cowork/Claude Code — not a standalone product.",
+      "difficulty": "beginner",
+      "tag": "computer-use",
+      "ladder_rung": 2,
+      "audience": "Curious builder",
+      "capabilities_unlocked": [
+        "Drive apps that don't have APIs by clicking and typing like a human",
+        "Delegate multi-step desktop workflows from your phone via Dispatch",
+        "Let Claude Code test what it built by actually clicking through the UI",
+        "Fill spreadsheets, process forms, and chain cross-app tasks without tab-switching",
+        "Hand off repetitive desk work (email triage, scheduling, data entry) to an agent that can literally see the screen"
+      ],
+      "good_for": [
+        "Pro/Max Claude subscribers who want Claude to operate apps the way they would",
+        "Knowledge workers with repeatable cross-app workflows",
+        "Builders prototyping agentic app experiences before full API integration"
+      ],
+      "not_for": [
+        "Tasks that touch sensitive credentials or financial data — Anthropic warns against this in research preview",
+        "Latency-sensitive or high-precision workflows — slower than a human, still error-prone on niche UIs",
+        "Headless automation at scale — the consumer feature runs on your local machine"
+      ],
+      "graduate_to": ["Claude Code", "LangGraph"],
+      "relationships": {
+        "works_with": ["Claude Code", "Claude Cowork"],
+        "ecosystem": ["Claude.ai", "Claude Code", "Claude Cowork"],
+        "alternative_to": ["ChatGPT Agent", "Perplexity Computer"]
+      }
+    },
+    {
+      "name": "Claude Cowork",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "subtype": "standalone-agent",
+      "use_cases": ["Ops", "Content", "Research", "General-Purpose"],
+      "features": [],
+      "creator": "Anthropic",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://claude.com/product/cowork",
+      "full_description": "Anthropic's agentic AI for non-coding knowledge work. Cowork is a dedicated tab in the Claude desktop app where Claude reads, edits, and creates files in user-specified folders, executes multi-step tasks in an isolated virtual machine, and delivers finished outputs — Excel with formulas, PowerPoint decks, drafted emails, organized folders. Built on the same Claude Agent SDK as Claude Code, but with zero terminal and a UI aimed at researchers, analysts, legal, finance, and operations professionals. Launched as a research preview January 12, 2026; hit General Availability April 9, 2026 on macOS and Windows for all paid plans (Pro $20/mo, Max $100/$200, Team $20/seat, Enterprise).",
+      "key_features": [
+        "Dedicated Cowork tab in Claude Desktop (macOS + Windows)",
+        "Direct local file read/edit/create in user-designated folders",
+        "Scheduled tasks that run automatically on a cadence",
+        "Deep Connectors for Google Drive, Gmail, Slack, DocuSign, FactSet",
+        "Projects with persistent context and persistent instructions",
+        "Parallel workstreams and long-running tasks without timeout",
+        "Enterprise RBAC, spend management, audit logs, OpenTelemetry observability",
+        "Plugin marketplace shared with Claude Code",
+        "Mobile task submission that executes on user's desktop"
+      ],
+      "why_discussed": "Fortune (Jan 13) described Cowork's launch as a threat to 'dozens of startups' building desktop agents for knowledge work. Full GA in April 2026 has made it the default agentic product Anthropic steers non-dev users toward. Frequently framed as 'Claude Code without the code' — a coworker for researchers, analysts, legal, finance, and ops professionals.",
+      "notes": "Classified off-ladder (ladder_rung: null) because Cowork is a companion layer bundled with Claude.ai subscriptions rather than a separately purchasable rung. If placed on the ladder, rung 2 (Agentic App) is the right slot — not rung 3, since it deliberately hides agent-tool complexity. Requires a paid Claude subscription and desktop app. Shares plugin marketplace with Claude Code.",
+      "difficulty": "beginner",
+      "tag": null,
+      "ladder_rung": null,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Multi-step task completion on your local files without coordinating each step",
+        "Scheduled recurring tasks (daily briefings, weekly reports) that run on a cadence",
+        "Synthesis across Google Drive, Gmail, Slack, DocuSign, FactSet via Deep Connectors",
+        "Finished deliverables (Excel with formulas, PowerPoint, Word) instead of chat suggestions",
+        "Approval gates and audit logs for enterprise-grade governance"
+      ],
+      "good_for": [
+        "Knowledge workers (legal, finance, ops, PR, research, analysts) who live in documents",
+        "Teams that want to automate recurring work without writing code or wiring MCP servers",
+        "Anyone already paying for Claude Pro/Max who wants more than chat"
+      ],
+      "not_for": [
+        "Developers doing code-heavy work (use Claude Code instead)",
+        "Users on the free tier or needing web/mobile-only access (desktop app required)",
+        "Regulated workloads requiring HIPAA, FedRAMP, or FSI compliance"
+      ],
+      "graduate_to": [],
+      "relationships": {
+        "works_with": ["Claude.ai", "Claude Code"],
+        "built_on": ["Claude Code"],
+        "ecosystem": ["Claude.ai", "Claude Code", "Claude Computer Use"]
+      }
+    },
+    {
+      "name": "Gemini Deep Research",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "subtype": "agentic-app",
+      "use_cases": ["Research"],
+      "features": [],
+      "creator": "Google DeepMind / Google Labs",
+      "github_stars": "N/A (closed-source, built into Gemini app)",
+      "github_url": null,
+      "website_url": "https://gemini.google/overview/deep-research/",
+      "full_description": "Google's agentic multi-step research mode inside the Gemini consumer app. Given a prompt, Deep Research generates an editable research plan, then autonomously browses up to hundreds of websites, iteratively reasoning and launching follow-up searches before synthesizing a multi-page, cited report with self-critique passes. Outputs can be exported to Google Docs, converted to podcast-style Audio Overviews, or transformed into interactive Canvas artifacts (quizzes, infographics). Can optionally draw on connected Gmail, Drive, Chat, Maps, and YouTube content. Available in 150+ countries and 45+ languages. Launched Dec 11, 2024 on Gemini 1.5 Pro; rebuilt on Gemini 2.0 Flash Thinking, Gemini 2.5 Pro Experimental, 2.5 Deep Think, and Gemini 3 (Feb 2026). Free tier gets limited access on Flash-class models; Gemini Advanced / Google AI Pro / Google AI Ultra subscribers get frontier model and higher usage limits.",
+      "key_features": [
+        "Autonomous multi-step research planning with user-editable plan before execution",
+        "Parallel browsing of up to hundreds of live websites per task",
+        "Iterative reasoning loop: read, evaluate, spawn follow-up searches, repeat",
+        "Multi-page synthesized report with inline citations and source links",
+        "Self-critique passes for clarity and completeness before delivery",
+        "Audio Overviews: podcast-style conversational summary of any report",
+        "Canvas integration: transform reports into interactive quizzes, infographics",
+        "Optional grounding in user's Gmail, Drive, Chat, Maps, and YouTube",
+        "One-click export to Google Docs",
+        "Powered by the current frontier Gemini model (Gemini 3 / 2.5 Deep Think on Ultra)"
+      ],
+      "why_discussed": "One of the three defining consumer 'Deep Research' products (alongside OpenAI Deep Research and Perplexity Deep Research) that turned agentic research from a demo into a daily tool in 2025-26. Clearest example of rung-2 Agentic Apps: consumer UX, AI takes multi-step action, no developer surface.",
+      "notes": "Lives inside the Gemini app as a mode selector rather than as a separate product URL. Pricing: limited free access; frontier model access requires Gemini Advanced / Google AI Pro or Ultra. Separate directory entry from Google Gemini (core chat).",
+      "difficulty": "beginner",
+      "tag": "agentic-app",
+      "ladder_rung": 2,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Autonomous multi-step research planning (user approves or edits the plan)",
+        "Parallel live-web source gathering at scale (hundreds of sites per run)",
+        "Long-form synthesis with inline citations and self-critique",
+        "Multimodal output transformation: text report → audio podcast → interactive Canvas",
+        "Personal-context grounding via connected Google apps (Gmail/Drive/Chat)"
+      ],
+      "good_for": [
+        "Competitive analysis, due diligence, lit reviews, market sizing — anything that used to mean 20+ open browser tabs",
+        "Non-technical users who want frontier-model agentic research without building anything",
+        "Google Workspace users who want research grounded in their own email and drive files"
+      ],
+      "not_for": [
+        "Taking actions outside the report — it cannot edit files, write code, send emails, or operate external tools",
+        "Real-time or iterative back-and-forth research — each run is a batched, long-running task (minutes, not seconds)",
+        "Developers building on top of the agent — there is no Deep Research API or SDK"
+      ],
+      "graduate_to": ["Superagent", "deer-flow", "ROMA (Recursive Open Meta-Agent Framework)"],
+      "relationships": {
+        "works_with": ["Google Gemini"],
+        "alternative_to": ["Superagent", "Perplexity"]
+      }
+    },
+    {
+      "name": "Perplexity Comet",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "subtype": "agentic-app",
+      "use_cases": ["Research", "General-Purpose", "Content"],
+      "features": [],
+      "creator": "Perplexity AI (Aravind Srinivas, CEO)",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://www.perplexity.ai/comet",
+      "full_description": "AI-native Chromium browser from Perplexity that pairs the Perplexity answer engine with a docked side-panel Comet Assistant that can see the active tab, plus an autonomous Agent Mode that drives the browser across multiple tabs and sites to complete tasks. Users can ask Comet to summarize emails, compare prices, fill forms, filter search results, book meetings, or pull together multi-source research — and watch the browser do it. Available on Windows, macOS, Android, and iOS (launched March 18, 2026). Free for all Perplexity account holders after a paywall drop in early 2026. Comet Plus ($5/mo, bundled with Pro/Max) unlocks premium publisher content; Pro/Max subscriptions at $20+/mo give access to the Max tier Comet Browser Agent running on Claude Opus 4.5 for complex task reasoning.",
+      "key_features": [
+        "Comet Assistant side panel that co-browses with you and can see the active tab",
+        "Autonomous Agent Mode: multi-tab, cross-site task execution",
+        "Built-in Perplexity answer engine with Deep Research and inline citations",
+        "Voice mode for hands-free querying and task assignment",
+        "Chrome extension compatibility on desktop",
+        "Model Council: routes queries across GPT/Claude/Gemini/Perplexity models",
+        "Max tier upgrades the Browser Agent to Claude Opus 4.5 reasoning",
+        "Available on Windows, macOS, iOS, and Android"
+      ],
+      "why_discussed": "One of the three headline AI-native browsers of the 2025–26 cycle (alongside OpenAI's ChatGPT Atlas and The Browser Company's Dia). Reached #3 on the iOS App Store at launch and is frequently cited on X as the leading example of 'AI that takes action on the web.'",
+      "notes": "Closed source, Chromium-based. iOS experience is reduced vs. desktop due to Apple's ban on third-party browser extensions. Legal note: in March 2026 Amazon won a preliminary injunction against Perplexity under the CFAA for Comet spoofing a Chrome user-agent. Distinct directory entry from Perplexity Search and Perplexity Computer.",
+      "difficulty": "beginner",
+      "tag": "agentic-app",
+      "ladder_rung": 2,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Autonomous browsing across multiple tabs and sites without per-step prompting",
+        "Cross-tab reasoning: summarize, compare, and synthesize content from open tabs in one pass",
+        "Take action on the web: fill forms, book meetings, filter listings, compare products, summarize email",
+        "Voice-driven web tasks: dictate a goal, watch the browser execute",
+        "Deep Research synthesized from the live web with citations attached to claims"
+      ],
+      "good_for": [
+        "Anyone who wants an AI that actually does things in a browser rather than just answers questions",
+        "Research-heavy work (market scans, comparison shopping, planning a trip) where multi-source synthesis saves hours",
+        "People who already pay for Perplexity Pro and want a single browser that combines search, chat, and action"
+      ],
+      "not_for": [
+        "Writing or editing code, running builds, or touching local files (it's a browser, not a dev agent)",
+        "High-stakes financial or identity workflows — the CEO himself said he 'wouldn't trust Comet to log into Morgan Stanley'",
+        "Developers building their own agents (it's a closed consumer product, not an SDK)"
+      ],
+      "graduate_to": ["Claude Code", "Codex CLI"],
+      "relationships": {
+        "alternative_to": ["ChatGPT Agent", "Claude Computer Use"],
+        "works_with": ["Perplexity"],
+        "ecosystem": ["Perplexity", "Perplexity Computer"]
+      }
+    },
+    {
+      "name": "Perplexity Computer",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "subtype": "orchestration-platform",
+      "use_cases": ["Ops", "Research", "General-Purpose"],
+      "features": ["Model-Agnostic"],
+      "creator": "Perplexity AI (Aravind Srinivas, CEO)",
+      "github_stars": "N/A (closed-source SaaS)",
+      "github_url": null,
+      "website_url": "https://www.perplexity.ai/hub/blog/introducing-perplexity-computer",
+      "full_description": "Autonomous multi-model AI agent that executes long-running, multi-step workflows from a single natural-language prompt. A Claude Opus 4.6 reasoning core orchestrates 19 specialized models — GPT-5.2 for long-context recall, Gemini for deep research and visuals, Grok for lightweight tasks, Nano Banana for images, Veo 3.1 for video, Claude Sonnet 4.5 for coding, among others — routing each subtask to the best-suited model and composing the results. Runs entirely in the cloud with a real filesystem and 400+ app connectors (Gmail, Slack, Notion, GitHub, Snowflake, HubSpot, Salesforce, custom). Launched February 25, 2026 exclusively to Perplexity Max subscribers ($200/month); Enterprise tier ($325/seat/month) with Slack integration, Snowflake connectors, and audit controls announced at the Ask 2026 developer conference. A companion product, Personal Computer, extends Computer with persistent secure access to a user's local Mac files, apps, and browser sessions via a dedicated Mac mini — general-availability April 16, 2026.",
+      "key_features": [
+        "Multi-model orchestration across 19 frontier models (OpenAI, Anthropic, Google, xAI)",
+        "Opus 4.6 reasoning core routes subtasks to model best-suited per task",
+        "400+ app connectors (Gmail, Slack, Notion, GitHub, Snowflake, HubSpot, custom)",
+        "Real cloud filesystem + parallel subtask execution",
+        "Dynamically spawns subagents for complex workflows",
+        "Skills / reusable context upload",
+        "Personal Computer companion turns a Mac mini into a 24/7 local-context agent",
+        "Enterprise tier with Slack, Snowflake, and audit controls"
+      ],
+      "why_discussed": "Perplexity's decisive move beyond search into agentic workflow execution, and the most prominent bet in the industry that multi-model orchestration (not a single frontier model) is the future of agentic apps. Launched with >100 enterprise customers demanding access in a single weekend.",
+      "notes": "Pricing: Max $200/month (10,000 credits); Enterprise $325/seat/month. Launched Feb 25, 2026; Personal Computer for Mac general-availability April 16, 2026. Separate from Perplexity Search (rung 1) and Perplexity Comet (agentic browser). Press briefing demo was canceled hours before launch due to 'flaws found in the product' (TechCrunch); a March 31 2026 class-action lawsuit accuses Perplexity of hidden Meta/Google trackers.",
+      "difficulty": "beginner",
+      "tag": "agentic-app",
+      "ladder_rung": 2,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Replace a multi-tool SaaS stack (marketing, research, reporting) with a single prompt-driven workflow",
+        "Run hours- or days-long autonomous projects with parallel model routing",
+        "Turn local Mac files and apps into persistent agent context via Personal Computer",
+        "Generate end-to-end deliverables (SEO audits, content calendars, tax drafts, financial dashboards) from one prompt",
+        "Compose workflows across 400+ business apps without code"
+      ],
+      "good_for": [
+        "Solo founders and small teams replacing specialist SaaS tools",
+        "Professionals in marketing, hiring, finance, and operations who want an AI coworker that executes, not just answers",
+        "Researchers and analysts needing long, cross-source report generation"
+      ],
+      "not_for": [
+        "Developers who want a code-first harness (use Claude Code, Cursor, or OpenClaw instead)",
+        "Privacy-sensitive workloads requiring local-only execution (cloud-based; recent tracker lawsuit raised concerns)",
+        "Users below the $200/month Max tier — there is no free or mid-tier access"
+      ],
+      "graduate_to": ["Claude Code", "Paperclip.ing"],
+      "relationships": {
+        "ecosystem": ["Perplexity", "Perplexity Comet"],
+        "alternative_to": ["ChatGPT Agent", "Claude Computer Use", "Dify", "LobeHub"]
+      }
+    },
+    {
+      "name": "Quiver",
+      "category": "Team/Organization-Backed",
+      "type": "developer-utility",
+      "subtype": "design-tool",
+      "use_cases": ["Content"],
+      "features": [],
+      "creator": "Quiver AI (a16z-backed seed, Feb 2026)",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://quiver.ai",
+      "full_description": "Frontier AI foundation model and web app dedicated to vector graphics generation. Quiver's Arrow models (Arrow 1.0 public-beta Feb 2026, Arrow 1.1 and 1.1 Max shipped Apr 16, 2026) generate clean, structured, production-ready SVG from text prompts or reference images — logos, icons, illustrations, technical/CAD-style drawings, and (coming soon) custom typography and SVG animations. Because SVG is code, Quiver treats visuals as code: the output is fully editable in any vector software, with real-time stroke-by-stroke streaming rendering in the web app. Two surfaces: the web app at app.quiver.ai (designer-facing, free beta with weekly credit allowance) and a developer API at api.quiver.ai/v1 (Bearer token auth; endpoints for List Models, Get Model, Text to SVG, Image to SVG). Positioning: 'Frontier AI for Design — Built by researchers. Made for designers.' Raised an $8.3M seed led by Andreessen Horowitz on Feb 25, 2026; reported angels include the Webflow and Replit CEOs. Already integrated with Vanikya Imagine and FLORA.",
+      "key_features": [
+        "Arrow 1.1 and Arrow 1.1 Max — dedicated SVG foundation models (top-ranked on the SVG Arena leaderboard at ~1583 Elo)",
+        "Text-to-SVG and Image-to-SVG generation with progressive streaming render",
+        "Clean, structured, fully editable vector output — usable in Figma, Illustrator, or any SVG tool",
+        "Logos, icons, illustrations, and technical / CAD-style diagrams in one model",
+        "Developer API at api.quiver.ai/v1 with Bearer auth and a standard REST surface",
+        "Style / structure transfer: carry composition from one generation into variations",
+        "Typography (custom letterforms, adjustable weight and contrast) — coming soon",
+        "SVG animations — coming soon",
+        "Free public-beta access with weekly SVG credit allowance"
+      ],
+      "why_discussed": "The clearest example in the 2026 design stack of 'SVG as code' — Quiver treats vector graphics as a structured generation problem rather than a raster-to-trace pipeline, and the specialist approach has decisively beaten general-purpose LLMs and image models on the public SVG Arena leaderboard. Backed by a16z, integrated into multiple creative workflows within weeks of public beta. Fills the gap left by general-purpose AI tools that produce unusable or locked-down vector output.",
+      "notes": "Closed-source model and app. Free public-beta access with weekly SVG credit allowance. API is live and self-serve. MCP server / Cursor skills integration not yet shipped as of Apr 2026 — the team has confirmed on X that the fastest path is a custom tool wrapping the API. Typography and animations marketed as 'coming soon.' Arrow 1.1 / 1.1 Max launched Apr 16, 2026.",
+      "difficulty": "beginner",
+      "tag": "design",
+      "ladder_rung": null,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Generate production-ready SVG from a text prompt or reference image in seconds",
+        "Treat visuals as code — every output is editable path data, not a locked raster",
+        "Call vector generation from any agent or app via a standard REST API",
+        "Style and composition transfer across variations without re-prompting from scratch",
+        "One model spans icons, logos, illustrations, and CAD-style technical drawings"
+      ],
+      "good_for": [
+        "Designers who need editable, on-brand SVG assets (logos, icons, illustrations) faster than drawing from scratch",
+        "Developers and agent builders who want a programmatic 'give me a vector' tool to call from apps, MCP servers, or coding agents",
+        "Non-designers who need clean vector output — landing-page illustrations, marketing icons, brand marks — without opening Illustrator"
+      ],
+      "not_for": [
+        "General-purpose design tasks beyond vector graphics (no raster art, no photography, no video, no 3D)",
+        "Agentic workflows that need the tool to take action — Quiver generates artifacts, it does not edit your files or click around your canvas",
+        "Teams requiring on-prem / self-hosted generation — the model is closed and served only from Quiver's API"
+      ],
+      "graduate_to": [],
+      "relationships": {
+        "works_with": ["Claude Code", "Cursor", "Skills CLI"]
+      }
+    },
+    {
+      "name": "NanoCorp",
+      "category": "Zero-Human / Agent Company Orchestration",
+      "type": "multi-agent-platform",
+      "subtype": "autonomous-org",
+      "use_cases": ["Ops", "Content"],
+      "features": [],
+      "creator": "PHOSPHO INC. (Pierre-Louis Biojout)",
+      "github_stars": "N/A",
+      "github_url": null,
+      "website_url": "https://www.nanocorp.so/",
+      "full_description": "Consumer platform that lets anyone launch an autonomous, revenue-generating AI company from a single prompt. You describe an idea; NanoCorp provisions a nanocorp.app subdomain, email, website, Stripe payments, and a team of specialized agents that handle marketing, sales, support, and ops on a schedule. A portfolio dashboard tracks every company you run and a public leaderboard (nanocorp.so/live) shows cumulative real dollars earned autonomously across the network. Free tier gives 3 lifetime credits + 1 active company; Founder plan is $30/mo for 30 credits, scaling to 960 credits/month with custom domains and unlimited companies. Flat 20% withdrawal fee applies to revenue earned through the platform. Founded by Pierre-Louis Biojout (YC alum, PHOSPHO INC.) and launched mid-March 2026.",
+      "key_features": [
+        "One-prompt company launch with auto-provisioned domain, email, website, and Stripe",
+        "Specialized scheduled agents for marketing, sales, product, and support",
+        "Portfolio dashboard for managing many autonomous companies",
+        "Live leaderboard tracking real revenue generated across the network",
+        "Referral/cross-partnership flows between NanoCorp companies",
+        "Planned Google Search Ads autonomous budget management",
+        "Custom-domain support on Founder plan"
+      ],
+      "why_discussed": "Viral on FR/EN AI-Twitter throughout April 2026 as the headline example of a Zero-Human Company platform. Founder is publicly posting aggressive ARR milestones ($250k → $400k → $520k in days; unverified). Community indexed 3,000+ NanoCorp-built companies within weeks. Frames itself as a stress test of whether consumer-accessible autonomous orgs can generate durable revenue.",
+      "notes": "Closed-source SaaS. Launched ~mid-March 2026. Parent company PHOSPHO INC. also operates phospho.ai (AI-robotics toolkit). Name collision: nanocorp.ai is an unrelated security-platform company; Google's 'Nano Banana' image-gen feature is also unrelated. ARR figures are founder-reported and unverified.",
+      "difficulty": "beginner",
+      "tag": "new",
+      "ladder_rung": 5,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Spin up a full autonomous company (site, email, Stripe, agents) from one prompt in ~20 seconds",
+        "Scheduled agent workstreams that run marketing, sales, and support without human check-ins",
+        "Real revenue — agents transact with real customers; live leaderboard shows cumulative earnings",
+        "Portfolio dashboard to run many autonomous companies in parallel from one account",
+        "Credit-based metering instead of per-action approvals, so the company keeps operating while you sleep"
+      ],
+      "good_for": [
+        "Non-technical founders testing a business idea end-to-end without building anything",
+        "Experimenters exploring the Zero-Human Company thesis firsthand",
+        "Anyone who wants a side-project that runs itself on a schedule"
+      ],
+      "not_for": [
+        "Builders who want visibility into or control over the agent stack (models, prompts, tools)",
+        "Regulated industries or anyone needing compliance guarantees — this is a consumer SaaS with a 20% withdrawal fee",
+        "Developers wanting to compose their own agent workflow (use a framework instead)"
+      ],
+      "graduate_to": ["Paperclip.ing", "CompanyHelm"],
+      "relationships": {
+        "alternative_to": ["Paperclip.ing"]
+      }
+    },
+    {
+      "name": "Flint",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "subtype": "agentic-app",
+      "use_cases": ["Content", "Ops"],
+      "features": [],
+      "creator": "Flint (Michelle Lim, Max Levenson) — $5M Accel seed, Oct 2025",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://tryflint.com",
+      "full_description": "Autonomous website platform that generates on-brand landing pages directly on a company's production domain. Point it at your homepage and give it a content brief; Flint ingests your design system and ships a fully-coded page — comparison, ad-targeted, geo, event, ABM, or agent-facing. Pages are continuously optimized for SEO, paid conversion, and AI-engine visibility (Google AI Overview, ChatGPT, Perplexity). Customers include Cognition, Modal, and Graphite. Integrates with Claude via MCP, plus Clay, Relay.app, and CRMs. Founded by Michelle Lim (ex-Warp first engineer and head of growth) and Max Levenson (ex-Nuro simulation/infrastructure); $5M seed led by Accel (Oct 2025). Framed by the founders as 'autonomous websites' — analogous to autonomous vehicles: perception, real-time decision-making, control.",
+      "key_features": [
+        "Autonomous landing-page generation from a URL + content brief",
+        "Design-system capture from existing homepage (brand file agents can reuse)",
+        "Page types: comparison, ad landers, geo, event, ABM, agent-facing",
+        "Direct deployment on customer domain — no rebuilds or CMS migration",
+        "MCP server for Claude integration",
+        "API for programmatic generation from Clay, Relay.app, and CRM workflows",
+        "Continuous SEO / SEM / AI-engine optimization",
+        "A/B testing and conversion optimization automation"
+      ],
+      "why_discussed": "Broke out of stealth Oct 14, 2025 with a $5M Accel seed. Positioned as the canonical example of 'your brand becomes a file that agents use to scale your website.' Cognition and Modal as launch customers anchor it in the AI-dev community. Discussed frequently alongside Profound, Moda, and other agent-era marketing tools in April 2026 threads about the emerging 'marketing-for-agents' category.",
+      "notes": "Closed-source SaaS. Pricing not public (14-day Pro trial advertised). Co-founders: Michelle Lim (CEO) and Max Levenson (CTO). Customers named publicly: Cognition, Modal, Graphite. Name collisions: Flint K12 (education), Flint Group (industrial) — unrelated.",
+      "difficulty": "beginner",
+      "tag": "marketing",
+      "ladder_rung": 2,
+      "audience": "Curious builder",
+      "capabilities_unlocked": [
+        "Autonomously generate fully-coded, on-brand landing pages directly on your production domain",
+        "Spin up comparison, ad-targeted, geo, event, and ABM pages without involving design, dev, or ops",
+        "Ingest an existing homepage to capture the design system and brand voice as a reusable 'brand file' for agents",
+        "Trigger page generation from Claude, Clay, Relay.app, or CRM workflows via MCP and API",
+        "Continuously optimize pages for SEO, SEM, and AI-engine discoverability (AI Overviews, ChatGPT, Perplexity)"
+      ],
+      "good_for": [
+        "Growth and marketing teams at B2B SaaS companies who need to ship many targeted pages fast",
+        "Teams that want to match every ad keyword, competitor move, or customer segment with a dedicated landing page",
+        "Operators who want marketing agents wired into their CRM and GTM stack via MCP/API"
+      ],
+      "not_for": [
+        "Pages that require bespoke brand or narrative work (hero product launches, brand sites, redesigns)",
+        "Solo founders without an existing design system for Flint to ingest",
+        "Anything outside marketing pages — Flint is not a general web/content tool"
+      ],
+      "graduate_to": [],
+      "relationships": {
+        "works_with": ["Claude.ai", "Claude Code"]
+      }
+    },
+    {
+      "name": "v0",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "subtype": "agentic-app",
+      "use_cases": ["Dev", "Content"],
+      "features": [],
+      "creator": "Vercel",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://v0.app",
+      "full_description": "Vercel's AI app builder. Type a goal — 'a dashboard for my SaaS,' 'a landing page for my cafe,' 'an iOS-style todo app' — and v0 plans the project, generates a full Next.js + Tailwind codebase, wires a database if needed, and deploys it to a live URL in seconds. Originally launched in late 2023 as a React component generator (v0.dev), it evolved into an 'agentic by default' full-stack builder on v0.app by 2026: visual design mode with live preview, GitHub sync for round-tripping code, one-click production deploys to Vercel, a template library, reusable design systems, and an iOS app for building from your phone. Runs on Vercel's in-house v0-* model family (Mini, Pro, Max, Max Fast) with credit-based pricing. Free ($0, $5/mo credits, 7-message/day limit); Team ($30/user/mo); Business ($100/user/mo); Enterprise custom.",
+      "key_features": [
+        "Natural-language prompts generate full-stack Next.js + Tailwind apps, not just snippets",
+        "Agentic planning: breaks goals into tasks, wires databases, creates real projects",
+        "Visual design mode with live preview and fine-grained style controls",
+        "GitHub sync — round-trip code between v0 and your repo",
+        "One-click deploy to Vercel production with a live URL",
+        "Template library (apps, games, dashboards, landing pages, components) and reusable design systems",
+        "iOS app for building from your phone",
+        "Four in-house models (v0 Mini, Pro, Max, Max Fast)"
+      ],
+      "why_discussed": "The canonical consumer 'I described an app and it built one' product in 2026. Alongside Lovable and Bolt, v0 defined the 'vibe-coding / idea-to-app' tier and remains the design/UI-led option most often paired with a developer harness (Cursor, Claude Code) for real projects. Frequently cited as the first AI agent non-developers actually ship real work with.",
+      "notes": "Originally v0.dev (React component generator, late 2023). Rebranded and expanded to v0.app as a full-stack agentic builder by 2026. Closed-source product and closed in-house models. Part of Vercel's wider AI stack (Vercel AI SDK, Vercel Agents, Open Agents reference app) — v0 is the consumer surface.",
+      "difficulty": "beginner",
+      "tag": "agentic-app",
+      "ladder_rung": 2,
+      "audience": "Curious builder",
+      "capabilities_unlocked": [
+        "Ship a real, deployed web app from a single natural-language prompt",
+        "Design and iterate on UIs visually without touching a codebase",
+        "Round-trip between AI-generated projects and GitHub — own the code",
+        "Prototype full-stack apps (with DB and auth) in minutes, not days",
+        "Build from your phone via the iOS app"
+      ],
+      "good_for": [
+        "Non-developers and designers who want polished UIs and working web apps without setting up a dev environment",
+        "Indie makers and PMs prototyping ideas — landing pages, dashboards, internal tools",
+        "Next.js / Tailwind / Vercel-stack teams who want AI-native scaffolding that exports clean code"
+      ],
+      "not_for": [
+        "Editing files in your existing local repo — v0 generates its own projects and syncs to GitHub, it does not run as an agent in your codebase (use Cursor, Claude Code, or Windsurf for that)",
+        "Non-web stacks or non-React frameworks — v0 is opinionated on Next.js + Tailwind + Vercel",
+        "Teams that need self-hosted, on-prem, or model-agnostic generation — v0 is closed and runs only on Vercel's in-house models"
+      ],
+      "graduate_to": ["Claude Code"],
+      "relationships": {
+        "works_with": ["GitHub"],
+        "ecosystem": ["Open Agents (Vercel)", "Skills CLI"]
+      }
+    },
+    {
+      "name": "Bloom",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "subtype": "agentic-app",
+      "use_cases": ["Content"],
+      "features": [],
+      "creator": "Bloom (YC S26; founder/CEO Ray — @rincidium on X)",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://trybloom.ai",
+      "full_description": "AI marketing-asset generator that learns a company's visual identity from a website URL or Instagram handle, then produces on-brand creative — product shots, social posts, ad creative, email headers — in roughly 60 seconds at up to 4K resolution. Pitched at non-designers (e-commerce founders, DTC brands, agencies, small-business owners) with the tagline 'Designer-quality images. No designer required.' A Bloom MCP exposes the same capability to AI agents: tools like Claude Cowork call Bloom to generate landing-page visuals and on-brand marketing creative as part of larger agentic workflows. Over 40,000 users since launch; accepted to Y Combinator's Spring 2026 batch (announced April 17, 2026). Long-term positioning per founder Ray (@rincidium): a 'Brand Operating System' — the infrastructure layer for a future where coding agents produce software faster than humans can produce the surrounding brand, landing pages, demos, and marketing to ship with it.",
+      "key_features": [
+        "Brand learning from a website URL or Instagram handle (no manual brand-kit upload required)",
+        "On-brand generation across marketing formats: product shots, social posts, ad creative, email headers",
+        "4K image generation with multi-format resizing",
+        "~60-second turnaround per asset",
+        "Team workspaces with shared brand kits (Scale plan)",
+        "Bloom MCP: agent-callable tool endpoint — used today by Claude Cowork workflows",
+        "Two plans in market: Plus (~$20/mo, 50 assets) and Scale ($90/mo or $1,080/yr, 500 credits/mo + team features)"
+      ],
+      "why_discussed": "A clear new-wave 'Agentic App' entry in 2026: one input (a URL) produces multi-format, brand-correct creative output without the user ever touching a design tool. The Bloom MCP makes it dual-life — a rung-2 app for direct users and a tool for rung-3/4 agent systems like Claude Cowork. Featured in @TheMattBerman's '$0 unlimited landing pages with Claude Cowork' thread during early April 2026.",
+      "notes": "Name disambiguation: this Bloom is trybloom.ai (AI marketing-asset generator, YC S26). It is NOT BigScience's BLOOM 176B open-weight LLM, and not Bloom Money / Bloom Growth / any wellness-app Blooms. Long-term 'Brand Operating System' framing is broader than today's scope (image generation) — revisit if/when the product expands to copy, video, or full-funnel brand automation.",
+      "difficulty": "beginner",
+      "tag": "agentic-app",
+      "ladder_rung": 2,
+      "audience": "Anyone",
+      "capabilities_unlocked": [
+        "Turn a single URL or IG handle into a brand kit the AI can use without any manual setup",
+        "Generate on-brand, multi-format marketing creative in about a minute per asset",
+        "Let AI coding agents (e.g., Claude Cowork) call Bloom as a tool to produce brand-correct landing-page imagery end-to-end",
+        "Replace or supplement freelance designers for routine marketing production",
+        "Scale branded creative output across platforms (ads, social, email) without a design team"
+      ],
+      "good_for": [
+        "Founders, DTC/e-commerce brands, agencies, and small-business owners who need fast, on-brand marketing creative without hiring a designer",
+        "Agent builders who want a drop-in brand-aware image tool inside Claude Cowork or other MCP-capable workflows",
+        "Teams producing high-volume ad / social / email creative who need consistent visual identity across formats"
+      ],
+      "not_for": [
+        "Users who need editable vector output (logos, technical illustrations) — use Quiver instead",
+        "Developers who want an open-source or self-hostable stack — Bloom is closed SaaS",
+        "Teams that need copywriting, video, or full-funnel brand automation today (roadmap, not shipped)"
+      ],
+      "graduate_to": [],
+      "relationships": {
+        "works_with": ["Claude Cowork"],
+        "alternative_to": ["Quiver"]
+      }
+    },
+    {
+      "name": "Durable",
+      "category": "Team/Organization-Backed",
+      "type": "multi-agent-platform",
+      "subtype": "orchestration-platform",
+      "use_cases": ["Ops"],
+      "features": ["Security-Focused"],
+      "creator": "Durable (Nima Keivan, Fernando) — both ex-Canvas Technology / Amazon",
+      "github_stars": "N/A (closed-source)",
+      "github_url": null,
+      "website_url": "https://durable.ai",
+      "full_description": "Enterprise automation platform powered by proprietary neurosymbolic AI. Durable turns plain-English problem descriptions into production-ready automation code that integrates across enterprise systems. Unlike typical LLM agent frameworks, Durable generates real, deterministic code — AI is embedded only where it adds value — and then maintains it autonomously: when APIs change or errors surface, Durable detects the drift, drafts a fix to the plain-English spec, and submits it for human approval. Ships with 50+ pre-built integrations (Salesforce, Snowflake, Slack, and others), SOC2 Type II, SSO/SAML, RBAC, and a 99.9% uptime SLA. Founded in Louisville, Colorado by Nima Keivan (previously co-founder/CTO of Canvas Technology, acquired by Amazon) and Fernando, who led visual perception for Canvas / Amazon's autonomous mobile robots. Positioned as a neurosymbolic alternative to prompt-chain automation platforms — the 'reliability wedge' into enterprise workflow automation.",
+      "key_features": [
+        "Natural-language requirements — users edit plain-English specs instead of code",
+        "Generates real production integration code (not prompt chains or agent wrappers)",
+        "Neurosymbolic architecture: AI used only where it adds value; rest is deterministic",
+        "50+ pre-built enterprise integrations (Salesforce, Snowflake, Slack, etc.) plus any REST API",
+        "Autonomous maintenance: detects API changes / errors, proposes spec updates for approval",
+        "One-click deployment to production environments",
+        "Enterprise controls: SOC2 Type II, SSO/SAML, RBAC, 99.9% uptime SLA"
+      ],
+      "why_discussed": "One of the most visible bets on neurosymbolic AI as a production-ready alternative to LLM agent chains for enterprise workflow automation. The 'real code, not prompt wrappers' pitch resonates with enterprise buyers burned by demo-ware agent platforms. Founders' pedigree (Canvas Technology / Amazon autonomous robotics) anchors reliability claims.",
+      "notes": "Closed-source, enterprise sales motion — no public pricing. Distinct from (and frequently confused with) durable.co/durable.com, the YC-backed AI website builder for small service businesses — a completely unrelated company. Also distinct from Temporal-style 'durable execution' workflow concepts. Based in Louisville, Colorado.",
+      "difficulty": "advanced",
+      "tag": null,
+      "ladder_rung": null,
+      "audience": "Developer",
+      "capabilities_unlocked": [
+        "Describe an enterprise integration in plain English and get production code, not a prototype",
+        "Automatic spec-level maintenance when upstream APIs drift",
+        "Reliable cross-system workflows (Salesforce ↔ Snowflake ↔ Slack) without glue-code engineering",
+        "Enterprise-grade security and compliance (SOC2 II, SSO, RBAC, 99.9% SLA) from day one",
+        "A neurosymbolic approach that keeps AI inside guardrails of deterministic code"
+      ],
+      "good_for": [
+        "Enterprise engineering / IT / data teams automating cross-system workflows they currently glue together with brittle scripts",
+        "Organizations that have tried LLM agent platforms and been burned by non-determinism and maintenance drift",
+        "Teams where SOC2, SSO, audit trails, and human approval loops are non-negotiable"
+      ],
+      "not_for": [
+        "Individuals or hobbyists — this is an enterprise sales product, not self-serve",
+        "Teams that want a code-first harness they drive themselves (use Claude Code, Cursor, or an open framework)",
+        "Anyone looking for the small-business AI website builder — that's durable.com, a different company"
+      ],
+      "graduate_to": [],
+      "relationships": {
+        "alternative_to": ["Dify", "LobeHub", "Perplexity Computer"]
+      }
+    },
+    {
+      "name": "Open Agents (Vercel)",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "subtype": "agentic-app",
+      "use_cases": ["Dev"],
+      "features": ["Open Source", "Self-Hosted", "Model-Agnostic"],
+      "creator": "Vercel Labs",
+      "github_stars": 3845,
+      "github_url": "https://github.com/vercel-labs/open-agents",
+      "website_url": "https://open-agents.dev/",
+      "full_description": "Open-source reference app from Vercel Labs for building and running background coding agents on Vercel. Ships a complete three-layer system — Next.js web UI handling auth/chat/streaming, a durable agent workflow running outside the sandbox, and a Vercel Sandbox VM for execution (filesystem, shell, git, dev servers, preview ports). The agent is explicitly decoupled from the sandbox: it runs as a Workflow SDK-backed durable run and interacts with the VM through tools, so sandbox hibernate/resume and model choices evolve independently. Includes repo cloning, branch work, optional auto-commit/push/PR creation, session sharing via read-only links, and optional voice input via ElevenLabs. MIT licensed, TypeScript, designed to be forked and adapted rather than used as a hosted product.",
+      "key_features": [
+        "Three-layer architecture: Web UI → durable workflow → Vercel Sandbox VM",
+        "Agent lives outside the sandbox (not tied to request lifecycle)",
+        "Durable multi-step runs via Vercel Workflow SDK with resume/cancellation",
+        "Isolated Vercel sandboxes with snapshot-based hibernation and resume",
+        "Built-in GitHub App integration: clone, branch, auto-commit, auto-PR",
+        "Multi-model support via AI Gateway with provider fallbacks",
+        "Session sharing via read-only links",
+        "Optional ElevenLabs voice transcription"
+      ],
+      "why_discussed": "Vercel Labs' canonical reference for cloud coding agents. Cited on X alongside LangChain's open-swe and Cole Murray's background-agents as one of the three go-to open-source templates for teams building Stripe Minions / Ramp Inspect-style in-house coding agent systems. 3.8K stars within ~4 months of launch. The three-layer 'agent-outside-the-sandbox' architecture is the design lesson being circulated.",
+      "notes": "MIT. Created Dec 26, 2025. Deploys as a Next.js app on Vercel. Requires PostgreSQL (Neon recommended), Vercel OAuth app, and GitHub App for full functionality. Tightly coupled to Vercel's product suite — AI SDK, AI Gateway, Sandbox, Workflow SDK. Distinct from the existing 'OpenAgents' entry (openagents.com, Rust/Nostr/Bitcoin agent economy by OpenAgentsInc) — unrelated project, different team, different stack.",
+      "difficulty": "intermediate",
+      "tag": null,
+      "ladder_rung": 2,
+      "audience": "Developer",
+      "capabilities_unlocked": [
+        "Spawn coding agents that keep working after you close the tab",
+        "Fork-and-deploy your own Cursor/Devin-style cloud coding product",
+        "Run background agents that auto-open PRs from a chat prompt",
+        "Hibernate idle sandboxes and resume hours later from the same state",
+        "Swap models/providers without rewriting the agent or sandbox code"
+      ],
+      "good_for": [
+        "Developers building their own background-agent product or internal tool",
+        "Teams already on Vercel who want a working reference for coding agents"
+      ],
+      "not_for": [
+        "Non-developers looking for a turnkey hosted coding assistant",
+        "Users who need portability off Vercel — it is opinionated on Vercel's AI SDK, Gateway, Sandbox, and Workflow SDK"
+      ],
+      "graduate_to": ["Claude Code"],
+      "relationships": {
+        "built_on": ["Vercel AI SDK"],
+        "ecosystem": ["v0"]
+      }
+    },
+    {
+      "name": "json-render",
+      "category": "Team/Organization-Backed",
+      "type": "developer-utility",
+      "subtype": "infrastructure",
+      "use_cases": ["Dev"],
+      "features": ["Open Source", "Self-Hosted", "Model-Agnostic"],
+      "creator": "Vercel Labs",
+      "github_stars": 14366,
+      "github_url": "https://github.com/vercel-labs/json-render",
+      "website_url": "https://json-render.dev",
+      "full_description": "Open-source Generative UI framework from Vercel Labs (Apache 2.0, TypeScript). json-render converts LLM outputs into real, safe, streaming user interfaces by constraining models to emit a JSON spec that references only the components and actions you pre-register in a catalog — AI cannot invent components, so output is guardrailed by construction. A streaming spec compiler renders progressively as the model responds. Supports dynamic prop expressions (state bindings, conditionals, templates), conditional visibility, and state watchers that trigger actions on data changes. Pluggable renderers cover React, Vue, Svelte, Solid, React Native, Next.js, Remotion (video), React PDF, email, 3D scenes, and terminal UIs. Ships 36 pre-built shadcn/ui components out of the box, supports MCP so UIs can be rendered inside Claude, ChatGPT, or Cursor, and auto-generates the system prompt from your catalog. Modular package layout: install @json-render/core plus one or more renderer packages.",
+      "key_features": [
+        "Catalog-based guardrails: AI can only use components and actions you register",
+        "Schema-validated JSON output every time — no hallucinated UI",
+        "Streaming spec compiler with progressive rendering",
+        "36 pre-built shadcn/ui components ready to use",
+        "Cross-platform renderers: React, Vue, Svelte, Solid, React Native, Next.js, Remotion, React PDF, email, 3D, terminal",
+        "Dynamic props with expressions: state bindings, conditionals, templates",
+        "State watchers that trigger actions when data changes",
+        "Auto-generated system prompts from your catalog",
+        "MCP support — render UIs inside Claude, ChatGPT, and Cursor"
+      ],
+      "why_discussed": "In the weeks after launch, json-render became the go-to reference for 'generative UI that's actually safe to ship' on dev Twitter — 14K stars in ~3 months, widely shared as the cleanest way to give an LLM a real UI surface. Discussed as the emerging design-system pattern where the consumer of a component library is an AI agent, not a human.",
+      "notes": "Apache 2.0. TypeScript. Created Jan 14, 2026; 14,366 stars / 767 forks as of April 2026. Modular packages: @json-render/core plus renderer package(s). Auto-generates system prompt from your catalog. Native MCP support. Tight fit with Vercel AI SDK but framework-agnostic on the model side.",
+      "difficulty": "advanced",
+      "tag": null,
+      "ladder_rung": null,
+      "audience": "Developer",
+      "capabilities_unlocked": [
+        "Give an agent a safe, structured way to render UI without letting the model write raw code",
+        "Stream LLM-driven UIs progressively as tokens arrive, on web or mobile",
+        "Ship generative UI inside MCP clients (Claude, ChatGPT, Cursor) instead of text-only tool outputs",
+        "Target web, mobile, video, PDF, email, 3D, and terminal from one catalog",
+        "Bind AI-generated UI to live application state with conditional visibility and watchers"
+      ],
+      "good_for": [
+        "Developers building agent or LLM apps that need real, branded UI instead of markdown",
+        "Teams on Vercel's AI stack (AI SDK, Gateway) who want a first-party generative-UI layer"
+      ],
+      "not_for": [
+        "Non-developers — you must define a catalog, wire renderers, and write schemas",
+        "Teams that want fully freeform AI-generated markup — guardrails are the point, and the catalog is required"
+      ],
+      "graduate_to": [],
+      "relationships": {
+        "ecosystem": ["Open Agents (Vercel)", "v0"],
+        "works_with": ["Claude Code", "Cursor"]
+      }
+    },
+    {
+      "name": "Browser Harness",
+      "category": "Team/Organization-Backed",
+      "type": "developer-utility",
+      "subtype": "infrastructure",
+      "use_cases": ["Dev", "Ops"],
+      "features": ["Open Source", "Self-Hosted", "Model-Agnostic"],
+      "creator": "Browser Use (Gregor Zunic / @gregpr07)",
+      "github_stars": 2480,
+      "github_url": "https://github.com/browser-use/browser-harness",
+      "website_url": "https://github.com/browser-use/browser-harness",
+      "full_description": "The thinnest, self-healing browser harness for LLM coding agents. Announced April 18, 2026 by Gregor Zunic (co-founder of Browser Use, whose flagship browser-use library hits 10M downloads/month). Unlike framework-style browser automation, Browser Harness strips the framework away: the LLM connects directly to Chrome through a single WebSocket to the Chrome DevTools Protocol (CDP) and edits helpers.py on the fly when it needs a capability that doesn't exist yet. ~592 lines of Python across three files (run.py, helpers.py, admin.py/daemon.py). Designed as a drop-in skill for Claude Code and Codex — pair any coding agent with a real Chrome and let it 'yolo mode' its way through browser tasks. Can drive your real Chrome profile (bypassing bot detection since it's your actual browser) or run cloud browsers via cloud.browser-use.com (3 concurrent browsers free, no card). MIT licensed. Hit 2,000 GitHub stars in 24 hours.",
+      "key_features": [
+        "Self-healing — the LLM edits helpers.py on the fly to add missing actions",
+        "Direct CDP — one WebSocket to Chrome, no Playwright/Puppeteer framework in between",
+        "Drop-in for Claude Code and Codex as a browser skill",
+        "Run against your real Chrome profile (avoids bot detection) or cloud browsers",
+        "~592 lines of Python across three files — auditable and hackable",
+        "Free cloud tier: 3 concurrent browsers, no credit card required",
+        "MIT licensed — fully open source"
+      ],
+      "why_discussed": "Launched April 18, 2026 and hit 2k stars in 24 hours — the canonical example of the late-2026 shift from framework-driven to agent-driven browser automation. Gregor Zunic framed it as 'we got tired of browser frameworks restricting the LLM, so we removed the framework.' Positioned as the next step after OpenClaw for browser control.",
+      "notes": "MIT licensed. Python. ~592 lines. Created Apr 17, 2026; announced Apr 18, 2026; 2,480 stars by Apr 20. From the same team behind the browser-use library (10M downloads/month). Cloud tier at cloud.browser-use.com with 3 free concurrent browsers. Intentionally minimal: no bot-detection handling beyond 'use your real Chrome.' Early reports: works great for most tasks, autofill/credential flows are rough, shares your current browser (so clean sensitive state first).",
+      "difficulty": "advanced",
+      "tag": "browser-automation",
+      "ladder_rung": null,
+      "audience": "Developer",
+      "capabilities_unlocked": [
+        "Give a coding agent full freedom to complete any browser task without framework rails",
+        "Let the agent write its own new browser helpers when it hits a missing capability",
+        "Use your real Chrome session (cookies, logins, profile) so sites don't flag it as a bot",
+        "Skip Playwright/Puppeteer and talk CDP directly for lower-latency browser control",
+        "Plug a browser into Claude Code or Codex as a first-class skill with minimal setup"
+      ],
+      "good_for": [
+        "Developers already using Claude Code or Codex who need their agent to drive a real browser",
+        "Automating long-tail browser tasks where predefined framework actions always fall short",
+        "Hackers who want 592 lines of Python they can fork instead of a black-box SaaS"
+      ],
+      "not_for": [
+        "Non-developers — requires Python, remote-debug Chrome setup, and a coding agent",
+        "Production workloads needing hardened sandboxing — it is explicitly 'yolo mode'",
+        "Anyone who wants a high-level framework with predefined actions and rails (use browser-use instead)"
+      ],
+      "graduate_to": [],
+      "relationships": {
+        "works_with": ["Claude Code"],
+        "alternative_to": ["Claude Computer Use"]
+      }
+    },
+    {
+      "name": "LazyPi",
+      "category": "Individual/Indie & Research",
+      "type": "agent-tool",
+      "subtype": "config-layer",
+      "use_cases": ["Dev", "General-Purpose"],
+      "features": ["Open Source", "Self-Hosted", "Model-Agnostic"],
+      "creator": "Rob Zolkos (@robzolkos)",
+      "github_stars": 65,
+      "github_url": "https://github.com/robzolkos/lazypi",
+      "website_url": "https://lazypi.org",
+      "full_description": "LazyPi is a one-command installer that turns Pi (Mario Zechner's minimalist coding-agent CLI) into a batteries-included experience. Run `npx @robzolkos/lazypi` and it installs Pi if missing, then layers on 60+ curated community Skills, 76 themes, MCP server support, sub-agent support, persistent memory, cost tracking, todo management, autoresearch, diff review, planning mode, and a ralph loop. Nothing is forked — LazyPi only installs additive packages the Pi runtime already supports, so it's 'stock Pi underneath.' You can pick fine-grained packages or select 'all,' and remove any later. The explicit analogy (from creator and users): LazyPi is to Pi what LazyVim is to Neovim — a curated distribution for people who want to skip the research-and-configuration tax and get to a useful experience on day one. MIT licensed, distributed via npm (@robzolkos/lazypi).",
+      "key_features": [
+        "One-command install over Pi (installs Pi itself if needed)",
+        "60+ curated community Skills preinstalled",
+        "76 themes and full MCP server support",
+        "Adds sub-agents, persistent memory, cost tracking, todos, autoresearch, diff review, planning mode, ralph loop",
+        "Non-destructive: fine-grained package selection; all additions are stock-Pi-compatible",
+        "Idempotent — reruns skip already-installed packages"
+      ],
+      "why_discussed": "Launched April 20, 2026 to 600+ likes on X and lively debate: is a curated Pi distro a contradiction (Pi's whole pitch is minimalism) or the missing onramp that finally broadens its audience? The LazyVim-for-Pi framing stuck — a user tweeted 'pi is really becoming the neovim of AI coding agents,' which Rob retweeted.",
+      "notes": "MIT licensed. JavaScript. 65 stars as of 2026-04-20 (created Apr 18 2026 — two-day-old repo at research time). Distributed as @robzolkos/lazypi on npm. Requires Pi to run; installs it automatically if missing. Not a fork — 'stock Pi underneath' per the creator. Different author than Pi Agent (Rob Zolkos vs Mario Zechner).",
+      "difficulty": "beginner",
+      "tag": null,
+      "ladder_rung": null,
+      "audience": "Curious builder",
+      "capabilities_unlocked": [
+        "Try Pi with a useful loadout without reading docs or picking packages",
+        "Get cost tracking, memory, and planning mode on Pi without hand-wiring them",
+        "Browse and sample 60+ community Skills from a single curated list",
+        "Graduate gradually to a custom Pi setup by removing packages you don't use"
+      ],
+      "good_for": [
+        "Pi-curious devs who bounced off Pi's minimal out-of-the-box experience",
+        "Developers who want an omakase loadout rather than configuring from scratch"
+      ],
+      "not_for": [
+        "Pi purists who value the minimalism — the point of Pi is hand-picking what you add",
+        "Users on harnesses unrelated to Pi (Claude Code, Codex, OpenCode) — LazyPi is Pi-specific"
+      ],
+      "graduate_to": [],
+      "relationships": {
+        "built_on": ["Pi Agent"],
+        "extends": ["Pi Agent"],
+        "ecosystem": ["Pi Agent"]
       }
     }
   ]

@@ -142,9 +142,9 @@ const typeLabels: Record<string, string> = {
 };
 
 const typeColors: Record<string, { border: string; badge: string; badgeText: string }> = {
-  "agent-tool": { border: "border-t-black/20 dark:border-t-white/20", badge: "bg-neutral-100 dark:bg-neutral-800", badgeText: "text-neutral-700 dark:text-neutral-300" },
-  "multi-agent-platform": { border: "border-t-emerald-500", badge: "bg-emerald-50 dark:bg-emerald-950", badgeText: "text-emerald-700 dark:text-emerald-500" },
-  "developer-utility": { border: "border-t-amber-500", badge: "bg-amber-50 dark:bg-amber-950", badgeText: "text-amber-700 dark:text-amber-500" },
+  "agent-tool": { border: "border-t-black/20", badge: "bg-neutral-100", badgeText: "text-neutral-700" },
+  "multi-agent-platform": { border: "border-t-emerald-500", badge: "bg-emerald-50", badgeText: "text-emerald-700" },
+  "developer-utility": { border: "border-t-amber-500", badge: "bg-amber-50", badgeText: "text-amber-700" },
 };
 
 const difficultyLabels: Record<string, string> = {
@@ -154,9 +154,9 @@ const difficultyLabels: Record<string, string> = {
 };
 
 const difficultyColors: Record<string, { badge: string; badgeText: string }> = {
-  beginner: { badge: "bg-emerald-50 dark:bg-emerald-950", badgeText: "text-emerald-700 dark:text-emerald-500" },
-  intermediate: { badge: "bg-amber-50 dark:bg-amber-950", badgeText: "text-amber-700 dark:text-amber-500" },
-  advanced: { badge: "bg-rose-50 dark:bg-rose-950", badgeText: "text-rose-700 dark:text-rose-500" },
+  beginner: { badge: "bg-emerald-50", badgeText: "text-emerald-700" },
+  intermediate: { badge: "bg-amber-50", badgeText: "text-amber-700" },
+  advanced: { badge: "bg-rose-50", badgeText: "text-rose-700" },
 };
 
 const subtypeLabels: Record<string, string> = {
@@ -335,117 +335,128 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <!-- Filter toolbar -->
-    <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:gap-6">
-      <!-- Search -->
-      <div class="flex-1">
-        <div class="relative">
-          <svg class="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-neutral-400" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
-          </svg>
-          <input
-            v-model="searchQuery"
-            type="text"
-            placeholder="Search projects..."
-            class="w-full rounded-lg border border-black/10 bg-white py-2.5 pl-10 pr-4 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition-colors focus:border-black focus:ring-2 focus:ring-neutral-100 dark:border-white/10 dark:bg-neutral-900 dark:text-white dark:placeholder-neutral-500 dark:focus:border-white dark:focus:ring-neutral-800"
-          />
-        </div>
-      </div>
-
-      <!-- Type -->
-      <div class="w-full sm:w-44">
-        <label class="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-400">Type</label>
-        <select
-          v-model="selectedType"
-          class="w-full rounded-lg border border-black/10 bg-white px-3 py-2.5 text-sm text-neutral-700 outline-none focus:border-black dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-300 dark:focus:border-white"
-        >
-          <option value="All">All types ({{ projects.length }})</option>
-          <option v-for="t in types" :key="t" :value="t">
-            {{ t }} ({{ projects.filter((p) => typeLabels[p.type] === t).length }})
-          </option>
-        </select>
-      </div>
-
-      <!-- Difficulty -->
-      <div class="w-full sm:w-40">
-        <label class="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-400">Difficulty</label>
-        <select
-          v-model="selectedDifficulty"
-          class="w-full rounded-lg border border-black/10 bg-white px-3 py-2.5 text-sm text-neutral-700 outline-none focus:border-black dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-300 dark:focus:border-white"
-        >
-          <option value="All">All levels</option>
-          <option v-for="d in difficultyLevels" :key="d" :value="d">
-            {{ d }} ({{ projects.filter((p) => difficultyLabels[p.difficulty] === d).length }})
-          </option>
-        </select>
-      </div>
-
-      <!-- Sort -->
-      <div class="w-full sm:w-36">
-        <label class="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-400">Sort</label>
-        <select
-          v-model="sortBy"
-          class="w-full rounded-lg border border-black/10 bg-white px-3 py-2.5 text-sm text-neutral-700 outline-none focus:border-black dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-300 dark:focus:border-white"
-        >
-          <option value="stars">Stars</option>
-          <option value="name">Name</option>
-          <option value="type">Type</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="flex flex-col lg:flex-row lg:gap-8">
+  <div class="flex flex-col lg:flex-row lg:gap-10">
     <!-- Sidebar -->
-    <aside class="w-full shrink-0 lg:w-64 xl:w-72">
-      <div class="lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto space-y-6">
-        <!-- Use Case Filter -->
+    <aside class="w-full shrink-0 lg:w-60 xl:w-64">
+      <div class="lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto space-y-8 pr-2">
+        <!-- Categories (Use Case) — durable-style vertical list -->
         <div>
-          <p class="mb-2 text-xs font-medium uppercase tracking-wider text-neutral-400">Use Case</p>
-          <div class="flex flex-col gap-1">
+          <div class="mb-3 flex items-center gap-2 px-3">
+            <svg class="h-4 w-4 text-neutral-500" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 16a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
+            </svg>
+            <span class="text-sm font-semibold text-neutral-900">Categories</span>
+          </div>
+          <div class="flex flex-col gap-0.5">
             <button
               :class="[
-                'rounded-lg px-3 py-2 text-left text-sm font-medium transition-colors',
+                'w-full rounded-xl px-3 py-2 text-left text-sm transition-colors',
                 selectedUseCase === 'All'
-                  ? 'bg-neutral-900 text-white dark:bg-white dark:text-black'
-                  : 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800',
+                  ? 'bg-neutral-100 font-semibold text-neutral-950'
+                  : 'font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-950',
               ]"
               @click="selectedUseCase = 'All'"
             >
-              All
+              All categories
             </button>
             <button
               v-for="uc in useCases"
               :key="uc"
               :class="[
-                'rounded-lg px-3 py-2 text-left text-sm font-medium transition-colors',
+                'flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm transition-colors',
                 selectedUseCase === uc
-                  ? 'bg-neutral-900 text-white dark:bg-white dark:text-black'
-                  : 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800',
+                  ? 'bg-neutral-100 font-semibold text-neutral-950'
+                  : 'font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-950',
               ]"
               @click="selectedUseCase = uc"
             >
-              {{ uc }} <span class="text-xs opacity-60">({{ projects.filter((p) => p.use_cases.includes(uc)).length }})</span>
+              <span>{{ uc }}</span>
+              <span class="text-xs text-neutral-400">{{ projects.filter((p) => p.use_cases.includes(uc)).length }}</span>
             </button>
           </div>
         </div>
 
-        <!-- Features Filter (multi-select checkboxes) -->
+        <!-- Type -->
         <div>
-          <p class="mb-2 text-xs font-medium uppercase tracking-wider text-neutral-400">Features</p>
-          <div class="flex flex-col gap-1">
+          <p class="mb-3 px-3 text-sm font-semibold text-neutral-900">Type</p>
+          <div class="flex flex-col gap-0.5">
+            <button
+              :class="[
+                'w-full rounded-xl px-3 py-2 text-left text-sm transition-colors',
+                selectedType === 'All'
+                  ? 'bg-neutral-100 font-semibold text-neutral-950'
+                  : 'font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-950',
+              ]"
+              @click="selectedType = 'All'"
+            >
+              All types
+            </button>
+            <button
+              v-for="t in types"
+              :key="t"
+              :class="[
+                'flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm transition-colors',
+                selectedType === t
+                  ? 'bg-neutral-100 font-semibold text-neutral-950'
+                  : 'font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-950',
+              ]"
+              @click="selectedType = t"
+            >
+              <span>{{ t }}</span>
+              <span class="text-xs text-neutral-400">{{ projects.filter((p) => typeLabels[p.type] === t).length }}</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Difficulty -->
+        <div>
+          <p class="mb-3 px-3 text-sm font-semibold text-neutral-900">Difficulty</p>
+          <div class="flex flex-col gap-0.5">
+            <button
+              :class="[
+                'w-full rounded-xl px-3 py-2 text-left text-sm transition-colors',
+                selectedDifficulty === 'All'
+                  ? 'bg-neutral-100 font-semibold text-neutral-950'
+                  : 'font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-950',
+              ]"
+              @click="selectedDifficulty = 'All'"
+            >
+              All levels
+            </button>
+            <button
+              v-for="d in difficultyLevels"
+              :key="d"
+              :class="[
+                'flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm transition-colors',
+                selectedDifficulty === d
+                  ? 'bg-neutral-100 font-semibold text-neutral-950'
+                  : 'font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-950',
+              ]"
+              @click="selectedDifficulty = d"
+            >
+              <span>{{ d }}</span>
+              <span class="text-xs text-neutral-400">{{ projects.filter((p) => difficultyLabels[p.difficulty] === d).length }}</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div>
+          <p class="mb-3 px-3 text-sm font-semibold text-neutral-900">Features</p>
+          <div class="flex flex-col gap-0.5">
             <label
               v-for="f in features"
               :key="f"
-              class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
+              class="flex cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-neutral-950"
             >
               <input
                 type="checkbox"
                 :checked="selectedFeatures.includes(f)"
-                class="h-3.5 w-3.5 rounded border-neutral-300 accent-neutral-900 dark:accent-white"
+                class="h-3.5 w-3.5 rounded border-neutral-300 accent-neutral-900"
                 @change="toggleFeature(f)"
               />
-              {{ f }} <span class="text-xs opacity-60">({{ projects.filter((p) => p.features.includes(f)).length }})</span>
+              <span class="flex-1">{{ f }}</span>
+              <span class="text-xs text-neutral-400">{{ projects.filter((p) => p.features.includes(f)).length }}</span>
             </label>
           </div>
         </div>
@@ -453,7 +464,7 @@ onMounted(() => {
         <!-- Clear filters -->
         <button
           v-if="hasActiveFilters"
-          class="w-full rounded-lg border border-black/10 px-3 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100 dark:border-white/10 dark:text-neutral-400 dark:hover:bg-neutral-800"
+          class="w-full rounded-full border border-neutral-200 px-3 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-neutral-950"
           @click="clearAll"
         >
           Clear all filters
@@ -462,15 +473,41 @@ onMounted(() => {
     </aside>
 
     <!-- Main content -->
-    <div class="mt-8 min-w-0 flex-1 lg:mt-0">
+    <div class="mt-10 min-w-0 flex-1 lg:mt-0">
+      <!-- Top strip: search + sort + count -->
+      <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative flex-1 sm:max-w-sm">
+          <svg class="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+          </svg>
+          <input
+            v-model="searchQuery"
+            type="text"
+            placeholder="Search projects..."
+            class="w-full rounded-full border border-neutral-200 bg-white py-2 pl-9 pr-4 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition-colors focus:border-neutral-400"
+          />
+        </div>
+        <div class="flex items-center gap-2">
+          <label class="text-xs font-medium text-neutral-500">Sort by</label>
+          <select
+            v-model="sortBy"
+            class="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 outline-none focus:border-neutral-400"
+          >
+            <option value="stars">Stars</option>
+            <option value="name">Name</option>
+            <option value="type">Type</option>
+          </select>
+        </div>
+      </div>
+
       <!-- Results count -->
       <div class="mb-6">
         <p class="text-sm text-neutral-500">
-          {{ filtered.length }} {{ filtered.length === 1 ? 'project' : 'projects' }} found
+          {{ filtered.length }} {{ filtered.length === 1 ? 'project' : 'projects' }}
         </p>
         <button
           v-if="searchQuery.trim() && hasNonSearchFilter && hiddenByFilters > 0"
-          class="mt-1 text-xs text-neutral-400 underline decoration-neutral-300 underline-offset-2 transition-colors hover:text-neutral-600 dark:decoration-neutral-600 dark:hover:text-neutral-300"
+          class="mt-1 text-xs text-neutral-500 underline decoration-neutral-300 underline-offset-2 transition-colors hover:text-neutral-900"
           @click="resetFiltersKeepSearch"
         >
           {{ hiddenByFilters }} more outside current filters
@@ -478,28 +515,26 @@ onMounted(() => {
       </div>
 
       <!-- Card Grid -->
-      <div v-if="filtered.length" class="grid gap-6 sm:grid-cols-2">
+      <div v-if="filtered.length" class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
         <a
           v-for="project in filtered"
           :key="project.name"
           :href="`/project/${generateSlug(project.name)}`"
-          :class="[
-            'card-interactive flex flex-col border-t-4 no-underline',
-            typeColors[project.type]?.border || 'border-t-neutral-500',
-          ]"
+          class="card-interactive flex flex-col no-underline"
         >
           <div class="flex items-start justify-between gap-2">
-            <div class="flex items-center gap-2">
-              <h3 class="text-lg font-semibold text-neutral-900 dark:text-white">{{ project.name }}</h3>
+            <div class="flex flex-wrap items-center gap-2">
+              <h3 class="text-base font-semibold text-neutral-950" style="letter-spacing: -0.01em;">{{ project.name }}</h3>
               <span
                 v-if="isPopular(project.github_stars)"
-                class="inline-block rounded-full border border-neutral-300 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-neutral-500 dark:border-neutral-600 dark:text-neutral-400"
+                class="badge badge-accent"
               >
                 Popular
               </span>
               <span
                 v-if="isEmerging(project.tag)"
-                class="inline-block rounded-full border border-dashed border-neutral-300 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-neutral-400 dark:border-neutral-600 dark:text-neutral-500"
+                class="badge badge-outline"
+                style="border-style: dashed;"
               >
                 Emerging
               </span>
@@ -509,25 +544,22 @@ onMounted(() => {
             </svg>
           </div>
 
-          <p class="mt-1 text-xs text-neutral-400">{{ project.creator }}</p>
+          <p class="mt-1 text-xs text-neutral-500">{{ project.creator }}</p>
 
-          <div class="mt-3 flex flex-wrap items-center gap-2">
-            <span class="inline-block rounded-full bg-neutral-900 px-3 py-1 text-xs font-medium text-white dark:bg-white dark:text-black">
+          <div class="mt-3 flex flex-wrap items-center gap-1.5">
+            <span class="badge badge-neutral">
               {{ typeLabels[project.type] || project.type }}
             </span>
             <span
               v-if="project.difficulty"
-              :class="[
-                'inline-block rounded-full px-3 py-1 text-xs font-medium',
-                difficultyColors[project.difficulty]?.badge || 'bg-neutral-100 dark:bg-neutral-800',
-                difficultyColors[project.difficulty]?.badgeText || 'text-neutral-700 dark:text-neutral-300',
-              ]"
+              class="badge badge-neutral"
             >
               {{ difficultyLabels[project.difficulty] || project.difficulty }}
             </span>
             <span
               v-if="project.tag"
-              class="inline-block rounded-full border border-dashed border-neutral-300 px-2.5 py-0.5 text-xs font-medium text-neutral-500 dark:border-neutral-600 dark:text-neutral-400"
+              class="badge badge-outline"
+              style="border-style: dashed;"
             >
               #{{ project.tag }}
             </span>
@@ -537,22 +569,15 @@ onMounted(() => {
               </svg>
               {{ formatStars(project.github_stars) }}
             </span>
-            <span
-              v-for="f in project.features.filter((ft) => ['Open Source', 'Model-Agnostic', 'Self-Hosted', 'Security-Focused'].includes(ft)).slice(0, 2)"
-              :key="f"
-              class="inline-block rounded-full bg-neutral-100 px-2 py-0.5 text-[11px] font-medium text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400"
-            >
-              {{ f }}
-            </span>
           </div>
 
-          <p class="mt-3 flex-1 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+          <p class="mt-3 flex-1 text-sm leading-relaxed text-neutral-600" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
             {{ project.full_description }}
           </p>
 
           <p
             v-if="project.why_discussed"
-            class="mt-2 text-xs italic leading-relaxed text-neutral-400 dark:text-neutral-500"
+            class="mt-2 text-xs italic leading-relaxed text-neutral-500"
             style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;"
           >
             {{ project.why_discussed }}
@@ -562,7 +587,7 @@ onMounted(() => {
             <span
               v-for="uc in project.use_cases"
               :key="uc"
-              class="inline-block rounded-full border border-black/10 px-2.5 py-0.5 text-xs text-neutral-500 dark:border-white/10 dark:text-neutral-400"
+              class="badge badge-outline"
             >
               {{ uc }}
             </span>
@@ -574,13 +599,12 @@ onMounted(() => {
       <div v-else class="mt-12 text-center">
         <p class="text-lg text-neutral-500">No projects match your filters.</p>
         <button
-          class="mt-4 text-sm font-medium text-neutral-900 hover:underline dark:text-white"
+          class="mt-4 text-sm font-medium text-neutral-900 hover:underline"
           @click="clearAll"
         >
           Clear all filters
         </button>
       </div>
     </div>
-  </div>
   </div>
 </template>
