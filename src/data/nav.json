@@ -1,7 +1,4 @@
 [
-  { "label": "Home", "href": "/", "order": 0 },
-  { "label": "Find Your Tool", "href": "/guide", "order": 1 },
-  { "label": "Directory", "href": "/directory", "order": 2 },
-  { "label": "Compare", "href": "/compare", "order": 3 },
-  { "label": "Resources", "href": "/resources", "order": 4 }
+  { "label": "Directory", "href": "/", "order": 0 },
+  { "label": "Resources", "href": "/resources", "order": 1 }
 ]

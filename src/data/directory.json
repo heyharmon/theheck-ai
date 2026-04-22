@@ -4125,6 +4125,204 @@
         "extends": ["Pi Agent"],
         "ecosystem": ["Pi Agent"]
       }
+    },
+    {
+      "name": "designdotmd",
+      "category": "Individual/Indie & Research",
+      "type": "developer-utility",
+      "subtype": "reference",
+      "use_cases": ["Dev", "Content"],
+      "features": ["Open Source", "Model-Agnostic"],
+      "creator": "Rodrigo Figueroa (@bidah / ROFI)",
+      "github_stars": "N/A",
+      "github_url": null,
+      "website_url": "https://designdotmd.directory",
+      "full_description": "A directory of 100+ ready-made DESIGN.md files for coding agents, plus a one-command CLI (`npx designdotmd add <slug>`) that drops a chosen spec into your project. Each entry conforms to Google Stitch's newly open-sourced DESIGN.md draft specification — a plain-markdown format that encodes a visual identity (colors, typography, spacing, components, accessibility/WCAG rules) so coding agents know exactly what 'on-brand' means without guessing. The site shows each design.md as desktop and mobile previews with 'kitchen sink' design-system samples, filterable by category and searchable. Announced April 21, 2026 by Chile-based indie builder Rodrigo Figueroa (@bidah / 'ROFI') roughly half a day after Google Stitch open-sourced the spec. Positioned as the fastest way to turn a generic, AI-generated UI into something that looks intentional. CLI is Apache-2.0 on npm; model-agnostic — a DESIGN.md is plain markdown any agent (Claude Code, Cursor, Codex, v0, Gemini CLI) can read.",
+      "key_features": [
+        "100+ pre-built DESIGN.md files across categories (SaaS, fitness, consumer, landing, dashboards, etc.)",
+        "Desktop and mobile preview plus kitchen-sink design-system samples for every entry",
+        "Category filters and search on the web directory",
+        "One-command install: `npx designdotmd add <slug>`",
+        "Built on Google Stitch's open DESIGN.md draft specification",
+        "Model-agnostic — drop into any coding agent's project (Claude Code, Cursor, Codex, v0, Gemini CLI)",
+        "Apache-2.0 CLI on npm (designdotmd)"
+      ],
+      "why_discussed": "First serious content directory for the DESIGN.md format — shipped the same day Google Stitch open-sourced the spec, turning a specification into an instantly useful, browseable catalog. 650+ likes on launch. Fills the gap between 'AI-generated UI looks sloppy' and 'reading a design spec is too much friction': pick a design.md from a gallery, run one command, ship.",
+      "notes": "Apache-2.0. Creator Rodrigo Figueroa (@bidah on X, bidah on GitHub), based in Chile. designdotmd package v0.4.1 on npm as of Apr 21 2026. No public GitHub repo surfaced for the directory site itself — only the npm CLI. Related ecosystem: VoltAgent/awesome-design-md (GitHub list of brand-inspired DESIGN.md files) and google-labs-code/design.md (the official spec repo).",
+      "difficulty": "beginner",
+      "tag": "design",
+      "ladder_rung": null,
+      "audience": "Curious builder",
+      "capabilities_unlocked": [
+        "Give a coding agent a coherent visual identity in one command — no design system to write",
+        "Browse 100+ real design systems (with live previews) instead of prompting 'make it look professional'",
+        "Switch design languages between projects without re-describing spacing, color, and typography",
+        "Hand a v0 / Cursor / Claude Code project a spec that follows WCAG rules out of the box",
+        "Sample design directions in minutes — swap the design.md, re-run the agent, compare"
+      ],
+      "good_for": [
+        "Indie makers and vibe coders whose AI-built UIs all 'look the same' and want a quick design upgrade",
+        "Designers and PMs shipping with v0 / Lovable / Bolt who want a non-generic look without hiring",
+        "Developers on Claude Code / Cursor / Codex who want to drop in a visual-identity context file and move on"
+      ],
+      "not_for": [
+        "Teams that already maintain a custom design system — roll your own DESIGN.md instead",
+        "Projects needing pixel-perfect brand compliance — the provided design.md files are inspirational, not official brand assets",
+        "Anyone looking for interactive component libraries — DESIGN.md is a spec, not code (use shadcn/ui or ui.sh for components)"
+      ],
+      "graduate_to": ["ui.sh", "Skills CLI"],
+      "relationships": {
+        "works_with": ["Claude Code", "Cursor", "v0"],
+        "ecosystem": ["Skills CLI", "ui.sh", "Stitch"]
+      }
+    },
+    {
+      "name": "Tolaria",
+      "category": "Individual/Indie & Research",
+      "type": "agent-tool",
+      "subtype": "agentic-app",
+      "use_cases": ["General-Purpose", "Content"],
+      "features": ["Open Source", "Self-Hosted", "Model-Agnostic"],
+      "creator": "Luca Rossi (@lucaronin)",
+      "github_stars": 461,
+      "github_url": "https://github.com/refactoringhq/tolaria",
+      "website_url": "https://tolaria.md/",
+      "full_description": "Tolaria is a free, open-source macOS desktop app for managing Markdown knowledge bases where AI agents are a first-class collaborator. Notes stay as plain .md files on disk with a Notion-style block editor (WYSIWYG + raw Markdown), wikilinks, note types, custom views, and native relationships (belongs_to, related_to, etc.). A built-in Git client (manual commits or AutoGit) handles versioning and cross-device sync. Tolaria exposes an MCP server so Claude Code, Codex, and other CLI agents can read, write, and connect notes in the same vault a human is using — the creator frames it as his implementation of Karpathy's 'LLM wiki.' Built by Luca Rossi (Refactoring newsletter) over three months as both a product and a living artifact of AI-assisted software development (2000 commits, 100K LOC, 85% test coverage, 70+ architecture decision records). AGPL-3.0 licensed and 'free forever.'",
+      "key_features": [
+        "Block editor with WYSIWYG + raw Markdown, wikilinks, types, views, and relationships",
+        "Native MCP server — Claude Code, Codex, and OpenClaw can operate the vault directly",
+        "Notes are plain Markdown files on disk (no database, no proprietary format)",
+        "Integrated Git client with manual commit or AutoGit auto-sync",
+        "Per-vault AGENTS and CLAUDE files teach agents Tolaria's types and properties",
+        "Command palette (cmd+K), inbox, favorites, archive, and type-based filtering"
+      ],
+      "why_discussed": "Launched April 22, 2026 to 1,140+ likes and immediate adoption by Obsidian/Bear users. Distinctive because the creator shipped it primarily via AI coding and released the whole repo — AGENTS file, ADRs, hooks — as a reference for how to build a serious app with Claude Code. Widely read as a concrete answer to Karpathy's 'LLM wiki' prompt.",
+      "notes": "AGPL-3.0 (not MIT). TypeScript. macOS only at launch. Uses the user's locally installed Claude Code / Codex — no API keys required. Related AGENTS/CLAUDE scaffolding is generated by clicking an in-app banner. 461 stars two days post-launch.",
+      "difficulty": "beginner",
+      "tag": "knowledge-base",
+      "ladder_rung": 2,
+      "audience": "Curious builder",
+      "capabilities_unlocked": [
+        "Run a local Markdown knowledge base that humans and AI edit in the same place",
+        "Let Claude Code or Codex scan existing notes and auto-assign types, properties, and relationships",
+        "Use Git-backed versioning and AutoGit sync without leaving the editor",
+        "Adopt a Notion-style editor without giving up file portability or local-first control",
+        "Copy a working AGENTS.md / CLAUDE.md pattern into your own projects"
+      ],
+      "good_for": [
+        "Obsidian, Bear, or Notion users who want AI agents as collaborators on the same files",
+        "Developers with a large personal knowledge base who already run Claude Code or Codex locally",
+        "Anyone curious about Karpathy's 'LLM wiki' idea and wanting a concrete, opinionated starting point"
+      ],
+      "not_for": [
+        "Windows or Linux users — macOS only at launch",
+        "Teams that need real-time multi-user collaboration (Tolaria is single-user local + Git)",
+        "Users who don't want to install Claude Code, Codex, or another MCP client alongside"
+      ],
+      "graduate_to": ["Cabinet"],
+      "relationships": {
+        "alternative_to": ["Cabinet"],
+        "works_with": ["Claude Code", "OpenClaw"],
+        "ecosystem": ["Claude Code"]
+      }
+    },
+    {
+      "name": "Stitch",
+      "category": "Team/Organization-Backed",
+      "type": "agent-tool",
+      "subtype": "agentic-app",
+      "use_cases": ["Dev", "Content"],
+      "features": [],
+      "creator": "Google Labs",
+      "github_stars": "N/A (product is closed-source; DESIGN.md spec repo is separate)",
+      "github_url": null,
+      "website_url": "https://stitch.withgoogle.com",
+      "full_description": "Google Labs' AI UI designer. Describe a mobile or web app in natural language — 'a meditation app with a calming palette,' 'a dashboard for a running coach,' 'a dark-mode checkout flow' — and Stitch generates a full multi-screen UI with branding, layout, components, and exportable front-end code on an AI-native canvas. Originally launched at Google I/O 2025 as a text-to-UI tool, it relaunched in 2026 as a 'vibe design partner' with a persistent design agent, voice-driven editing ('show me this in three palettes'), native image/logo generation on the canvas, copy-paste across projects, image/sketch/screenshot-to-UI, Figma export, and a View Code panel. Runs on Gemini 2.5 Flash (Standard, 350 generations/month) and Gemini 2.5 Pro / Gemini 3 (Experimental, 50 generations/month). Free via Google Labs. In April 2026, Google open-sourced the DESIGN.md draft spec — a portable design-rules file agents can import, export, and validate against WCAG — with a CLI validator and MCP integrations so downstream tools (e.g. Claude Code) can consume a Stitch design system directly.",
+      "key_features": [
+        "Natural-language, voice, sketch, and screenshot inputs all generate full multi-screen UIs",
+        "AI-native canvas with a persistent design agent that tracks progress and gives real-time critiques",
+        "Native image generation on the canvas (logos, hero graphics) that the agent drops into the UI",
+        "Copy & paste screens across projects — mix design systems and styles",
+        "Figma export and a View Code panel for clean front-end code",
+        "DESIGN.md — open-sourced portable design-system spec with WCAG validation and CLI validator; works across tools via MCP",
+        "Runs on Gemini 2.5 Flash / 2.5 Pro / Gemini 3; free via Google Labs"
+      ],
+      "why_discussed": "Alongside v0, Lovable, and Bolt, Stitch is a canonical consumer 'describe a UI, get a working design + code' product. The design-led entry point in Google's Gemini stack; pairs naturally with Claude Code / Cursor via MCP (design in Stitch, implement in a coding agent). The April 2026 DESIGN.md launch is notable as the first serious attempt at a portable, agent-readable design-system file format.",
+      "notes": "Closed-source product; Gemini-only. Launched at Google I/O 2025 as text-to-UI; relaunched 2026 as a full 'vibe design partner' AI-native canvas. April 21 2026: DESIGN.md draft spec open-sourced with CLI validator and components-section experiment. MCP server lets Claude Code (and other agents) read a Stitch design system directly. Community sentiment is mixed — fans love the free tier and workflow; critics find output generic on non-light themes vs. Claude Design.",
+      "difficulty": "beginner",
+      "tag": "agentic-app",
+      "ladder_rung": 2,
+      "audience": "Curious builder",
+      "capabilities_unlocked": [
+        "Generate a full multi-screen mobile or web UI from a single natural-language prompt",
+        "Iterate on designs with voice ('show me three palettes', 'make it feel like high-end stationery')",
+        "Turn a sketch, wireframe, or screenshot into a clean digital UI",
+        "Export a production-ready design system as DESIGN.md and hand it to a coding agent via MCP",
+        "Share a live link for client approval before any code is written"
+      ],
+      "good_for": [
+        "Designers, PMs, and indie makers who want polished multi-screen UIs from a prompt without opening Figma from scratch",
+        "Non-developers who need mockups and a design system they can hand off to a coding agent (Claude Code, Cursor) via DESIGN.md / MCP",
+        "Client work where the design needs sign-off before a single line of code is written"
+      ],
+      "not_for": [
+        "Deploying a working app — Stitch stops at design + code export; it does not host or ship production apps (use v0, Lovable, or Bolt for that)",
+        "Editing in your existing repo — Stitch generates its own projects; it does not run as an agent in your codebase",
+        "Teams that need self-hosted, on-prem, or model-agnostic generation — Stitch is closed-source and Gemini-only"
+      ],
+      "graduate_to": ["Claude Code"],
+      "relationships": {
+        "alternative_to": ["v0"],
+        "ecosystem": ["Google Gemini", "Quiver", "designdotmd"]
+      }
+    },
+    {
+      "name": "Agentic.Market",
+      "category": "Team/Organization-Backed",
+      "type": "developer-utility",
+      "subtype": "infrastructure",
+      "use_cases": ["Ops", "Dev"],
+      "features": ["Open Source"],
+      "creator": "Coinbase",
+      "github_stars": 96,
+      "github_url": "https://github.com/coinbase/agentic-wallet-skills",
+      "website_url": "https://agentic.market",
+      "full_description": "A discovery marketplace for x402-enabled services that AI agents can call and pay for per-request in USDC — no API keys, no registration, no rate limits. Launched April 20, 2026 by Coinbase and announced by CEO Brian Armstrong as a homepage for the 'agentic economy.' Aggregates 500+ services across inference (Claude, GPT, DeepSeek, Gemini), data (crypto prices, analytics, portfolio tracking), search (web, scraping), media (speech-to-text, image and audio generation), social (email, phone, X/Farcaster payments), trading (oracles, DeFi), and infrastructure (RPC, storage, sandboxes, proxies). Most calls cost $0.001–$0.50 USDC. The companion coinbase/agentic-wallet-skills package (MIT) installs into an agent via `npx skills add coinbase/agentic-wallet-skills`, giving it x402 wallet + discovery capabilities out of the box. Providers list their service to be discovered and earn revenue per call.",
+      "key_features": [
+        "Directory of 500+ x402-enabled services across inference, data, search, media, social, trading, and infra",
+        "Pay-per-request pricing in USDC — no API keys, no registration, no rate limits",
+        "Companion 'agentic-wallet-skills' Skill installable into any skill-aware agent",
+        "Providers can list services and earn revenue per call",
+        "Trending / commerce dashboard for monitoring agent-economy activity",
+        "Operated by Coinbase; site states ownership by the Linux Foundation"
+      ],
+      "why_discussed": "Named by Brian Armstrong as the first serious 'homepage of the agent economy' — a neutral discovery + payments rail that lets agents autonomously find and buy services without per-provider signup. Gives the x402 standard a concrete consumer surface.",
+      "notes": "Skill repo MIT, 96 stars as of research date. Marketplace itself not confirmed open-source. Crypto-native (USDC on Base + x402). Unrelated BSC meme-coin ticker with the same name clutters search results — disambiguate via domain.",
+      "difficulty": "intermediate",
+      "tag": "web3",
+      "ladder_rung": null,
+      "audience": "Developer",
+      "capabilities_unlocked": [
+        "Agents can discover and call third-party services at runtime without a human pre-provisioning API keys",
+        "Per-request micropayments in USDC replace subscriptions and rate limits for agent workloads",
+        "API providers get an agent-native distribution channel without custom billing integrations",
+        "A single installable skill wires wallet + discovery into any skill-aware harness (Claude Code, Claude.ai, etc.)"
+      ],
+      "good_for": [
+        "Autonomous agents that need to shop for capabilities (inference, search, data) on the fly",
+        "Developers prototyping agent-to-agent or agent-to-service commerce with real payments",
+        "API providers wanting to reach agents as customers without standing up user accounts and keys"
+      ],
+      "not_for": [
+        "Users who just want a chat assistant — this is plumbing, not a product",
+        "Teams that need predictable fixed-price billing or enterprise procurement contracts",
+        "Non-crypto environments — all settlement is in USDC"
+      ],
+      "graduate_to": ["Claude Code", "LangGraph"],
+      "relationships": {
+        "built_on": ["x402"],
+        "ecosystem": ["Base"]
+      }
     }
   ]
 }
