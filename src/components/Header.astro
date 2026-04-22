@@ -6,11 +6,11 @@ const pathname = Astro.url.pathname;
 const sortedNav = [...nav].sort((a, b) => a.order - b.order);
 ---
 
-<header class="sticky top-0 z-40 border-b border-neutral-200 bg-white/85 backdrop-blur">
+<header class="sticky top-0 z-40 border-b border-neutral-200 bg-[#F6F9FC]/85 backdrop-blur">
   <nav class="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-3">
     <a
       href="/"
-      class="font-display text-lg font-medium tracking-tight text-neutral-950 no-underline"
+      class="font-display text-lg font-semibold tracking-tight text-neutral-900 no-underline"
       style="letter-spacing: -0.02em;"
     >
       {siteMeta.name}
@@ -29,10 +29,10 @@ const sortedNav = [...nav].sort((a, b) => a.order - b.order);
                 <a
                   href={item.href}
                   class:list={[
-                    "inline-flex items-center rounded-xl px-3 py-1 text-sm font-medium no-underline transition-colors",
+                    "inline-flex items-center rounded-lg px-3 py-1 text-sm font-medium no-underline transition-colors",
                     isActive
-                      ? "bg-neutral-100 text-neutral-950"
-                      : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-950",
+                      ? "bg-neutral-100 text-neutral-900"
+                      : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900",
                   ]}
                 >
                   {item.label}

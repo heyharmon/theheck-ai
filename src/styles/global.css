@@ -1,130 +1,145 @@
 @import "tailwindcss";
 
-/* Light mode ONLY. No dark variant. Refined editorial minimalism
-   inspired by durable.com — Fraunces serif display, Nunito rounded
-   sans body, near-monochrome palette with warm off-white panels. */
+/* Light mode ONLY. No dark variant. Stripe Gradient design system:
+   deep navy primary (#0A2540), cool off-white surface (#F6F9FC),
+   single violet-blue accent (#635BFF) used only for CTAs, status dot,
+   and links. Inter + Inter Tight grotesks. Flat — no gradients. */
 
 @theme {
-  /* Typography */
-  --font-sans: "Nunito", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-display: "Fraunces", ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  /* Typography — grotesk only, no serif */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Inter Tight", "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Neutral scale: warm zinc-leaning, normal 50..950 ramp. */
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #f4f4f5;
-  --color-neutral-200: #e4e4e7;
-  --color-neutral-300: #d4d4d8;
-  --color-neutral-400: #a1a1aa;
-  --color-neutral-500: #71717a;
-  --color-neutral-600: #52525b;
-  --color-neutral-700: #3f3f46;
-  --color-neutral-800: #27272a;
-  --color-neutral-900: #18181b;
-  --color-neutral-950: #09090b;
+  /* Stripe Gradient palette tokens */
+  --color-primary: #0A2540;       /* deep navy — headings, body */
+  --color-secondary: #425466;     /* slate — meta text, borders */
+  --color-tertiary: #635BFF;      /* violet — single-action accent */
+  --color-tertiary-hover: #7A73FF;
+  --color-neutral-bg: #F6F9FC;    /* page background */
+  --color-surface: #FFFFFF;       /* cards/panels */
+  --color-on-primary: #FFFFFF;
+  --color-border: #E3E8EE;        /* light cool border */
 
-  /* Accent — durable uses near-black as its only visual accent
-     against white. Keep that restraint. --color-accent resolves to
-     near-black so any reference to it renders correctly in light mode. */
-  --color-accent: #18181b;
-  --color-accent-dim: rgba(24, 24, 27, 0.1);
+  /* Neutral scale: cool slate-leaning ramp aligned with the Stripe palette.
+     50/100 land near the off-white surfaces; 900/950 land near primary navy. */
+  --color-neutral-50: #F6F9FC;
+  --color-neutral-100: #EFF3F8;
+  --color-neutral-200: #E3E8EE;
+  --color-neutral-300: #CBD2DB;
+  --color-neutral-400: #8792A2;
+  --color-neutral-500: #697386;
+  --color-neutral-600: #425466;
+  --color-neutral-700: #2A3F5F;
+  --color-neutral-800: #1A2B47;
+  --color-neutral-900: #0A2540;
+  --color-neutral-950: #061A30;
 
-  /* Legacy lime aliases mapped to near-black so stray utilities
-     from the previous theme don't blow up the palette. */
-  --color-lime-300: #18181b;
-  --color-lime-400: #18181b;
-  --color-lime-500: #18181b;
+  /* Accent token aliases — resolve to the single tertiary so any stray
+     reference renders correctly. Use sparingly per single-accent rule. */
+  --color-accent: #635BFF;
+  --color-accent-dim: rgba(99, 91, 255, 0.1);
 
-  /* Legacy semantic tokens — mapped to neutral values so stray
+  /* Legacy lime aliases mapped to primary navy — old utilities should
+     read as monochrome navy, not the violet accent. */
+  --color-lime-300: #0A2540;
+  --color-lime-400: #0A2540;
+  --color-lime-500: #0A2540;
+
+  /* Legacy semantic tokens — mapped to cool neutrals so stray
      emerald/amber/rose utilities resolve sensibly in light mode.
      (difficulty badges etc. use these.) */
-  --color-emerald-50: #f4f4f5;
-  --color-emerald-100: #e4e4e7;
-  --color-emerald-500: #52525b;
-  --color-emerald-600: #3f3f46;
-  --color-emerald-700: #27272a;
-  --color-emerald-800: #18181b;
-  --color-emerald-900: #09090b;
-  --color-emerald-950: #09090b;
+  --color-emerald-50: #EFF3F8;
+  --color-emerald-100: #E3E8EE;
+  --color-emerald-500: #425466;
+  --color-emerald-600: #2A3F5F;
+  --color-emerald-700: #1A2B47;
+  --color-emerald-800: #0A2540;
+  --color-emerald-900: #061A30;
+  --color-emerald-950: #061A30;
 
-  --color-amber-50: #f4f4f5;
-  --color-amber-100: #e4e4e7;
-  --color-amber-500: #71717a;
-  --color-amber-600: #52525b;
-  --color-amber-700: #3f3f46;
-  --color-amber-800: #27272a;
-  --color-amber-900: #18181b;
-  --color-amber-950: #09090b;
+  --color-amber-50: #EFF3F8;
+  --color-amber-100: #E3E8EE;
+  --color-amber-500: #697386;
+  --color-amber-600: #425466;
+  --color-amber-700: #2A3F5F;
+  --color-amber-800: #1A2B47;
+  --color-amber-900: #0A2540;
+  --color-amber-950: #061A30;
 
-  --color-rose-50: #f4f4f5;
-  --color-rose-100: #e4e4e7;
-  --color-rose-500: #a1a1aa;
-  --color-rose-600: #71717a;
-  --color-rose-700: #52525b;
-  --color-rose-800: #3f3f46;
-  --color-rose-900: #27272a;
-  --color-rose-950: #18181b;
+  --color-rose-50: #EFF3F8;
+  --color-rose-100: #E3E8EE;
+  --color-rose-500: #8792A2;
+  --color-rose-600: #697386;
+  --color-rose-700: #425466;
+  --color-rose-800: #2A3F5F;
+  --color-rose-900: #1A2B47;
+  --color-rose-950: #0A2540;
 }
 
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #ffffff;
+    background-color: #F6F9FC;
     color-scheme: light;
   }
 
   body {
-    @apply bg-white text-neutral-900 font-sans;
+    background-color: #F6F9FC;
+    color: #0A2540;
+    font-family: var(--font-sans);
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.6;
     position: relative;
   }
 
   h1 {
-    @apply font-display text-neutral-950;
-    font-weight: 400;
-    font-size: clamp(2.75rem, 6vw, 4.25rem);
-    line-height: 1.08;
-    letter-spacing: -0.015em;
-    font-variation-settings: "opsz" 144, "SOFT" 50;
+    font-family: var(--font-display);
+    color: #0A2540;
+    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
   }
 
   h2 {
-    @apply font-display text-neutral-950;
-    font-weight: 400;
-    font-size: clamp(1.875rem, 3.5vw, 2.5rem);
-    line-height: 1.1;
-    letter-spacing: -0.015em;
-    font-variation-settings: "opsz" 144, "SOFT" 50;
+    font-family: var(--font-display);
+    color: #0A2540;
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
   }
 
   h3 {
-    @apply font-sans text-neutral-900;
+    font-family: var(--font-sans);
+    color: #0A2540;
     font-weight: 600;
     font-size: 1.125rem;
     line-height: 1.35;
-    letter-spacing: -0.005em;
+    letter-spacing: -0.01em;
   }
 
   p {
-    @apply text-neutral-600;
+    color: #425466;
     line-height: 1.6;
   }
 
   a {
-    color: #18181b;
+    color: #635BFF;
     text-decoration: underline;
-    text-decoration-color: rgba(24, 24, 27, 0.3);
+    text-decoration-color: rgba(99, 91, 255, 0.3);
     text-underline-offset: 3px;
-    transition: text-decoration-color 0.2s;
+    transition: text-decoration-color 0.2s, color 0.2s;
   }
   a:hover {
-    text-decoration-color: #18181b;
+    color: #7A73FF;
+    text-decoration-color: #7A73FF;
   }
 
   hr {
-    @apply border-neutral-200;
+    border-color: #E3E8EE;
   }
 
   input, select, textarea, button {
@@ -132,15 +147,15 @@
   }
 
   ::selection {
-    background: #18181b;
+    background: #635BFF;
     color: #ffffff;
   }
 }
 
 /* ================== UTILITIES ================== */
 
-/* grid-bg kept as a no-op so markup referencing the class still works,
-   but no grid overlay — durable uses clean white backgrounds. */
+/* grid-bg kept as a no-op so markup referencing the class still works.
+   Stripe Gradient is flat — no overlay. */
 .grid-bg::before {
   content: none;
 }
@@ -149,51 +164,52 @@
   z-index: 1;
 }
 
-/* Primary button — near-black pill, white text. Durable style. */
+/* Primary button — the ONE place tertiary violet appears as a fill.
+   Used for the Visit Website CTA and other primary actions (one per screen). */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #18181b;
+  background-color: #635BFF;
   color: #ffffff;
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.9375rem;
   letter-spacing: -0.005em;
-  padding: 0.625rem 1.25rem;
-  border: 1px solid #18181b;
-  border-radius: 999px;
+  padding: 12px 20px;
+  border: 1px solid #635BFF;
+  border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
 }
 .btn-primary:hover {
-  background-color: #27272a;
-  border-color: #27272a;
+  background-color: #7A73FF;
+  border-color: #7A73FF;
   text-decoration: none;
   color: #ffffff;
 }
 
-/* Ghost button — thin outlined pill, dark text, light hover bg */
+/* Ghost button — outlined, primary navy text. Monochrome — no tertiary. */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  color: #18181b;
+  color: #0A2540;
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.9375rem;
   letter-spacing: -0.005em;
-  padding: 0.625rem 1.25rem;
-  border: 1px solid #ebebeb;
-  border-radius: 999px;
+  padding: 12px 20px;
+  border: 1px solid #0A2540;
+  border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.2s, border-color 0.2s;
 }
 .btn-ghost:hover {
-  background-color: #f4f4f5;
-  border-color: #d4d4d8;
-  color: #18181b;
+  background-color: #EFF3F8;
+  border-color: #0A2540;
+  color: #0A2540;
   text-decoration: none;
 }
 
@@ -202,39 +218,39 @@
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  color: #18181b;
+  color: #0A2540;
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.9375rem;
   letter-spacing: -0.005em;
-  padding: 0.625rem 1.25rem;
-  border: 1px solid #ebebeb;
-  border-radius: 999px;
+  padding: 12px 20px;
+  border: 1px solid #0A2540;
+  border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.2s, border-color 0.2s;
 }
 .btn-ghost-dark:hover {
-  background-color: #f4f4f5;
-  border-color: #d4d4d8;
-  color: #18181b;
+  background-color: #EFF3F8;
+  border-color: #0A2540;
+  color: #0A2540;
   text-decoration: none;
 }
 
-/* Interactive card — soft panel with hover lift. Durable's card pattern. */
+/* Interactive card — white surface on cool bg, soft hover lift. Monochrome. */
 .card-interactive {
-  background-color: #ffffff;
-  border: 1px solid #ebebeb;
+  background-color: #FFFFFF;
+  border: 1px solid #E3E8EE;
   border-radius: 16px;
   padding: 1.5rem;
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 .card-interactive:hover {
-  border-color: #d4d4d8;
-  box-shadow: 0 8px 24px -12px rgba(24, 24, 27, 0.12);
+  border-color: #CBD2DB;
+  box-shadow: 0 2px 8px -2px rgba(10, 37, 64, 0.08), 0 8px 24px -12px rgba(10, 37, 64, 0.12);
   transform: translateY(-2px);
 }
 
-/* Badges — small rounded-8px chips, light gray bg, small text */
+/* Badges — small rounded chips. Neutral palette only. */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -242,138 +258,118 @@
   font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: -0.005em;
+  letter-spacing: 0.005em;
   border-radius: 8px;
   line-height: 1.4;
 }
 .badge-neutral {
   border: 1px solid transparent;
-  background: #f4f4f5;
-  color: #3f3f46;
+  background: #EFF3F8;
+  color: #0A2540;
 }
 .badge-outline {
-  border: 1px solid #e4e4e7;
+  border: 1px solid #E3E8EE;
   background: transparent;
-  color: #52525b;
+  color: #425466;
 }
 .badge-subtle {
   border: 1px solid transparent;
-  background: #fafafa;
-  color: #71717a;
+  background: #F6F9FC;
+  color: #697386;
 }
 .badge-emerald,
 .badge-amber,
 .badge-rose {
   border: 1px solid transparent;
-  background: #f4f4f5;
-  color: #3f3f46;
+  background: #EFF3F8;
+  color: #0A2540;
 }
+/* Accent badge — uses primary navy fill. The single-accent rule reserves
+   the violet tertiary for actions, not labels. */
 .badge-accent {
-  background-color: #18181b;
+  background-color: #0A2540;
   color: #ffffff;
-  border: 1px solid #18181b;
+  border: 1px solid #0A2540;
 }
 
-/* Status pill — light background, dark text, animated dot */
+/* Status pill — surface bg, navy text, secondary border. Dot is tertiary
+   violet (allowed under the single-accent rule). */
 .status-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.375rem 0.75rem;
-  border: 1px solid #ebebeb;
+  border: 1px solid #425466;
   border-radius: 999px;
   font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: -0.005em;
-  color: #52525b;
-  background: #ffffff;
+  color: #0A2540;
+  background: #FFFFFF;
 }
 .status-pill::before {
   content: "";
   width: 6px;
   height: 6px;
   border-radius: 999px;
-  background: #18181b;
-  box-shadow: 0 0 0 0 rgba(24, 24, 27, 0.4);
+  background: #635BFF;
+  box-shadow: 0 0 0 0 rgba(99, 91, 255, 0.4);
   animation: pulse-dot 1.8s ease-in-out infinite;
 }
 
 @keyframes pulse-dot {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(24, 24, 27, 0.4);
+    box-shadow: 0 0 0 0 rgba(99, 91, 255, 0.4);
     opacity: 1;
   }
   50% {
-    box-shadow: 0 0 0 6px rgba(24, 24, 27, 0);
+    box-shadow: 0 0 0 6px rgba(99, 91, 255, 0);
     opacity: 0.7;
   }
 }
 
-/* Slim marquee bar — near-black on white, restrained */
-.marquee {
-  display: flex;
-  overflow: hidden;
-  background: #18181b;
-  color: #ffffff;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 0.8125rem;
-  letter-spacing: -0.005em;
-  padding: 0.5rem 0;
-  white-space: nowrap;
-}
-.marquee__track {
-  display: inline-flex;
-  gap: 3rem;
-  padding-left: 3rem;
-  animation: marquee-scroll 30s linear infinite;
-}
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
 /* Section rhythm: subtle light borders */
 .section-bordered {
-  border-top: 1px solid #ebebeb;
+  border-top: 1px solid #E3E8EE;
 }
 
-/* Tinted section — warm off-white panel */
+/* Tinted section — cool off-white panel matches body bg */
 .section-tinted {
-  background-color: #f4f4f5;
+  background-color: #F6F9FC;
 }
 
-/* Hero section helper — clean white bg, dark text */
-.hero-dark {
-  background-color: #ffffff;
-  color: #09090b;
+/* Hero helper — surface white panel on cool bg */
+.hero-surface {
+  background-color: #FFFFFF;
+  color: #0A2540;
 }
-.hero-dark h1,
-.hero-dark h2 {
-  color: #09090b;
+.hero-surface h1,
+.hero-surface h2 {
+  color: #0A2540;
 }
-.hero-dark p {
-  color: #52525b;
+.hero-surface p {
+  color: #425466;
   line-height: 1.6;
 }
 
 /* ================== PROSE ================== */
 .prose {
   max-width: none;
-  color: #3f3f46;
+  color: #425466;
+  font-family: var(--font-sans);
 }
 .prose h1,
 .prose h2 {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.015em;
-  color: #09090b;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #0A2540;
 }
 .prose h3 {
   font-family: var(--font-sans);
   font-weight: 600;
-  color: #18181b;
+  color: #0A2540;
 }
 .prose h2 {
   margin-top: 3rem;
@@ -385,14 +381,14 @@
 }
 .prose p {
   margin-bottom: 1.5rem;
-  color: #3f3f46;
+  color: #425466;
   line-height: 1.7;
 }
 .prose ul {
   list-style: disc;
   padding-left: 1.5rem;
   margin-bottom: 1.5rem;
-  color: #3f3f46;
+  color: #425466;
 }
 .prose ul > li,
 .prose ol > li {
@@ -402,32 +398,35 @@
   list-style: decimal;
   padding-left: 1.5rem;
   margin-bottom: 1.5rem;
-  color: #3f3f46;
+  color: #425466;
 }
 .prose blockquote {
-  border-left: 2px solid #e4e4e7;
+  border-left: 2px solid #E3E8EE;
   padding-left: 1.5rem;
   font-style: italic;
-  color: #71717a;
+  color: #697386;
   margin: 1.5rem 0;
 }
 .prose strong {
-  font-weight: 700;
-  color: #09090b;
+  font-weight: 600;
+  color: #0A2540;
 }
 .prose code {
-  background: #f4f4f5;
-  color: #18181b;
+  background: #F6F9FC;
+  color: #0A2540;
   padding: 0.1rem 0.35rem;
   font-family: var(--font-mono);
   font-size: 0.9em;
   border-radius: 6px;
+  border: 1px solid #E3E8EE;
 }
+/* Links in prose use the tertiary violet — part of the single-accent rule. */
 .prose a {
-  color: #18181b;
+  color: #635BFF;
   text-decoration: underline;
-  text-decoration-color: rgba(24, 24, 27, 0.3);
+  text-decoration-color: rgba(99, 91, 255, 0.3);
 }
 .prose a:hover {
-  text-decoration-color: #18181b;
+  color: #7A73FF;
+  text-decoration-color: #7A73FF;
 }

@@ -350,7 +350,7 @@ onMounted(() => {
           <div class="flex flex-col gap-0.5">
             <button
               :class="[
-                'w-full rounded-xl px-3 py-2 text-left text-sm transition-colors',
+                'w-full rounded-lg px-3 py-2 text-left text-sm transition-colors',
                 selectedUseCase === 'All'
                   ? 'bg-neutral-100 font-semibold text-neutral-950'
                   : 'font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-950',
@@ -363,7 +363,7 @@ onMounted(() => {
               v-for="uc in useCases"
               :key="uc"
               :class="[
-                'flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm transition-colors',
+                'flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm transition-colors',
                 selectedUseCase === uc
                   ? 'bg-neutral-100 font-semibold text-neutral-950'
                   : 'font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-950',
@@ -382,7 +382,7 @@ onMounted(() => {
           <div class="flex flex-col gap-0.5">
             <button
               :class="[
-                'w-full rounded-xl px-3 py-2 text-left text-sm transition-colors',
+                'w-full rounded-lg px-3 py-2 text-left text-sm transition-colors',
                 selectedType === 'All'
                   ? 'bg-neutral-100 font-semibold text-neutral-950'
                   : 'font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-950',
@@ -395,7 +395,7 @@ onMounted(() => {
               v-for="t in types"
               :key="t"
               :class="[
-                'flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm transition-colors',
+                'flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm transition-colors',
                 selectedType === t
                   ? 'bg-neutral-100 font-semibold text-neutral-950'
                   : 'font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-950',
@@ -414,7 +414,7 @@ onMounted(() => {
           <div class="flex flex-col gap-0.5">
             <button
               :class="[
-                'w-full rounded-xl px-3 py-2 text-left text-sm transition-colors',
+                'w-full rounded-lg px-3 py-2 text-left text-sm transition-colors',
                 selectedDifficulty === 'All'
                   ? 'bg-neutral-100 font-semibold text-neutral-950'
                   : 'font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-950',
@@ -427,7 +427,7 @@ onMounted(() => {
               v-for="d in difficultyLevels"
               :key="d"
               :class="[
-                'flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm transition-colors',
+                'flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm transition-colors',
                 selectedDifficulty === d
                   ? 'bg-neutral-100 font-semibold text-neutral-950'
                   : 'font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-950',
@@ -447,7 +447,7 @@ onMounted(() => {
             <label
               v-for="f in features"
               :key="f"
-              class="flex cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-neutral-950"
+              class="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-neutral-950"
             >
               <input
                 type="checkbox"
@@ -464,7 +464,7 @@ onMounted(() => {
         <!-- Clear filters -->
         <button
           v-if="hasActiveFilters"
-          class="w-full rounded-full border border-neutral-200 px-3 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-neutral-950"
+          class="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-neutral-950"
           @click="clearAll"
         >
           Clear all filters
@@ -484,14 +484,14 @@ onMounted(() => {
             v-model="searchQuery"
             type="text"
             placeholder="Search projects..."
-            class="w-full rounded-full border border-neutral-200 bg-white py-2 pl-9 pr-4 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition-colors focus:border-neutral-400"
+            class="w-full rounded-lg border border-neutral-200 bg-white py-2 pl-9 pr-4 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition-colors focus:border-neutral-600"
           />
         </div>
         <div class="flex items-center gap-2">
           <label class="text-xs font-medium text-neutral-500">Sort by</label>
           <select
             v-model="sortBy"
-            class="rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 outline-none focus:border-neutral-400"
+            class="rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 outline-none focus:border-neutral-600"
           >
             <option value="stars">Stars</option>
             <option value="name">Name</option>

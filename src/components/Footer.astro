@@ -6,12 +6,12 @@ const socialLinks = Object.entries(siteMeta.social).filter(([_, url]) => url);
 const navSection = footerData.find((s) => s.section === "Navigation");
 ---
 
-<footer class="border-t border-neutral-200 bg-neutral-50 py-16">
+<footer class="border-t border-neutral-200 bg-white py-16">
   <div class="mx-auto max-w-[1400px] px-6">
     <div class="flex flex-col items-center gap-6 text-center">
       <a
         href="/"
-        class="font-display text-xl font-medium tracking-tight text-neutral-950 no-underline"
+        class="font-display text-xl font-semibold tracking-tight text-neutral-900 no-underline"
         style="letter-spacing: -0.02em;"
       >
         {siteMeta.name}
@@ -28,7 +28,7 @@ const navSection = footerData.find((s) => s.section === "Navigation");
               <li>
                 <a
                   href={link.href}
-                  class="text-sm font-medium text-neutral-600 no-underline transition-colors hover:text-neutral-950"
+                  class="text-sm font-medium text-neutral-600 no-underline transition-colors hover:text-neutral-900"
                 >
                   {link.label}
                 </a>
@@ -45,7 +45,7 @@ const navSection = footerData.find((s) => s.section === "Navigation");
               href={url as string}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-sm font-medium text-neutral-600 no-underline transition-colors hover:text-neutral-950"
+              class="text-sm font-medium text-neutral-600 no-underline transition-colors hover:text-neutral-900"
             >
               {platform}
             </a>
